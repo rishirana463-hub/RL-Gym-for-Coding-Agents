@@ -47,3 +47,13 @@ Added `npm run check:secrets`: scans working files, staged blobs, and unique rea
 JSON responses now include `X-Content-Type-Options: nosniff`. npm audit reports zero known vulnerabilities, including development dependencies; the pinned Python image dependencies remain unverified. Local reference, mutant and determinism evidence was regenerated for the current source/verifier fingerprint. Runtime artifact: 12,073 raw bytes / 4,498 gzip bytes.
 
 Verified: lint/build, all 18 Node regressions, two Python credential-input tests, reference and built runtime 56/56, 18/18 mutants caught, three stable reference runs, metadata and lifecycle checks. The intentionally incomplete starter remains 0/56; it is not model difficulty evidence.
+
+## Phase 6 — Documentation
+
+Replaced the long README with a concise overview, stack, fresh-install setup, API/configuration defaults, scripts and Vercel deployment limitations. Moved the complete public/private boundary, scoring rules, container and single-pass model protocol, credential handling, lifecycle commands and durability limits into `docs/evaluation.md`; updated the submission checklist link.
+
+The current persistent single-writer snapshot design is unsuitable for Vercel Functions as-is, based on the runtime's [read-only filesystem and temporary scratch storage](https://vercel.com/docs/functions/runtimes#file-system-support). Supporting it requires a storage/concurrency redesign; no deployment configuration or deployment is claimed.
+
+Verified: a fresh `npm ci` succeeds with zero known npm vulnerabilities; local documentation links/anchors and referenced scripts resolve; lint/build pass. Final runtime: 12,073 raw bytes / 4,498 gzip bytes, compared with 11,048 / 3,954 initially. No browser bundle exists. Docker, real frontier-model evaluations, Python image dependency auditing and deployment remain pending.
+
+The final submission-readiness check correctly fails for missing container reports and both model attempts; its updated report preserves those outstanding requirements.

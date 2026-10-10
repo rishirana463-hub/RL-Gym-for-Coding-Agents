@@ -13,7 +13,7 @@
 ## Still required before submitting
 
 1. Obtain organizer approval of the task idea, as requested in the original listing. The user's instruction to build authorized local implementation; it does not establish organizer approval.
-2. Run the container reference, mutation, and determinism commands in README. Review any Linux-specific failures before proceeding.
+2. Run the container reference, mutation, and determinism commands in the [evaluation guide](docs/evaluation.md#container-verification). Review any Linux-specific failures before proceeding.
 3. Choose two eligible frontier models and configure their provider access locally. Execute each once using the same recorded limits and medium reasoning. Preserve logs and generated code. No model runs have been performed yet.
 4. Score each saved solution in containers. Both scores must be **strictly below 0.30**. Do not count setup/API failures as task difficulty evidence.
 5. Write a short failure analysis for each actual run, linked to failing check IDs and components.
