@@ -36,16 +36,17 @@ Recorded verification, already executed:
 - Inspected the signed-in [HackerRank bounty](https://www.hackerrank.com/earn/applications/603). It does not list supplied model access/credits; it links HackerRank Experts Discord for coordination. The existing application already shows Submitted with this repo link. No submission edit was made.
 - Completed the model-access investigation: inspected the user's Discord task thread and verified [Saurabh Maurya's original reply](https://discord.com/channels/1544210398180282380/1558107634698166384/1558380743925829733) explicitly declining API credits. The user then requested **leave real evaluations pending**. Zero model attempts/charges were initiated; no model scores or analyses exist. `docs/model-access.md` and `evals/README.md` record the evidence and limitations.
 - Recorded step 3's unavailable difficulty assessment in `evals/DIFFICULTY.md`, including the strict below-30% gate and fair revision protocol. No task or scoring changes were made without real scores. The actual gate remains pending. Lint and build passed; runtime size remains 12,073 raw / 4,498 gzip bytes.
+- Recorded step 4's unavailable analyses in `evals/FAILURE-ANALYSIS.md` and linked both pending records from the evaluation index. Actual per-model analyses cannot be written without candidate code, logs and scores; no placeholder model folders or failure claims were created. Lint and build passed.
 
 ## In progress
 
-- Real evaluation step 2 is pending at the user's explicit request. Finishing the failure-analysis status record and comprehensive submission checklist/organizer draft; no real model execution.
+- Real evaluation steps 2-4 remain pending at the user's explicit request. Finishing the comprehensive submission checklist and organizer draft (step 5); no real model execution.
 - Organizer guidance in Discord says higher reasoning and two accessible models; the live listing says medium reasoning and frontier models. Resolve this discrepancy before either real attempt. The existing harness retains medium reasoning pending clarification.
 - Added a manual hosted-runner path for the two real evaluations because local Docker is absent. It requires two secure provider secrets, distinct confirmed model IDs and matching current Docker evidence, refuses workflow retries/saved attempt folders, and archives full generation/scoring/trajectory logs under model-specific `evals/` directories. It has not been dispatched; actual provider execution remains unverified. Preserve artifacts before any further dispatch.
 
 ## Next
 
-1. Finish step 4's failure-analysis status record and the exhaustive listing checklist/organizer draft (step 5).
+1. Finish the exhaustive listing checklist and organizer draft (step 5).
 2. When the user resumes real evaluations and provides access, confirm exact model eligibility/reasoning with the organizer, run each once, save full logs under model-specific `evals/` directories, and score saved solutions in Docker.
 3. Apply the difficulty gate to real scores only. If needed, preserve attempts, revise the task fairly and rerun Docker plus both evaluations under a disclosed new version. Then write actual per-model failure analyses.
 4. Obtain organizer idea approval and collaborator access; satisfy the automated/manual readiness gates before claiming acceptance-ready status.
