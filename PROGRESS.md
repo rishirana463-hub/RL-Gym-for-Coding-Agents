@@ -29,18 +29,18 @@ Recorded verification, already executed:
 - Initialized and reviewed this root progress ledger from existing history and evidence, preserving all completed phase commits and outstanding prerequisites.
 - GitHub README presentation prepared with accessible badges, capability/evidence tables, clone/setup instructions and documentation links. GitHub's Markdown renderer confirmed all four tables and badges; local links/scripts, lint/build and the outgoing secret scan passed. Completed reference/model checks were not rerun.
 - Saved and independently verified the GitHub repository description: "A stateful software engineering benchmark for coding agents: durable inventory APIs, 56 black-box checks, 18 executable mutants, and a prepared one-pass OpenHands evaluation harness."
+- Uploaded the complete existing project/history to [GitHub](https://github.com/rishirana463-hub/RL-Gym-for-Coding-Agents) on `main`. Verified initial publication commit `228f176`, all 98 tracked files, the exact uploaded README bytes and repository description through GitHub's API. `origin/main` is configured as the local branch's upstream.
 
 ## In progress
 
-- GitHub handoff: commit and push the prepared README/project history to the selected repository, then verify the remote branch and uploaded README. Local Git authentication confirms push/admin access; the target branch was empty before upload.
+- None. The GitHub README, repository description and project upload are complete. The remaining evaluation/submission work awaits the prerequisites below.
 
 ## Next
 
-1. Push the prepared documentation/project history without overwriting remote work, verify the remote commit and README, and record the completed handoff in this ledger.
-2. When Docker with Linux containers is available, execute the container reference, mutant and determinism checks documented in [the evaluation guide](docs/evaluation.md#container-verification). Review Linux bind-mount permissions and crash recovery during that work.
-3. When access to two eligible frontier models is configured, run each once with the recorded limits, score its saved solution in Docker, and write failure analyses. Preserve all attempts. Both scores must be strictly below 30% to establish the task's difficulty requirement.
-4. Install/audit the pinned Python/OpenHands image dependencies when the image can be built; this has not been verified locally.
-5. Complete organizer approval, private repository/access requirements and the submission-readiness gate in [SUBMISSION.md](SUBMISSION.md) when the required evidence exists.
+1. When Docker with Linux containers is available, execute the container reference, mutant and determinism checks documented in [the evaluation guide](docs/evaluation.md#container-verification). Review Linux bind-mount permissions and crash recovery during that work.
+2. When access to two eligible frontier models is configured, run each once with the recorded limits, score its saved solution in Docker, and write failure analyses. Preserve all attempts. Both scores must be strictly below 30% to establish the task's difficulty requirement.
+3. Install/audit the pinned Python/OpenHands image dependencies when the image can be built; this has not been verified locally.
+4. Complete organizer approval, private repository/access requirements and the submission-readiness gate in [SUBMISSION.md](SUBMISSION.md) when the required evidence exists.
 
 ## Notes
 
