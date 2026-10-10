@@ -37,19 +37,23 @@ Recorded verification, already executed:
 - Completed the model-access investigation: inspected the user's Discord task thread and verified [Saurabh Maurya's original reply](https://discord.com/channels/1544210398180282380/1558107634698166384/1558380743925829733) explicitly declining API credits. The user then requested **leave real evaluations pending**. Zero model attempts/charges were initiated; no model scores or analyses exist. `docs/model-access.md` and `evals/README.md` record the evidence and limitations.
 - Recorded step 3's unavailable difficulty assessment in `evals/DIFFICULTY.md`, including the strict below-30% gate and fair revision protocol. No task or scoring changes were made without real scores. The actual gate remains pending. Lint and build passed; runtime size remains 12,073 raw / 4,498 gzip bytes.
 - Recorded step 4's unavailable analyses in `evals/FAILURE-ANALYSIS.md` and linked both pending records from the evaluation index. Actual per-model analyses cannot be written without candidate code, logs and scores; no placeholder model folders or failure claims were created. Lint and build passed.
+- Gap step 5 completed: rewrote `SUBMISSION.md` as a requirement-by-requirement Done / Not done / Needs human checklist, and saved the short approval/clarification draft in `docs/organizer-message.md`. No message was sent. The draft discloses that the prototype was implemented before organizer approval and asks about scope, model eligibility/reasoning and the collaborator account.
+- Rechecked GitHub's API: repository remains private, with zero outside collaborators and zero pending invitations. No organizer access was granted or assumed.
+- Step 5 lint/build passed; 53 local documentation links resolved. The readiness gate was actually rerun and correctly failed on exactly eight missing model files, with current Docker reference/mutant/determinism evidence accepted. Runtime size remains 12,073 raw / 4,498 gzip bytes.
+- The outgoing secret-signature scan passed across 158 working files, 246 reachable history blobs and the staged documentation/readiness changes, with no findings/errors; environment-file ignore checks passed. Its documented detection limits still apply.
 
 ## In progress
 
-- Real evaluation steps 2-4 remain pending at the user's explicit request. Finishing the comprehensive submission checklist and organizer draft (step 5); no real model execution.
+- Real evaluation steps 2-4 remain pending at the user's explicit request. No model execution is active. Docker validation, offline setup, access investigation and the requested checklist/approval draft are complete.
 - Organizer guidance in Discord says higher reasoning and two accessible models; the live listing says medium reasoning and frontier models. Resolve this discrepancy before either real attempt. The existing harness retains medium reasoning pending clarification.
 - Added a manual hosted-runner path for the two real evaluations because local Docker is absent. It requires two secure provider secrets, distinct confirmed model IDs and matching current Docker evidence, refuses workflow retries/saved attempt folders, and archives full generation/scoring/trajectory logs under model-specific `evals/` directories. It has not been dispatched; actual provider execution remains unverified. Preserve artifacts before any further dispatch.
 
 ## Next
 
-1. Finish the exhaustive listing checklist and organizer draft (step 5).
-2. When the user resumes real evaluations and provides access, confirm exact model eligibility/reasoning with the organizer, run each once, save full logs under model-specific `evals/` directories, and score saved solutions in Docker.
+1. Have the user share the unsent organizer draft to request scope approval, clarify models/reasoning and identify the GitHub collaborator. The listing's approval-before-implementation ordering was not met; only the organizer can decide whether to review the existing prototype.
+2. When the user resumes real evaluations and provides secure access, run each confirmed model once, save full logs under model-specific `evals/` directories, and score saved solutions in Docker. Resolve eligibility/reasoning before starting.
 3. Apply the difficulty gate to real scores only. If needed, preserve attempts, revise the task fairly and rerun Docker plus both evaluations under a disclosed new version. Then write actual per-model failure analyses.
-4. Obtain organizer idea approval and collaborator access; satisfy the automated/manual readiness gates before claiming acceptance-ready status.
+4. Verify organizer collaborator access and satisfy all automated/manual readiness gates before claiming acceptance-ready status. The existing HackerRank Submitted label does not establish acceptance or payment.
 
 ## Notes
 

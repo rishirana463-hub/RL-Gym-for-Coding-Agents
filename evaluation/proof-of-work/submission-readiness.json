@@ -1,10 +1,7 @@
 {
-  "generatedAt": "2026-10-10T15:41:44.122Z",
+  "generatedAt": "2026-10-10T19:54:32.163Z",
   "automatedChecksReady": false,
   "issues": [
-    "Missing evaluation/proof-of-work/reference-docker.json",
-    "Missing evaluation/proof-of-work/mutants-docker.json",
-    "Missing evaluation/proof-of-work/determinism-docker.json",
     "Missing evaluation/proof-of-work/model-a/run.json",
     "Missing evaluation/proof-of-work/model-a/score.json",
     "Missing model-a/openhands.log",
