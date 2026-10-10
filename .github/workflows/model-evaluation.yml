@@ -1,0 +1,125 @@
+name: One-pass frontier model evaluations
+
+on:
+  workflow_dispatch:
+    inputs:
+      model_a:
+        description: Exact organizer-eligible provider/model ID for model A
+        required: true
+        type: string
+      model_b:
+        description: Different organizer-eligible provider/model ID for model B
+        required: true
+        type: string
+      base_url_a:
+        description: Optional provider endpoint for model A (no embedded credentials)
+        type: string
+      base_url_b:
+        description: Optional provider endpoint for model B (no embedded credentials)
+        type: string
+      frontier_confirmed:
+        description: Organizer eligibility and medium reasoning support confirmed for both models
+        required: true
+        default: false
+        type: boolean
+
+permissions:
+  contents: read
+
+concurrency:
+  group: frontier-evaluations-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  evaluate:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 45
+    strategy:
+      fail-fast: false
+      max-parallel: 1
+      matrix:
+        include:
+          - run: model-a
+            model_input: model_a
+            base_input: base_url_a
+            secret: MODEL_A_API_KEY
+          - run: model-b
+            model_input: model_b
+            base_input: base_url_b
+            secret: MODEL_B_API_KEY
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
+        with:
+          node-version: 24.14.0
+      - name: Verify prerequisites before any attempt
+        env:
+          MODEL_A: ${{ inputs.model_a }}
+          MODEL_B: ${{ inputs.model_b }}
+          FRONTIER_CONFIRMED: ${{ inputs.frontier_confirmed }}
+          RUN_ID: ${{ matrix.run }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$GITHUB_RUN_ATTEMPT" = 1 || { echo 'Workflow retries are forbidden. Preserve and review the original attempt.'; exit 1; }
+          test "$FRONTIER_CONFIRMED" = true
+          test -n "$MODEL_A" && test -n "$MODEL_B" && test "$MODEL_A" != "$MODEL_B"
+          test ! -e "evaluation/proof-of-work/$RUN_ID" || { echo 'A saved attempt already exists. Refusing another attempt.'; exit 1; }
+          node --input-type=module <<'NODE'
+          import assert from 'node:assert/strict';
+          import { read, sourceHash, verifierHash } from './evaluation/util.mjs';
+          import { checkMetadata } from './evaluation/metadata.mjs';
+          import { validateDeterminismEvidence } from './evaluation/evidence.mjs';
+          const solutionHash = sourceHash('reference'), checkHash = verifierHash();
+          const reference = read('evaluation/proof-of-work/reference-docker.json');
+          assert.ok(reference.complete && reference.execution === 'docker' && reference.score === 1);
+          assert.equal(reference.solutionHash, solutionHash); assert.equal(reference.checkHash, checkHash);
+          const mutants = read('evaluation/proof-of-work/mutants-docker.json');
+          assert.ok(mutants.execution === 'docker' && mutants.killed === mutants.total && mutants.total >= 18);
+          assert.equal(mutants.baseline.solutionHash, solutionHash); assert.equal(mutants.baseline.checkHash, checkHash);
+          validateDeterminismEvidence(read('evaluation/proof-of-work/determinism-docker.json'), { solutionHash, checkHash, checks: checkMetadata().checks });
+          console.log('Current Docker evidence verified. No model attempt has started.');
+          NODE
+      - name: Generate once and score the saved solution
+        env:
+          LLM_API_KEY: ${{ secrets[matrix.secret] }}
+          LLM_BASE_URL: ${{ inputs[matrix.base_input] }}
+          MODEL_ID: ${{ inputs[matrix.model_input] }}
+          RUN_ID: ${{ matrix.run }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          test -n "$LLM_API_KEY" || { echo 'Required provider secret is missing. No model attempt started.'; exit 1; }
+          SLUG=$(node --input-type=module -e "import crypto from 'node:crypto'; const m=process.env.MODEL_ID; console.log(m.toLowerCase().replace(/[^a-z0-9._-]/g,'-').slice(0,80)+'-'+crypto.createHash('sha256').update(m).digest('hex').slice(0,8));")
+          EVAL_DIR="evals/$SLUG"
+          mkdir -p "$EVAL_DIR"
+          export EVAL_DIR
+          node --input-type=module <<'NODE'
+          import fs from 'node:fs';
+          fs.writeFileSync(`${process.env.EVAL_DIR}/cloud-provenance.json`, JSON.stringify({
+            model: process.env.MODEL_ID, runId: process.env.RUN_ID, commit: process.env.GITHUB_SHA,
+            workflowRunId: process.env.GITHUB_RUN_ID,
+            workflowUrl: `${process.env.GITHUB_SERVER_URL}/${process.env.GITHUB_REPOSITORY}/actions/runs/${process.env.GITHUB_RUN_ID}`,
+            reasoningEffort: 'medium', maxIterations: 100, wallTimeSeconds: 1800
+          }, null, 2) + '\n');
+          NODE
+          set +e
+          npm run generate -- --run "$RUN_ID" --model "$MODEL_ID" --frontier-confirmed --iterations 100 --seconds 1800 2>&1 | tee "$EVAL_DIR/generation-command.log"
+          GENERATE_STATUS=${PIPESTATUS[0]}
+          set -e
+          if test -d "evaluation/proof-of-work/$RUN_ID"; then cp -R "evaluation/proof-of-work/$RUN_ID/." "$EVAL_DIR/"; fi
+          if test "$GENERATE_STATUS" != 0; then echo 'Generation did not complete. No task score is claimed.'; exit "$GENERATE_STATUS"; fi
+          npm run score -- --solution "evaluation/proof-of-work/$RUN_ID/solution" --docker --out "evaluation/proof-of-work/$RUN_ID/score.json" 2>&1 | tee "$EVAL_DIR/scoring-command.log"
+          cp -R "evaluation/proof-of-work/$RUN_ID/." "$EVAL_DIR/"
+      - name: Preserve all actual output, including failures
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+        with:
+          name: frontier-${{ matrix.run }}-${{ github.run_id }}-${{ github.run_attempt }}
+          retention-days: 90
+          if-no-files-found: warn
+          path: |
+            evals/
+            evaluation/proof-of-work/${{ matrix.run }}/

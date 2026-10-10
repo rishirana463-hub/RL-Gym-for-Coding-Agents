@@ -40,6 +40,7 @@ Recorded verification, already executed:
 - Step 2: inspect organizer onboarding in Discord for provided model access. The user confirmed existing server access and is signing in. Two eligible model IDs/credentials are still unconfigured; neither real attempt has started.
 - Prepared a clean-runner OpenHands image build, dependency consistency check, offline SDK/tool/conversation setup and credential helper tests. The setup container has no network and never calls `conversation.run()`; it cannot count as either required model attempt. No eligible model IDs or provider access have been supplied yet.
 - Recorded the model-access investigation in `docs/model-access.md`. Do not interpret the listing's silence as proof that private Discord onboarding provides no access.
+- Added a manual hosted-runner path for the two real evaluations because local Docker is absent. It requires two secure provider secrets, distinct confirmed model IDs and matching current Docker evidence, refuses workflow retries/saved attempt folders, and archives full generation/scoring/trajectory logs under model-specific `evals/` directories. It has not been dispatched; actual provider execution remains unverified. Preserve artifacts before any further dispatch.
 - Checking the HackerRank listing and signed-in task for organizer-provided model access/credits, as requested. No model-provider credentials are configured locally; no real attempt has started.
 
 ## Next
