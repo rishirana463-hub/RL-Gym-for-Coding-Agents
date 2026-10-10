@@ -34,11 +34,13 @@ Recorded verification, already executed:
 
 ## In progress
 
-- None. The GitHub README, repository description, project upload and private visibility are complete. The remaining evaluation/submission work awaits the prerequisites below.
+- Step 1: obtain clean Linux Docker validation. Docker Desktop is absent locally; checking whether the existing private repository can run validation on a GitHub-hosted runner.
+- Checking the HackerRank listing and signed-in task for organizer-provided model access/credits, as requested. No model-provider credentials are configured locally; no real attempt has started.
+- Prepared a least-privilege GitHub Actions workflow on Ubuntu 24.04 for a fresh checkout, container reference/mutant/determinism checks, full command logs and source/run provenance. Local lint, build and outgoing secret scan passed before dispatch. GitHub Actions is enabled; repository Actions secrets are empty.
 
 ## Next
 
-1. When Docker with Linux containers is available, execute the container reference, mutant and determinism checks documented in [the evaluation guide](docs/evaluation.md#container-verification). Review Linux bind-mount permissions and crash recovery during that work.
+1. Execute the container reference, mutant and determinism checks from a clean Linux checkout. Preserve complete logs and provenance; review bind-mount permissions and crash recovery.
 2. When access to two eligible frontier models is configured, run each once with the recorded limits, score its saved solution in Docker, and write failure analyses. Preserve all attempts. Both scores must be strictly below 30% to establish the task's difficulty requirement.
 3. Install/audit the pinned Python/OpenHands image dependencies when the image can be built; this has not been verified locally.
 4. Complete organizer approval, collaborator-access requirements and the submission-readiness gate in [SUBMISSION.md](SUBMISSION.md) when the required evidence exists. The private GitHub repository requirement is satisfied.
@@ -54,3 +56,5 @@ Recorded verification, already executed:
 - No deployment was performed. Vercel Functions would require external durable transactional storage and revised concurrency handling; that architecture change is outside the completed polish scope.
 - The repository was initially public, then made private at the user's explicit request. Private visibility is verified; collaborator invitation/access and the other submission requirements remain outstanding.
 - Resume from Next when its prerequisites are available. Reopen Done work only for a demonstrated regression or an explicitly requested change.
+- Current requested order: Docker validation, two real OpenHands attempts, conditional difficulty revision, evidence-based failure analyses, then an exhaustive readiness checklist and organizer approval draft. Missing infrastructure/access must remain explicit; starter scores are never model results.
+- Preserved the original user-supplied listing verbatim in `docs/bounty-listing.txt`. It specifies OpenHands, two frontier models, medium reasoning and one attempt each, but does not promise API keys, credits or reimbursement. Public HackerRank search did not confirm task-specific model access; the in-app browser currently requires login before its Earn details can be inspected.

@@ -1,0 +1,102 @@
+Build a Real-World Software Engineering RL Gym for Coding Agents
+$800.00
+fixed price
+RL Gym
+RLVR
+AI Evaluation
+Benchmarking
+Software Engineering
+Avg. 2 days
+We are looking for an experienced Software Engineer to design, implement a repository-level software engineering task used to evaluate autonomous AI coding agents in an RL Gym environment.
+
+How This Task Works (The Core Concept)
+Model-Facing Instruction (task/instruction.md): You will write a clear problem description for the AI model. The instruction should keep the internal technical approach open (vague on architecture), but be precise and unambiguous about observable behaviors, workflows, and edge cases so it matches what the test suite verifies.
+Reference Solution (reference/): You will write an ideal, fully-functional implementation that satisfies all specifications and achieves a 100% score on the verifier suite.
+Private Verifier & Mutants (evaluation/): You will build a hidden black-box test suite that tests external behavior (file states, commands, exit codes). You will also create mutants (deliberately bugged variations of your code) to prove that your test suite reliably catches failures.
+Model Evaluation (evaluation/proof-of-work/): You will evaluate any two different frontier models on the task in a single pass (one attempt), using OpenHands as the agent harness. Both models must score below 30% to prove the task is sufficiently challenging.
+Application Requirements
+The application described below is only an example of the type of task we are looking for.
+
+Before starting implementation, please share your proposed task idea with us for review and approval. The idea should involve meaningful stateful workflows, edge cases, and failure scenarios that make it challenging for coding agents to implement correctly. Both greenfield and brownfield tasks are welcome.
+
+Example Task: Excalidraw-Style Whiteboard
+A browser-based whiteboard in the style of Excalidraw is one example of an appropriate RL Gym task.
+
+The application could include:
+
+Drawing Tools: Select, rectangle, ellipse, diamond, arrow, freehand, text, and eraser on an infinite canvas.
+Editing Mechanics: Undo, redo, copy, paste, grouping, layer ordering (bring to front, send to back), and multi-select.
+Arrow Binding: An arrow attached to a shape stays attached when that shape is moved or resized.
+Persistence & Export: The document survives a page reload, and JSON and SVG export round-trip without losing elements.
+Collaboration Conflicts: When two sessions edit the same document, a save from one session must not overwrite the other session's latest changes.
+Crash Recovery: Unsaved edits are restored after the browser tab or the server process is killed.
+This is intended to demonstrate the expected depth and complexity, not to prescribe the task. Your proposed task should be a different application/problem with comparable difficulty.
+
+Please share the task idea with us and get approval before proceeding with the implementation.
+
+Deliverables & Repository Structure
+Your deliverable will be one private GitHub repository structured as follows:
+
+.
+├── task/                       # Model instructions & public materials
+│   ├── instruction.md
+│   └── public/                 # Public materials (starter files or existing codebase)
+├── environment/                # Sandbox the model works in and the solution runs in
+│   └── Dockerfile
+├── reference/                  # Reference solution (passes 100% of checks)
+├── evaluation/                 # Hidden verifier suite
+│   ├── tests/                  # Deterministic verifier checks
+│   ├── acceptance-criteria.yml # Requirements linked to check IDs
+│   ├── scoring.yml             # weights (Sum = 1.0)
+│   └── proof-of-work/          # Reference solution run, Model run logs and mutant outputs
+├── app-setup/                  # Task lifecycle scripts
+│   ├── build.sh
+│   ├── start.sh
+│   └── reset.sh
+└── package.json                # Root package configuration & evaluation commands
+Copy
+Configuration & Lifecycle Management
+1. Environment (environment/)
+environment/Dockerfile defines the clean, reproducible sandbox for the task. The model works in this environment, and the lifecycle scripts build and run the solution in it. Every run starts from a fresh container.
+
+2. Lifecycle Scripts (app-setup/)
+The application lifecycle scripts handle preparing and running the model's generated solution so the verifier can interact with it:
+
+build.sh – Compiles and prepares the model solution.
+reset.sh – Deletes generated state/artifacts to ensure a clean rebuild.
+start.sh – Starts the model runtime so the verifier can interact with it.
+3. Root Package Commands (package.json)
+Solution generation, mutant verification and scoring are driven via the root package.json:
+
+{
+  "name": "<project-name>",
+  "version": "0.1.0",
+  "private": true,
+  "description": "<project-description>",
+  "scripts": {
+    "generate": "<solution-generation-command (runs the model via OpenHands)>",
+    "score": "<solution-scoring-and-verification-command>",
+    "check:mutants": "<verifier-mutant-check-command>",
+    "check:reference": "<reference-solution-check-command>"
+  }
+}
+Copy
+Steps to Complete the Project
+Design the Task: Define the application's user workflows, state management, edge cases, and failure scenarios.
+Write Agent Instruction: Write task/instruction.md defining observable software behavior, constraints, and error handling without prescribing a specific code structure.
+Build Reference Solution: Develop a complete reference solution in reference/ that achieves a 100% score.
+Build Private Evaluation Suite:
+Hidden Verifier Tests: Black-box unit and integration tests inside evaluation/tests/.
+Acceptance Criteria (evaluation/acceptance-criteria.yml): Map observable requirements to verifier test IDs.
+Scoring Rules (evaluation/scoring.yml): Define component weights to sum to exactly 1.0.
+Mutant Suite: Create realistic code bugs and confirm npm run check:mutants catches each mutant.
+Evaluating Models: Evaluate any two different frontier models (medium reasoning) on a single-pass run with OpenHands, using npm run generate / npm run score. Confirm both score below 30% and record the model names, OpenHands logs, scores, and failure categories in evaluation/proof-of-work/.
+Set Up Environment, App Scripts & Package: Write environment/Dockerfile, implement app-setup/ scripts (build.sh, reset.sh, start.sh) and populate package.json scripts.
+Quality & Acceptance Criteria
+Reference Pass Rate: Reference solution passes 100% of score-bearing checks (npm run check:reference).
+Model Difficulty: Two different frontier models score below 30% on a single-pass evaluation.
+Determinism: Repeated verifier runs produce stable, consistent results.
+Mutant Coverage: Every mutant is realistic and caught via npm run check:mutants.
+Scoring: Weights in scoring.yml sum to exactly 1.0.
+Privacy: All private verifier assets remain isolated from model-facing directories.
+Access: Collaborator access granted to content.team@problemsetters.com.

@@ -1,0 +1,86 @@
+name: Clean Docker validation
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - .github/workflows/docker-validation.yml
+      - environment/**
+      - app-setup/**
+      - reference/**
+      - evaluation/**
+      - '!evaluation/proof-of-work/**'
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
+        with:
+          node-version: 24.14.0
+      - name: Record clean environment
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p evals/docker/logs
+          test -z "$(git status --porcelain --untracked-files=no)"
+          docker version > evals/docker/logs/docker-version.txt
+          docker images --no-trunc > evals/docker/logs/images-before.txt
+          node --input-type=module <<'NODE'
+          import fs from 'node:fs';
+          import { sourceHash, verifierHash } from './evaluation/util.mjs';
+          fs.writeFileSync('evals/docker/provenance.json', JSON.stringify({
+            commit: process.env.GITHUB_SHA, runId: process.env.GITHUB_RUN_ID,
+            runAttempt: process.env.GITHUB_RUN_ATTEMPT,
+            runUrl: `${process.env.GITHUB_SERVER_URL}/${process.env.GITHUB_REPOSITORY}/actions/runs/${process.env.GITHUB_RUN_ID}`,
+            runnerOS: process.env.RUNNER_OS, runnerArch: process.env.RUNNER_ARCH,
+            runnerImage: process.env.ImageOS, runnerImageVersion: process.env.ImageVersion,
+            node: process.version, referenceHash: sourceHash('reference'), verifierHash: verifierHash(),
+            freshCheckout: true, modelAttempts: 0
+          }, null, 2) + '\n');
+          NODE
+      - name: Install and verify tooling
+        shell: bash
+        run: |
+          set -euo pipefail
+          npm ci 2>&1 | tee evals/docker/logs/install.log
+          npm run lint 2>&1 | tee evals/docker/logs/lint.log
+          npm run build 2>&1 | tee evals/docker/logs/build.log
+          npm run check:metadata 2>&1 | tee evals/docker/logs/metadata.log
+          npm run check:lifecycle 2>&1 | tee evals/docker/logs/lifecycle.log
+      - name: Reference in fresh containers
+        shell: bash
+        run: |
+          set -euo pipefail
+          npm run check:reference -- --docker --out evaluation/proof-of-work/reference-docker.json 2>&1 | tee evals/docker/logs/reference.log
+      - name: All mutants in fresh containers
+        shell: bash
+        run: |
+          set -euo pipefail
+          npm run check:mutants -- --docker 2>&1 | tee evals/docker/logs/mutants.log
+      - name: Three complete container runs
+        shell: bash
+        run: |
+          set -euo pipefail
+          npm run check:determinism -- --docker 2>&1 | tee evals/docker/logs/determinism.log
+          docker images --no-trunc > evals/docker/logs/images-after.txt
+      - name: Preserve validation evidence, including failures
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+        with:
+          name: docker-validation-${{ github.run_id }}-${{ github.run_attempt }}
+          if-no-files-found: error
+          retention-days: 30
+          path: |
+            evals/docker/
+            evaluation/proof-of-work/reference-docker.json
+            evaluation/proof-of-work/mutants-docker.json
+            evaluation/proof-of-work/determinism-docker.json
+            evaluation/proof-of-work/mutants/*.json
