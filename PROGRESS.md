@@ -30,17 +30,18 @@ Recorded verification, already executed:
 - GitHub README presentation prepared with accessible badges, capability/evidence tables, clone/setup instructions and documentation links. GitHub's Markdown renderer confirmed all four tables and badges; local links/scripts, lint/build and the outgoing secret scan passed. Completed reference/model checks were not rerun.
 - Saved and independently verified the GitHub repository description: "A stateful software engineering benchmark for coding agents: durable inventory APIs, 56 black-box checks, 18 executable mutants, and a prepared one-pass OpenHands evaluation harness."
 - Uploaded the complete existing project/history to [GitHub](https://github.com/rishirana463-hub/RL-Gym-for-Coding-Agents) on `main`. Verified initial publication commit `228f176`, all 98 tracked files, the exact uploaded README bytes and repository description through GitHub's API. `origin/main` is configured as the local branch's upstream.
+- Changed the GitHub repository to private on 2026-10-11 at the user's request. An independent GitHub API read confirmed both `private: true` and `visibility: private`.
 
 ## In progress
 
-- None. The GitHub README, repository description and project upload are complete. The remaining evaluation/submission work awaits the prerequisites below.
+- None. The GitHub README, repository description, project upload and private visibility are complete. The remaining evaluation/submission work awaits the prerequisites below.
 
 ## Next
 
 1. When Docker with Linux containers is available, execute the container reference, mutant and determinism checks documented in [the evaluation guide](docs/evaluation.md#container-verification). Review Linux bind-mount permissions and crash recovery during that work.
 2. When access to two eligible frontier models is configured, run each once with the recorded limits, score its saved solution in Docker, and write failure analyses. Preserve all attempts. Both scores must be strictly below 30% to establish the task's difficulty requirement.
 3. Install/audit the pinned Python/OpenHands image dependencies when the image can be built; this has not been verified locally.
-4. Complete organizer approval, private repository/access requirements and the submission-readiness gate in [SUBMISSION.md](SUBMISSION.md) when the required evidence exists.
+4. Complete organizer approval, collaborator-access requirements and the submission-readiness gate in [SUBMISSION.md](SUBMISSION.md) when the required evidence exists. The private GitHub repository requirement is satisfied.
 
 ## Notes
 
@@ -51,5 +52,5 @@ Recorded verification, already executed:
 - Secret scans inspect common signatures in text, not arbitrary/encoded secrets, binary files or ignored untracked files. Tracked files and reachable history remain scanned even when ignore rules match them. Local scoring is for trusted code; the environment filter is not a sandbox.
 - The reference needs persistent storage and one writer per `DATA_DIR`. Snapshot/retry/audit history grows with workload; this is a correctness benchmark, not a production scalability claim.
 - No deployment was performed. Vercel Functions would require external durable transactional storage and revised concurrency handling; that architecture change is outside the completed polish scope.
-- The user explicitly selected the existing public GitHub repository for this upload. Its visibility will be preserved; the organizer's private-repository submission requirement remains outstanding.
+- The repository was initially public, then made private at the user's explicit request. Private visibility is verified; collaborator invitation/access and the other submission requirements remain outstanding.
 - Resume from Next when its prerequisites are available. Reopen Done work only for a demonstrated regression or an explicitly requested change.
