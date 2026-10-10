@@ -31,3 +31,7 @@ Repeated state reads now reuse serialized JSON until the next command. Every com
 The same local workload (100 products, 100 three-line orders, 20 warmups, seven batches of 100 sequential state reads) measured median batch time of 94.8335 ms before and 62.9603 ms after: 33.61% less time in this benchmark. Both versions returned the same 57,379-byte response and validated unchanged JSON. These measurements are not a general throughput guarantee; reports are in `evaluation/proof-of-work/performance/` and the reusable command is `npm run benchmark`.
 
 Verified: lint/build pass, 10 regression tests pass, reference remains 56/56, mutants remain 18/18 caught, and three reference runs remain stable. Runtime artifact: 12,009 raw bytes / 4,470 gzip bytes. Source size increased for correctness and caching; no browser bundle exists to shrink.
+
+## Phase 4 — Accessibility and SEO
+
+There is no HTML or interactive UI, so alt text, semantic elements, ARIA, focus states, and meta/OG tags are not applicable. JSON API responses now include `X-Robots-Tag: noindex`, the [documented mechanism for non-HTML resources](https://developers.google.com/search/docs/crawling-indexing/robots-meta-tag). This is a search-crawler hint, not access control. Success/error response checks verify JSON content type, no-store caching, and noindex. Lint/build and all 11 regression tests pass; the observable JSON contract is preserved.

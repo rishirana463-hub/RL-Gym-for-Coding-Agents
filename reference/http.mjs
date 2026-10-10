@@ -13,6 +13,6 @@ export async function readCommand(req) {
 }
 export function send(res, status, body) {
   if (res.destroyed || res.writableEnded) return;
-  res.writeHead(status, { 'content-type': 'application/json', 'cache-control': 'no-store' });
+  res.writeHead(status, { 'content-type': 'application/json', 'cache-control': 'no-store', 'x-robots-tag': 'noindex' });
   res.end(typeof body === 'string' ? body : JSON.stringify(body));
 }
