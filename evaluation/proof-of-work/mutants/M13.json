@@ -1,0 +1,89 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-10-10T12:36:54.518Z",
+  "solution": ".runs/mutants/M13",
+  "solutionHash": "18dded23253f9921f73cf8c86191d9e9b3f1831c67b10a546f22a31768b1cb44",
+  "checkHash": "e85ccbc4bfb0eb8b48671f34c07f5073e544b8618071c9ced16bf700f5c655f0",
+  "node": "v25.6.0",
+  "platform": "win32",
+  "execution": "local",
+  "complete": false,
+  "score": 0,
+  "passed": 0,
+  "total": 56,
+  "executed": 2,
+  "groups": {
+    "transport": {
+      "weight": 0.125,
+      "passed": 0,
+      "total": 8,
+      "executed": 0,
+      "weightedScore": 0
+    },
+    "inventory": {
+      "weight": 0.125,
+      "passed": 0,
+      "total": 6,
+      "executed": 0,
+      "weightedScore": 0
+    },
+    "orders": {
+      "weight": 0.125,
+      "passed": 0,
+      "total": 8,
+      "executed": 0,
+      "weightedScore": 0
+    },
+    "transfers": {
+      "weight": 0.125,
+      "passed": 0,
+      "total": 8,
+      "executed": 1,
+      "weightedScore": 0
+    },
+    "clock": {
+      "weight": 0.125,
+      "passed": 0,
+      "total": 6,
+      "executed": 0,
+      "weightedScore": 0
+    },
+    "idempotency": {
+      "weight": 0.125,
+      "passed": 0,
+      "total": 8,
+      "executed": 0,
+      "weightedScore": 0
+    },
+    "concurrency": {
+      "weight": 0.125,
+      "passed": 0,
+      "total": 6,
+      "executed": 1,
+      "weightedScore": 0
+    },
+    "recovery": {
+      "weight": 0.125,
+      "passed": 0,
+      "total": 6,
+      "executed": 0,
+      "weightedScore": 0
+    }
+  },
+  "checks": [
+    {
+      "id": "F02",
+      "group": "transfers",
+      "description": "Dispatch cannot consume reserved stock and same-warehouse fails",
+      "passed": false,
+      "error": "AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n\n200 !== 409\n\n    at Object.error (file:///C:/Users/rishi/Downloads/RL%20GYM%20AI/evaluation/tests/harness.mjs:79:126)\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)\n    at async file:///C:/Users/rishi/Downloads/RL%20GYM%20AI/evaluation/tests/cases/transfers.mjs:15:5\n    at async unchanged (file:///C:/Users/rishi/Downloads/RL%20GYM%20AI/evaluation/tests/helpers.mjs:7:78)\n    at async file:///C:/Users/rishi/Downloads/RL%20GYM%20AI/evaluation/tests/cases/transfers.mjs:14:3\n    at async withService (file:///C:/Users/rishi/Downloads/RL%20GYM%20AI/evaluation/tests/harness.mjs:86:24)\n    at async score (file:///C:/Users/rishi/Downloads/RL%20GYM%20AI/evaluation/score.mjs:37:11)\n    at async file:///C:/Users/rishi/Downloads/RL%20GYM%20AI/evaluation/mutants/check.mjs:24:18"
+    },
+    {
+      "id": "C01",
+      "group": "concurrency",
+      "description": "Concurrent reservations cannot oversell the last units",
+      "passed": false,
+      "error": "AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n\n16 !== 7\n\n    at file:///C:/Users/rishi/Downloads/RL%20GYM%20AI/evaluation/tests/cases/concurrency.mjs:10:10\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)\n    at async withService (file:///C:/Users/rishi/Downloads/RL%20GYM%20AI/evaluation/tests/harness.mjs:86:24)\n    at async score (file:///C:/Users/rishi/Downloads/RL%20GYM%20AI/evaluation/score.mjs:37:11)\n    at async file:///C:/Users/rishi/Downloads/RL%20GYM%20AI/evaluation/mutants/check.mjs:24:18"
+    }
+  ]
+}

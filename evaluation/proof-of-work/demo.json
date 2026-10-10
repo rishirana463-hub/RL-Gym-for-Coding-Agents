@@ -1,0 +1,880 @@
+{
+  "generatedAt": "2026-10-10T12:27:16.222Z",
+  "steps": [
+    {
+      "label": "Receive 20 widgets into warehouse A",
+      "response": {
+        "ok": true,
+        "sequence": 1,
+        "result": {
+          "warehouse": "A",
+          "sku": "widget",
+          "onHand": 20,
+          "reserved": 0,
+          "available": 20
+        }
+      },
+      "state": {
+        "now": 0,
+        "sequence": 1,
+        "inventory": [
+          {
+            "warehouse": "A",
+            "sku": "widget",
+            "onHand": 20,
+            "reserved": 0,
+            "available": 20
+          }
+        ],
+        "orders": [],
+        "transfers": [],
+        "audit": [
+          {
+            "sequence": 1,
+            "requestId": "receive-1",
+            "op": "receive",
+            "now": 0
+          }
+        ]
+      }
+    },
+    {
+      "label": "Reserve 8 widgets for order o1",
+      "response": {
+        "ok": true,
+        "sequence": 2,
+        "result": {
+          "id": "o1",
+          "warehouse": "A",
+          "expiresAt": 10,
+          "revision": 1,
+          "lines": [
+            {
+              "sku": "widget",
+              "quantity": 8,
+              "reserved": 8,
+              "shipped": 0,
+              "cancelled": 0,
+              "returned": 0
+            }
+          ],
+          "status": "OPEN"
+        }
+      },
+      "state": {
+        "now": 0,
+        "sequence": 2,
+        "inventory": [
+          {
+            "warehouse": "A",
+            "sku": "widget",
+            "onHand": 20,
+            "reserved": 8,
+            "available": 12
+          }
+        ],
+        "orders": [
+          {
+            "id": "o1",
+            "warehouse": "A",
+            "expiresAt": 10,
+            "revision": 1,
+            "lines": [
+              {
+                "sku": "widget",
+                "quantity": 8,
+                "reserved": 8,
+                "shipped": 0,
+                "cancelled": 0,
+                "returned": 0
+              }
+            ],
+            "status": "OPEN"
+          }
+        ],
+        "transfers": [],
+        "audit": [
+          {
+            "sequence": 1,
+            "requestId": "receive-1",
+            "op": "receive",
+            "now": 0
+          },
+          {
+            "sequence": 2,
+            "requestId": "reserve-1",
+            "op": "createOrder",
+            "now": 0
+          }
+        ]
+      }
+    },
+    {
+      "label": "Ship 3 widgets",
+      "response": {
+        "ok": true,
+        "sequence": 3,
+        "result": {
+          "id": "o1",
+          "warehouse": "A",
+          "expiresAt": 10,
+          "revision": 2,
+          "lines": [
+            {
+              "sku": "widget",
+              "quantity": 8,
+              "reserved": 5,
+              "shipped": 3,
+              "cancelled": 0,
+              "returned": 0
+            }
+          ],
+          "status": "OPEN"
+        }
+      },
+      "state": {
+        "now": 0,
+        "sequence": 3,
+        "inventory": [
+          {
+            "warehouse": "A",
+            "sku": "widget",
+            "onHand": 17,
+            "reserved": 5,
+            "available": 12
+          }
+        ],
+        "orders": [
+          {
+            "id": "o1",
+            "warehouse": "A",
+            "expiresAt": 10,
+            "revision": 2,
+            "lines": [
+              {
+                "sku": "widget",
+                "quantity": 8,
+                "reserved": 5,
+                "shipped": 3,
+                "cancelled": 0,
+                "returned": 0
+              }
+            ],
+            "status": "OPEN"
+          }
+        ],
+        "transfers": [],
+        "audit": [
+          {
+            "sequence": 1,
+            "requestId": "receive-1",
+            "op": "receive",
+            "now": 0
+          },
+          {
+            "sequence": 2,
+            "requestId": "reserve-1",
+            "op": "createOrder",
+            "now": 0
+          },
+          {
+            "sequence": 3,
+            "requestId": "ship-1",
+            "op": "ship",
+            "now": 0
+          }
+        ]
+      }
+    },
+    {
+      "label": "Dispatch 5 widgets from A to B",
+      "response": {
+        "ok": true,
+        "sequence": 4,
+        "result": {
+          "id": "t1",
+          "from": "A",
+          "to": "B",
+          "revision": 1,
+          "lines": [
+            {
+              "sku": "widget",
+              "quantity": 5,
+              "received": 0,
+              "cancelled": 0
+            }
+          ],
+          "status": "IN_TRANSIT"
+        }
+      },
+      "state": {
+        "now": 0,
+        "sequence": 4,
+        "inventory": [
+          {
+            "warehouse": "A",
+            "sku": "widget",
+            "onHand": 12,
+            "reserved": 5,
+            "available": 7
+          }
+        ],
+        "orders": [
+          {
+            "id": "o1",
+            "warehouse": "A",
+            "expiresAt": 10,
+            "revision": 2,
+            "lines": [
+              {
+                "sku": "widget",
+                "quantity": 8,
+                "reserved": 5,
+                "shipped": 3,
+                "cancelled": 0,
+                "returned": 0
+              }
+            ],
+            "status": "OPEN"
+          }
+        ],
+        "transfers": [
+          {
+            "id": "t1",
+            "from": "A",
+            "to": "B",
+            "revision": 1,
+            "lines": [
+              {
+                "sku": "widget",
+                "quantity": 5,
+                "received": 0,
+                "cancelled": 0
+              }
+            ],
+            "status": "IN_TRANSIT"
+          }
+        ],
+        "audit": [
+          {
+            "sequence": 1,
+            "requestId": "receive-1",
+            "op": "receive",
+            "now": 0
+          },
+          {
+            "sequence": 2,
+            "requestId": "reserve-1",
+            "op": "createOrder",
+            "now": 0
+          },
+          {
+            "sequence": 3,
+            "requestId": "ship-1",
+            "op": "ship",
+            "now": 0
+          },
+          {
+            "sequence": 4,
+            "requestId": "transfer-1",
+            "op": "dispatchTransfer",
+            "now": 0
+          }
+        ]
+      }
+    },
+    {
+      "label": "Receive 2 of those widgets in B",
+      "response": {
+        "ok": true,
+        "sequence": 5,
+        "result": {
+          "id": "t1",
+          "from": "A",
+          "to": "B",
+          "revision": 2,
+          "lines": [
+            {
+              "sku": "widget",
+              "quantity": 5,
+              "received": 2,
+              "cancelled": 0
+            }
+          ],
+          "status": "IN_TRANSIT"
+        }
+      },
+      "state": {
+        "now": 0,
+        "sequence": 5,
+        "inventory": [
+          {
+            "warehouse": "A",
+            "sku": "widget",
+            "onHand": 12,
+            "reserved": 5,
+            "available": 7
+          },
+          {
+            "warehouse": "B",
+            "sku": "widget",
+            "onHand": 2,
+            "reserved": 0,
+            "available": 2
+          }
+        ],
+        "orders": [
+          {
+            "id": "o1",
+            "warehouse": "A",
+            "expiresAt": 10,
+            "revision": 2,
+            "lines": [
+              {
+                "sku": "widget",
+                "quantity": 8,
+                "reserved": 5,
+                "shipped": 3,
+                "cancelled": 0,
+                "returned": 0
+              }
+            ],
+            "status": "OPEN"
+          }
+        ],
+        "transfers": [
+          {
+            "id": "t1",
+            "from": "A",
+            "to": "B",
+            "revision": 2,
+            "lines": [
+              {
+                "sku": "widget",
+                "quantity": 5,
+                "received": 2,
+                "cancelled": 0
+              }
+            ],
+            "status": "IN_TRANSIT"
+          }
+        ],
+        "audit": [
+          {
+            "sequence": 1,
+            "requestId": "receive-1",
+            "op": "receive",
+            "now": 0
+          },
+          {
+            "sequence": 2,
+            "requestId": "reserve-1",
+            "op": "createOrder",
+            "now": 0
+          },
+          {
+            "sequence": 3,
+            "requestId": "ship-1",
+            "op": "ship",
+            "now": 0
+          },
+          {
+            "sequence": 4,
+            "requestId": "transfer-1",
+            "op": "dispatchTransfer",
+            "now": 0
+          },
+          {
+            "sequence": 5,
+            "requestId": "receipt-1",
+            "op": "receiveTransfer",
+            "now": 0
+          }
+        ]
+      }
+    },
+    {
+      "label": "Cancel the remaining 3 in transit",
+      "response": {
+        "ok": true,
+        "sequence": 6,
+        "result": {
+          "id": "t1",
+          "from": "A",
+          "to": "B",
+          "revision": 3,
+          "lines": [
+            {
+              "sku": "widget",
+              "quantity": 5,
+              "received": 2,
+              "cancelled": 3
+            }
+          ],
+          "status": "CLOSED"
+        }
+      },
+      "state": {
+        "now": 0,
+        "sequence": 6,
+        "inventory": [
+          {
+            "warehouse": "A",
+            "sku": "widget",
+            "onHand": 15,
+            "reserved": 5,
+            "available": 10
+          },
+          {
+            "warehouse": "B",
+            "sku": "widget",
+            "onHand": 2,
+            "reserved": 0,
+            "available": 2
+          }
+        ],
+        "orders": [
+          {
+            "id": "o1",
+            "warehouse": "A",
+            "expiresAt": 10,
+            "revision": 2,
+            "lines": [
+              {
+                "sku": "widget",
+                "quantity": 8,
+                "reserved": 5,
+                "shipped": 3,
+                "cancelled": 0,
+                "returned": 0
+              }
+            ],
+            "status": "OPEN"
+          }
+        ],
+        "transfers": [
+          {
+            "id": "t1",
+            "from": "A",
+            "to": "B",
+            "revision": 3,
+            "lines": [
+              {
+                "sku": "widget",
+                "quantity": 5,
+                "received": 2,
+                "cancelled": 3
+              }
+            ],
+            "status": "CLOSED"
+          }
+        ],
+        "audit": [
+          {
+            "sequence": 1,
+            "requestId": "receive-1",
+            "op": "receive",
+            "now": 0
+          },
+          {
+            "sequence": 2,
+            "requestId": "reserve-1",
+            "op": "createOrder",
+            "now": 0
+          },
+          {
+            "sequence": 3,
+            "requestId": "ship-1",
+            "op": "ship",
+            "now": 0
+          },
+          {
+            "sequence": 4,
+            "requestId": "transfer-1",
+            "op": "dispatchTransfer",
+            "now": 0
+          },
+          {
+            "sequence": 5,
+            "requestId": "receipt-1",
+            "op": "receiveTransfer",
+            "now": 0
+          },
+          {
+            "sequence": 6,
+            "requestId": "cancel-transfer-1",
+            "op": "cancelTransfer",
+            "now": 0
+          }
+        ]
+      }
+    },
+    {
+      "label": "Expire the unshipped order remainder",
+      "response": {
+        "ok": true,
+        "sequence": 7,
+        "result": {
+          "now": 10,
+          "expired": [
+            "o1"
+          ]
+        }
+      },
+      "state": {
+        "now": 10,
+        "sequence": 7,
+        "inventory": [
+          {
+            "warehouse": "A",
+            "sku": "widget",
+            "onHand": 15,
+            "reserved": 0,
+            "available": 15
+          },
+          {
+            "warehouse": "B",
+            "sku": "widget",
+            "onHand": 2,
+            "reserved": 0,
+            "available": 2
+          }
+        ],
+        "orders": [
+          {
+            "id": "o1",
+            "warehouse": "A",
+            "expiresAt": 10,
+            "revision": 3,
+            "lines": [
+              {
+                "sku": "widget",
+                "quantity": 8,
+                "reserved": 0,
+                "shipped": 3,
+                "cancelled": 5,
+                "returned": 0
+              }
+            ],
+            "status": "CLOSED"
+          }
+        ],
+        "transfers": [
+          {
+            "id": "t1",
+            "from": "A",
+            "to": "B",
+            "revision": 3,
+            "lines": [
+              {
+                "sku": "widget",
+                "quantity": 5,
+                "received": 2,
+                "cancelled": 3
+              }
+            ],
+            "status": "CLOSED"
+          }
+        ],
+        "audit": [
+          {
+            "sequence": 1,
+            "requestId": "receive-1",
+            "op": "receive",
+            "now": 0
+          },
+          {
+            "sequence": 2,
+            "requestId": "reserve-1",
+            "op": "createOrder",
+            "now": 0
+          },
+          {
+            "sequence": 3,
+            "requestId": "ship-1",
+            "op": "ship",
+            "now": 0
+          },
+          {
+            "sequence": 4,
+            "requestId": "transfer-1",
+            "op": "dispatchTransfer",
+            "now": 0
+          },
+          {
+            "sequence": 5,
+            "requestId": "receipt-1",
+            "op": "receiveTransfer",
+            "now": 0
+          },
+          {
+            "sequence": 6,
+            "requestId": "cancel-transfer-1",
+            "op": "cancelTransfer",
+            "now": 0
+          },
+          {
+            "sequence": 7,
+            "requestId": "clock-1",
+            "op": "advanceClock",
+            "now": 10
+          }
+        ]
+      }
+    },
+    {
+      "label": "Retry the old shipment: original response, no second shipment",
+      "response": {
+        "ok": true,
+        "sequence": 3,
+        "result": {
+          "id": "o1",
+          "warehouse": "A",
+          "expiresAt": 10,
+          "revision": 2,
+          "lines": [
+            {
+              "sku": "widget",
+              "quantity": 8,
+              "reserved": 5,
+              "shipped": 3,
+              "cancelled": 0,
+              "returned": 0
+            }
+          ],
+          "status": "OPEN"
+        }
+      },
+      "state": {
+        "now": 10,
+        "sequence": 7,
+        "inventory": [
+          {
+            "warehouse": "A",
+            "sku": "widget",
+            "onHand": 15,
+            "reserved": 0,
+            "available": 15
+          },
+          {
+            "warehouse": "B",
+            "sku": "widget",
+            "onHand": 2,
+            "reserved": 0,
+            "available": 2
+          }
+        ],
+        "orders": [
+          {
+            "id": "o1",
+            "warehouse": "A",
+            "expiresAt": 10,
+            "revision": 3,
+            "lines": [
+              {
+                "sku": "widget",
+                "quantity": 8,
+                "reserved": 0,
+                "shipped": 3,
+                "cancelled": 5,
+                "returned": 0
+              }
+            ],
+            "status": "CLOSED"
+          }
+        ],
+        "transfers": [
+          {
+            "id": "t1",
+            "from": "A",
+            "to": "B",
+            "revision": 3,
+            "lines": [
+              {
+                "sku": "widget",
+                "quantity": 5,
+                "received": 2,
+                "cancelled": 3
+              }
+            ],
+            "status": "CLOSED"
+          }
+        ],
+        "audit": [
+          {
+            "sequence": 1,
+            "requestId": "receive-1",
+            "op": "receive",
+            "now": 0
+          },
+          {
+            "sequence": 2,
+            "requestId": "reserve-1",
+            "op": "createOrder",
+            "now": 0
+          },
+          {
+            "sequence": 3,
+            "requestId": "ship-1",
+            "op": "ship",
+            "now": 0
+          },
+          {
+            "sequence": 4,
+            "requestId": "transfer-1",
+            "op": "dispatchTransfer",
+            "now": 0
+          },
+          {
+            "sequence": 5,
+            "requestId": "receipt-1",
+            "op": "receiveTransfer",
+            "now": 0
+          },
+          {
+            "sequence": 6,
+            "requestId": "cancel-transfer-1",
+            "op": "cancelTransfer",
+            "now": 0
+          },
+          {
+            "sequence": 7,
+            "requestId": "clock-1",
+            "op": "advanceClock",
+            "now": 10
+          }
+        ]
+      }
+    },
+    {
+      "label": "Return 1 shipped widget",
+      "response": {
+        "ok": true,
+        "sequence": 8,
+        "result": {
+          "id": "o1",
+          "warehouse": "A",
+          "expiresAt": 10,
+          "revision": 4,
+          "lines": [
+            {
+              "sku": "widget",
+              "quantity": 8,
+              "reserved": 0,
+              "shipped": 3,
+              "cancelled": 5,
+              "returned": 1
+            }
+          ],
+          "status": "CLOSED"
+        }
+      },
+      "state": {
+        "now": 10,
+        "sequence": 8,
+        "inventory": [
+          {
+            "warehouse": "A",
+            "sku": "widget",
+            "onHand": 16,
+            "reserved": 0,
+            "available": 16
+          },
+          {
+            "warehouse": "B",
+            "sku": "widget",
+            "onHand": 2,
+            "reserved": 0,
+            "available": 2
+          }
+        ],
+        "orders": [
+          {
+            "id": "o1",
+            "warehouse": "A",
+            "expiresAt": 10,
+            "revision": 4,
+            "lines": [
+              {
+                "sku": "widget",
+                "quantity": 8,
+                "reserved": 0,
+                "shipped": 3,
+                "cancelled": 5,
+                "returned": 1
+              }
+            ],
+            "status": "CLOSED"
+          }
+        ],
+        "transfers": [
+          {
+            "id": "t1",
+            "from": "A",
+            "to": "B",
+            "revision": 3,
+            "lines": [
+              {
+                "sku": "widget",
+                "quantity": 5,
+                "received": 2,
+                "cancelled": 3
+              }
+            ],
+            "status": "CLOSED"
+          }
+        ],
+        "audit": [
+          {
+            "sequence": 1,
+            "requestId": "receive-1",
+            "op": "receive",
+            "now": 0
+          },
+          {
+            "sequence": 2,
+            "requestId": "reserve-1",
+            "op": "createOrder",
+            "now": 0
+          },
+          {
+            "sequence": 3,
+            "requestId": "ship-1",
+            "op": "ship",
+            "now": 0
+          },
+          {
+            "sequence": 4,
+            "requestId": "transfer-1",
+            "op": "dispatchTransfer",
+            "now": 0
+          },
+          {
+            "sequence": 5,
+            "requestId": "receipt-1",
+            "op": "receiveTransfer",
+            "now": 0
+          },
+          {
+            "sequence": 6,
+            "requestId": "cancel-transfer-1",
+            "op": "cancelTransfer",
+            "now": 0
+          },
+          {
+            "sequence": 7,
+            "requestId": "clock-1",
+            "op": "advanceClock",
+            "now": 10
+          },
+          {
+            "sequence": 8,
+            "requestId": "return-1",
+            "op": "return",
+            "now": 10
+          }
+        ]
+      }
+    }
+  ]
+}

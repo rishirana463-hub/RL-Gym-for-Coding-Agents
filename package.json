@@ -1,0 +1,28 @@
+{
+  "name": "stockroom-rl-gym",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Repository-level inventory fulfillment benchmark for autonomous coding agents",
+  "type": "module",
+  "engines": {
+    "node": ">=24"
+  },
+  "scripts": {
+    "lint": "eslint . --max-warnings 0",
+    "build": "node scripts/build.mjs",
+    "test": "node --test scripts/*.test.mjs",
+    "start": "node reference/server.mjs",
+    "generate": "node evaluation/generate.mjs",
+    "score": "node evaluation/score.mjs",
+    "check:reference": "node evaluation/score.mjs --solution reference --out evaluation/proof-of-work/reference.json --require-perfect",
+    "check:mutants": "node evaluation/mutants/check.mjs",
+    "check:metadata": "node evaluation/metadata.mjs",
+    "check:determinism": "node evaluation/determinism.mjs",
+    "check:submission": "node evaluation/submission.mjs",
+    "check:lifecycle": "node scripts/check-lifecycle.mjs",
+    "demo": "node scripts/demo.mjs"
+  },
+  "devDependencies": {
+    "eslint": "10.12.0"
+  }
+}

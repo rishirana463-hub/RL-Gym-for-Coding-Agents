@@ -1,0 +1,23 @@
+{
+  "generatedAt": "2026-10-10T12:30:45.563Z",
+  "automatedChecksReady": false,
+  "issues": [
+    "Missing evaluation/proof-of-work/reference-docker.json",
+    "Missing evaluation/proof-of-work/mutants-docker.json",
+    "Missing evaluation/proof-of-work/determinism-docker.json",
+    "Missing evaluation/proof-of-work/model-a/run.json",
+    "Missing evaluation/proof-of-work/model-a/score.json",
+    "Missing model-a/openhands.log",
+    "Missing model-a/failure-analysis.md",
+    "Missing evaluation/proof-of-work/model-b/run.json",
+    "Missing evaluation/proof-of-work/model-b/score.json",
+    "Missing model-b/openhands.log",
+    "Missing model-b/failure-analysis.md"
+  ],
+  "manualRequirements": [
+    "Organizer task-idea approval",
+    "Private GitHub repository",
+    "Verified collaborator invitation/access for content.team@problemsetters.com",
+    "Frontier-model eligibility verified with organizer"
+  ]
+}

@@ -1,0 +1,82 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-10-10T12:36:54.167Z",
+  "solution": ".runs/mutants/M12",
+  "solutionHash": "7eee7e1b5807a134c875f684b7c1d2e2aa506bbae46c93ad889854c3a2fe8fb8",
+  "checkHash": "e85ccbc4bfb0eb8b48671f34c07f5073e544b8618071c9ced16bf700f5c655f0",
+  "node": "v25.6.0",
+  "platform": "win32",
+  "execution": "local",
+  "complete": false,
+  "score": 0,
+  "passed": 0,
+  "total": 56,
+  "executed": 1,
+  "groups": {
+    "transport": {
+      "weight": 0.125,
+      "passed": 0,
+      "total": 8,
+      "executed": 0,
+      "weightedScore": 0
+    },
+    "inventory": {
+      "weight": 0.125,
+      "passed": 0,
+      "total": 6,
+      "executed": 0,
+      "weightedScore": 0
+    },
+    "orders": {
+      "weight": 0.125,
+      "passed": 0,
+      "total": 8,
+      "executed": 0,
+      "weightedScore": 0
+    },
+    "transfers": {
+      "weight": 0.125,
+      "passed": 0,
+      "total": 8,
+      "executed": 0,
+      "weightedScore": 0
+    },
+    "clock": {
+      "weight": 0.125,
+      "passed": 0,
+      "total": 6,
+      "executed": 0,
+      "weightedScore": 0
+    },
+    "idempotency": {
+      "weight": 0.125,
+      "passed": 0,
+      "total": 8,
+      "executed": 0,
+      "weightedScore": 0
+    },
+    "concurrency": {
+      "weight": 0.125,
+      "passed": 0,
+      "total": 6,
+      "executed": 0,
+      "weightedScore": 0
+    },
+    "recovery": {
+      "weight": 0.125,
+      "passed": 0,
+      "total": 6,
+      "executed": 1,
+      "weightedScore": 0
+    }
+  },
+  "checks": [
+    {
+      "id": "R02",
+      "group": "recovery",
+      "description": "Retry ledger and original snapshots survive repeated termination",
+      "passed": false,
+      "error": "AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:\n+ actual - expected\n\n  {\n    body: {\n+     error: {\n+       code: 'STALE_REVISION'\n-     ok: true,\n-     result: {\n-       expiresAt: 10,\n-       id: 'o1',\n-       lines: [\n-         {\n-           cancelled: 0,\n-           quantity: 4,\n-           reserved: 3,\n-           returned: 0,\n-           shipped: 1,\n-           sku: 'widget'\n-         }\n-       ],\n-       revision: 2,\n-       status: 'OPEN',\n-       warehouse: 'A'\n      },\n+     ok: false\n-     sequence: 3\n    },\n+   status: 409\n-   status: 200\n  }\n\n    at file:///C:/Users/rishi/Downloads/RL%20GYM%20AI/evaluation/tests/cases/recovery.mjs:16:59\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)\n    at async withService (file:///C:/Users/rishi/Downloads/RL%20GYM%20AI/evaluation/tests/harness.mjs:86:24)\n    at async score (file:///C:/Users/rishi/Downloads/RL%20GYM%20AI/evaluation/score.mjs:37:11)\n    at async file:///C:/Users/rishi/Downloads/RL%20GYM%20AI/evaluation/mutants/check.mjs:24:18"
+    }
+  ]
+}

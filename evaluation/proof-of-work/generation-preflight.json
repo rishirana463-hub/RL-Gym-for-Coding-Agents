@@ -1,0 +1,12 @@
+{
+  "generatedAt": "2026-10-10T12:30:11.169Z",
+  "status": "prepared-only",
+  "modelAttempts": 0,
+  "dockerAvailable": false,
+  "apiKeyConfigured": false,
+  "sdkVersion": "1.54.0",
+  "reasoningEffort": "medium",
+  "publicSourceHash": "0d5b5e70c91856516d10a4ece22504d7bf0d33306494a38cbfb028b34f4fdb59",
+  "privateAssetsExposed": false,
+  "nextCommand": "npm run generate -- --run model-a --model <provider/model> --frontier-confirmed"
+}

@@ -1,0 +1,9 @@
+.git
+.env*
+node_modules
+.state
+.runs
+evaluation
+scripts
+README.md
+SUBMISSION.md

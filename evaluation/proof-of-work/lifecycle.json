@@ -1,0 +1,14 @@
+{
+  "passed": true,
+  "checks": [
+    "build",
+    "nested-state-reset",
+    "source-retained",
+    "source-file-target-refused",
+    "outside-path-refused",
+    "solution-root-refused",
+    "source-directory-refused",
+    "nested-source-refused",
+    "symlink-traversal-refused"
+  ]
+}

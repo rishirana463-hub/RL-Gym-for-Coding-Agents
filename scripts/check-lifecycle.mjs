@@ -1,0 +1,25 @@
+import fs from 'node:fs';
+import path from 'node:path';
+import assert from 'node:assert/strict';
+import { spawnSync } from 'node:child_process';
+import { root, write } from '../evaluation/util.mjs';
+
+const parent = path.join(root, '.runs'); fs.mkdirSync(parent, { recursive: true });
+const directory = fs.mkdtempSync(path.join(parent, 'lifecycle-'));
+const run = (operation, dataDir) => spawnSync(process.execPath, [path.join(root, 'app-setup/lifecycle.mjs'), operation, directory], { encoding: 'utf8', env: { ...process.env, DATA_DIR: dataDir } });
+fs.writeFileSync(path.join(directory, 'server.mjs'), 'console.log("fixture");\n');
+fs.mkdirSync(path.join(directory, '.state')); fs.writeFileSync(path.join(directory, '.state/generated.json'), '{}');
+assert.equal(run('build', '.state').status, 0);
+assert.equal(run('reset', '.state').status, 0); assert.equal(fs.existsSync(path.join(directory, '.state')), false);
+assert.ok(fs.existsSync(path.join(directory, 'server.mjs')));
+assert.notEqual(run('reset', 'server.mjs').status, 0); assert.ok(fs.existsSync(path.join(directory, 'server.mjs')));
+assert.notEqual(run('reset', root).status, 0);
+assert.notEqual(run('reset', directory).status, 0);
+const source = path.join(directory, 'source'); fs.mkdirSync(source); fs.writeFileSync(path.join(source, 'server.mjs'), '// protected');
+assert.notEqual(run('reset', source).status, 0); assert.ok(fs.existsSync(path.join(source, 'server.mjs')));
+const nested = path.join(directory, 'nested'); fs.mkdirSync(path.join(nested, 'module'), { recursive: true }); fs.writeFileSync(path.join(nested, 'module/engine.mjs'), '// protected');
+assert.notEqual(run('reset', nested).status, 0); assert.ok(fs.existsSync(path.join(nested, 'module/engine.mjs')));
+fs.symlinkSync(source, path.join(directory, 'linked-state'), process.platform === 'win32' ? 'junction' : 'dir');
+assert.notEqual(run('reset', 'linked-state').status, 0); assert.ok(fs.existsSync(path.join(source, 'server.mjs')));
+write('evaluation/proof-of-work/lifecycle.json', { passed: true, checks: ['build', 'nested-state-reset', 'source-retained', 'source-file-target-refused', 'outside-path-refused', 'solution-root-refused', 'source-directory-refused', 'nested-source-refused', 'symlink-traversal-refused'] });
+console.log('Lifecycle checks passed, including protected-path and symlink refusal.');
