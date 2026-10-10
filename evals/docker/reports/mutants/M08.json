@@ -1,0 +1,89 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-10-10T19:29:49.736Z",
+  "solution": ".runs/mutants/M08",
+  "solutionHash": "0cc4f0f47adbf7f8528ed917db2e0a098f9beec5ca5f8affc8d89b9321670571",
+  "checkHash": "a05e6c24e7fd06cb72d90800a9a5ee55fb3acc18b198d5c8a7d2b38caa1221ab",
+  "node": "v24.14.0",
+  "platform": "linux",
+  "execution": "docker",
+  "complete": false,
+  "score": 0,
+  "passed": 0,
+  "total": 56,
+  "executed": 2,
+  "groups": {
+    "transport": {
+      "weight": 0.125,
+      "passed": 0,
+      "total": 8,
+      "executed": 0,
+      "weightedScore": 0
+    },
+    "inventory": {
+      "weight": 0.125,
+      "passed": 0,
+      "total": 6,
+      "executed": 2,
+      "weightedScore": 0
+    },
+    "orders": {
+      "weight": 0.125,
+      "passed": 0,
+      "total": 8,
+      "executed": 0,
+      "weightedScore": 0
+    },
+    "transfers": {
+      "weight": 0.125,
+      "passed": 0,
+      "total": 8,
+      "executed": 0,
+      "weightedScore": 0
+    },
+    "clock": {
+      "weight": 0.125,
+      "passed": 0,
+      "total": 6,
+      "executed": 0,
+      "weightedScore": 0
+    },
+    "idempotency": {
+      "weight": 0.125,
+      "passed": 0,
+      "total": 8,
+      "executed": 0,
+      "weightedScore": 0
+    },
+    "concurrency": {
+      "weight": 0.125,
+      "passed": 0,
+      "total": 6,
+      "executed": 0,
+      "weightedScore": 0
+    },
+    "recovery": {
+      "weight": 0.125,
+      "passed": 0,
+      "total": 6,
+      "executed": 0,
+      "weightedScore": 0
+    }
+  },
+  "checks": [
+    {
+      "id": "I05",
+      "group": "inventory",
+      "description": "Reservation, shipment and cancellation conserve physical stock",
+      "passed": false,
+      "error": "AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:\n+ actual - expected\n\n  {\n+   available: 7,\n+   onHand: 8,\n-   available: 5,\n-   onHand: 6,\n    reserved: 1,\n    sku: 'widget',\n    warehouse: 'A'\n  }\n\n    at file:///home/runner/work/RL-Gym-for-Coding-Agents/RL-Gym-for-Coding-Agents/evaluation/tests/cases/inventory.mjs:28:10\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)\n    at async withService (file:///home/runner/work/RL-Gym-for-Coding-Agents/RL-Gym-for-Coding-Agents/evaluation/tests/harness.mjs:87:24)\n    at async score (file:///home/runner/work/RL-Gym-for-Coding-Agents/RL-Gym-for-Coding-Agents/evaluation/score.mjs:37:11)\n    at async file:///home/runner/work/RL-Gym-for-Coding-Agents/RL-Gym-for-Coding-Agents/evaluation/mutants/check.mjs:24:18"
+    },
+    {
+      "id": "I06",
+      "group": "inventory",
+      "description": "Zero stock rows remain visible after full shipment",
+      "passed": false,
+      "error": "AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:\n+ actual - expected\n\n  {\n+   available: 4,\n+   onHand: 4,\n-   available: 0,\n-   onHand: 0,\n    reserved: 0,\n    sku: 'widget',\n    warehouse: 'A'\n  }\n\n    at file:///home/runner/work/RL-Gym-for-Coding-Agents/RL-Gym-for-Coding-Agents/evaluation/tests/cases/inventory.mjs:32:10\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)\n    at async withService (file:///home/runner/work/RL-Gym-for-Coding-Agents/RL-Gym-for-Coding-Agents/evaluation/tests/harness.mjs:87:24)\n    at async score (file:///home/runner/work/RL-Gym-for-Coding-Agents/RL-Gym-for-Coding-Agents/evaluation/score.mjs:37:11)\n    at async file:///home/runner/work/RL-Gym-for-Coding-Agents/RL-Gym-for-Coding-Agents/evaluation/mutants/check.mjs:24:18"
+    }
+  ]
+}

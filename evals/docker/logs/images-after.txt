@@ -1,0 +1,26 @@
+REPOSITORY                                   TAG            IMAGE ID                                                                  CREATED              SIZE
+stockroom-score                              6dd24e073e85   sha256:9be11a803b7ec0a1668dcea28b3aa03a970ca4f4745e453a5a04631a72f928b0   About a minute ago   223MB
+stockroom-score                              44f6a3915aac   sha256:10529ccaaaed186f27bc45e13c15fd5e391eb29a7948308b89bf1f5b9ee7d8ae   About a minute ago   223MB
+stockroom-score                              acbd33db4603   sha256:f47c77c82d7e5ccf98f2a79741f298b1f3759ff2a549754032496e69e46f5bd6   About a minute ago   223MB
+stockroom-score                              d7362402b6da   sha256:80ec0fe640f3e5e84e04dce18a00b9673ddd418f147ebe091f62469ad2eef99c   About a minute ago   223MB
+stockroom-score                              e60d0297c88f   sha256:af04d94bc05526b158ba3bbb4e05fab1016f9f96106c2c35232b2a616acd8393   About a minute ago   223MB
+stockroom-score                              9b3e22bfe75f   sha256:0edf52810faff18c3930d59701756e0283ba12ca40c7576a41b1e0b59a33607f   About a minute ago   223MB
+stockroom-score                              96f64e5147e0   sha256:aecb2ff2b9b5e75794cb210871bdcc0056cf51ce9b3b24d5d728fa8310bb7028   About a minute ago   223MB
+stockroom-score                              0ecf298f9bbb   sha256:7ab24be8a66da667017e544017069d06f1f6ad3ce55beae3268629079e1aff15   About a minute ago   223MB
+stockroom-score                              151847bd3564   sha256:c9ad90deb41c205f578caf2d7cd275dcce3208a31dac8a06759fc53c50697ac3   About a minute ago   223MB
+stockroom-score                              534ba3cd1e8b   sha256:8a8989f253849ddf602ffd37fd2e0fac7a985eb9016ab735800f9c8973c79680   About a minute ago   223MB
+stockroom-score                              0cc4f0f47adb   sha256:f7438e07e2bce3d09ad90c9b30281eedf3cb5bf28b7a287d8df85f1936ff49ac   About a minute ago   223MB
+stockroom-score                              cfc808362c37   sha256:27516b9f77dd933ce98957292e8dab72b8551c80f806733fb61eaddd5f1b03c0   2 minutes ago        223MB
+stockroom-score                              b92ac88dc5ea   sha256:ae3e5f28bd906bc7ddb7cf2f0155bdacaeccd7e300ae4994e146b3b1226f1b85   2 minutes ago        223MB
+stockroom-score                              acfcc0bce407   sha256:b96de1e183f27108170a86b9448def38d5748b203eab3e2efd07caf7427fa902   2 minutes ago        223MB
+stockroom-score                              f740a9b2d17e   sha256:33c39bd5cd218988b5c2a48c0337565041e309a4b54daa8f9351b930e701e78b   2 minutes ago        223MB
+stockroom-score                              6f6289d3ea7c   sha256:849afbfcf19ea3de33d8e2759329777b372be1aee3e3b340c1c407478c5d946c   2 minutes ago        223MB
+stockroom-score                              612e33ce4cf7   sha256:26252c8f948f7db293fc47d9c76c91e533ec961de38e510f65dc4002a4ee8435   2 minutes ago        223MB
+stockroom-score                              a7538656cd96   sha256:9a83ddb2ed2cdb6f9a123574d8f1a2eb249d24b430b49af0af7b976110fc13bd   2 minutes ago        223MB
+stockroom-score                              d6ccc7096536   sha256:e7a231df16cc9182d7f2c34ac35f2c86ba8166ecc0fd988ab29c16f386cdde5f   3 minutes ago        223MB
+ghcr.io/github/github-mcp-server             latest         sha256:70d716031cd8fbdb03ea648b706ea4ac706b6d33b8f420bac7479c2f441c4261   8 days ago           47.1MB
+ghcr.io/dependabot/dependabot-updater-core   latest         sha256:226ed17086e98ddeee3160baabfb3f78a829d92364d4133509d18d2418c9962e   8 days ago           835MB
+ghcr.io/github/gh-aw-mcpg                    latest         sha256:a589ff70a2020d1b1c5e77be8a997173f4eed8fe2230ae03893c330994c27440   8 days ago           181MB
+ghcr.io/github/gh-aw-firewall/agent          latest         sha256:d1d510080c4d6741ea6a805d8f522bb83040186cef3474cc665932a84f6f9a3b   8 days ago           547MB
+ghcr.io/github/gh-aw-firewall/api-proxy      latest         sha256:6b335d6fe22a4651a1f265fea4267b837129d7dfe5279c12f46e6d080182ee44   8 days ago           207MB
+ghcr.io/github/gh-aw-firewall/squid          latest         sha256:22967111f2812e3549c638bafb97d3d5de396bb09e7a6b84173d58b979433abb   2 weeks ago          43.1MB

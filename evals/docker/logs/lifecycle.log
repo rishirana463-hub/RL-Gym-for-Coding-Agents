@@ -1,0 +1,5 @@
+
+> stockroom-rl-gym@0.1.0 check:lifecycle
+> node scripts/check-lifecycle.mjs
+
+Lifecycle checks passed, including protected-path and symlink refusal.

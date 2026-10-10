@@ -15,7 +15,7 @@ npm run check:lifecycle
 npm run demo
 ```
 
-Docker, the Linux images, and the complete OpenHands integration have not been executed on the development machine. Neither frontier-model attempt has been performed. The Python credential-input helper has local unit coverage, but the pinned Python/OpenHands image dependencies have not been installed or audited here. Local success does not establish container durability or the required below-30% frontier-model difficulty.
+Docker remains unavailable on the Windows development machine. [Clean Linux hosted-runner validation](../evals/docker/README.md) passed: reference 56/56, mutants 18/18, and three identical complete container runs. The complete OpenHands integration and neither frontier-model attempt have been executed. The Python credential-input helper has local unit coverage, but the pinned Python/OpenHands image dependencies have not yet been installed or audited. Reference success does not establish the required below-30% frontier-model difficulty.
 
 ## Layout and information boundary
 
@@ -36,13 +36,15 @@ The `.yml` configuration files use JSON syntax, which is valid YAML 1.2, to avoi
 
 ## Container verification
 
-Install Docker Desktop with Linux containers, then run from the repository root:
+Use Docker with Linux containers, then run from the repository root:
 
 ```sh
 npm run check:reference -- --docker --out evaluation/proof-of-work/reference-docker.json
 npm run check:mutants -- --docker
 npm run check:determinism -- --docker
 ```
+
+Alternatively, dispatch [Clean Docker validation](../.github/workflows/docker-validation.yml) on the private GitHub repository. It uses a fresh Ubuntu 24.04 checkout without model credentials and preserves full command logs, source fingerprints and reports as an artifact. Download and verify those artifacts before updating recorded evidence. Reports fingerprint exact bytes; `.gitattributes` enforces LF for fingerprinted source/configuration files across platforms. Earlier local reports retain their historical fingerprints.
 
 The scorer builds from a temporary context containing **only the selected solution, public instruction, and lifecycle scripts**. Each check starts a fresh container and fresh state directory. Recovery scenarios intentionally restart the service using the same state directory. Private tests stay on the host and interact through HTTP. The server runs as an unprivileged user.
 

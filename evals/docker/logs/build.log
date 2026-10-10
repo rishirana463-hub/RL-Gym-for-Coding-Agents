@@ -1,0 +1,5 @@
+
+> stockroom-rl-gym@0.1.0 build
+> node scripts/build.mjs
+
+Built dist/reference: 5 files, 12073 bytes (4498 bytes gzip); no browser bundle.

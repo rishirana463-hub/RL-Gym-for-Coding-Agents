@@ -1,0 +1,136 @@
+
+> stockroom-rl-gym@0.1.0 check:determinism
+> node evaluation/determinism.mjs --docker
+
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 558B done
+#1 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/library/node:24.14.0-bookworm-slim@sha256:d8e448a56fc63242f70026718378bd4b00f8c82e78d20eefb199224a4d8e33d8
+#2 DONE 0.0s
+
+#3 [internal] load .dockerignore
+#3 transferring context: 2B done
+#3 DONE 0.0s
+
+#4 [1/7] FROM docker.io/library/node:24.14.0-bookworm-slim@sha256:d8e448a56fc63242f70026718378bd4b00f8c82e78d20eefb199224a4d8e33d8
+#4 DONE 0.0s
+
+#5 [internal] load build context
+#5 transferring context: 24.96kB done
+#5 DONE 0.0s
+
+#6 [3/7] COPY --chown=node:node task/public/ /workspace/
+#6 CACHED
+
+#7 [2/7] WORKDIR /workspace
+#7 CACHED
+
+#8 [4/7] COPY --chown=node:node task/instruction.md /workspace/instruction.md
+#8 CACHED
+
+#9 [6/7] RUN chmod +x /opt/app-setup/*.sh && mkdir -p /data && chown node:node /data
+#9 CACHED
+
+#10 [5/7] COPY app-setup/ /opt/app-setup/
+#10 CACHED
+
+#11 [7/7] RUN node /opt/app-setup/lifecycle.mjs build /workspace
+#11 CACHED
+
+#12 exporting to image
+#12 exporting layers done
+#12 writing image sha256:e7a231df16cc9182d7f2c34ac35f2c86ba8166ecc0fd988ab29c16f386cdde5f done
+#12 naming to docker.io/library/stockroom-score:d6ccc7096536 done
+#12 DONE 0.0s
+Determinism pass 1: 56/56
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 558B done
+#1 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/library/node:24.14.0-bookworm-slim@sha256:d8e448a56fc63242f70026718378bd4b00f8c82e78d20eefb199224a4d8e33d8
+#2 DONE 0.0s
+
+#3 [internal] load .dockerignore
+#3 transferring context: 2B done
+#3 DONE 0.0s
+
+#4 [1/7] FROM docker.io/library/node:24.14.0-bookworm-slim@sha256:d8e448a56fc63242f70026718378bd4b00f8c82e78d20eefb199224a4d8e33d8
+#4 DONE 0.0s
+
+#5 [internal] load build context
+#5 transferring context: 24.96kB done
+#5 DONE 0.0s
+
+#6 [2/7] WORKDIR /workspace
+#6 CACHED
+
+#7 [3/7] COPY --chown=node:node task/public/ /workspace/
+#7 CACHED
+
+#8 [4/7] COPY --chown=node:node task/instruction.md /workspace/instruction.md
+#8 CACHED
+
+#9 [5/7] COPY app-setup/ /opt/app-setup/
+#9 CACHED
+
+#10 [6/7] RUN chmod +x /opt/app-setup/*.sh && mkdir -p /data && chown node:node /data
+#10 CACHED
+
+#11 [7/7] RUN node /opt/app-setup/lifecycle.mjs build /workspace
+#11 CACHED
+
+#12 exporting to image
+#12 exporting layers done
+#12 writing image sha256:e7a231df16cc9182d7f2c34ac35f2c86ba8166ecc0fd988ab29c16f386cdde5f done
+#12 naming to docker.io/library/stockroom-score:d6ccc7096536 done
+#12 DONE 0.0s
+Determinism pass 2: 56/56
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 558B done
+#1 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/library/node:24.14.0-bookworm-slim@sha256:d8e448a56fc63242f70026718378bd4b00f8c82e78d20eefb199224a4d8e33d8
+#2 DONE 0.0s
+
+#3 [internal] load .dockerignore
+#3 transferring context: 2B done
+#3 DONE 0.0s
+
+#4 [1/7] FROM docker.io/library/node:24.14.0-bookworm-slim@sha256:d8e448a56fc63242f70026718378bd4b00f8c82e78d20eefb199224a4d8e33d8
+#4 DONE 0.0s
+
+#5 [internal] load build context
+#5 transferring context: 24.96kB done
+#5 DONE 0.0s
+
+#6 [6/7] RUN chmod +x /opt/app-setup/*.sh && mkdir -p /data && chown node:node /data
+#6 CACHED
+
+#7 [3/7] COPY --chown=node:node task/public/ /workspace/
+#7 CACHED
+
+#8 [2/7] WORKDIR /workspace
+#8 CACHED
+
+#9 [5/7] COPY app-setup/ /opt/app-setup/
+#9 CACHED
+
+#10 [4/7] COPY --chown=node:node task/instruction.md /workspace/instruction.md
+#10 CACHED
+
+#11 [7/7] RUN node /opt/app-setup/lifecycle.mjs build /workspace
+#11 CACHED
+
+#12 exporting to image
+#12 exporting layers done
+#12 writing image sha256:e7a231df16cc9182d7f2c34ac35f2c86ba8166ecc0fd988ab29c16f386cdde5f done
+#12 naming to docker.io/library/stockroom-score:d6ccc7096536 done
+#12 DONE 0.0s
+Determinism pass 3: 56/56

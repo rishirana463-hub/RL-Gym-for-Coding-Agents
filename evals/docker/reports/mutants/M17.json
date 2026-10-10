@@ -1,0 +1,96 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-10-10T19:30:13.122Z",
+  "solution": ".runs/mutants/M17",
+  "solutionHash": "44f6a3915aac8eaa76fc26bb6cc9276fb89ee5a8b98256e00f5e87e29cb06791",
+  "checkHash": "a05e6c24e7fd06cb72d90800a9a5ee55fb3acc18b198d5c8a7d2b38caa1221ab",
+  "node": "v24.14.0",
+  "platform": "linux",
+  "execution": "docker",
+  "complete": false,
+  "score": 0,
+  "passed": 0,
+  "total": 56,
+  "executed": 3,
+  "groups": {
+    "transport": {
+      "weight": 0.125,
+      "passed": 0,
+      "total": 8,
+      "executed": 0,
+      "weightedScore": 0
+    },
+    "inventory": {
+      "weight": 0.125,
+      "passed": 0,
+      "total": 6,
+      "executed": 1,
+      "weightedScore": 0
+    },
+    "orders": {
+      "weight": 0.125,
+      "passed": 0,
+      "total": 8,
+      "executed": 1,
+      "weightedScore": 0
+    },
+    "transfers": {
+      "weight": 0.125,
+      "passed": 0,
+      "total": 8,
+      "executed": 1,
+      "weightedScore": 0
+    },
+    "clock": {
+      "weight": 0.125,
+      "passed": 0,
+      "total": 6,
+      "executed": 0,
+      "weightedScore": 0
+    },
+    "idempotency": {
+      "weight": 0.125,
+      "passed": 0,
+      "total": 8,
+      "executed": 0,
+      "weightedScore": 0
+    },
+    "concurrency": {
+      "weight": 0.125,
+      "passed": 0,
+      "total": 6,
+      "executed": 0,
+      "weightedScore": 0
+    },
+    "recovery": {
+      "weight": 0.125,
+      "passed": 0,
+      "total": 6,
+      "executed": 0,
+      "weightedScore": 0
+    }
+  },
+  "checks": [
+    {
+      "id": "I03",
+      "group": "inventory",
+      "description": "Stock cap accepts maximum and rejects overflow with no audit effect",
+      "passed": false,
+      "error": "AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n\n200 !== 409\n\n    at Object.error (file:///home/runner/work/RL-Gym-for-Coding-Agents/RL-Gym-for-Coding-Agents/evaluation/tests/harness.mjs:80:126)\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)\n    at async unchanged (file:///home/runner/work/RL-Gym-for-Coding-Agents/RL-Gym-for-Coding-Agents/evaluation/tests/helpers.mjs:7:78)\n    at async file:///home/runner/work/RL-Gym-for-Coding-Agents/RL-Gym-for-Coding-Agents/evaluation/tests/cases/inventory.mjs:19:3\n    at async withService (file:///home/runner/work/RL-Gym-for-Coding-Agents/RL-Gym-for-Coding-Agents/evaluation/tests/harness.mjs:87:24)\n    at async score (file:///home/runner/work/RL-Gym-for-Coding-Agents/RL-Gym-for-Coding-Agents/evaluation/score.mjs:37:11)\n    at async file:///home/runner/work/RL-Gym-for-Coding-Agents/RL-Gym-for-Coding-Agents/evaluation/mutants/check.mjs:24:18"
+    },
+    {
+      "id": "O08",
+      "group": "orders",
+      "description": "Multi-line return overflow rolls back earlier restoration",
+      "passed": false,
+      "error": "AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n\n200 !== 409\n\n    at Object.error (file:///home/runner/work/RL-Gym-for-Coding-Agents/RL-Gym-for-Coding-Agents/evaluation/tests/harness.mjs:80:126)\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)\n    at async unchanged (file:///home/runner/work/RL-Gym-for-Coding-Agents/RL-Gym-for-Coding-Agents/evaluation/tests/helpers.mjs:7:78)\n    at async file:///home/runner/work/RL-Gym-for-Coding-Agents/RL-Gym-for-Coding-Agents/evaluation/tests/cases/orders.mjs:45:3\n    at async withService (file:///home/runner/work/RL-Gym-for-Coding-Agents/RL-Gym-for-Coding-Agents/evaluation/tests/harness.mjs:87:24)\n    at async score (file:///home/runner/work/RL-Gym-for-Coding-Agents/RL-Gym-for-Coding-Agents/evaluation/score.mjs:37:11)\n    at async file:///home/runner/work/RL-Gym-for-Coding-Agents/RL-Gym-for-Coding-Agents/evaluation/mutants/check.mjs:24:18"
+    },
+    {
+      "id": "F07",
+      "group": "transfers",
+      "description": "Destination overflow rolls back all receipt lines",
+      "passed": false,
+      "error": "AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n\n200 !== 409\n\n    at Object.error (file:///home/runner/work/RL-Gym-for-Coding-Agents/RL-Gym-for-Coding-Agents/evaluation/tests/harness.mjs:80:126)\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)\n    at async unchanged (file:///home/runner/work/RL-Gym-for-Coding-Agents/RL-Gym-for-Coding-Agents/evaluation/tests/helpers.mjs:7:78)\n    at async file:///home/runner/work/RL-Gym-for-Coding-Agents/RL-Gym-for-Coding-Agents/evaluation/tests/cases/transfers.mjs:44:3\n    at async withService (file:///home/runner/work/RL-Gym-for-Coding-Agents/RL-Gym-for-Coding-Agents/evaluation/tests/harness.mjs:87:24)\n    at async score (file:///home/runner/work/RL-Gym-for-Coding-Agents/RL-Gym-for-Coding-Agents/evaluation/score.mjs:37:11)\n    at async file:///home/runner/work/RL-Gym-for-Coding-Agents/RL-Gym-for-Coding-Agents/evaluation/mutants/check.mjs:24:18"
+    }
+  ]
+}

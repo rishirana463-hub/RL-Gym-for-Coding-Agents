@@ -1,0 +1,96 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-10-10T19:29:57.062Z",
+  "solution": ".runs/mutants/M11",
+  "solutionHash": "0ecf298f9bbbfcdc830e5333498945459ff4ee80458a54b0634ded052dae9b32",
+  "checkHash": "a05e6c24e7fd06cb72d90800a9a5ee55fb3acc18b198d5c8a7d2b38caa1221ab",
+  "node": "v24.14.0",
+  "platform": "linux",
+  "execution": "docker",
+  "complete": false,
+  "score": 0,
+  "passed": 0,
+  "total": 56,
+  "executed": 3,
+  "groups": {
+    "transport": {
+      "weight": 0.125,
+      "passed": 0,
+      "total": 8,
+      "executed": 0,
+      "weightedScore": 0
+    },
+    "inventory": {
+      "weight": 0.125,
+      "passed": 0,
+      "total": 6,
+      "executed": 0,
+      "weightedScore": 0
+    },
+    "orders": {
+      "weight": 0.125,
+      "passed": 0,
+      "total": 8,
+      "executed": 2,
+      "weightedScore": 0
+    },
+    "transfers": {
+      "weight": 0.125,
+      "passed": 0,
+      "total": 8,
+      "executed": 1,
+      "weightedScore": 0
+    },
+    "clock": {
+      "weight": 0.125,
+      "passed": 0,
+      "total": 6,
+      "executed": 0,
+      "weightedScore": 0
+    },
+    "idempotency": {
+      "weight": 0.125,
+      "passed": 0,
+      "total": 8,
+      "executed": 0,
+      "weightedScore": 0
+    },
+    "concurrency": {
+      "weight": 0.125,
+      "passed": 0,
+      "total": 6,
+      "executed": 0,
+      "weightedScore": 0
+    },
+    "recovery": {
+      "weight": 0.125,
+      "passed": 0,
+      "total": 6,
+      "executed": 0,
+      "weightedScore": 0
+    }
+  },
+  "checks": [
+    {
+      "id": "O01",
+      "group": "orders",
+      "description": "Multi-SKU reservation rolls back an earlier successful line",
+      "passed": false,
+      "error": "AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:\n+ actual - expected\n... Skipped lines\n\n  {\n    audit: [\n      {\n        now: 0,\n        op: 'receive',\n...\n      {\n+       available: 2,\n-       available: 5,\n        onHand: 5,\n+       reserved: 3,\n-       reserved: 0,\n        sku: 'a',\n        warehouse: 'A'\n      },\n      {\n        available: 1,\n\n    at unchanged (file:///home/runner/work/RL-Gym-for-Coding-Agents/RL-Gym-for-Coding-Agents/evaluation/tests/helpers.mjs:7:101)\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)\n    at async file:///home/runner/work/RL-Gym-for-Coding-Agents/RL-Gym-for-Coding-Agents/evaluation/tests/cases/orders.mjs:9:3\n    at async withService (file:///home/runner/work/RL-Gym-for-Coding-Agents/RL-Gym-for-Coding-Agents/evaluation/tests/harness.mjs:87:24)\n    at async score (file:///home/runner/work/RL-Gym-for-Coding-Agents/RL-Gym-for-Coding-Agents/evaluation/score.mjs:37:11)\n    at async file:///home/runner/work/RL-Gym-for-Coding-Agents/RL-Gym-for-Coding-Agents/evaluation/mutants/check.mjs:24:18"
+    },
+    {
+      "id": "O05",
+      "group": "orders",
+      "description": "Unknown and excess line quantities fail atomically",
+      "passed": false,
+      "error": "AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:\n+ actual - expected\n... Skipped lines\n\n  {\n    audit: [\n      {\n        now: 0,\n        op: 'receive',\n...\n        available: 2,\n+       onHand: 4,\n+       reserved: 2,\n-       onHand: 5,\n-       reserved: 3,\n        sku: 'a',\n        warehouse: 'A'\n      },\n      {\n        available: 3,\n...\n            quantity: 3,\n+           reserved: 2,\n-           reserved: 3,\n            returned: 0,\n+           shipped: 1,\n-           shipped: 0,\n            sku: 'a'\n          },\n          {\n            cancelled: 0,\n            quantity: 2,\n\n    at unchanged (file:///home/runner/work/RL-Gym-for-Coding-Agents/RL-Gym-for-Coding-Agents/evaluation/tests/helpers.mjs:7:101)\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)\n    at async file:///home/runner/work/RL-Gym-for-Coding-Agents/RL-Gym-for-Coding-Agents/evaluation/tests/cases/orders.mjs:27:3\n    at async withService (file:///home/runner/work/RL-Gym-for-Coding-Agents/RL-Gym-for-Coding-Agents/evaluation/tests/harness.mjs:87:24)\n    at async score (file:///home/runner/work/RL-Gym-for-Coding-Agents/RL-Gym-for-Coding-Agents/evaluation/score.mjs:37:11)\n    at async file:///home/runner/work/RL-Gym-for-Coding-Agents/RL-Gym-for-Coding-Agents/evaluation/mutants/check.mjs:24:18"
+    },
+    {
+      "id": "F03",
+      "group": "transfers",
+      "description": "Multi-SKU dispatch is atomic on insufficient stock",
+      "passed": false,
+      "error": "AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:\n+ actual - expected\n... Skipped lines\n\n  {\n    audit: [\n      {\n        now: 0,\n        op: 'receive',\n...\n      {\n+       available: 3,\n+       onHand: 3,\n-       available: 5,\n-       onHand: 5,\n        reserved: 0,\n        sku: 'a',\n        warehouse: 'A'\n      },\n      {\n\n    at unchanged (file:///home/runner/work/RL-Gym-for-Coding-Agents/RL-Gym-for-Coding-Agents/evaluation/tests/helpers.mjs:7:101)\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)\n    at async file:///home/runner/work/RL-Gym-for-Coding-Agents/RL-Gym-for-Coding-Agents/evaluation/tests/cases/transfers.mjs:21:3\n    at async withService (file:///home/runner/work/RL-Gym-for-Coding-Agents/RL-Gym-for-Coding-Agents/evaluation/tests/harness.mjs:87:24)\n    at async score (file:///home/runner/work/RL-Gym-for-Coding-Agents/RL-Gym-for-Coding-Agents/evaluation/score.mjs:37:11)\n    at async file:///home/runner/work/RL-Gym-for-Coding-Agents/RL-Gym-for-Coding-Agents/evaluation/mutants/check.mjs:24:18"
+    }
+  ]
+}

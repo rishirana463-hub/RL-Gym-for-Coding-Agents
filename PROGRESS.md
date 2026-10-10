@@ -31,24 +31,24 @@ Recorded verification, already executed:
 - Saved and independently verified the GitHub repository description: "A stateful software engineering benchmark for coding agents: durable inventory APIs, 56 black-box checks, 18 executable mutants, and a prepared one-pass OpenHands evaluation harness."
 - Uploaded the complete existing project/history to [GitHub](https://github.com/rishirana463-hub/RL-Gym-for-Coding-Agents) on `main`. Verified initial publication commit `228f176`, all 98 tracked files, the exact uploaded README bytes and repository description through GitHub's API. `origin/main` is configured as the local branch's upstream.
 - Changed the GitHub repository to private on 2026-10-11 at the user's request. An independent GitHub API read confirmed both `private: true` and `visibility: private`.
+- Gap step 1 completed: clean Linux Docker build/run on [Actions run 38079910504](https://github.com/rishirana463-hub/RL-Gym-for-Coding-Agents/actions/runs/38079910504), source `97cce98`: reference 56/56 (100%), mutants 18/18 detected, three identical complete reference runs. Fresh install, lint/build, metadata and lifecycle passed. Downloaded complete logs/reports to `evals/docker/`, verified the artifact SHA-256 and every source/verifier fingerprint, and installed the three canonical Docker summaries under `evaluation/proof-of-work/`. No reference/test behavior changes were needed.
 
 ## In progress
 
-- Step 1: obtain clean Linux Docker validation. Docker Desktop is absent locally; checking whether the existing private repository can run validation on a GitHub-hosted runner.
+- Step 2: validate the OpenHands image without paid model calls while obtaining access to two eligible frontier models.
 - Checking the HackerRank listing and signed-in task for organizer-provided model access/credits, as requested. No model-provider credentials are configured locally; no real attempt has started.
-- Prepared a least-privilege GitHub Actions workflow on Ubuntu 24.04 for a fresh checkout, container reference/mutant/determinism checks, full command logs and source/run provenance. Local lint, build and outgoing secret scan passed before dispatch. GitHub Actions is enabled; repository Actions secrets are empty.
 
 ## Next
 
-1. Execute the container reference, mutant and determinism checks from a clean Linux checkout. Preserve complete logs and provenance; review bind-mount permissions and crash recovery.
-2. When access to two eligible frontier models is configured, run each once with the recorded limits, score its saved solution in Docker, and write failure analyses. Preserve all attempts. Both scores must be strictly below 30% to establish the task's difficulty requirement.
-3. Install/audit the pinned Python/OpenHands image dependencies when the image can be built; this has not been verified locally.
-4. Complete organizer approval, collaborator-access requirements and the submission-readiness gate in [SUBMISSION.md](SUBMISSION.md) when the required evidence exists. The private GitHub repository requirement is satisfied.
+1. Validate the pinned OpenHands image dependencies and harness setup on Linux; no provider call during preflight.
+2. Inspect the signed-in HackerRank task for provided model access. Once two eligible model IDs and credentials are available, run each once, save full logs under `evals/<model>/`, and score its saved solution in Docker.
+3. Apply the difficulty gate to real scores only. If needed, preserve attempts, revise the task fairly and rerun Docker plus both evaluations under a disclosed new version. Then write actual per-model failure analyses.
+4. Complete an exhaustive listing checklist and organizer approval draft; keep access/approval gaps explicit. The private repository and clean Docker requirements are satisfied.
 
 ## Notes
 
 - This file was introduced after the six phase commits. Their completion was recovered from [the production polish record](docs/production-polish.md), Git history and [recorded evidence](evaluation/proof-of-work/README.md); those phases have not been rerun or rewritten. Future phase/step commits must include their progress update.
-- Docker is unavailable on this machine; no Linux container or real frontier-model runs have occurred. The submission-readiness check correctly reports missing container/model evidence.
+- Docker is unavailable on this Windows machine, but clean Linux Docker validation has now passed on GitHub Actions. No real frontier-model run has occurred. The submission-readiness check must continue to reject missing model evidence.
 - There are no browser pages, CSS, images, React or Framer Motion. Viewport, tap-target, alt text, ARIA, focus and HTML meta/OG work was skipped as not applicable.
 - ESLint is the only added direct development dependency. Runtime and starter code remain dependency-free.
 - Secret scans inspect common signatures in text, not arbitrary/encoded secrets, binary files or ignored untracked files. Tracked files and reachable history remain scanned even when ignore rules match them. Local scoring is for trusted code; the environment filter is not a sandbox.
@@ -58,3 +58,5 @@ Recorded verification, already executed:
 - Resume from Next when its prerequisites are available. Reopen Done work only for a demonstrated regression or an explicitly requested change.
 - Current requested order: Docker validation, two real OpenHands attempts, conditional difficulty revision, evidence-based failure analyses, then an exhaustive readiness checklist and organizer approval draft. Missing infrastructure/access must remain explicit; starter scores are never model results.
 - Preserved the original user-supplied listing verbatim in `docs/bounty-listing.txt`. It specifies OpenHands, two frontier models, medium reasoning and one attempt each, but does not promise API keys, credits or reimbursement. Public HackerRank search did not confirm task-specific model access; the in-app browser currently requires login before its Earn details can be inspected.
+- Normalized ten local `evaluation/tests/*.mjs` files to the exact LF bytes already stored in Git, after verifying that line endings were their only differences. This aligns raw verifier fingerprints with a clean Linux checkout without changing test logic. Earlier local reports retain their original byte fingerprints as historical evidence.
+- Extended LF checkout rules to JSON/YAML/Markdown/Dockerfile inputs so future Windows checkouts preserve the raw source/verifier fingerprints used by Linux evidence. No fingerprinted content changed relative to the validated Git commit.

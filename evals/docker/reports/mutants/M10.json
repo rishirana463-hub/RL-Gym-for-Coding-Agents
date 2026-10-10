@@ -1,0 +1,82 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-10-10T19:29:54.117Z",
+  "solution": ".runs/mutants/M10",
+  "solutionHash": "151847bd35641a0a3e839c1c25ddf2ba0fbe567886d57f7794824600191f1d04",
+  "checkHash": "a05e6c24e7fd06cb72d90800a9a5ee55fb3acc18b198d5c8a7d2b38caa1221ab",
+  "node": "v24.14.0",
+  "platform": "linux",
+  "execution": "docker",
+  "complete": false,
+  "score": 0,
+  "passed": 0,
+  "total": 56,
+  "executed": 1,
+  "groups": {
+    "transport": {
+      "weight": 0.125,
+      "passed": 0,
+      "total": 8,
+      "executed": 0,
+      "weightedScore": 0
+    },
+    "inventory": {
+      "weight": 0.125,
+      "passed": 0,
+      "total": 6,
+      "executed": 0,
+      "weightedScore": 0
+    },
+    "orders": {
+      "weight": 0.125,
+      "passed": 0,
+      "total": 8,
+      "executed": 1,
+      "weightedScore": 0
+    },
+    "transfers": {
+      "weight": 0.125,
+      "passed": 0,
+      "total": 8,
+      "executed": 0,
+      "weightedScore": 0
+    },
+    "clock": {
+      "weight": 0.125,
+      "passed": 0,
+      "total": 6,
+      "executed": 0,
+      "weightedScore": 0
+    },
+    "idempotency": {
+      "weight": 0.125,
+      "passed": 0,
+      "total": 8,
+      "executed": 0,
+      "weightedScore": 0
+    },
+    "concurrency": {
+      "weight": 0.125,
+      "passed": 0,
+      "total": 6,
+      "executed": 0,
+      "weightedScore": 0
+    },
+    "recovery": {
+      "weight": 0.125,
+      "passed": 0,
+      "total": 6,
+      "executed": 0,
+      "weightedScore": 0
+    }
+  },
+  "checks": [
+    {
+      "id": "O06",
+      "group": "orders",
+      "description": "Partial returns restore original warehouse without reopening orders",
+      "passed": false,
+      "error": "AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n\n6 !== 8\n\n    at file:///home/runner/work/RL-Gym-for-Coding-Agents/RL-Gym-for-Coding-Agents/evaluation/tests/cases/orders.mjs:35:10\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)\n    at async withService (file:///home/runner/work/RL-Gym-for-Coding-Agents/RL-Gym-for-Coding-Agents/evaluation/tests/harness.mjs:87:24)\n    at async score (file:///home/runner/work/RL-Gym-for-Coding-Agents/RL-Gym-for-Coding-Agents/evaluation/score.mjs:37:11)\n    at async file:///home/runner/work/RL-Gym-for-Coding-Agents/RL-Gym-for-Coding-Agents/evaluation/mutants/check.mjs:24:18"
+    }
+  ]
+}

@@ -35,10 +35,11 @@ The repository includes a public task and starter, a working reference, a privat
 
 | Evidence | Current result |
 |---|---|
-| Reference correctness | **56/56** local black-box checks passed |
-| Verifier sensitivity | **18/18** executable mutants detected |
-| Determinism | Three complete local reference runs with identical outcomes |
-| Linux containers and OpenHands integration | Prepared; execution pending |
+| Reference correctness | **56/56** local and Linux Docker checks passed |
+| Verifier sensitivity | **18/18** executable mutants detected locally and in Docker |
+| Determinism | Three complete Docker reference runs with identical outcomes |
+| Linux containers | [Clean hosted-runner validation passed](evals/docker/README.md) |
+| OpenHands integration | Prepared; image validation and real provider execution pending |
 | Two frontier-model attempts | Not run; the **below-30% difficulty target is unproven** |
 
 Badges summarize recorded local results, not live CI. See [proof of work](evaluation/proof-of-work/README.md) for the reports and their limitations. Do not expose the reference or verifier to an evaluated agent; provide only its designated public workspace.
@@ -92,7 +93,7 @@ Detailed flags, container commands, the public/private boundary, and the one-pas
 
 This reference cannot preserve its storage guarantees on Vercel Functions as-is: it requires durable `DATA_DIR` snapshots and one writer, while Functions provide a read-only filesystem and writable `/tmp` scratch space. See [Vercel's filesystem documentation](https://vercel.com/docs/functions/runtimes#file-system-support).
 
-Supporting Vercel requires external durable transactional storage and revised concurrency handling before deployment configuration is added. A single container or VM with persistent storage matches the current design; Linux container execution remains unverified. No Vercel deployment has been performed.
+Supporting Vercel requires external durable transactional storage and revised concurrency handling before deployment configuration is added. A single container or VM with persistent storage matches the current design; Linux Docker reference validation passed on a clean hosted runner. No Vercel deployment has been performed.
 
 ## Further reading
 

@@ -1,0 +1,5 @@
+
+> stockroom-rl-gym@0.1.0 check:metadata
+> node evaluation/metadata.mjs
+
+{"checks":56,"groups":8,"weightSum":1}

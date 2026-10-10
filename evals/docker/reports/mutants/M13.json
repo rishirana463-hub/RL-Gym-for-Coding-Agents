@@ -1,0 +1,89 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-10-10T19:30:02.213Z",
+  "solution": ".runs/mutants/M13",
+  "solutionHash": "9b3e22bfe75f77c695a0caa0130883b5491461195dcc995f8a65ec9d1e560094",
+  "checkHash": "a05e6c24e7fd06cb72d90800a9a5ee55fb3acc18b198d5c8a7d2b38caa1221ab",
+  "node": "v24.14.0",
+  "platform": "linux",
+  "execution": "docker",
+  "complete": false,
+  "score": 0,
+  "passed": 0,
+  "total": 56,
+  "executed": 2,
+  "groups": {
+    "transport": {
+      "weight": 0.125,
+      "passed": 0,
+      "total": 8,
+      "executed": 0,
+      "weightedScore": 0
+    },
+    "inventory": {
+      "weight": 0.125,
+      "passed": 0,
+      "total": 6,
+      "executed": 0,
+      "weightedScore": 0
+    },
+    "orders": {
+      "weight": 0.125,
+      "passed": 0,
+      "total": 8,
+      "executed": 0,
+      "weightedScore": 0
+    },
+    "transfers": {
+      "weight": 0.125,
+      "passed": 0,
+      "total": 8,
+      "executed": 1,
+      "weightedScore": 0
+    },
+    "clock": {
+      "weight": 0.125,
+      "passed": 0,
+      "total": 6,
+      "executed": 0,
+      "weightedScore": 0
+    },
+    "idempotency": {
+      "weight": 0.125,
+      "passed": 0,
+      "total": 8,
+      "executed": 0,
+      "weightedScore": 0
+    },
+    "concurrency": {
+      "weight": 0.125,
+      "passed": 0,
+      "total": 6,
+      "executed": 1,
+      "weightedScore": 0
+    },
+    "recovery": {
+      "weight": 0.125,
+      "passed": 0,
+      "total": 6,
+      "executed": 0,
+      "weightedScore": 0
+    }
+  },
+  "checks": [
+    {
+      "id": "F02",
+      "group": "transfers",
+      "description": "Dispatch cannot consume reserved stock and same-warehouse fails",
+      "passed": false,
+      "error": "AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n\n200 !== 409\n\n    at Object.error (file:///home/runner/work/RL-Gym-for-Coding-Agents/RL-Gym-for-Coding-Agents/evaluation/tests/harness.mjs:80:126)\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)\n    at async file:///home/runner/work/RL-Gym-for-Coding-Agents/RL-Gym-for-Coding-Agents/evaluation/tests/cases/transfers.mjs:15:5\n    at async unchanged (file:///home/runner/work/RL-Gym-for-Coding-Agents/RL-Gym-for-Coding-Agents/evaluation/tests/helpers.mjs:7:78)\n    at async file:///home/runner/work/RL-Gym-for-Coding-Agents/RL-Gym-for-Coding-Agents/evaluation/tests/cases/transfers.mjs:14:3\n    at async withService (file:///home/runner/work/RL-Gym-for-Coding-Agents/RL-Gym-for-Coding-Agents/evaluation/tests/harness.mjs:87:24)\n    at async score (file:///home/runner/work/RL-Gym-for-Coding-Agents/RL-Gym-for-Coding-Agents/evaluation/score.mjs:37:11)\n    at async file:///home/runner/work/RL-Gym-for-Coding-Agents/RL-Gym-for-Coding-Agents/evaluation/mutants/check.mjs:24:18"
+    },
+    {
+      "id": "C01",
+      "group": "concurrency",
+      "description": "Concurrent reservations cannot oversell the last units",
+      "passed": false,
+      "error": "AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n\n16 !== 7\n\n    at file:///home/runner/work/RL-Gym-for-Coding-Agents/RL-Gym-for-Coding-Agents/evaluation/tests/cases/concurrency.mjs:10:10\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)\n    at async withService (file:///home/runner/work/RL-Gym-for-Coding-Agents/RL-Gym-for-Coding-Agents/evaluation/tests/harness.mjs:87:24)\n    at async score (file:///home/runner/work/RL-Gym-for-Coding-Agents/RL-Gym-for-Coding-Agents/evaluation/score.mjs:37:11)\n    at async file:///home/runner/work/RL-Gym-for-Coding-Agents/RL-Gym-for-Coding-Agents/evaluation/mutants/check.mjs:24:18"
+    }
+  ]
+}

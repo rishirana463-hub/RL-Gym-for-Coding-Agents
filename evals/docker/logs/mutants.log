@@ -1,0 +1,875 @@
+
+> stockroom-rl-gym@0.1.0 check:mutants
+> node evaluation/mutants/check.mjs --docker
+
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 558B done
+#1 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/library/node:24.14.0-bookworm-slim@sha256:d8e448a56fc63242f70026718378bd4b00f8c82e78d20eefb199224a4d8e33d8
+#2 DONE 0.0s
+
+#3 [internal] load .dockerignore
+#3 transferring context: 2B done
+#3 DONE 0.0s
+
+#4 [1/7] FROM docker.io/library/node:24.14.0-bookworm-slim@sha256:d8e448a56fc63242f70026718378bd4b00f8c82e78d20eefb199224a4d8e33d8
+#4 DONE 0.0s
+
+#5 [internal] load build context
+#5 transferring context: 24.96kB done
+#5 DONE 0.0s
+
+#6 [2/7] WORKDIR /workspace
+#6 CACHED
+
+#7 [4/7] COPY --chown=node:node task/instruction.md /workspace/instruction.md
+#7 CACHED
+
+#8 [5/7] COPY app-setup/ /opt/app-setup/
+#8 CACHED
+
+#9 [3/7] COPY --chown=node:node task/public/ /workspace/
+#9 CACHED
+
+#10 [6/7] RUN chmod +x /opt/app-setup/*.sh && mkdir -p /data && chown node:node /data
+#10 CACHED
+
+#11 [7/7] RUN node /opt/app-setup/lifecycle.mjs build /workspace
+#11 CACHED
+
+#12 exporting to image
+#12 exporting layers done
+#12 writing image sha256:e7a231df16cc9182d7f2c34ac35f2c86ba8166ecc0fd988ab29c16f386cdde5f done
+#12 naming to docker.io/library/stockroom-score:d6ccc7096536 done
+#12 DONE 0.0s
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 558B done
+#1 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/library/node:24.14.0-bookworm-slim@sha256:d8e448a56fc63242f70026718378bd4b00f8c82e78d20eefb199224a4d8e33d8
+#2 DONE 0.0s
+
+#3 [internal] load .dockerignore
+#3 transferring context: 2B done
+#3 DONE 0.0s
+
+#4 [1/7] FROM docker.io/library/node:24.14.0-bookworm-slim@sha256:d8e448a56fc63242f70026718378bd4b00f8c82e78d20eefb199224a4d8e33d8
+#4 DONE 0.0s
+
+#5 [internal] load build context
+#5 transferring context: 24.96kB done
+#5 DONE 0.0s
+
+#6 [2/7] WORKDIR /workspace
+#6 CACHED
+
+#7 [3/7] COPY --chown=node:node task/public/ /workspace/
+#7 DONE 0.0s
+
+#8 [4/7] COPY --chown=node:node task/instruction.md /workspace/instruction.md
+#8 DONE 0.0s
+
+#9 [5/7] COPY app-setup/ /opt/app-setup/
+#9 DONE 0.0s
+
+#10 [6/7] RUN chmod +x /opt/app-setup/*.sh && mkdir -p /data && chown node:node /data
+#10 DONE 0.2s
+
+#11 [7/7] RUN node /opt/app-setup/lifecycle.mjs build /workspace
+#11 0.290 Build checks passed.
+#11 DONE 0.3s
+
+#12 exporting to image
+#12 exporting layers
+#12 exporting layers 1.0s done
+#12 writing image sha256:9a83ddb2ed2cdb6f9a123574d8f1a2eb249d24b430b49af0af7b976110fc13bd done
+#12 naming to docker.io/library/stockroom-score:a7538656cd96 done
+#12 DONE 1.1s
+KILLED M01: Apply a successful retry twice (D01, C02)
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 558B done
+#1 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/library/node:24.14.0-bookworm-slim@sha256:d8e448a56fc63242f70026718378bd4b00f8c82e78d20eefb199224a4d8e33d8
+#2 DONE 0.0s
+
+#3 [internal] load .dockerignore
+#3 transferring context: 2B done
+#3 DONE 0.0s
+
+#4 [1/7] FROM docker.io/library/node:24.14.0-bookworm-slim@sha256:d8e448a56fc63242f70026718378bd4b00f8c82e78d20eefb199224a4d8e33d8
+#4 DONE 0.0s
+
+#5 [internal] load build context
+#5 transferring context: 24.96kB done
+#5 DONE 0.0s
+
+#6 [2/7] WORKDIR /workspace
+#6 CACHED
+
+#7 [3/7] COPY --chown=node:node task/public/ /workspace/
+#7 DONE 0.0s
+
+#8 [4/7] COPY --chown=node:node task/instruction.md /workspace/instruction.md
+#8 DONE 0.0s
+
+#9 [5/7] COPY app-setup/ /opt/app-setup/
+#9 DONE 0.0s
+
+#10 [6/7] RUN chmod +x /opt/app-setup/*.sh && mkdir -p /data && chown node:node /data
+#10 DONE 0.2s
+
+#11 [7/7] RUN node /opt/app-setup/lifecycle.mjs build /workspace
+#11 0.290 Build checks passed.
+#11 DONE 0.3s
+
+#12 exporting to image
+#12 exporting layers
+#12 exporting layers 1.1s done
+#12 writing image sha256:26252c8f948f7db293fc47d9c76c91e533ec961de38e510f65dc4002a4ee8435 done
+#12 naming to docker.io/library/stockroom-score:612e33ce4cf7 done
+#12 DONE 1.1s
+KILLED M02: Treat object key insertion order as retry identity (D02)
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 558B done
+#1 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/library/node:24.14.0-bookworm-slim@sha256:d8e448a56fc63242f70026718378bd4b00f8c82e78d20eefb199224a4d8e33d8
+#2 DONE 0.0s
+
+#3 [internal] load .dockerignore
+#3 transferring context: 2B done
+#3 DONE 0.0s
+
+#4 [1/7] FROM docker.io/library/node:24.14.0-bookworm-slim@sha256:d8e448a56fc63242f70026718378bd4b00f8c82e78d20eefb199224a4d8e33d8
+#4 DONE 0.0s
+
+#5 [internal] load build context
+#5 transferring context: 24.96kB done
+#5 DONE 0.0s
+
+#6 [2/7] WORKDIR /workspace
+#6 CACHED
+
+#7 [3/7] COPY --chown=node:node task/public/ /workspace/
+#7 DONE 0.0s
+
+#8 [4/7] COPY --chown=node:node task/instruction.md /workspace/instruction.md
+#8 DONE 0.0s
+
+#9 [5/7] COPY app-setup/ /opt/app-setup/
+#9 DONE 0.0s
+
+#10 [6/7] RUN chmod +x /opt/app-setup/*.sh && mkdir -p /data && chown node:node /data
+#10 DONE 0.2s
+
+#11 [7/7] RUN node /opt/app-setup/lifecycle.mjs build /workspace
+#11 0.274 Build checks passed.
+#11 DONE 0.3s
+
+#12 exporting to image
+#12 exporting layers
+#12 exporting layers 1.0s done
+#12 writing image sha256:849afbfcf19ea3de33d8e2759329777b372be1aee3e3b340c1c407478c5d946c done
+#12 naming to docker.io/library/stockroom-score:6f6289d3ea7c done
+#12 DONE 1.0s
+KILLED M03: Silently accept a conflicting request ID (D03)
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 558B done
+#1 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/library/node:24.14.0-bookworm-slim@sha256:d8e448a56fc63242f70026718378bd4b00f8c82e78d20eefb199224a4d8e33d8
+#2 DONE 0.0s
+
+#3 [internal] load .dockerignore
+#3 transferring context: 2B done
+#3 DONE 0.0s
+
+#4 [1/7] FROM docker.io/library/node:24.14.0-bookworm-slim@sha256:d8e448a56fc63242f70026718378bd4b00f8c82e78d20eefb199224a4d8e33d8
+#4 DONE 0.0s
+
+#5 [internal] load build context
+#5 transferring context: 24.95kB done
+#5 DONE 0.0s
+
+#6 [2/7] WORKDIR /workspace
+#6 CACHED
+
+#7 [3/7] COPY --chown=node:node task/public/ /workspace/
+#7 DONE 0.0s
+
+#8 [4/7] COPY --chown=node:node task/instruction.md /workspace/instruction.md
+#8 DONE 0.0s
+
+#9 [5/7] COPY app-setup/ /opt/app-setup/
+#9 DONE 0.0s
+
+#10 [6/7] RUN chmod +x /opt/app-setup/*.sh && mkdir -p /data && chown node:node /data
+#10 DONE 0.1s
+
+#11 [7/7] RUN node /opt/app-setup/lifecycle.mjs build /workspace
+#11 0.286 Build checks passed.
+#11 DONE 0.3s
+
+#12 exporting to image
+#12 exporting layers
+#12 exporting layers 1.0s done
+#12 writing image sha256:33c39bd5cd218988b5c2a48c0337565041e309a4b54daa8f9351b930e701e78b done
+#12 naming to docker.io/library/stockroom-score:f740a9b2d17e done
+#12 DONE 1.1s
+KILLED M04: Expire strictly after the deadline instead of at it (K01, K05)
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 558B done
+#1 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/library/node:24.14.0-bookworm-slim@sha256:d8e448a56fc63242f70026718378bd4b00f8c82e78d20eefb199224a4d8e33d8
+#2 DONE 0.0s
+
+#3 [internal] load .dockerignore
+#3 transferring context: 2B done
+#3 DONE 0.0s
+
+#4 [1/7] FROM docker.io/library/node:24.14.0-bookworm-slim@sha256:d8e448a56fc63242f70026718378bd4b00f8c82e78d20eefb199224a4d8e33d8
+#4 DONE 0.0s
+
+#5 [internal] load build context
+#5 transferring context: 24.96kB done
+#5 DONE 0.0s
+
+#6 [2/7] WORKDIR /workspace
+#6 CACHED
+
+#7 [3/7] COPY --chown=node:node task/public/ /workspace/
+#7 DONE 0.0s
+
+#8 [4/7] COPY --chown=node:node task/instruction.md /workspace/instruction.md
+#8 DONE 0.0s
+
+#9 [5/7] COPY app-setup/ /opt/app-setup/
+#9 DONE 0.0s
+
+#10 [6/7] RUN chmod +x /opt/app-setup/*.sh && mkdir -p /data && chown node:node /data
+#10 DONE 0.2s
+
+#11 [7/7] RUN node /opt/app-setup/lifecycle.mjs build /workspace
+#11 0.280 Build checks passed.
+#11 DONE 0.3s
+
+#12 exporting to image
+#12 exporting layers
+#12 exporting layers 1.1s done
+#12 writing image sha256:b96de1e183f27108170a86b9448def38d5748b203eab3e2efd07caf7427fa902 done
+#12 naming to docker.io/library/stockroom-score:acfcc0bce407 done
+#12 DONE 1.1s
+KILLED M05: Accept stale revisions (O04, C03, C04)
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 558B done
+#1 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/library/node:24.14.0-bookworm-slim@sha256:d8e448a56fc63242f70026718378bd4b00f8c82e78d20eefb199224a4d8e33d8
+#2 DONE 0.0s
+
+#3 [internal] load .dockerignore
+#3 transferring context: 2B done
+#3 DONE 0.0s
+
+#4 [1/7] FROM docker.io/library/node:24.14.0-bookworm-slim@sha256:d8e448a56fc63242f70026718378bd4b00f8c82e78d20eefb199224a4d8e33d8
+#4 DONE 0.0s
+
+#5 [internal] load build context
+#5 transferring context: 24.94kB done
+#5 DONE 0.0s
+
+#6 [2/7] WORKDIR /workspace
+#6 CACHED
+
+#7 [3/7] COPY --chown=node:node task/public/ /workspace/
+#7 DONE 0.0s
+
+#8 [4/7] COPY --chown=node:node task/instruction.md /workspace/instruction.md
+#8 DONE 0.0s
+
+#9 [5/7] COPY app-setup/ /opt/app-setup/
+#9 DONE 0.0s
+
+#10 [6/7] RUN chmod +x /opt/app-setup/*.sh && mkdir -p /data && chown node:node /data
+#10 DONE 0.2s
+
+#11 [7/7] RUN node /opt/app-setup/lifecycle.mjs build /workspace
+#11 0.297 Build checks passed.
+#11 DONE 0.3s
+
+#12 exporting to image
+#12 exporting layers
+#12 exporting layers 1.0s done
+#12 writing image sha256:ae3e5f28bd906bc7ddb7cf2f0155bdacaeccd7e300ae4994e146b3b1226f1b85 done
+#12 naming to docker.io/library/stockroom-score:b92ac88dc5ea done
+#12 DONE 1.0s
+KILLED M06: Validate each return independently of past returns (O07)
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 558B done
+#1 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/library/node:24.14.0-bookworm-slim@sha256:d8e448a56fc63242f70026718378bd4b00f8c82e78d20eefb199224a4d8e33d8
+#2 DONE 0.0s
+
+#3 [internal] load .dockerignore
+#3 transferring context: 2B done
+#3 DONE 0.0s
+
+#4 [1/7] FROM docker.io/library/node:24.14.0-bookworm-slim@sha256:d8e448a56fc63242f70026718378bd4b00f8c82e78d20eefb199224a4d8e33d8
+#4 DONE 0.0s
+
+#5 [internal] load build context
+#5 transferring context: 24.98kB done
+#5 DONE 0.0s
+
+#6 [2/7] WORKDIR /workspace
+#6 CACHED
+
+#7 [3/7] COPY --chown=node:node task/public/ /workspace/
+#7 DONE 0.0s
+
+#8 [4/7] COPY --chown=node:node task/instruction.md /workspace/instruction.md
+#8 DONE 0.0s
+
+#9 [5/7] COPY app-setup/ /opt/app-setup/
+#9 DONE 0.0s
+
+#10 [6/7] RUN chmod +x /opt/app-setup/*.sh && mkdir -p /data && chown node:node /data
+#10 DONE 0.2s
+
+#11 [7/7] RUN node /opt/app-setup/lifecycle.mjs build /workspace
+#11 0.289 Build checks passed.
+#11 DONE 0.3s
+
+#12 exporting to image
+#12 exporting layers
+#12 exporting layers 1.0s done
+#12 writing image sha256:27516b9f77dd933ce98957292e8dab72b8551c80f806733fb61eaddd5f1b03c0 done
+#12 naming to docker.io/library/stockroom-score:cfc808362c37 done
+#12 DONE 1.0s
+KILLED M07: Discard physical stock when cancelling a reservation (I05)
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 558B done
+#1 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/library/node:24.14.0-bookworm-slim@sha256:d8e448a56fc63242f70026718378bd4b00f8c82e78d20eefb199224a4d8e33d8
+#2 DONE 0.0s
+
+#3 [internal] load .dockerignore
+#3 transferring context: 2B done
+#3 DONE 0.0s
+
+#4 [1/7] FROM docker.io/library/node:24.14.0-bookworm-slim@sha256:d8e448a56fc63242f70026718378bd4b00f8c82e78d20eefb199224a4d8e33d8
+#4 DONE 0.0s
+
+#5 [internal] load build context
+#5 transferring context: 24.94kB done
+#5 DONE 0.0s
+
+#6 [2/7] WORKDIR /workspace
+#6 CACHED
+
+#7 [3/7] COPY --chown=node:node task/public/ /workspace/
+#7 DONE 0.0s
+
+#8 [4/7] COPY --chown=node:node task/instruction.md /workspace/instruction.md
+#8 DONE 0.0s
+
+#9 [5/7] COPY app-setup/ /opt/app-setup/
+#9 DONE 0.0s
+
+#10 [6/7] RUN chmod +x /opt/app-setup/*.sh && mkdir -p /data && chown node:node /data
+#10 DONE 0.2s
+
+#11 [7/7] RUN node /opt/app-setup/lifecycle.mjs build /workspace
+#11 0.290 Build checks passed.
+#11 DONE 0.3s
+
+#12 exporting to image
+#12 exporting layers
+#12 exporting layers 1.1s done
+#12 writing image sha256:f7438e07e2bce3d09ad90c9b30281eedf3cb5bf28b7a287d8df85f1936ff49ac done
+#12 naming to docker.io/library/stockroom-score:0cc4f0f47adb done
+#12 DONE 1.1s
+KILLED M08: Ship without consuming physical stock (I05, I06)
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 558B done
+#1 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/library/node:24.14.0-bookworm-slim@sha256:d8e448a56fc63242f70026718378bd4b00f8c82e78d20eefb199224a4d8e33d8
+#2 DONE 0.0s
+
+#3 [internal] load .dockerignore
+#3 transferring context: 2B done
+#3 DONE 0.0s
+
+#4 [1/7] FROM docker.io/library/node:24.14.0-bookworm-slim@sha256:d8e448a56fc63242f70026718378bd4b00f8c82e78d20eefb199224a4d8e33d8
+#4 DONE 0.0s
+
+#5 [internal] load build context
+#5 transferring context: 25.00kB done
+#5 DONE 0.0s
+
+#6 [2/7] WORKDIR /workspace
+#6 CACHED
+
+#7 [3/7] COPY --chown=node:node task/public/ /workspace/
+#7 DONE 0.0s
+
+#8 [4/7] COPY --chown=node:node task/instruction.md /workspace/instruction.md
+#8 DONE 0.0s
+
+#9 [5/7] COPY app-setup/ /opt/app-setup/
+#9 DONE 0.0s
+
+#10 [6/7] RUN chmod +x /opt/app-setup/*.sh && mkdir -p /data && chown node:node /data
+#10 DONE 0.2s
+
+#11 [7/7] RUN node /opt/app-setup/lifecycle.mjs build /workspace
+#11 0.294 Build checks passed.
+#11 DONE 0.3s
+
+#12 exporting to image
+#12 exporting layers
+#12 exporting layers 1.1s done
+#12 writing image sha256:8a8989f253849ddf602ffd37fd2e0fac7a985eb9016ab735800f9c8973c79680 done
+#12 naming to docker.io/library/stockroom-score:534ba3cd1e8b done
+#12 DONE 1.1s
+KILLED M09: Credit the destination before transfer receipt (F01)
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 558B done
+#1 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/library/node:24.14.0-bookworm-slim@sha256:d8e448a56fc63242f70026718378bd4b00f8c82e78d20eefb199224a4d8e33d8
+#2 DONE 0.0s
+
+#3 [internal] load .dockerignore
+#3 transferring context: 2B done
+#3 DONE 0.0s
+
+#4 [1/7] FROM docker.io/library/node:24.14.0-bookworm-slim@sha256:d8e448a56fc63242f70026718378bd4b00f8c82e78d20eefb199224a4d8e33d8
+#4 DONE 0.0s
+
+#5 [internal] load build context
+#5 transferring context: 24.98kB done
+#5 DONE 0.0s
+
+#6 [2/7] WORKDIR /workspace
+#6 CACHED
+
+#7 [3/7] COPY --chown=node:node task/public/ /workspace/
+#7 DONE 0.0s
+
+#8 [4/7] COPY --chown=node:node task/instruction.md /workspace/instruction.md
+#8 DONE 0.0s
+
+#9 [5/7] COPY app-setup/ /opt/app-setup/
+#9 DONE 0.0s
+
+#10 [6/7] RUN chmod +x /opt/app-setup/*.sh && mkdir -p /data && chown node:node /data
+#10 DONE 0.2s
+
+#11 [7/7] RUN node /opt/app-setup/lifecycle.mjs build /workspace
+#11 0.292 Build checks passed.
+#11 DONE 0.3s
+
+#12 exporting to image
+#12 exporting layers
+#12 exporting layers 1.0s done
+#12 writing image sha256:c9ad90deb41c205f578caf2d7cd275dcce3208a31dac8a06759fc53c50697ac3 done
+#12 naming to docker.io/library/stockroom-score:151847bd3564 done
+#12 DONE 1.0s
+KILLED M10: Restore returns to the wrong warehouse (O06)
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 558B done
+#1 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/library/node:24.14.0-bookworm-slim@sha256:d8e448a56fc63242f70026718378bd4b00f8c82e78d20eefb199224a4d8e33d8
+#2 DONE 0.0s
+
+#3 [internal] load .dockerignore
+#3 transferring context: 2B done
+#3 DONE 0.0s
+
+#4 [1/7] FROM docker.io/library/node:24.14.0-bookworm-slim@sha256:d8e448a56fc63242f70026718378bd4b00f8c82e78d20eefb199224a4d8e33d8
+#4 DONE 0.0s
+
+#5 [internal] load build context
+#5 transferring context: 24.94kB done
+#5 DONE 0.0s
+
+#6 [2/7] WORKDIR /workspace
+#6 CACHED
+
+#7 [3/7] COPY --chown=node:node task/public/ /workspace/
+#7 DONE 0.0s
+
+#8 [4/7] COPY --chown=node:node task/instruction.md /workspace/instruction.md
+#8 DONE 0.0s
+
+#9 [5/7] COPY app-setup/ /opt/app-setup/
+#9 DONE 0.0s
+
+#10 [6/7] RUN chmod +x /opt/app-setup/*.sh && mkdir -p /data && chown node:node /data
+#10 DONE 0.2s
+
+#11 [7/7] RUN node /opt/app-setup/lifecycle.mjs build /workspace
+#11 0.291 Build checks passed.
+#11 DONE 0.3s
+
+#12 exporting to image
+#12 exporting layers
+#12 exporting layers 1.0s done
+#12 writing image sha256:7ab24be8a66da667017e544017069d06f1f6ad3ce55beae3268629079e1aff15 done
+#12 naming to docker.io/library/stockroom-score:0ecf298f9bbb done
+#12 DONE 1.0s
+KILLED M11: Mutate live state before all lines validate (O01, O05, F03)
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 558B done
+#1 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/library/node:24.14.0-bookworm-slim@sha256:d8e448a56fc63242f70026718378bd4b00f8c82e78d20eefb199224a4d8e33d8
+#2 DONE 0.0s
+
+#3 [internal] load .dockerignore
+#3 transferring context: 2B done
+#3 DONE 0.0s
+
+#4 [1/7] FROM docker.io/library/node:24.14.0-bookworm-slim@sha256:d8e448a56fc63242f70026718378bd4b00f8c82e78d20eefb199224a4d8e33d8
+#4 DONE 0.0s
+
+#5 [internal] load build context
+#5 transferring context: 24.98kB done
+#5 DONE 0.0s
+
+#6 [2/7] WORKDIR /workspace
+#6 CACHED
+
+#7 [3/7] COPY --chown=node:node task/public/ /workspace/
+#7 DONE 0.0s
+
+#8 [4/7] COPY --chown=node:node task/instruction.md /workspace/instruction.md
+#8 DONE 0.0s
+
+#9 [5/7] COPY app-setup/ /opt/app-setup/
+#9 DONE 0.0s
+
+#10 [6/7] RUN chmod +x /opt/app-setup/*.sh && mkdir -p /data && chown node:node /data
+#10 DONE 0.1s
+
+#11 [7/7] RUN node /opt/app-setup/lifecycle.mjs build /workspace
+#11 0.279 Build checks passed.
+#11 DONE 0.3s
+
+#12 exporting to image
+#12 exporting layers
+#12 exporting layers 1.0s done
+#12 writing image sha256:aecb2ff2b9b5e75794cb210871bdcc0056cf51ce9b3b24d5d728fa8310bb7028 done
+#12 naming to docker.io/library/stockroom-score:96f64e5147e0 done
+#12 DONE 1.0s
+KILLED M12: Lose retry identity on process restart (R02)
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 558B done
+#1 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/library/node:24.14.0-bookworm-slim@sha256:d8e448a56fc63242f70026718378bd4b00f8c82e78d20eefb199224a4d8e33d8
+#2 DONE 0.0s
+
+#3 [internal] load .dockerignore
+#3 transferring context: 2B done
+#3 DONE 0.0s
+
+#4 [1/7] FROM docker.io/library/node:24.14.0-bookworm-slim@sha256:d8e448a56fc63242f70026718378bd4b00f8c82e78d20eefb199224a4d8e33d8
+#4 DONE 0.0s
+
+#5 [internal] load build context
+#5 transferring context: 24.94kB done
+#5 DONE 0.0s
+
+#6 [2/7] WORKDIR /workspace
+#6 CACHED
+
+#7 [3/7] COPY --chown=node:node task/public/ /workspace/
+#7 DONE 0.0s
+
+#8 [4/7] COPY --chown=node:node task/instruction.md /workspace/instruction.md
+#8 DONE 0.0s
+
+#9 [5/7] COPY app-setup/ /opt/app-setup/
+#9 DONE 0.0s
+
+#10 [6/7] RUN chmod +x /opt/app-setup/*.sh && mkdir -p /data && chown node:node /data
+#10 DONE 0.2s
+
+#11 [7/7] RUN node /opt/app-setup/lifecycle.mjs build /workspace
+#11 0.314 Build checks passed.
+#11 DONE 0.3s
+
+#12 exporting to image
+#12 exporting layers
+#12 exporting layers 1.0s done
+#12 writing image sha256:0edf52810faff18c3930d59701756e0283ba12ca40c7576a41b1e0b59a33607f done
+#12 naming to docker.io/library/stockroom-score:9b3e22bfe75f done
+#12 DONE 1.0s
+KILLED M13: Count reserved stock as available (F02, C01)
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 558B done
+#1 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/library/node:24.14.0-bookworm-slim@sha256:d8e448a56fc63242f70026718378bd4b00f8c82e78d20eefb199224a4d8e33d8
+#2 DONE 0.0s
+
+#3 [internal] load .dockerignore
+#3 transferring context: 2B done
+#3 DONE 0.0s
+
+#4 [1/7] FROM docker.io/library/node:24.14.0-bookworm-slim@sha256:d8e448a56fc63242f70026718378bd4b00f8c82e78d20eefb199224a4d8e33d8
+#4 DONE 0.0s
+
+#5 [internal] load build context
+#5 transferring context: 24.93kB done
+#5 DONE 0.0s
+
+#6 [2/7] WORKDIR /workspace
+#6 CACHED
+
+#7 [3/7] COPY --chown=node:node task/public/ /workspace/
+#7 DONE 0.0s
+
+#8 [4/7] COPY --chown=node:node task/instruction.md /workspace/instruction.md
+#8 DONE 0.0s
+
+#9 [5/7] COPY app-setup/ /opt/app-setup/
+#9 DONE 0.0s
+
+#10 [6/7] RUN chmod +x /opt/app-setup/*.sh && mkdir -p /data && chown node:node /data
+#10 DONE 0.2s
+
+#11 [7/7] RUN node /opt/app-setup/lifecycle.mjs build /workspace
+#11 0.306 Build checks passed.
+#11 DONE 0.3s
+
+#12 exporting to image
+#12 exporting layers
+#12 exporting layers 1.0s done
+#12 writing image sha256:af04d94bc05526b158ba3bbb4e05fab1016f9f96106c2c35232b2a616acd8393 done
+#12 naming to docker.io/library/stockroom-score:e60d0297c88f done
+#12 DONE 1.0s
+KILLED M14: Acknowledge in-memory commits without durability (R01, R03)
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 558B done
+#1 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/library/node:24.14.0-bookworm-slim@sha256:d8e448a56fc63242f70026718378bd4b00f8c82e78d20eefb199224a4d8e33d8
+#2 DONE 0.0s
+
+#3 [internal] load .dockerignore
+#3 transferring context: 2B done
+#3 DONE 0.0s
+
+#4 [1/7] FROM docker.io/library/node:24.14.0-bookworm-slim@sha256:d8e448a56fc63242f70026718378bd4b00f8c82e78d20eefb199224a4d8e33d8
+#4 DONE 0.0s
+
+#5 [internal] load build context
+#5 transferring context: 24.95kB done
+#5 DONE 0.0s
+
+#6 [2/7] WORKDIR /workspace
+#6 CACHED
+
+#7 [3/7] COPY --chown=node:node task/public/ /workspace/
+#7 DONE 0.0s
+
+#8 [4/7] COPY --chown=node:node task/instruction.md /workspace/instruction.md
+#8 DONE 0.0s
+
+#9 [5/7] COPY app-setup/ /opt/app-setup/
+#9 DONE 0.0s
+
+#10 [6/7] RUN chmod +x /opt/app-setup/*.sh && mkdir -p /data && chown node:node /data
+#10 DONE 0.2s
+
+#11 [7/7] RUN node /opt/app-setup/lifecycle.mjs build /workspace
+#11 0.279 Build checks passed.
+#11 DONE 0.3s
+
+#12 exporting to image
+#12 exporting layers
+#12 exporting layers 1.1s done
+#12 writing image sha256:80ec0fe640f3e5e84e04dce18a00b9673ddd418f147ebe091f62469ad2eef99c done
+#12 naming to docker.io/library/stockroom-score:d7362402b6da done
+#12 DONE 1.1s
+KILLED M15: Cancel transfers into the destination warehouse (F04)
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 558B done
+#1 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/library/node:24.14.0-bookworm-slim@sha256:d8e448a56fc63242f70026718378bd4b00f8c82e78d20eefb199224a4d8e33d8
+#2 DONE 0.0s
+
+#3 [internal] load .dockerignore
+#3 transferring context: 2B done
+#3 DONE 0.0s
+
+#4 [1/7] FROM docker.io/library/node:24.14.0-bookworm-slim@sha256:d8e448a56fc63242f70026718378bd4b00f8c82e78d20eefb199224a4d8e33d8
+#4 DONE 0.0s
+
+#5 [internal] load build context
+#5 transferring context: 24.96kB done
+#5 DONE 0.0s
+
+#6 [2/7] WORKDIR /workspace
+#6 CACHED
+
+#7 [3/7] COPY --chown=node:node task/public/ /workspace/
+#7 DONE 0.0s
+
+#8 [4/7] COPY --chown=node:node task/instruction.md /workspace/instruction.md
+#8 DONE 0.0s
+
+#9 [5/7] COPY app-setup/ /opt/app-setup/
+#9 DONE 0.0s
+
+#10 [6/7] RUN chmod +x /opt/app-setup/*.sh && mkdir -p /data && chown node:node /data
+#10 DONE 0.2s
+
+#11 [7/7] RUN node /opt/app-setup/lifecycle.mjs build /workspace
+#11 0.295 Build checks passed.
+#11 DONE 0.3s
+
+#12 exporting to image
+#12 exporting layers
+#12 exporting layers 1.1s done
+#12 writing image sha256:f47c77c82d7e5ccf98f2a79741f298b1f3759ff2a549754032496e69e46f5bd6 done
+#12 naming to docker.io/library/stockroom-score:acbd33db4603 done
+#12 DONE 1.1s
+KILLED M16: Allow the logical clock to move backwards (K02)
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 558B done
+#1 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/library/node:24.14.0-bookworm-slim@sha256:d8e448a56fc63242f70026718378bd4b00f8c82e78d20eefb199224a4d8e33d8
+#2 DONE 0.0s
+
+#3 [internal] load .dockerignore
+#3 transferring context: 2B done
+#3 DONE 0.0s
+
+#4 [1/7] FROM docker.io/library/node:24.14.0-bookworm-slim@sha256:d8e448a56fc63242f70026718378bd4b00f8c82e78d20eefb199224a4d8e33d8
+#4 DONE 0.0s
+
+#5 [internal] load build context
+#5 transferring context: 24.96kB done
+#5 DONE 0.0s
+
+#6 [2/7] WORKDIR /workspace
+#6 CACHED
+
+#7 [3/7] COPY --chown=node:node task/public/ /workspace/
+#7 DONE 0.0s
+
+#8 [4/7] COPY --chown=node:node task/instruction.md /workspace/instruction.md
+#8 DONE 0.0s
+
+#9 [5/7] COPY app-setup/ /opt/app-setup/
+#9 DONE 0.0s
+
+#10 [6/7] RUN chmod +x /opt/app-setup/*.sh && mkdir -p /data && chown node:node /data
+#10 DONE 0.1s
+
+#11 [7/7] RUN node /opt/app-setup/lifecycle.mjs build /workspace
+#11 0.290 Build checks passed.
+#11 DONE 0.3s
+
+#12 exporting to image
+#12 exporting layers
+#12 exporting layers 1.1s done
+#12 writing image sha256:10529ccaaaed186f27bc45e13c15fd5e391eb29a7948308b89bf1f5b9ee7d8ae done
+#12 naming to docker.io/library/stockroom-score:44f6a3915aac done
+#12 DONE 1.1s
+KILLED M17: Omit the inventory cap (I03, O08, F07)
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 558B done
+#1 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/library/node:24.14.0-bookworm-slim@sha256:d8e448a56fc63242f70026718378bd4b00f8c82e78d20eefb199224a4d8e33d8
+#2 DONE 0.0s
+
+#3 [internal] load .dockerignore
+#3 transferring context: 2B done
+#3 DONE 0.0s
+
+#4 [1/7] FROM docker.io/library/node:24.14.0-bookworm-slim@sha256:d8e448a56fc63242f70026718378bd4b00f8c82e78d20eefb199224a4d8e33d8
+#4 DONE 0.0s
+
+#5 [internal] load build context
+#5 transferring context: 24.96kB done
+#5 DONE 0.0s
+
+#6 [2/7] WORKDIR /workspace
+#6 CACHED
+
+#7 [3/7] COPY --chown=node:node task/public/ /workspace/
+#7 DONE 0.0s
+
+#8 [4/7] COPY --chown=node:node task/instruction.md /workspace/instruction.md
+#8 DONE 0.0s
+
+#9 [5/7] COPY app-setup/ /opt/app-setup/
+#9 DONE 0.0s
+
+#10 [6/7] RUN chmod +x /opt/app-setup/*.sh && mkdir -p /data && chown node:node /data
+#10 DONE 0.2s
+
+#11 [7/7] RUN node /opt/app-setup/lifecycle.mjs build /workspace
+#11 0.288 Build checks passed.
+#11 DONE 0.3s
+
+#12 exporting to image
+#12 exporting layers
+#12 exporting layers 1.1s done
+#12 writing image sha256:9be11a803b7ec0a1668dcea28b3aa03a970ca4f4745e453a5a04631a72f928b0 done
+#12 naming to docker.io/library/stockroom-score:6dd24e073e85 done
+#12 DONE 1.1s
+KILLED M18: Cancel all ordered units at expiry, including shipped stock (K03, R06)

@@ -1,0 +1,326 @@
+{
+  "generatedAt": "2026-10-10T19:30:16.161Z",
+  "execution": "docker",
+  "baseline": {
+    "passed": 56,
+    "total": 56,
+    "solutionHash": "d6ccc709653661acfbd888cb1889444434befceeab9de2df06e8bc0e6396f4d6",
+    "checkHash": "a05e6c24e7fd06cb72d90800a9a5ee55fb3acc18b198d5c8a7d2b38caa1221ab"
+  },
+  "total": 18,
+  "killed": 18,
+  "mutants": [
+    {
+      "id": "M01",
+      "description": "Apply a successful retry twice",
+      "file": "engine.mjs",
+      "before": "if (own(previous.requests, c.requestId)) {",
+      "after": "if (false && own(previous.requests, c.requestId)) {",
+      "checks": [
+        "D01",
+        "C02"
+      ],
+      "syntaxValid": true,
+      "killed": true,
+      "detectedBy": [
+        "D01",
+        "C02"
+      ],
+      "solutionHash": "a7538656cd9663675fa733ee61da196c1cecf39342933e2d985bdb7fa7e23a3e"
+    },
+    {
+      "id": "M02",
+      "description": "Treat object key insertion order as retry identity",
+      "file": "engine.mjs",
+      "before": "const fingerprint = canonical(c);",
+      "after": "const fingerprint = JSON.stringify(c);",
+      "checks": [
+        "D02"
+      ],
+      "syntaxValid": true,
+      "killed": true,
+      "detectedBy": [
+        "D02"
+      ],
+      "solutionHash": "612e33ce4cf75eb2137dfca56ae541ad2ce95e9a6247633ee250ea9c6fe9cb0f"
+    },
+    {
+      "id": "M03",
+      "description": "Silently accept a conflicting request ID",
+      "file": "engine.mjs",
+      "before": "if (old.fingerprint !== fingerprint)",
+      "after": "if (false && old.fingerprint !== fingerprint)",
+      "checks": [
+        "D03"
+      ],
+      "syntaxValid": true,
+      "killed": true,
+      "detectedBy": [
+        "D03"
+      ],
+      "solutionHash": "6f6289d3ea7cf6d54374ad4bf3cad2215adfcb2c36558623650a15d59d5be1cb"
+    },
+    {
+      "id": "M04",
+      "description": "Expire strictly after the deadline instead of at it",
+      "file": "engine.mjs",
+      "before": "o.expiresAt <= s.now",
+      "after": "o.expiresAt < s.now",
+      "checks": [
+        "K01",
+        "K05"
+      ],
+      "syntaxValid": true,
+      "killed": true,
+      "detectedBy": [
+        "K01",
+        "K05"
+      ],
+      "solutionHash": "f740a9b2d17e9c0394f936fb7b93fc16544d2a925d95b62293d908a96b397d4a"
+    },
+    {
+      "id": "M05",
+      "description": "Accept stale revisions",
+      "file": "engine.mjs",
+      "before": "if (x.revision !== expected)",
+      "after": "if (false && x.revision !== expected)",
+      "checks": [
+        "O04",
+        "C03",
+        "C04"
+      ],
+      "syntaxValid": true,
+      "killed": true,
+      "detectedBy": [
+        "O04",
+        "C03",
+        "C04"
+      ],
+      "solutionHash": "acfcc0bce407fc58322276c1b3764c021eaf5191bb128cb075a6168a807806de"
+    },
+    {
+      "id": "M06",
+      "description": "Validate each return independently of past returns",
+      "file": "engine.mjs",
+      "before": "q > x.shipped - x.returned",
+      "after": "q > x.shipped",
+      "checks": [
+        "O07"
+      ],
+      "syntaxValid": true,
+      "killed": true,
+      "detectedBy": [
+        "O07"
+      ],
+      "solutionHash": "b92ac88dc5ea44964ed54f11138914da9a343f5b34b62adcf2b7b55418ca93b4"
+    },
+    {
+      "id": "M07",
+      "description": "Discard physical stock when cancelling a reservation",
+      "file": "engine.mjs",
+      "before": "else x.cancelled += q;",
+      "after": "else { inv.onHand -= q; x.cancelled += q; }",
+      "checks": [
+        "I05"
+      ],
+      "syntaxValid": true,
+      "killed": true,
+      "detectedBy": [
+        "I05"
+      ],
+      "solutionHash": "cfc808362c3781a1d2161a26cd2a396789f3b779528230cf2dc722a9d007606c"
+    },
+    {
+      "id": "M08",
+      "description": "Ship without consuming physical stock",
+      "file": "engine.mjs",
+      "before": "inv.onHand -= q; x.shipped += q;",
+      "after": "x.shipped += q;",
+      "checks": [
+        "I05",
+        "I06"
+      ],
+      "syntaxValid": true,
+      "killed": true,
+      "detectedBy": [
+        "I05",
+        "I06"
+      ],
+      "solutionHash": "0cc4f0f47adbf7f8528ed917db2e0a098f9beec5ca5f8affc8d89b9321670571"
+    },
+    {
+      "id": "M09",
+      "description": "Credit the destination before transfer receipt",
+      "file": "engine.mjs",
+      "before": "inv.onHand -= x.quantity;",
+      "after": "inv.onHand -= x.quantity; addStock(stock(s, c.to, x.sku), x.quantity);",
+      "checks": [
+        "F01"
+      ],
+      "syntaxValid": true,
+      "killed": true,
+      "detectedBy": [
+        "F01"
+      ],
+      "solutionHash": "534ba3cd1e8bbf4c72da43c34bed464abd094c42bfc389dece509cdacc970f04"
+    },
+    {
+      "id": "M10",
+      "description": "Restore returns to the wrong warehouse",
+      "file": "engine.mjs",
+      "before": "addStock(inv, q); x.returned += q;",
+      "after": "addStock(stock(s, 'Returns', x.sku), q); x.returned += q;",
+      "checks": [
+        "O06"
+      ],
+      "syntaxValid": true,
+      "killed": true,
+      "detectedBy": [
+        "O06"
+      ],
+      "solutionHash": "151847bd35641a0a3e839c1c25ddf2ba0fbe567886d57f7794824600191f1d04"
+    },
+    {
+      "id": "M11",
+      "description": "Mutate live state before all lines validate",
+      "file": "engine.mjs",
+      "before": "const s = structuredClone(previous);",
+      "after": "const s = previous;",
+      "checks": [
+        "O01",
+        "O05",
+        "F03"
+      ],
+      "syntaxValid": true,
+      "killed": true,
+      "detectedBy": [
+        "O01",
+        "O05",
+        "F03"
+      ],
+      "solutionHash": "0ecf298f9bbbfcdc830e5333498945459ff4ee80458a54b0634ded052dae9b32"
+    },
+    {
+      "id": "M12",
+      "description": "Lose retry identity on process restart",
+      "file": "server.mjs",
+      "before": "let state = load();",
+      "after": "let state = load(); state.requests = {};",
+      "checks": [
+        "R02"
+      ],
+      "syntaxValid": true,
+      "killed": true,
+      "detectedBy": [
+        "R02"
+      ],
+      "solutionHash": "96f64e5147e0eb3fbd02d0866d50b9a9bf37ae32875155a7905f4799b303628c"
+    },
+    {
+      "id": "M13",
+      "description": "Count reserved stock as available",
+      "file": "engine.mjs",
+      "before": "const available = x => x.onHand - x.reserved;",
+      "after": "const available = x => x.onHand;",
+      "checks": [
+        "F02",
+        "C01"
+      ],
+      "syntaxValid": true,
+      "killed": true,
+      "detectedBy": [
+        "F02",
+        "C01"
+      ],
+      "solutionHash": "9b3e22bfe75f77c695a0caa0130883b5491461195dcc995f8a65ec9d1e560094"
+    },
+    {
+      "id": "M14",
+      "description": "Acknowledge in-memory commits without durability",
+      "file": "server.mjs",
+      "before": "persist(outcome.state); state = outcome.state;",
+      "after": "state = outcome.state;",
+      "checks": [
+        "R01",
+        "R03"
+      ],
+      "syntaxValid": true,
+      "killed": true,
+      "detectedBy": [
+        "R01",
+        "R03"
+      ],
+      "solutionHash": "e60d0297c88fc7e398d394a112f0d781f65d4adcd0840a4c5ae557de0c1f0a3b"
+    },
+    {
+      "id": "M15",
+      "description": "Cancel transfers into the destination warehouse",
+      "file": "engine.mjs",
+      "before": "addStock(stock(s, t.from, x.sku), item.quantity);",
+      "after": "addStock(stock(s, t.to, x.sku), item.quantity);",
+      "checks": [
+        "F04"
+      ],
+      "syntaxValid": true,
+      "killed": true,
+      "detectedBy": [
+        "F04"
+      ],
+      "solutionHash": "d7362402b6daa25b9a8433e55fd1a6ed8753debff0a3bacc714fea75b0afe4ee"
+    },
+    {
+      "id": "M16",
+      "description": "Allow the logical clock to move backwards",
+      "file": "engine.mjs",
+      "before": "if (c.now < s.now) fail('INVALID_TIME');",
+      "after": "if (false && c.now < s.now) fail('INVALID_TIME');",
+      "checks": [
+        "K02"
+      ],
+      "syntaxValid": true,
+      "killed": true,
+      "detectedBy": [
+        "K02"
+      ],
+      "solutionHash": "acbd33db46038204346bf24e78e08cf8193ea44bbc0604aa343adb32d3476834"
+    },
+    {
+      "id": "M17",
+      "description": "Omit the inventory cap",
+      "file": "engine.mjs",
+      "before": "if (x.onHand + q > MAX)",
+      "after": "if (false && x.onHand + q > MAX)",
+      "checks": [
+        "I03",
+        "O08",
+        "F07"
+      ],
+      "syntaxValid": true,
+      "killed": true,
+      "detectedBy": [
+        "I03",
+        "O08",
+        "F07"
+      ],
+      "solutionHash": "44f6a3915aac8eaa76fc26bb6cc9276fb89ee5a8b98256e00f5e87e29cb06791"
+    },
+    {
+      "id": "M18",
+      "description": "Cancel all ordered units at expiry, including shipped stock",
+      "file": "engine.mjs",
+      "before": "x.cancelled += x.reserved; x.reserved = 0;",
+      "after": "x.cancelled += x.quantity; x.reserved = 0;",
+      "checks": [
+        "K03",
+        "R06"
+      ],
+      "syntaxValid": true,
+      "killed": true,
+      "detectedBy": [
+        "K03",
+        "R06"
+      ],
+      "solutionHash": "6dd24e073e858c2027f4cca9d405d3bb9d12b2033bb8549943bbb2b992f97098"
+    }
+  ]
+}
