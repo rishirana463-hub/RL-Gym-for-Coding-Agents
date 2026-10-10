@@ -11,6 +11,7 @@ COPY requirements.txt /opt/harness/requirements.txt
 RUN pip install --no-cache-dir -r /opt/harness/requirements.txt
 COPY run.py /opt/harness/run.py
 COPY credentials.py /opt/harness/credentials.py
+COPY preflight.py /opt/harness/preflight.py
 RUN useradd --create-home --uid 1000 agent && mkdir -p /workspace && chown agent:agent /workspace
 USER agent
 WORKDIR /workspace

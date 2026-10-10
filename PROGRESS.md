@@ -36,6 +36,7 @@ Recorded verification, already executed:
 ## In progress
 
 - Step 2: validate the OpenHands image without paid model calls while obtaining access to two eligible frontier models.
+- Prepared a clean-runner OpenHands image build, dependency consistency check, offline SDK/tool/conversation setup and credential helper tests. The setup container has no network and never calls `conversation.run()`; it cannot count as either required model attempt. No eligible model IDs or provider access have been supplied yet.
 - Checking the HackerRank listing and signed-in task for organizer-provided model access/credits, as requested. No model-provider credentials are configured locally; no real attempt has started.
 
 ## Next

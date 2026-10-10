@@ -1,0 +1,42 @@
+name: OpenHands offline preflight
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - .github/workflows/openhands-preflight.yml
+      - environment/openhands/**
+
+permissions:
+  contents: read
+
+jobs:
+  preflight:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          persist-credentials: false
+      - name: Build and validate pinned OpenHands environment
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p evals/openhands-preflight/logs
+          printf '%s\n' "$GITHUB_SHA" > evals/openhands-preflight/source-commit.txt
+          printf '%s/%s/actions/runs/%s\n' "$GITHUB_SERVER_URL" "$GITHUB_REPOSITORY" "$GITHUB_RUN_ID" > evals/openhands-preflight/run-url.txt
+          docker version > evals/openhands-preflight/logs/docker-version.txt
+          docker build --no-cache --progress=plain -t stockroom-openhands:1.54.0 environment/openhands 2>&1 | tee evals/openhands-preflight/logs/build.log
+          docker image inspect stockroom-openhands:1.54.0 > evals/openhands-preflight/image.json
+          docker run --rm --network none --entrypoint python stockroom-openhands:1.54.0 -m pip check 2>&1 | tee evals/openhands-preflight/logs/pip-check.log
+          docker run --rm --network none --entrypoint python stockroom-openhands:1.54.0 -m pip list --format=json > evals/openhands-preflight/packages.json
+          docker run --rm --network none --cap-drop ALL --security-opt no-new-privileges --entrypoint python stockroom-openhands:1.54.0 /opt/harness/preflight.py 2>&1 | tee evals/openhands-preflight/logs/setup.log
+          docker run --rm --network none --entrypoint python -e PYTHONPATH=/opt/harness --mount "type=bind,source=$PWD/environment/openhands/test_credentials.py,target=/tmp/test_credentials.py,readonly" stockroom-openhands:1.54.0 /tmp/test_credentials.py 2>&1 | tee evals/openhands-preflight/logs/credential-tests.log
+      - name: Preserve preflight evidence, including failures
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+        with:
+          name: openhands-preflight-${{ github.run_id }}-${{ github.run_attempt }}
+          retention-days: 30
+          if-no-files-found: error
+          path: evals/openhands-preflight/
