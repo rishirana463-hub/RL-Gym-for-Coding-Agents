@@ -1,0 +1,35 @@
+{
+  "generatedAt": "2026-10-10T15:30:47.296Z",
+  "solution": "C:\\Users\\rishi\\Downloads\\RL GYM AI\\.runs\\polish-phase3-before\\reference",
+  "sourceHash": "dfccf3fd0ae884b506af20c0bd963618440b1f8dd7e5eff838118b2cebbfea8f",
+  "runtime": {
+    "node": "v25.6.0",
+    "v8": "14.1.146.11-node.19",
+    "platform": "win32",
+    "arch": "x64"
+  },
+  "scenario": {
+    "products": 100,
+    "orders": 100,
+    "linesPerOrder": 3,
+    "setupCommands": 200
+  },
+  "measurement": "Sequential GET /v1/state with full body reads; setup, warmup, and JSON validation excluded",
+  "warmups": 20,
+  "batches": 7,
+  "iterationsPerBatch": 100,
+  "timedRequests": 700,
+  "rawResponseBytes": 57379,
+  "batchMilliseconds": [
+    103.9905,
+    106.34169999999995,
+    101.47039999999993,
+    94.83349999999996,
+    93.52129999999988,
+    88.51279999999997,
+    91.67779999999993
+  ],
+  "medianMsPerBatch": 94.83349999999996,
+  "medianMsPerRequest": 0.9483349999999996,
+  "unchangedJsonValidated": true
+}

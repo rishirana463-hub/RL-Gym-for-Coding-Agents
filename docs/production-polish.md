@@ -23,3 +23,11 @@ Verified: lint and build pass; 9 regression tests pass; source and built runtime
 ## Phase 2 — Responsive
 
 The source/dependency inventory confirms there are no pages, stylesheets, frontend components, or browser routes. `/health`, `/v1/state`, and `/v1/commands` are JSON API endpoints. Viewport checks at 360px, 768px, and 1280px, overflow, spacing, and tap targets are therefore not applicable; no visual checks are claimed. No UI or API behavior was added. Lint and build pass; runtime size is unchanged.
+
+## Phase 3 — Performance
+
+Repeated state reads now reuse serialized JSON until the next command. Every command attempt clears the cache, including retries and rejections; no state is retained across writes. A regression verifies fresh responses after commits, errors, retries, expiry, and restart. The runtime remains dependency-free; there are no images, browser bundles, React components, or Framer Motion animations to optimize.
+
+The same local workload (100 products, 100 three-line orders, 20 warmups, seven batches of 100 sequential state reads) measured median batch time of 94.8335 ms before and 62.9603 ms after: 33.61% less time in this benchmark. Both versions returned the same 57,379-byte response and validated unchanged JSON. These measurements are not a general throughput guarantee; reports are in `evaluation/proof-of-work/performance/` and the reusable command is `npm run benchmark`.
+
+Verified: lint/build pass, 10 regression tests pass, reference remains 56/56, mutants remain 18/18 caught, and three reference runs remain stable. Runtime artifact: 12,009 raw bytes / 4,470 gzip bytes. Source size increased for correctness and caching; no browser bundle exists to shrink.

@@ -14,5 +14,5 @@ export async function readCommand(req) {
 export function send(res, status, body) {
   if (res.destroyed || res.writableEnded) return;
   res.writeHead(status, { 'content-type': 'application/json', 'cache-control': 'no-store' });
-  res.end(JSON.stringify(body));
+  res.end(typeof body === 'string' ? body : JSON.stringify(body));
 }

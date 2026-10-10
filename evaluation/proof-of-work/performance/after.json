@@ -1,0 +1,35 @@
+{
+  "generatedAt": "2026-10-10T15:31:10.063Z",
+  "solution": "C:\\Users\\rishi\\Downloads\\RL GYM AI\\reference",
+  "sourceHash": "c2013c1516c04fc339e6008c2a3ae208eb376393f0594e96025bb085a4493f9b",
+  "runtime": {
+    "node": "v25.6.0",
+    "v8": "14.1.146.11-node.19",
+    "platform": "win32",
+    "arch": "x64"
+  },
+  "scenario": {
+    "products": 100,
+    "orders": 100,
+    "linesPerOrder": 3,
+    "setupCommands": 200
+  },
+  "measurement": "Sequential GET /v1/state with full body reads; setup, warmup, and JSON validation excluded",
+  "warmups": 20,
+  "batches": 7,
+  "iterationsPerBatch": 100,
+  "timedRequests": 700,
+  "rawResponseBytes": 57379,
+  "batchMilliseconds": [
+    71.18499999999995,
+    68.22929999999997,
+    72.55449999999996,
+    57.41759999999999,
+    62.96029999999996,
+    53.6235999999999,
+    42.04099999999994
+  ],
+  "medianMsPerBatch": 62.96029999999996,
+  "medianMsPerRequest": 0.6296029999999996,
+  "unchangedJsonValidated": true
+}
