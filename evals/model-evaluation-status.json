@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "recordedAt": "2026-10-10T19:47:22.250970+00:00",
+  "status": "pending-at-user-request",
+  "modelAttempts": 0,
+  "reason": "Organizer does not provide API credits; user explicitly requested leaving real evaluations pending.",
+  "organizerSource": "https://discord.com/channels/1544210398180282380/1558107634698166384/1558380743925829733",
+  "models": [
+    {
+      "slot": "model-a",
+      "model": null,
+      "attempts": 0,
+      "score": null
+    },
+    {
+      "slot": "model-b",
+      "model": null,
+      "attempts": 0,
+      "score": null
+    }
+  ],
+  "reasoningClarificationNeeded": true,
+  "difficultyGate": "not-assessed",
+  "failureAnalyses": "unavailable-without-real-runs"
+}

@@ -34,20 +34,22 @@ Recorded verification, already executed:
 - Gap step 1 completed: clean Linux Docker build/run on [Actions run 38079910504](https://github.com/rishirana463-hub/RL-Gym-for-Coding-Agents/actions/runs/38079910504), source `97cce98`: reference 56/56 (100%), mutants 18/18 detected, three identical complete reference runs. Fresh install, lint/build, metadata and lifecycle passed. Downloaded complete logs/reports to `evals/docker/`, verified the artifact SHA-256 and every source/verifier fingerprint, and installed the three canonical Docker summaries under `evaluation/proof-of-work/`. No reference/test behavior changes were needed.
 - Step 2 prerequisite completed: [OpenHands offline preflight 38080385852](https://github.com/rishirana463-hub/RL-Gym-for-Coding-Agents/actions/runs/38080385852), source `292e7cd`, built the pinned image, passed dependency consistency, initialized SDK/tools/conversation and passed two credential tests in Linux. Full logs/package list/image identity are in `evals/openhands-preflight/`; downloaded artifact digest verified. Network-disabled setup made zero provider requests/model attempts. This does not complete the real-model evaluation requirement.
 - Inspected the signed-in [HackerRank bounty](https://www.hackerrank.com/earn/applications/603). It does not list supplied model access/credits; it links HackerRank Experts Discord for coordination. The existing application already shows Submitted with this repo link. No submission edit was made.
+- Completed the model-access investigation: inspected the user's Discord task thread and verified [Saurabh Maurya's original reply](https://discord.com/channels/1544210398180282380/1558107634698166384/1558380743925829733) explicitly declining API credits. The user then requested **leave real evaluations pending**. Zero model attempts/charges were initiated; no model scores or analyses exist. `docs/model-access.md` and `evals/README.md` record the evidence and limitations.
 
 ## In progress
 
-- Step 2: inspect organizer onboarding in Discord for provided model access. The user confirmed existing server access and is signing in. Two eligible model IDs/credentials are still unconfigured; neither real attempt has started.
+- Real evaluation step 2 is pending at the user's explicit request. Finishing the conditional difficulty/failure-analysis status records and comprehensive submission checklist/organizer draft; no real model execution.
 - Prepared a clean-runner OpenHands image build, dependency consistency check, offline SDK/tool/conversation setup and credential helper tests. The setup container has no network and never calls `conversation.run()`; it cannot count as either required model attempt. No eligible model IDs or provider access have been supplied yet.
-- Recorded the model-access investigation in `docs/model-access.md`. Do not interpret the listing's silence as proof that private Discord onboarding provides no access.
+- Organizer guidance in Discord says higher reasoning and two accessible models; the live listing says medium reasoning and frontier models. Resolve this discrepancy before either real attempt. The existing harness retains medium reasoning pending clarification.
 - Added a manual hosted-runner path for the two real evaluations because local Docker is absent. It requires two secure provider secrets, distinct confirmed model IDs and matching current Docker evidence, refuses workflow retries/saved attempt folders, and archives full generation/scoring/trajectory logs under model-specific `evals/` directories. It has not been dispatched; actual provider execution remains unverified. Preserve artifacts before any further dispatch.
 - Checking the HackerRank listing and signed-in task for organizer-provided model access/credits, as requested. No model-provider credentials are configured locally; no real attempt has started.
 
 ## Next
 
-1. Inspect the signed-in Discord task/onboarding for provided model access. Once two eligible model IDs and credentials are available, run each once, save full logs under `evals/<model>/`, and score its saved solution in Docker.
+1. Finish ordered status records for steps 3/4 and the exhaustive listing checklist/organizer draft (step 5).
+2. When the user resumes real evaluations and provides access, confirm exact model eligibility/reasoning with the organizer, run each once, save full logs under model-specific `evals/` directories, and score saved solutions in Docker.
 3. Apply the difficulty gate to real scores only. If needed, preserve attempts, revise the task fairly and rerun Docker plus both evaluations under a disclosed new version. Then write actual per-model failure analyses.
-4. Complete an exhaustive listing checklist and organizer approval draft; keep access/approval gaps explicit. The private repository and clean Docker requirements are satisfied.
+4. Obtain organizer idea approval and collaborator access; satisfy the automated/manual readiness gates before claiming acceptance-ready status.
 
 ## Notes
 
