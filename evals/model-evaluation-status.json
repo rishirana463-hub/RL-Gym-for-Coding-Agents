@@ -1,9 +1,14 @@
 {
   "schemaVersion": 1,
-  "recordedAt": "2026-10-10T19:47:22.250970+00:00",
-  "status": "pending-at-user-request",
+  "recordedAt": "2026-10-10T19:59:21Z",
+  "status": "blocked-missing-provider-access",
   "modelAttempts": 0,
-  "reason": "Organizer does not provide API credits; user explicitly requested leaving real evaluations pending.",
+  "reason": "User requested resuming real evaluations, then confirmed they have no provider access. Local credential presence checks and GitHub Actions secret metadata confirmed none configured. Organizer does not provide API credits.",
+  "blockers": [
+    "Funded provider access is unavailable",
+    "Two exact eligible model IDs are not selected",
+    "Organizer has not clarified medium versus higher reasoning"
+  ],
   "organizerSource": "https://discord.com/channels/1544210398180282380/1558107634698166384/1558380743925829733",
   "models": [
     {

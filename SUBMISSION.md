@@ -1,6 +1,6 @@
 # Submission readiness
 
-Checked 2026-10-11 against the [original listing](docs/bounty-listing.txt) and the signed-in [HackerRank application](https://www.hackerrank.com/earn/applications/603). **Not submission-ready:** real model evaluations are pending at the user's request, and organizer approval/access are outstanding. Docker reference and mutant validation are complete.
+Checked 2026-10-11 against the [original listing](docs/bounty-listing.txt) and the signed-in [HackerRank application](https://www.hackerrank.com/earn/applications/603). **Not submission-ready:** the user requested real model evaluations but confirmed they have no provider access; model/reasoning confirmation and organizer approval/access are outstanding. Docker reference and mutant validation are complete.
 
 **Done** means the listed artifact exists or the stated check actually passed. **Not done** means evidence or work is missing. **Needs human** means organizer confirmation, account access or a human decision is required. Prepared tooling is not a completed model evaluation.
 
@@ -46,7 +46,7 @@ Docker is unavailable on the Windows development machine. Validation used [GitHu
 |---|---|---|
 | Two different organizer-eligible frontier models | Needs human | No model IDs selected. The organizer permits two accessible models in [Discord guidance](https://discord.com/channels/1544210398180282380/1558107634698166384/1558380743925829733), while the listing specifies frontier models. Confirm eligibility. |
 | Medium reasoning as specified in the listing | Needs human | The organizer's reply asks for higher reasoning. Resolve this difference before either attempt; current harness/readiness gate retain medium. An approved change requires updating and validating both before running. |
-| Provider access for real OpenHands runs | Needs human | The organizer explicitly does not provide API credits. No provider credentials are configured; the user requested leaving runs pending. [Access findings](docs/model-access.md). |
+| Provider access for real OpenHands runs | Needs human | The organizer explicitly does not provide API credits. The user requested resumption but confirmed they have no provider access. Fresh local presence checks and GitHub Actions metadata show no configured credentials. Ask whether an approved evaluator or alternative is accepted. [Access findings](docs/model-access.md). |
 | Model A: one single-pass OpenHands attempt using `npm run generate` | Not done | Zero attempts; no model identity, candidate or trajectory. [Recorded status](evals/model-evaluation-status.json). |
 | Model B: one single-pass OpenHands attempt using `npm run generate` | Not done | Zero attempts; no model identity, candidate or trajectory. The [manual workflow](.github/workflows/model-evaluation.yml) is prepared but has not run with real credentials. |
 | Score both saved generated solutions in fresh Docker using `npm run score` | Not done | No generated candidates exist. Both scores are **unavailable**, not zero. Preserve identical disclosed settings and source/verifier fingerprints. |
@@ -65,4 +65,4 @@ Docker is unavailable on the Windows development machine. Validation used [GitHu
 | Automated submission-readiness gate | Not done | [Readiness report](evaluation/proof-of-work/submission-readiness.json) intentionally rejects the eight missing model files. Current reference/mutant/determinism fingerprints pass. Manual requirements still apply after automated success. |
 | Repository link on the HackerRank application | Done (existing application) | Signed-in application already displays **Submitted**, dated Oct 10, with this repo link. This was observed, not edited. It does not establish readiness, approval, acceptance or payment. |
 
-The listing offers **$800 fixed price**. Acceptance and payment are organizer decisions; technical reference success alone does not establish eligibility for payment. Resume the pending model work only when the user requests it and the access/eligibility/reasoning prerequisites are settled.
+The listing offers **$800 fixed price**. Acceptance and payment are organizer decisions; technical reference success alone does not establish eligibility for payment. The user has requested real evaluations; execution requires the access/eligibility/reasoning prerequisites to be settled. No evaluator arrangement or waiver has been granted.

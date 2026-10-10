@@ -1,6 +1,6 @@
 # Difficulty gate
 
-Status on 2026-10-11: **not assessed**. The user requested that real evaluations remain pending. There have been zero model attempts; neither model has a score. See the [evaluation status](model-evaluation-status.json).
+Status on 2026-10-11: **not assessed**. The user requested resuming real evaluations but confirmed they have no provider access. There have been zero model attempts; neither model has a score. See the [evaluation status](model-evaluation-status.json).
 
 The reference passes 56/56 checks in Docker, all 18 mutants are detected, and three complete reference runs are stable. [Evidence](docker/README.md). These results establish reference solvability and verifier behavior; they do not establish model difficulty. The incomplete starter's score and the offline OpenHands preflight cannot substitute for model scores.
 

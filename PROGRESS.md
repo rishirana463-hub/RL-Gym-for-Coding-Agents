@@ -41,17 +41,19 @@ Recorded verification, already executed:
 - Rechecked GitHub's API: repository remains private, with zero outside collaborators and zero pending invitations. No organizer access was granted or assumed.
 - Step 5 lint/build passed; 53 local documentation links resolved. The readiness gate was actually rerun and correctly failed on exactly eight missing model files, with current Docker reference/mutant/determinism evidence accepted. Runtime size remains 12,073 raw / 4,498 gzip bytes.
 - The outgoing secret-signature scan passed across 158 working files, 246 reachable history blobs and the staged documentation/readiness changes, with no findings/errors; environment-file ignore checks passed. Its documented detection limits still apply.
+- On 2026-10-11 the user requested resuming real evaluations, then confirmed they have no provider access and no reasoning clarification. Rechecked process/user/machine credential presence and GitHub Actions metadata: no provider keys configured, zero repository secrets. Updated evaluation status/checklist to the actual access blocker and added an approved-evaluator/alternative question to the unsent organizer draft. Zero model attempts or charges were initiated.
+- This access-status update passed lint/build, resolved 57 local documentation links and validated that the status record still contains zero attempts and two unavailable scores. The outgoing working/staged/history secret-signature scan passed with no findings or errors. No completed Docker/reference/mutant checks were rerun.
 
 ## In progress
 
-- Real evaluation steps 2-4 remain pending at the user's explicit request. No model execution is active. Docker validation, offline setup, access investigation and the requested checklist/approval draft are complete.
+- Real evaluation step 2 is requested but blocked by missing funded provider access and unconfirmed models/reasoning. The user confirms they have no access. Steps 3-4 cannot proceed without genuine results. No model execution is active. Completed Docker validation and offline setup have not been repeated.
 - Organizer guidance in Discord says higher reasoning and two accessible models; the live listing says medium reasoning and frontier models. Resolve this discrepancy before either real attempt. The existing harness retains medium reasoning pending clarification.
 - Added a manual hosted-runner path for the two real evaluations because local Docker is absent. It requires two secure provider secrets, distinct confirmed model IDs and matching current Docker evidence, refuses workflow retries/saved attempt folders, and archives full generation/scoring/trajectory logs under model-specific `evals/` directories. It has not been dispatched; actual provider execution remains unverified. Preserve artifacts before any further dispatch.
 
 ## Next
 
-1. Have the user share the unsent organizer draft to request scope approval, clarify models/reasoning and identify the GitHub collaborator. The listing's approval-before-implementation ordering was not met; only the organizer can decide whether to review the existing prototype.
-2. When the user resumes real evaluations and provides secure access, run each confirmed model once, save full logs under model-specific `evals/` directories, and score saved solutions in Docker. Resolve eligibility/reasoning before starting.
+1. Have the user share the unsent organizer draft to request scope approval, clarify models/reasoning, identify the GitHub collaborator and ask whether an approved evaluator or alternative is accepted because provider access is unavailable. No arrangement or waiver exists yet. The listing's approval-before-implementation ordering was not met; only the organizer can decide whether to review the existing prototype.
+2. Once funded authorized provider access and exact model/reasoning confirmation are available, run each model once, save full logs under model-specific `evals/` directories, and score saved solutions in Docker. The user's request to resume is already recorded; do not request it again.
 3. Apply the difficulty gate to real scores only. If needed, preserve attempts, revise the task fairly and rerun Docker plus both evaluations under a disclosed new version. Then write actual per-model failure analyses.
 4. Verify organizer collaborator access and satisfy all automated/manual readiness gates before claiming acceptance-ready status. The existing HackerRank Submitted label does not establish acceptance or payment.
 

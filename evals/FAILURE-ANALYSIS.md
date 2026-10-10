@@ -1,6 +1,6 @@
 # Failure-analysis status
 
-Status on 2026-10-11: **unavailable; real evaluations deferred by the user**. Zero model attempts have occurred. Neither model has an identity, candidate implementation, trajectory or score. Consequently, no missed checks, causes of failure or task-fairness conclusions can be reported. [Recorded status](model-evaluation-status.json).
+Status on 2026-10-11: **unavailable; real evaluations requested but blocked by missing provider access**. Zero model attempts have occurred. Neither model has an identity, candidate implementation, trajectory or score. Consequently, no missed checks, causes of failure or task-fairness conclusions can be reported. [Recorded status](model-evaluation-status.json).
 
 This document records missing work, not a model analysis. No per-model `ANALYSIS.md` files have been created. Reference success, mutation detections and the incomplete starter cannot explain how an unrun frontier model would perform.
 

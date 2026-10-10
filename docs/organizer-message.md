@@ -6,6 +6,8 @@ Hi Saurabh, could you review Stockroom for task #603 and confirm whether its sco
 
 The prototype is already implemented; I have not obtained the required prior approval. Would you accept it for review at this stage? Clean Docker validation passed 56/56 reference checks, caught 18/18 mutants and produced three stable full runs. Real model evaluations remain unrun.
 
+I do not have provider API access. Could an approved evaluator run the two attempts, or is there an accepted alternative?
+
 Could you confirm eligible model choices and reasoning level? The listing specifies frontier models at medium reasoning; your reply permits accessible models with higher reasoning. Which GitHub account should receive access for content.team@problemsetters.com?
 
 Private repository: [RL-Gym-for-Coding-Agents](https://github.com/rishirana463-hub/RL-Gym-for-Coding-Agents)
