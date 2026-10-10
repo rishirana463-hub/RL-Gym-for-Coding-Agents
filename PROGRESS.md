@@ -2,7 +2,7 @@
 
 Read this file first at the start of every session and continue from the outstanding work. Do not repeat Done items. Update Done / In progress / Next / Notes after each phase or meaningful step, before moving on, and commit the update with that work.
 
-Last updated: 2026-10-10.
+Last updated: 2026-10-11.
 
 ## Done
 
@@ -27,17 +27,20 @@ Recorded verification, already executed:
 - Final runtime size: 12,073 raw bytes / 4,498 gzip bytes; baseline: 11,048 / 3,954. There is no browser bundle.
 - The handoff ZIP was verified against the exact tested source/verifier bytes. Windows line-ending conversion was avoided during packaging.
 - Initialized and reviewed this root progress ledger from existing history and evidence, preserving all completed phase commits and outstanding prerequisites.
+- GitHub README presentation prepared with accessible badges, capability/evidence tables, clone/setup instructions and documentation links. GitHub's Markdown renderer confirmed all four tables and badges; local links/scripts, lint/build and the outgoing secret scan passed. Completed reference/model checks were not rerun.
+- Saved and independently verified the GitHub repository description: "A stateful software engineering benchmark for coding agents: durable inventory APIs, 56 black-box checks, 18 executable mutants, and a prepared one-pass OpenHands evaluation harness."
 
 ## In progress
 
-- None. The six polish phases and progress-tracking setup are complete; outstanding verification awaits the prerequisites below.
+- GitHub handoff: commit and push the prepared README/project history to the selected repository, then verify the remote branch and uploaded README. Local Git authentication confirms push/admin access; the target branch was empty before upload.
 
 ## Next
 
-1. When Docker with Linux containers is available, execute the container reference, mutant and determinism checks documented in [the evaluation guide](docs/evaluation.md#container-verification). Review Linux bind-mount permissions and crash recovery during that work.
-2. When access to two eligible frontier models is configured, run each once with the recorded limits, score its saved solution in Docker, and write failure analyses. Preserve all attempts. Both scores must be strictly below 30% to establish the task's difficulty requirement.
-3. Install/audit the pinned Python/OpenHands image dependencies when the image can be built; this has not been verified locally.
-4. Complete organizer approval, private repository/access requirements and the submission-readiness gate in [SUBMISSION.md](SUBMISSION.md) when the required evidence exists.
+1. Push the prepared documentation/project history without overwriting remote work, verify the remote commit and README, and record the completed handoff in this ledger.
+2. When Docker with Linux containers is available, execute the container reference, mutant and determinism checks documented in [the evaluation guide](docs/evaluation.md#container-verification). Review Linux bind-mount permissions and crash recovery during that work.
+3. When access to two eligible frontier models is configured, run each once with the recorded limits, score its saved solution in Docker, and write failure analyses. Preserve all attempts. Both scores must be strictly below 30% to establish the task's difficulty requirement.
+4. Install/audit the pinned Python/OpenHands image dependencies when the image can be built; this has not been verified locally.
+5. Complete organizer approval, private repository/access requirements and the submission-readiness gate in [SUBMISSION.md](SUBMISSION.md) when the required evidence exists.
 
 ## Notes
 
@@ -48,4 +51,5 @@ Recorded verification, already executed:
 - Secret scans inspect common signatures in text, not arbitrary/encoded secrets, binary files or ignored untracked files. Tracked files and reachable history remain scanned even when ignore rules match them. Local scoring is for trusted code; the environment filter is not a sandbox.
 - The reference needs persistent storage and one writer per `DATA_DIR`. Snapshot/retry/audit history grows with workload; this is a correctness benchmark, not a production scalability claim.
 - No deployment was performed. Vercel Functions would require external durable transactional storage and revised concurrency handling; that architecture change is outside the completed polish scope.
+- The user explicitly selected the existing public GitHub repository for this upload. Its visibility will be preserved; the organizer's private-repository submission requirement remains outstanding.
 - Resume from Next when its prerequisites are available. Reopen Done work only for a demonstrated regression or an explicitly requested change.

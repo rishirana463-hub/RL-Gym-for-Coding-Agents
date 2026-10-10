@@ -1,14 +1,55 @@
-# Stockroom RL Gym
+<div align="center">
 
-A repository-level coding challenge to build a durable inventory and fulfillment API covering concurrency, partial shipments, transfers, returns, logical-clock expiry, retries, and crash recovery.
+<h1>Stockroom</h1>
+<p><strong>A real-world software engineering RL gym for coding agents</strong></p>
+<p>Durable inventory. Concurrent workflows. Verifiable outcomes.</p>
 
-The reference passes **56/56 local checks** and the verifier catches **18/18 executable mutants**. Docker and both frontier-model attempts remain pending; the below-30% difficulty target is unproven. See the [actual evidence](evaluation/proof-of-work/README.md).
+<img src="https://img.shields.io/badge/Node.js-24%2B-43853d?style=flat-square" alt="Requires Node.js 24 or newer">
+<img src="https://img.shields.io/badge/runtime_dependencies-0-2563eb?style=flat-square" alt="Zero runtime dependencies">
+<img src="https://img.shields.io/badge/local_checks-56%2F56-15803d?style=flat-square" alt="Reference passed 56 of 56 local checks">
+<img src="https://img.shields.io/badge/mutants_detected-18%2F18-7c3aed?style=flat-square" alt="Verifier detected 18 of 18 executable mutants">
 
-## Stack and setup
+<p>
+<a href="task/instruction.md">Task contract</a> &middot;
+<a href="docs/evaluation.md">Evaluation guide</a> &middot;
+<a href="evaluation/proof-of-work/README.md">Recorded evidence</a> &middot;
+<a href="PROGRESS.md">Progress</a>
+</p>
 
-Node.js 24+ with standard-library-only application code; ESLint is the sole direct development dependency. Real model evaluations use Docker Linux containers with Python and OpenHands; no provider access is needed for local reference checks.
+</div>
+
+Stockroom is a repository-level coding benchmark in which an agent implements a persistent inventory and fulfillment API. Correctness must survive competing requests, partial workflows, retries, and abrupt process termination.
+
+The repository includes a public task and starter, a working reference, a private verifier, executable fault variants, and a prepared one-pass OpenHands harness. Each layer has a defined role in [the evaluation boundary](docs/evaluation.md#layout-and-information-boundary).
+
+## What the task covers
+
+| Capability | What agents must handle |
+|---|---|
+| Inventory and fulfillment | Atomic multi-item reservations, partial shipments, cancellations, and cumulative returns |
+| Warehouse transfers | Dispatch, partial receipt, cancellation, and stock conservation across locations |
+| Concurrency and retries | Optimistic revisions, no overselling, and durable idempotent responses |
+| Time and recovery | Explicit logical-clock expiry, persisted audit history, and recovery after forced termination |
+
+## Evaluation status
+
+| Evidence | Current result |
+|---|---|
+| Reference correctness | **56/56** local black-box checks passed |
+| Verifier sensitivity | **18/18** executable mutants detected |
+| Determinism | Three complete local reference runs with identical outcomes |
+| Linux containers and OpenHands integration | Prepared; execution pending |
+| Two frontier-model attempts | Not run; the **below-30% difficulty target is unproven** |
+
+Badges summarize recorded local results, not live CI. See [proof of work](evaluation/proof-of-work/README.md) for the reports and their limitations. Do not expose the reference or verifier to an evaluated agent; provide only its designated public workspace.
+
+## Quick start
+
+Requires **Node.js 24+** and Git. The application uses only the Node standard library; ESLint is the sole direct development dependency. Docker, Python, and provider access are needed for real model evaluations, not local reference checks.
 
 ```sh
+git clone https://github.com/rishirana463-hub/RL-Gym-for-Coding-Agents.git
+cd RL-Gym-for-Coding-Agents
 npm ci
 npm run lint
 npm run build
@@ -57,4 +98,5 @@ Supporting Vercel requires external durable transactional storage and revised co
 
 - [Evaluation, lifecycle, and reference limits](docs/evaluation.md)
 - [Production polish checks and measurements](docs/production-polish.md)
+- [Progress and remaining work](PROGRESS.md)
 - [Submission checklist](SUBMISSION.md), including organizer approval and private repository access
