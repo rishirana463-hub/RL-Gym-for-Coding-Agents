@@ -14,8 +14,8 @@ This folder contains **actual local and Linux Docker results**, not model simula
 - `submission-readiness.json`: an honest list of missing submission evidence.
 - `lifecycle.json`: safe-reset checks, including rejection of source paths and symlink traversal.
 - `security.json`: signature scan of working files, staged content and reachable Git-history blobs, plus environment-file ignore checks. Binary and Git-ignored files are excluded; a passing signature scan is not proof that arbitrary or encoded secrets are absent.
-- `dependency-audit.json`: npm audit of application and development dependencies. The Python/OpenHands image dependencies have not been installed or audited here.
+- `dependency-audit.json`: npm audit of application and development dependencies. Python/OpenHands installation and dependency consistency now passed on the clean hosted runner; its vulnerability audit remains unperformed.
 
-Docker is unavailable on the Windows development machine. Linux task-container validation passed on a clean GitHub-hosted runner; [provenance and full logs](../../evals/docker/README.md) record the source commit, runner, image inventory and artifact digest. OpenHands image validation and real integration remain pending. Neither frontier-model attempt has been performed. There is **no evidence yet** that two frontier models score below 30%.
+Docker is unavailable on the Windows development machine. Linux task-container validation passed on a clean GitHub-hosted runner; [provenance and full logs](../../evals/docker/README.md) record the source commit, runner, image inventory and artifact digest. [OpenHands image/offline setup validation](../../evals/openhands-preflight/README.md) passed with network disabled and zero model calls. Real provider integration remains pending. Neither frontier-model attempt has been performed. There is **no evidence yet** that two frontier models score below 30%.
 
 Separate `model-a/` and `model-b/` directories must be created by actual model runs. Preserve every attempt, including failures. Do not tune the private tests after seeing model output or label an infrastructure failure as a model's low score.

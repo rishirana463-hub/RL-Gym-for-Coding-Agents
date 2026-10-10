@@ -1,0 +1,28 @@
+19:36:35 - LiteLLM:WARNING: get_model_cost_map.py:315 - LiteLLM: model cost map fetch attempt 1/3 failed (ConnectError fetching https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json: [Errno -3] Temporary failure in name resolution); retrying in 2.7s
+19:36:35 - LiteLLM:WARNING: get_model_cost_map.py:672 - LiteLLM: Failed to fetch remote model cost map from https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json: ConnectError fetching https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json: [Errno -3] Temporary failure in name resolution. Falling back to local backup.
++----------------------------------------------------------------------+
+|  OpenHands SDK v1.54.0                                               |
+|                                                                      |
+|  Report a bug: github.com/OpenHands/software-agent-sdk/issues        |
+|  Get help: openhands.dev/joinslack                                   |
+|  Scale up: openhands.dev/product/sdk                                 |
+|                                                                      |
+|  Set OPENHANDS_SUPPRESS_BANNER=1 to hide this message                |
++----------------------------------------------------------------------+
+
+[10/10/26 19:36:40] WARNING  No persistence_dir provided; falling   state.py:515
+                             back to InMemoryFileStore. EventLog                
+                             data will not persist across requests.             
+[10/10/26 19:36:40] INFO     Created new conversation               state.py:592
+                             22a5a18d-ad30-49ef-adf7-e4c42cff9c7f               
+[10/10/26 19:36:40] INFO     FileEditor initialized with cwd:      editor.py:105
+                             /workspace                                         
+[10/10/26 19:36:40] INFO     TmuxPanePool initialized:     tmux_pane_pool.py:143
+                             session=openhands-pool-None-9                      
+                             df72855-6e50-4222-ad4b-1fc742                      
+                             c0c663, max_panes=4                                
+[10/10/26 19:36:40] INFO     TerminalExecutor initialized (pool      impl.py:145
+                             mode) working_dir: /workspace,                     
+                             username: None, max_panes: 4                       
+[10/10/26 19:36:40] INFO     Loaded 2 tools from spec                base.py:596
+{"status": "setup-validated-no-model-call", "sdk": "1.54.0", "tools": "1.54.0", "reasoningEffort": "medium", "conversationStatus": "idle", "modelAttempts": 0, "providerRequests": 0}

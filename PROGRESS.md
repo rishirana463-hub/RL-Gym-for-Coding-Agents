@@ -32,17 +32,19 @@ Recorded verification, already executed:
 - Uploaded the complete existing project/history to [GitHub](https://github.com/rishirana463-hub/RL-Gym-for-Coding-Agents) on `main`. Verified initial publication commit `228f176`, all 98 tracked files, the exact uploaded README bytes and repository description through GitHub's API. `origin/main` is configured as the local branch's upstream.
 - Changed the GitHub repository to private on 2026-10-11 at the user's request. An independent GitHub API read confirmed both `private: true` and `visibility: private`.
 - Gap step 1 completed: clean Linux Docker build/run on [Actions run 38079910504](https://github.com/rishirana463-hub/RL-Gym-for-Coding-Agents/actions/runs/38079910504), source `97cce98`: reference 56/56 (100%), mutants 18/18 detected, three identical complete reference runs. Fresh install, lint/build, metadata and lifecycle passed. Downloaded complete logs/reports to `evals/docker/`, verified the artifact SHA-256 and every source/verifier fingerprint, and installed the three canonical Docker summaries under `evaluation/proof-of-work/`. No reference/test behavior changes were needed.
+- Step 2 prerequisite completed: [OpenHands offline preflight 38080385852](https://github.com/rishirana463-hub/RL-Gym-for-Coding-Agents/actions/runs/38080385852), source `292e7cd`, built the pinned image, passed dependency consistency, initialized SDK/tools/conversation and passed two credential tests in Linux. Full logs/package list/image identity are in `evals/openhands-preflight/`; downloaded artifact digest verified. Network-disabled setup made zero provider requests/model attempts. This does not complete the real-model evaluation requirement.
+- Inspected the signed-in [HackerRank bounty](https://www.hackerrank.com/earn/applications/603). It does not list supplied model access/credits; it links HackerRank Experts Discord for coordination. The existing application already shows Submitted with this repo link. No submission edit was made.
 
 ## In progress
 
-- Step 2: validate the OpenHands image without paid model calls while obtaining access to two eligible frontier models.
+- Step 2: inspect organizer onboarding in Discord for provided model access. The user confirmed existing server access and is signing in. Two eligible model IDs/credentials are still unconfigured; neither real attempt has started.
 - Prepared a clean-runner OpenHands image build, dependency consistency check, offline SDK/tool/conversation setup and credential helper tests. The setup container has no network and never calls `conversation.run()`; it cannot count as either required model attempt. No eligible model IDs or provider access have been supplied yet.
+- Recorded the model-access investigation in `docs/model-access.md`. Do not interpret the listing's silence as proof that private Discord onboarding provides no access.
 - Checking the HackerRank listing and signed-in task for organizer-provided model access/credits, as requested. No model-provider credentials are configured locally; no real attempt has started.
 
 ## Next
 
-1. Validate the pinned OpenHands image dependencies and harness setup on Linux; no provider call during preflight.
-2. Inspect the signed-in HackerRank task for provided model access. Once two eligible model IDs and credentials are available, run each once, save full logs under `evals/<model>/`, and score its saved solution in Docker.
+1. Inspect the signed-in Discord task/onboarding for provided model access. Once two eligible model IDs and credentials are available, run each once, save full logs under `evals/<model>/`, and score its saved solution in Docker.
 3. Apply the difficulty gate to real scores only. If needed, preserve attempts, revise the task fairly and rerun Docker plus both evaluations under a disclosed new version. Then write actual per-model failure analyses.
 4. Complete an exhaustive listing checklist and organizer approval draft; keep access/approval gaps explicit. The private repository and clean Docker requirements are satisfied.
 
@@ -61,3 +63,4 @@ Recorded verification, already executed:
 - Preserved the original user-supplied listing verbatim in `docs/bounty-listing.txt`. It specifies OpenHands, two frontier models, medium reasoning and one attempt each, but does not promise API keys, credits or reimbursement. Public HackerRank search did not confirm task-specific model access; the in-app browser currently requires login before its Earn details can be inspected.
 - Normalized ten local `evaluation/tests/*.mjs` files to the exact LF bytes already stored in Git, after verifying that line endings were their only differences. This aligns raw verifier fingerprints with a clean Linux checkout without changing test logic. Earlier local reports retain their original byte fingerprints as historical evidence.
 - Extended LF checkout rules to JSON/YAML/Markdown/Dockerfile inputs so future Windows checkouts preserve the raw source/verifier fingerprints used by Linux evidence. No fingerprinted content changed relative to the validated Git commit.
+- OpenHands dependency consistency was executed; Python dependency vulnerability auditing and real provider/agent integration have not been executed. Offline preflight does not count toward the two frontier attempts.

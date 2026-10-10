@@ -1,0 +1,19 @@
+{
+  "runId": 38080385852,
+  "runUrl": "https://github.com/rishirana463-hub/RL-Gym-for-Coding-Agents/actions/runs/38080385852",
+  "sourceCommit": "292e7cd9b443ddb04e96087aa7fa1435eb7d7a72",
+  "conclusion": "success",
+  "artifactId": 11680700530,
+  "artifactDigest": "sha256:969072c2dce9ec712a4fc4271bff1082bc9c5854b8beb97878d8f372ba9cc4d6",
+  "downloadedZipSha256": "969072c2dce9ec712a4fc4271bff1082bc9c5854b8beb97878d8f372ba9cc4d6",
+  "filesPreserved": 9,
+  "result": {
+    "status": "setup-validated-no-model-call",
+    "sdk": "1.54.0",
+    "tools": "1.54.0",
+    "reasoningEffort": "medium",
+    "conversationStatus": "idle",
+    "modelAttempts": 0,
+    "providerRequests": 0
+  }
+}

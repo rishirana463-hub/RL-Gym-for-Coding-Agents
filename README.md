@@ -39,7 +39,7 @@ The repository includes a public task and starter, a working reference, a privat
 | Verifier sensitivity | **18/18** executable mutants detected locally and in Docker |
 | Determinism | Three complete Docker reference runs with identical outcomes |
 | Linux containers | [Clean hosted-runner validation passed](evals/docker/README.md) |
-| OpenHands integration | Prepared; image validation and real provider execution pending |
+| OpenHands integration | [Offline image/SDK setup passed](evals/openhands-preflight/README.md); real provider execution pending |
 | Two frontier-model attempts | Not run; the **below-30% difficulty target is unproven** |
 
 Badges summarize recorded local results, not live CI. See [proof of work](evaluation/proof-of-work/README.md) for the reports and their limitations. Do not expose the reference or verifier to an evaluated agent; provide only its designated public workspace.

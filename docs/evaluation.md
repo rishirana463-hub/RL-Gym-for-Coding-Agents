@@ -15,7 +15,7 @@ npm run check:lifecycle
 npm run demo
 ```
 
-Docker remains unavailable on the Windows development machine. [Clean Linux hosted-runner validation](../evals/docker/README.md) passed: reference 56/56, mutants 18/18, and three identical complete container runs. The complete OpenHands integration and neither frontier-model attempt have been executed. The Python credential-input helper has local unit coverage, but the pinned Python/OpenHands image dependencies have not yet been installed or audited. Reference success does not establish the required below-30% frontier-model difficulty.
+Docker remains unavailable on the Windows development machine. [Clean Linux hosted-runner validation](../evals/docker/README.md) passed: reference 56/56, mutants 18/18, and three identical complete container runs. The [OpenHands image and offline SDK setup](../evals/openhands-preflight/README.md) also passed, including dependency consistency and two credential-input tests. Real provider execution and both frontier-model attempts remain unperformed. Python dependency vulnerability auditing has not been run. Reference/setup success does not establish the required below-30% frontier-model difficulty.
 
 ## Layout and information boundary
 

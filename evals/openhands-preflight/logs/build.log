@@ -1,0 +1,990 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 1.13kB 0.0s done
+#1 DONE 0.0s
+
+#2 [auth] library/python:pull token for registry-1.docker.io
+#2 DONE 0.0s
+
+#3 [auth] library/node:pull token for registry-1.docker.io
+#3 DONE 0.0s
+
+#4 [internal] load metadata for docker.io/library/node:24.14.0-bookworm-slim@sha256:d8e448a56fc63242f70026718378bd4b00f8c82e78d20eefb199224a4d8e33d8
+#4 DONE 0.4s
+
+#5 [internal] load metadata for docker.io/library/python:3.12.13-slim-bookworm@sha256:4766d8b510c428e595d74b9cc5bbb2fae8e26316fffb4adc89908d79aacd58a2
+#5 DONE 0.4s
+
+#6 [internal] load .dockerignore
+#6 transferring context: 83B done
+#6 DONE 0.0s
+
+#7 [internal] load build context
+#7 transferring context: 3.63kB done
+#7 DONE 0.0s
+
+#8 [node 1/1] FROM docker.io/library/node:24.14.0-bookworm-slim@sha256:d8e448a56fc63242f70026718378bd4b00f8c82e78d20eefb199224a4d8e33d8
+#8 resolve docker.io/library/node:24.14.0-bookworm-slim@sha256:d8e448a56fc63242f70026718378bd4b00f8c82e78d20eefb199224a4d8e33d8 0.0s done
+#8 sha256:d8e448a56fc63242f70026718378bd4b00f8c82e78d20eefb199224a4d8e33d8 5.20kB / 5.20kB done
+#8 sha256:4bd6219054c8bebcd26a66bfd8ca0bd6e1024b4b97474c59bb7ee3bbcbef4fe8 1.93kB / 1.93kB done
+#8 sha256:fc739c52279c78801b004ad8caea06c083f5ceaaea45380b736a11affefd45c4 6.88kB / 6.88kB done
+#8 sha256:6db0909c4473287ed4d1f950d26b8bc5b7b4206d365a0e7740cb89e46979153e 16.78MB / 28.24MB 0.1s
+#8 sha256:f338f4ce51e01bb68984dfe040d1127c733a14b68e7336987193d3519f5044d2 3.31kB / 3.31kB 0.0s done
+#8 sha256:a57bdd3e230f749f2933290b5dc58aec8a1c451658b915deaabc080db7eb6631 5.24MB / 49.25MB 0.1s
+#8 sha256:93ee29de81c9263806a610d22d4f26397e90f873bee4ad3ba765dc167b86b4d0 1.71MB / 1.71MB 0.1s done
+#8 sha256:776241850f38a30fe88eaf208cc912a7a0e33e1fd8f7c587061f548caa924125 0B / 445B 0.1s
+#8 sha256:6db0909c4473287ed4d1f950d26b8bc5b7b4206d365a0e7740cb89e46979153e 28.24MB / 28.24MB 0.1s done
+#8 sha256:a57bdd3e230f749f2933290b5dc58aec8a1c451658b915deaabc080db7eb6631 30.41MB / 49.25MB 0.2s
+#8 sha256:776241850f38a30fe88eaf208cc912a7a0e33e1fd8f7c587061f548caa924125 445B / 445B 0.1s done
+#8 sha256:a57bdd3e230f749f2933290b5dc58aec8a1c451658b915deaabc080db7eb6631 49.25MB / 49.25MB 0.3s done
+#8 extracting sha256:6db0909c4473287ed4d1f950d26b8bc5b7b4206d365a0e7740cb89e46979153e 0.1s
+#8 extracting sha256:6db0909c4473287ed4d1f950d26b8bc5b7b4206d365a0e7740cb89e46979153e 2.0s done
+#8 extracting sha256:f338f4ce51e01bb68984dfe040d1127c733a14b68e7336987193d3519f5044d2 done
+#8 extracting sha256:a57bdd3e230f749f2933290b5dc58aec8a1c451658b915deaabc080db7eb6631
+#8 ...
+
+#9 [stage-1  1/11] FROM docker.io/library/python:3.12.13-slim-bookworm@sha256:4766d8b510c428e595d74b9cc5bbb2fae8e26316fffb4adc89908d79aacd58a2
+#9 resolve docker.io/library/python:3.12.13-slim-bookworm@sha256:4766d8b510c428e595d74b9cc5bbb2fae8e26316fffb4adc89908d79aacd58a2 0.0s done
+#9 sha256:4766d8b510c428e595d74b9cc5bbb2fae8e26316fffb4adc89908d79aacd58a2 6.55kB / 6.55kB done
+#9 sha256:6e13e65c55e33adf203d77ee371cf8bf5d81bd4902ef07565721f46bf44917af 1.75kB / 1.75kB done
+#9 sha256:64d91f7b885eed272bba87909446b12ff408d4aaa5f1a0e9ca787bbea1a020b9 5.68kB / 5.68kB done
+#9 sha256:039e6f9f9752f74a3ff4a6a224f64c7c864da16ed98f882107704328f41b9c42 28.23MB / 28.23MB 0.4s done
+#9 sha256:e8e392f3681c10ad9c2b19ab6614fd158f6d5a03e0f71694aea9429d38813dbd 3.52MB / 3.52MB 0.3s done
+#9 sha256:8e0b0d5a4a0425bc991b95b78af125c6005a0a82a89011f076802a0265d8ff32 13.67MB / 13.67MB 0.5s done
+#9 sha256:1634f3c69c84a41815c187086e80cf5fdec289c6ce620014ef3ca9b54c019279 248B / 248B 0.4s done
+#9 extracting sha256:039e6f9f9752f74a3ff4a6a224f64c7c864da16ed98f882107704328f41b9c42 1.8s done
+#9 extracting sha256:e8e392f3681c10ad9c2b19ab6614fd158f6d5a03e0f71694aea9429d38813dbd 0.6s done
+#9 extracting sha256:8e0b0d5a4a0425bc991b95b78af125c6005a0a82a89011f076802a0265d8ff32 0.9s done
+#9 extracting sha256:1634f3c69c84a41815c187086e80cf5fdec289c6ce620014ef3ca9b54c019279 done
+#9 DONE 4.7s
+
+#8 [node 1/1] FROM docker.io/library/node:24.14.0-bookworm-slim@sha256:d8e448a56fc63242f70026718378bd4b00f8c82e78d20eefb199224a4d8e33d8
+#8 extracting sha256:a57bdd3e230f749f2933290b5dc58aec8a1c451658b915deaabc080db7eb6631 2.4s done
+#8 extracting sha256:93ee29de81c9263806a610d22d4f26397e90f873bee4ad3ba765dc167b86b4d0 0.0s done
+#8 extracting sha256:776241850f38a30fe88eaf208cc912a7a0e33e1fd8f7c587061f548caa924125
+#8 extracting sha256:776241850f38a30fe88eaf208cc912a7a0e33e1fd8f7c587061f548caa924125 done
+#8 DONE 4.9s
+
+#10 [stage-1  2/11] COPY --from=node /usr/local/bin/node /usr/local/bin/node
+#10 DONE 0.3s
+
+#11 [stage-1  3/11] COPY --from=node /usr/local/lib/node_modules/ /usr/local/lib/node_modules/
+#11 DONE 0.4s
+
+#12 [stage-1  4/11] RUN ln -s /usr/local/lib/node_modules/npm/bin/npm-cli.js /usr/local/bin/npm     && ln -s /usr/local/lib/node_modules/npm/bin/npx-cli.js /usr/local/bin/npx     && apt-get update     && apt-get install -y --no-install-recommends bash git ripgrep tmux ca-certificates     && rm -rf /var/lib/apt/lists/*
+#12 0.214 Get:1 http://deb.debian.org/debian bookworm InRelease [151 kB]
+#12 0.225 Get:2 http://deb.debian.org/debian bookworm-updates InRelease [55.4 kB]
+#12 0.225 Get:3 http://deb.debian.org/debian-security bookworm-security InRelease [34.8 kB]
+#12 0.284 Get:4 http://deb.debian.org/debian bookworm/main amd64 Packages [8790 kB]
+#12 0.364 Get:5 http://deb.debian.org/debian bookworm-updates/main amd64 Packages [6924 B]
+#12 0.429 Get:6 http://deb.debian.org/debian-security bookworm-security/main amd64 Packages [349 kB]
+#12 1.145 Fetched 9388 kB in 1s (9876 kB/s)
+#12 1.145 Reading package lists...
+#12 1.607 Reading package lists...
+#12 2.061 Building dependency tree...
+#12 2.190 Reading state information...
+#12 2.305 bash is already the newest version (5.2.15-2+b13).
+#12 2.305 bash set to manually installed.
+#12 2.305 The following additional packages will be installed:
+#12 2.305   git-man libbrotli1 libcurl3-gnutls liberror-perl libevent-core-2.1-7
+#12 2.305   libexpat1 libgdbm-compat4 libldap-2.5-0 libnghttp2-14 libperl5.36 libpsl5
+#12 2.306   librtmp1 libsasl2-2 libsasl2-modules-db libssh2-1 libutempter0 perl
+#12 2.306   perl-base perl-modules-5.36
+#12 2.307 Suggested packages:
+#12 2.307   gettext-base git-daemon-run | git-daemon-sysvinit git-doc git-email git-gui
+#12 2.307   gitk gitweb git-cvs git-mediawiki git-svn sensible-utils perl-doc
+#12 2.307   libterm-readline-gnu-perl | libterm-readline-perl-perl make
+#12 2.307   libtap-harness-archive-perl
+#12 2.307 Recommended packages:
+#12 2.307   patch less ssh-client libldap-common publicsuffix libsasl2-modules
+#12 2.400 The following NEW packages will be installed:
+#12 2.400   git git-man libbrotli1 libcurl3-gnutls liberror-perl libevent-core-2.1-7
+#12 2.401   libexpat1 libgdbm-compat4 libldap-2.5-0 libnghttp2-14 libperl5.36 libpsl5
+#12 2.401   librtmp1 libsasl2-2 libsasl2-modules-db libssh2-1 libutempter0 perl
+#12 2.402   perl-modules-5.36 ripgrep tmux
+#12 2.402 The following packages will be upgraded:
+#12 2.403   ca-certificates perl-base
+#12 2.439 2 upgraded, 21 newly installed, 0 to remove and 5 not upgraded.
+#12 2.439 Need to get 21.7 MB of archives.
+#12 2.439 After this operation, 107 MB of additional disk space will be used.
+#12 2.439 Get:1 http://deb.debian.org/debian-security bookworm-security/main amd64 perl-base amd64 5.36.0-7+deb12u4 [1610 kB]
+#12 2.455 Get:2 http://deb.debian.org/debian-security bookworm-security/main amd64 perl-modules-5.36 all 5.36.0-7+deb12u4 [2817 kB]
+#12 2.464 Get:3 http://deb.debian.org/debian bookworm/main amd64 libgdbm-compat4 amd64 1.23-3 [48.2 kB]
+#12 2.467 Get:4 http://deb.debian.org/debian-security bookworm-security/main amd64 libperl5.36 amd64 5.36.0-7+deb12u4 [4208 kB]
+#12 2.482 Get:5 http://deb.debian.org/debian-security bookworm-security/main amd64 perl amd64 5.36.0-7+deb12u4 [239 kB]
+#12 2.483 Get:6 http://deb.debian.org/debian-security bookworm-security/main amd64 ca-certificates all 20250419~deb12u1 [162 kB]
+#12 2.484 Get:7 http://deb.debian.org/debian bookworm/main amd64 libbrotli1 amd64 1.0.9-2+b6 [275 kB]
+#12 2.486 Get:8 http://deb.debian.org/debian bookworm/main amd64 libsasl2-modules-db amd64 2.1.28+dfsg-10 [20.3 kB]
+#12 2.486 Get:9 http://deb.debian.org/debian bookworm/main amd64 libsasl2-2 amd64 2.1.28+dfsg-10 [59.7 kB]
+#12 2.488 Get:10 http://deb.debian.org/debian bookworm/main amd64 libldap-2.5-0 amd64 2.5.13+dfsg-5 [183 kB]
+#12 2.489 Get:11 http://deb.debian.org/debian bookworm/main amd64 libnghttp2-14 amd64 1.52.0-1+deb12u3 [72.4 kB]
+#12 2.491 Get:12 http://deb.debian.org/debian bookworm/main amd64 libpsl5 amd64 0.21.2-1 [58.7 kB]
+#12 2.494 Get:13 http://deb.debian.org/debian bookworm/main amd64 librtmp1 amd64 2.4+20151223.gitfa8646d.1-2+b2 [60.8 kB]
+#12 2.496 Get:14 http://deb.debian.org/debian-security bookworm-security/main amd64 libssh2-1 amd64 1.10.0-3+deb12u1 [176 kB]
+#12 2.497 Get:15 http://deb.debian.org/debian bookworm/main amd64 libcurl3-gnutls amd64 7.88.1-10+deb12u15 [386 kB]
+#12 2.499 Get:16 http://deb.debian.org/debian-security bookworm-security/main amd64 libexpat1 amd64 2.5.0-1+deb12u4 [106 kB]
+#12 2.500 Get:17 http://deb.debian.org/debian bookworm/main amd64 liberror-perl all 0.17029-2 [29.0 kB]
+#12 2.500 Get:18 http://deb.debian.org/debian bookworm/main amd64 git-man all 1:2.39.5-0+deb12u3 [2053 kB]
+#12 2.508 Get:19 http://deb.debian.org/debian bookworm/main amd64 git amd64 1:2.39.5-0+deb12u3 [7264 kB]
+#12 2.539 Get:20 http://deb.debian.org/debian-security bookworm-security/main amd64 libevent-core-2.1-7 amd64 2.1.12-stable-8+deb12u1 [131 kB]
+#12 2.540 Get:21 http://deb.debian.org/debian bookworm/main amd64 libutempter0 amd64 1.2.1-3 [8960 B]
+#12 2.541 Get:22 http://deb.debian.org/debian bookworm/main amd64 ripgrep amd64 13.0.0-4+b2 [1253 kB]
+#12 2.547 Get:23 http://deb.debian.org/debian bookworm/main amd64 tmux amd64 3.3a-3 [455 kB]
+#12 2.640 debconf: delaying package configuration, since apt-utils is not installed
+#12 2.661 Fetched 21.7 MB in 0s (153 MB/s)
+#12 2.674 (Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 6695 files and directories currently installed.)
+#12 2.683 Preparing to unpack .../perl-base_5.36.0-7+deb12u4_amd64.deb ...
+#12 2.696 Unpacking perl-base (5.36.0-7+deb12u4) over (5.36.0-7+deb12u3) ...
+#12 3.377 Setting up perl-base (5.36.0-7+deb12u4) ...
+#12 3.401 Selecting previously unselected package perl-modules-5.36.
+#12 3.401 (Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 6696 files and directories currently installed.)
+#12 3.411 Preparing to unpack .../00-perl-modules-5.36_5.36.0-7+deb12u4_all.deb ...
+#12 3.412 Unpacking perl-modules-5.36 (5.36.0-7+deb12u4) ...
+#12 3.749 Selecting previously unselected package libgdbm-compat4:amd64.
+#12 3.750 Preparing to unpack .../01-libgdbm-compat4_1.23-3_amd64.deb ...
+#12 3.752 Unpacking libgdbm-compat4:amd64 (1.23-3) ...
+#12 3.772 Selecting previously unselected package libperl5.36:amd64.
+#12 3.772 Preparing to unpack .../02-libperl5.36_5.36.0-7+deb12u4_amd64.deb ...
+#12 3.773 Unpacking libperl5.36:amd64 (5.36.0-7+deb12u4) ...
+#12 4.107 Selecting previously unselected package perl.
+#12 4.109 Preparing to unpack .../03-perl_5.36.0-7+deb12u4_amd64.deb ...
+#12 4.116 Unpacking perl (5.36.0-7+deb12u4) ...
+#12 4.151 Preparing to unpack .../04-ca-certificates_20250419~deb12u1_all.deb ...
+#12 4.153 Unpacking ca-certificates (20250419~deb12u1) over (20230311+deb12u1) ...
+#12 4.285 Selecting previously unselected package libbrotli1:amd64.
+#12 4.287 Preparing to unpack .../05-libbrotli1_1.0.9-2+b6_amd64.deb ...
+#12 4.288 Unpacking libbrotli1:amd64 (1.0.9-2+b6) ...
+#12 4.320 Selecting previously unselected package libsasl2-modules-db:amd64.
+#12 4.322 Preparing to unpack .../06-libsasl2-modules-db_2.1.28+dfsg-10_amd64.deb ...
+#12 4.323 Unpacking libsasl2-modules-db:amd64 (2.1.28+dfsg-10) ...
+#12 4.339 Selecting previously unselected package libsasl2-2:amd64.
+#12 4.341 Preparing to unpack .../07-libsasl2-2_2.1.28+dfsg-10_amd64.deb ...
+#12 4.342 Unpacking libsasl2-2:amd64 (2.1.28+dfsg-10) ...
+#12 4.364 Selecting previously unselected package libldap-2.5-0:amd64.
+#12 4.365 Preparing to unpack .../08-libldap-2.5-0_2.5.13+dfsg-5_amd64.deb ...
+#12 4.367 Unpacking libldap-2.5-0:amd64 (2.5.13+dfsg-5) ...
+#12 4.394 Selecting previously unselected package libnghttp2-14:amd64.
+#12 4.397 Preparing to unpack .../09-libnghttp2-14_1.52.0-1+deb12u3_amd64.deb ...
+#12 4.399 Unpacking libnghttp2-14:amd64 (1.52.0-1+deb12u3) ...
+#12 4.419 Selecting previously unselected package libpsl5:amd64.
+#12 4.421 Preparing to unpack .../10-libpsl5_0.21.2-1_amd64.deb ...
+#12 4.422 Unpacking libpsl5:amd64 (0.21.2-1) ...
+#12 4.441 Selecting previously unselected package librtmp1:amd64.
+#12 4.442 Preparing to unpack .../11-librtmp1_2.4+20151223.gitfa8646d.1-2+b2_amd64.deb ...
+#12 4.443 Unpacking librtmp1:amd64 (2.4+20151223.gitfa8646d.1-2+b2) ...
+#12 4.464 Selecting previously unselected package libssh2-1:amd64.
+#12 4.466 Preparing to unpack .../12-libssh2-1_1.10.0-3+deb12u1_amd64.deb ...
+#12 4.467 Unpacking libssh2-1:amd64 (1.10.0-3+deb12u1) ...
+#12 4.492 Selecting previously unselected package libcurl3-gnutls:amd64.
+#12 4.494 Preparing to unpack .../13-libcurl3-gnutls_7.88.1-10+deb12u15_amd64.deb ...
+#12 4.495 Unpacking libcurl3-gnutls:amd64 (7.88.1-10+deb12u15) ...
+#12 4.531 Selecting previously unselected package libexpat1:amd64.
+#12 4.533 Preparing to unpack .../14-libexpat1_2.5.0-1+deb12u4_amd64.deb ...
+#12 4.534 Unpacking libexpat1:amd64 (2.5.0-1+deb12u4) ...
+#12 4.558 Selecting previously unselected package liberror-perl.
+#12 4.558 Preparing to unpack .../15-liberror-perl_0.17029-2_all.deb ...
+#12 4.559 Unpacking liberror-perl (0.17029-2) ...
+#12 4.577 Selecting previously unselected package git-man.
+#12 4.578 Preparing to unpack .../16-git-man_1%3a2.39.5-0+deb12u3_all.deb ...
+#12 4.579 Unpacking git-man (1:2.39.5-0+deb12u3) ...
+#12 4.667 Selecting previously unselected package git.
+#12 4.669 Preparing to unpack .../17-git_1%3a2.39.5-0+deb12u3_amd64.deb ...
+#12 4.675 Unpacking git (1:2.39.5-0+deb12u3) ...
+#12 5.092 Selecting previously unselected package libevent-core-2.1-7:amd64.
+#12 5.095 Preparing to unpack .../18-libevent-core-2.1-7_2.1.12-stable-8+deb12u1_amd64.deb ...
+#12 5.096 Unpacking libevent-core-2.1-7:amd64 (2.1.12-stable-8+deb12u1) ...
+#12 5.119 Selecting previously unselected package libutempter0:amd64.
+#12 5.120 Preparing to unpack .../19-libutempter0_1.2.1-3_amd64.deb ...
+#12 5.121 Unpacking libutempter0:amd64 (1.2.1-3) ...
+#12 5.141 Selecting previously unselected package ripgrep.
+#12 5.143 Preparing to unpack .../20-ripgrep_13.0.0-4+b2_amd64.deb ...
+#12 5.144 Unpacking ripgrep (13.0.0-4+b2) ...
+#12 5.242 Selecting previously unselected package tmux.
+#12 5.243 Preparing to unpack .../21-tmux_3.3a-3_amd64.deb ...
+#12 5.245 Unpacking tmux (3.3a-3) ...
+#12 5.295 Setting up libexpat1:amd64 (2.5.0-1+deb12u4) ...
+#12 5.298 Setting up libpsl5:amd64 (0.21.2-1) ...
+#12 5.300 Setting up libbrotli1:amd64 (1.0.9-2+b6) ...
+#12 5.302 Setting up libnghttp2-14:amd64 (1.52.0-1+deb12u3) ...
+#12 5.304 Setting up libsasl2-modules-db:amd64 (2.1.28+dfsg-10) ...
+#12 5.306 Setting up ca-certificates (20250419~deb12u1) ...
+#12 5.378 debconf: unable to initialize frontend: Dialog
+#12 5.378 debconf: (TERM is not set, so the dialog frontend is not usable.)
+#12 5.378 debconf: falling back to frontend: Readline
+#12 5.386 debconf: unable to initialize frontend: Readline
+#12 5.386 debconf: (This frontend requires a controlling tty.)
+#12 5.386 debconf: falling back to frontend: Teletype
+#12 7.299 Updating certificates in /etc/ssl/certs...
+#12 8.253 rehash: warning: skipping ca-certificates.crt,it does not contain exactly one certificate or CRL
+#12 8.260 21 added, 13 removed; done.
+#12 8.275 Setting up perl-modules-5.36 (5.36.0-7+deb12u4) ...
+#12 8.277 Setting up librtmp1:amd64 (2.4+20151223.gitfa8646d.1-2+b2) ...
+#12 8.279 Setting up libevent-core-2.1-7:amd64 (2.1.12-stable-8+deb12u1) ...
+#12 8.281 Setting up libgdbm-compat4:amd64 (1.23-3) ...
+#12 8.283 Setting up libsasl2-2:amd64 (2.1.28+dfsg-10) ...
+#12 8.285 Setting up libutempter0:amd64 (1.2.1-3) ...
+#12 8.287 Setting up ripgrep (13.0.0-4+b2) ...
+#12 8.289 Setting up git-man (1:2.39.5-0+deb12u3) ...
+#12 8.291 Setting up libssh2-1:amd64 (1.10.0-3+deb12u1) ...
+#12 8.293 Setting up tmux (3.3a-3) ...
+#12 8.307 Setting up libperl5.36:amd64 (5.36.0-7+deb12u4) ...
+#12 8.309 Setting up libldap-2.5-0:amd64 (2.5.13+dfsg-5) ...
+#12 8.311 Setting up perl (5.36.0-7+deb12u4) ...
+#12 8.321 Setting up libcurl3-gnutls:amd64 (7.88.1-10+deb12u15) ...
+#12 8.324 Setting up liberror-perl (0.17029-2) ...
+#12 8.326 Setting up git (1:2.39.5-0+deb12u3) ...
+#12 8.334 Processing triggers for libc-bin (2.36-9+deb12u14) ...
+#12 8.345 Processing triggers for ca-certificates (20250419~deb12u1) ...
+#12 8.350 Updating certificates in /etc/ssl/certs...
+#12 8.973 0 added, 0 removed; done.
+#12 8.973 Running hooks in /etc/ca-certificates/update.d...
+#12 8.975 done.
+#12 DONE 9.3s
+
+#13 [stage-1  5/11] COPY requirements.txt /opt/harness/requirements.txt
+#13 DONE 0.0s
+
+#14 [stage-1  6/11] RUN pip install --no-cache-dir -r /opt/harness/requirements.txt
+#14 1.671 Collecting openhands-sdk==1.54.0 (from -r /opt/harness/requirements.txt (line 1))
+#14 1.736   Downloading openhands_sdk-1.54.0-py3-none-any.whl.metadata (1.3 kB)
+#14 1.761 Collecting openhands-tools==1.54.0 (from -r /opt/harness/requirements.txt (line 2))
+#14 1.766   Downloading openhands_tools-1.54.0-py3-none-any.whl.metadata (741 bytes)
+#14 1.778 Collecting agent-client-protocol<0.13.0,>=0.12.1 (from openhands-sdk==1.54.0->-r /opt/harness/requirements.txt (line 1))
+#14 1.784   Downloading agent_client_protocol-0.12.1-py3-none-any.whl.metadata (5.8 kB)
+#14 1.794 Collecting deprecation>=2.1.0 (from openhands-sdk==1.54.0->-r /opt/harness/requirements.txt (line 1))
+#14 1.799   Downloading deprecation-2.1.0-py2.py3-none-any.whl.metadata (4.6 kB)
+#14 1.826 Collecting fakeredis>=2.32.1 (from fakeredis[lua]>=2.32.1->openhands-sdk==1.54.0->-r /opt/harness/requirements.txt (line 1))
+#14 1.834   Downloading fakeredis-2.39.0-py3-none-any.whl.metadata (7.2 kB)
+#14 1.864 Collecting fastmcp<4,>=3.2.0 (from openhands-sdk==1.54.0->-r /opt/harness/requirements.txt (line 1))
+#14 1.869   Downloading fastmcp-3.4.8-py3-none-any.whl.metadata (8.5 kB)
+#14 1.895 Collecting filelock>=3.20.1 (from openhands-sdk==1.54.0->-r /opt/harness/requirements.txt (line 1))
+#14 1.904   Downloading filelock-4.1.0-py3-none-any.whl.metadata (2.0 kB)
+#14 1.920 Collecting httpx>=0.28.1 (from httpx[socks]>=0.28.1->openhands-sdk==1.54.0->-r /opt/harness/requirements.txt (line 1))
+#14 1.928   Downloading httpx-0.28.1-py3-none-any.whl.metadata (7.1 kB)
+#14 1.952 Collecting jsonschema>=4.23.0 (from openhands-sdk==1.54.0->-r /opt/harness/requirements.txt (line 1))
+#14 1.956   Downloading jsonschema-4.26.0-py3-none-any.whl.metadata (7.6 kB)
+#14 1.972 Collecting joserfc>=1.7.5 (from openhands-sdk==1.54.0->-r /opt/harness/requirements.txt (line 1))
+#14 1.976   Downloading joserfc-1.7.5-py3-none-any.whl.metadata (3.1 kB)
+#14 2.160 Collecting litellm>=1.93.0 (from openhands-sdk==1.54.0->-r /opt/harness/requirements.txt (line 1))
+#14 2.164   Downloading litellm-1.104.2-cp310-abi3-manylinux_2_28_x86_64.whl.metadata (43 kB)
+#14 2.339 Collecting pillow>=12.3.0 (from openhands-sdk==1.54.0->-r /opt/harness/requirements.txt (line 1))
+#14 2.344   Downloading pillow-12.3.0-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (9.1 kB)
+#14 2.443 Collecting pydantic>=2.13.5 (from openhands-sdk==1.54.0->-r /opt/harness/requirements.txt (line 1))
+#14 2.451   Downloading pydantic-2.14.0-py3-none-any.whl.metadata (131 kB)
+#14 2.469 Collecting python-frontmatter>=1.3.0 (from openhands-sdk==1.54.0->-r /opt/harness/requirements.txt (line 1))
+#14 2.473   Downloading python_frontmatter-1.3.0-py3-none-any.whl.metadata (4.4 kB)
+#14 2.484 Collecting python-json-logger>=3.3.0 (from openhands-sdk==1.54.0->-r /opt/harness/requirements.txt (line 1))
+#14 2.489   Downloading python_json_logger-4.2.0-py3-none-any.whl.metadata (2.9 kB)
+#14 2.502 Collecting tenacity>=9.1.2 (from openhands-sdk==1.54.0->-r /opt/harness/requirements.txt (line 1))
+#14 2.506   Downloading tenacity-9.2.1-py3-none-any.whl.metadata (1.4 kB)
+#14 2.606 Collecting websockets>=12 (from openhands-sdk==1.54.0->-r /opt/harness/requirements.txt (line 1))
+#14 2.610   Downloading websockets-17.2-cp312-cp312-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl.metadata (6.3 kB)
+#14 2.646 Collecting lmnr<0.8.0,>=0.7.60 (from openhands-sdk==1.54.0->-r /opt/harness/requirements.txt (line 1))
+#14 2.652   Downloading lmnr-0.7.66-py3-none-any.whl.metadata (14 kB)
+#14 2.699 Collecting tree-sitter>=0.25 (from openhands-sdk==1.54.0->-r /opt/harness/requirements.txt (line 1))
+#14 2.704   Downloading tree_sitter-0.26.0-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (10 kB)
+#14 2.716 Collecting tree-sitter-bash>=0.25 (from openhands-sdk==1.54.0->-r /opt/harness/requirements.txt (line 1))
+#14 2.723   Downloading tree_sitter_bash-0.25.1-cp310-abi3-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (2.2 kB)
+#14 2.734 Collecting binaryornot>=0.6.0 (from openhands-tools==1.54.0->-r /opt/harness/requirements.txt (line 2))
+#14 2.739   Downloading binaryornot-0.6.0-py3-none-any.whl.metadata (2.9 kB)
+#14 2.756 Collecting cachetools (from openhands-tools==1.54.0->-r /opt/harness/requirements.txt (line 2))
+#14 2.760   Downloading cachetools-7.2.1-py3-none-any.whl.metadata (5.5 kB)
+#14 2.811 Collecting libtmux>=0.53.0 (from openhands-tools==1.54.0->-r /opt/harness/requirements.txt (line 2))
+#14 2.816   Downloading libtmux-0.62.0-py3-none-any.whl.metadata (12 kB)
+#14 2.858 Collecting browser-use>=0.8.0 (from openhands-tools==1.54.0->-r /opt/harness/requirements.txt (line 2))
+#14 2.863   Downloading browser_use-0.13.11-py3-none-any.whl.metadata (20 kB)
+#14 2.879 Collecting func-timeout>=4.3.5 (from openhands-tools==1.54.0->-r /opt/harness/requirements.txt (line 2))
+#14 2.883   Downloading func_timeout-4.3.5.tar.gz (44 kB)
+#14 2.898   Installing build dependencies: started
+#14 4.131   Installing build dependencies: finished with status 'done'
+#14 4.132   Getting requirements to build wheel: started
+#14 4.343   Getting requirements to build wheel: finished with status 'done'
+#14 4.345   Preparing metadata (pyproject.toml): started
+#14 4.546   Preparing metadata (pyproject.toml): finished with status 'done'
+#14 4.555 Collecting tom-swe>=1.0.3 (from openhands-tools==1.54.0->-r /opt/harness/requirements.txt (line 2))
+#14 4.559   Downloading tom_swe-1.0.3-py3-none-any.whl.metadata (7.0 kB)
+#14 5.008 Collecting aiohttp==3.14.3 (from browser-use>=0.8.0->openhands-tools==1.54.0->-r /opt/harness/requirements.txt (line 2))
+#14 5.013   Downloading aiohttp-3.14.3-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (8.3 kB)
+#14 5.060 Collecting anthropic<2.0.0,>=0.76.0 (from browser-use>=0.8.0->openhands-tools==1.54.0->-r /opt/harness/requirements.txt (line 2))
+#14 5.064   Downloading anthropic-1.13.0-py3-none-any.whl.metadata (3.8 kB)
+#14 5.084 Collecting anyio==4.12.1 (from browser-use>=0.8.0->openhands-tools==1.54.0->-r /opt/harness/requirements.txt (line 2))
+#14 5.088   Downloading anyio-4.12.1-py3-none-any.whl.metadata (4.3 kB)
+#14 5.101 Collecting browser-harness==0.1.13 (from browser-use>=0.8.0->openhands-tools==1.54.0->-r /opt/harness/requirements.txt (line 2))
+#14 5.110   Downloading browser_harness-0.1.13-py3-none-any.whl.metadata (4.1 kB)
+#14 5.131 Collecting browser-use-sdk==3.4.2 (from browser-use>=0.8.0->openhands-tools==1.54.0->-r /opt/harness/requirements.txt (line 2))
+#14 5.137   Downloading browser_use_sdk-3.4.2-py3-none-any.whl.metadata (1.0 kB)
+#14 5.147 Collecting bubus==1.5.6 (from browser-use>=0.8.0->openhands-tools==1.54.0->-r /opt/harness/requirements.txt (line 2))
+#14 5.153   Downloading bubus-1.5.6-py3-none-any.whl.metadata (37 kB)
+#14 5.164 Collecting cdp-use==1.4.5 (from browser-use>=0.8.0->openhands-tools==1.54.0->-r /opt/harness/requirements.txt (line 2))
+#14 5.169   Downloading cdp_use-1.4.5-py3-none-any.whl.metadata (9.5 kB)
+#14 5.185 Collecting click==8.3.3 (from browser-use>=0.8.0->openhands-tools==1.54.0->-r /opt/harness/requirements.txt (line 2))
+#14 5.189   Downloading click-8.3.3-py3-none-any.whl.metadata (2.6 kB)
+#14 5.202 Collecting cloudpickle==3.1.2 (from browser-use>=0.8.0->openhands-tools==1.54.0->-r /opt/harness/requirements.txt (line 2))
+#14 5.205   Downloading cloudpickle-3.1.2-py3-none-any.whl.metadata (7.1 kB)
+#14 5.271 Collecting google-api-core==2.29.0 (from browser-use>=0.8.0->openhands-tools==1.54.0->-r /opt/harness/requirements.txt (line 2))
+#14 5.277   Downloading google_api_core-2.29.0-py3-none-any.whl.metadata (3.3 kB)
+#14 5.327 Collecting google-api-python-client==2.188.0 (from browser-use>=0.8.0->openhands-tools==1.54.0->-r /opt/harness/requirements.txt (line 2))
+#14 5.333   Downloading google_api_python_client-2.188.0-py3-none-any.whl.metadata (7.0 kB)
+#14 5.346 Collecting google-auth-oauthlib==1.2.4 (from browser-use>=0.8.0->openhands-tools==1.54.0->-r /opt/harness/requirements.txt (line 2))
+#14 5.353   Downloading google_auth_oauthlib-1.2.4-py3-none-any.whl.metadata (3.1 kB)
+#14 5.389 Collecting google-auth==2.48.0 (from browser-use>=0.8.0->openhands-tools==1.54.0->-r /opt/harness/requirements.txt (line 2))
+#14 5.394   Downloading google_auth-2.48.0-py3-none-any.whl.metadata (6.2 kB)
+#14 5.423 Collecting google-genai==1.65.0 (from browser-use>=0.8.0->openhands-tools==1.54.0->-r /opt/harness/requirements.txt (line 2))
+#14 5.429   Downloading google_genai-1.65.0-py3-none-any.whl.metadata (51 kB)
+#14 5.448 Collecting groq==1.0.0 (from browser-use>=0.8.0->openhands-tools==1.54.0->-r /opt/harness/requirements.txt (line 2))
+#14 5.454   Downloading groq-1.0.0-py3-none-any.whl.metadata (16 kB)
+#14 5.467 Collecting inquirerpy==0.3.4 (from browser-use>=0.8.0->openhands-tools==1.54.0->-r /opt/harness/requirements.txt (line 2))
+#14 5.471   Downloading InquirerPy-0.3.4-py3-none-any.whl.metadata (8.1 kB)
+#14 5.485 Collecting markdownify==1.2.2 (from browser-use>=0.8.0->openhands-tools==1.54.0->-r /opt/harness/requirements.txt (line 2))
+#14 5.489   Downloading markdownify-1.2.2-py3-none-any.whl.metadata (9.9 kB)
+#14 5.508 Collecting mcp==2.1.1 (from browser-use>=0.8.0->openhands-tools==1.54.0->-r /opt/harness/requirements.txt (line 2))
+#14 5.512   Downloading mcp-2.1.1-py3-none-any.whl.metadata (7.8 kB)
+#14 5.526 Collecting ollama==0.6.1 (from browser-use>=0.8.0->openhands-tools==1.54.0->-r /opt/harness/requirements.txt (line 2))
+#14 5.531   Downloading ollama-0.6.1-py3-none-any.whl.metadata (4.3 kB)
+#14 5.591 Collecting openai==2.26.0 (from browser-use>=0.8.0->openhands-tools==1.54.0->-r /opt/harness/requirements.txt (line 2))
+#14 5.596   Downloading openai-2.26.0-py3-none-any.whl.metadata (29 kB)
+#14 5.652 Collecting posthog==7.7.0 (from browser-use>=0.8.0->openhands-tools==1.54.0->-r /opt/harness/requirements.txt (line 2))
+#14 5.658   Downloading posthog-7.7.0-py3-none-any.whl.metadata (6.4 kB)
+#14 5.721 Collecting psutil==7.2.2 (from browser-use>=0.8.0->openhands-tools==1.54.0->-r /opt/harness/requirements.txt (line 2))
+#14 5.725   Downloading psutil-7.2.2-cp36-abi3-manylinux2010_x86_64.manylinux_2_12_x86_64.manylinux_2_28_x86_64.whl.metadata (22 kB)
+#14 5.743 Collecting pydantic-settings==2.15.0 (from browser-use>=0.8.0->openhands-tools==1.54.0->-r /opt/harness/requirements.txt (line 2))
+#14 5.748   Downloading pydantic_settings-2.15.0-py3-none-any.whl.metadata (3.9 kB)
+#14 5.762 Collecting pydantic>=2.13.5 (from openhands-sdk==1.54.0->-r /opt/harness/requirements.txt (line 1))
+#14 5.766   Downloading pydantic-2.13.5-py3-none-any.whl.metadata (110 kB)
+#14 5.780 Collecting pyotp==2.9.0 (from browser-use>=0.8.0->openhands-tools==1.54.0->-r /opt/harness/requirements.txt (line 2))
+#14 5.784   Downloading pyotp-2.9.0-py3-none-any.whl.metadata (9.8 kB)
+#14 5.806 Collecting pypdf==6.16.2 (from browser-use>=0.8.0->openhands-tools==1.54.0->-r /opt/harness/requirements.txt (line 2))
+#14 5.812   Downloading pypdf-6.16.2-py3-none-any.whl.metadata (7.5 kB)
+#14 5.827 Collecting python-docx==1.2.0 (from browser-use>=0.8.0->openhands-tools==1.54.0->-r /opt/harness/requirements.txt (line 2))
+#14 5.830   Downloading python_docx-1.2.0-py3-none-any.whl.metadata (2.0 kB)
+#14 5.846 Collecting python-dotenv==1.2.2 (from browser-use>=0.8.0->openhands-tools==1.54.0->-r /opt/harness/requirements.txt (line 2))
+#14 5.850   Downloading python_dotenv-1.2.2-py3-none-any.whl.metadata (27 kB)
+#14 5.944 Collecting reportlab==4.4.9 (from browser-use>=0.8.0->openhands-tools==1.54.0->-r /opt/harness/requirements.txt (line 2))
+#14 5.948   Downloading reportlab-4.4.9-py3-none-any.whl.metadata (1.7 kB)
+#14 5.972 Collecting requests==2.33.0 (from browser-use>=0.8.0->openhands-tools==1.54.0->-r /opt/harness/requirements.txt (line 2))
+#14 5.976   Downloading requests-2.33.0-py3-none-any.whl.metadata (5.1 kB)
+#14 6.011 Collecting rich==14.3.3 (from browser-use>=0.8.0->openhands-tools==1.54.0->-r /opt/harness/requirements.txt (line 2))
+#14 6.016   Downloading rich-14.3.3-py3-none-any.whl.metadata (18 kB)
+#14 6.026 Collecting screeninfo==0.8.1 (from browser-use>=0.8.0->openhands-tools==1.54.0->-r /opt/harness/requirements.txt (line 2))
+#14 6.030   Downloading screeninfo-0.8.1-py3-none-any.whl.metadata (2.9 kB)
+#14 6.044 Collecting typing-extensions==4.15.0 (from browser-use>=0.8.0->openhands-tools==1.54.0->-r /opt/harness/requirements.txt (line 2))
+#14 6.048   Downloading typing_extensions-4.15.0-py3-none-any.whl.metadata (3.3 kB)
+#14 6.055 Collecting uuid7==0.1.0 (from browser-use>=0.8.0->openhands-tools==1.54.0->-r /opt/harness/requirements.txt (line 2))
+#14 6.061   Downloading uuid7-0.1.0-py2.py3-none-any.whl.metadata (3.6 kB)
+#14 6.079 Collecting certifi (from httpx>=0.28.1->httpx[socks]>=0.28.1->openhands-sdk==1.54.0->-r /opt/harness/requirements.txt (line 1))
+#14 6.083   Downloading certifi-2026.7.22-py3-none-any.whl.metadata (2.5 kB)
+#14 6.101 Collecting httpcore==1.* (from httpx>=0.28.1->httpx[socks]>=0.28.1->openhands-sdk==1.54.0->-r /opt/harness/requirements.txt (line 1))
+#14 6.105   Downloading httpcore-1.0.9-py3-none-any.whl.metadata (21 kB)
+#14 6.119 Collecting idna (from httpx>=0.28.1->httpx[socks]>=0.28.1->openhands-sdk==1.54.0->-r /opt/harness/requirements.txt (line 1))
+#14 6.123   Downloading idna-3.20-py3-none-any.whl.metadata (7.2 kB)
+#14 6.134 Collecting annotated-types>=0.6.0 (from pydantic>=2.13.5->openhands-sdk==1.54.0->-r /opt/harness/requirements.txt (line 1))
+#14 6.139   Downloading annotated_types-0.8.0-py3-none-any.whl.metadata (15 kB)
+#14 6.766 Collecting pydantic-core==2.46.5 (from pydantic>=2.13.5->openhands-sdk==1.54.0->-r /opt/harness/requirements.txt (line 1))
+#14 6.770   Downloading pydantic_core-2.46.5-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (6.6 kB)
+#14 6.782 Collecting typing-inspection>=0.4.2 (from pydantic>=2.13.5->openhands-sdk==1.54.0->-r /opt/harness/requirements.txt (line 1))
+#14 6.785   Downloading typing_inspection-0.4.4-py3-none-any.whl.metadata (2.6 kB)
+#14 6.800 Collecting aiohappyeyeballs>=2.5.0 (from aiohttp==3.14.3->browser-use>=0.8.0->openhands-tools==1.54.0->-r /opt/harness/requirements.txt (line 2))
+#14 6.804   Downloading aiohappyeyeballs-2.7.1-py3-none-any.whl.metadata (5.9 kB)
+#14 6.815 Collecting aiosignal>=1.4.0 (from aiohttp==3.14.3->browser-use>=0.8.0->openhands-tools==1.54.0->-r /opt/harness/requirements.txt (line 2))
+#14 6.819   Downloading aiosignal-1.4.0-py3-none-any.whl.metadata (3.7 kB)
+#14 6.833 Collecting attrs>=17.3.0 (from aiohttp==3.14.3->browser-use>=0.8.0->openhands-tools==1.54.0->-r /opt/harness/requirements.txt (line 2))
+#14 6.837   Downloading attrs-26.1.0-py3-none-any.whl.metadata (8.8 kB)
+#14 6.942 Collecting frozenlist>=1.1.1 (from aiohttp==3.14.3->browser-use>=0.8.0->openhands-tools==1.54.0->-r /opt/harness/requirements.txt (line 2))
+#14 6.947   Downloading frozenlist-1.8.0-cp312-cp312-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl.metadata (20 kB)
+#14 7.172 Collecting multidict<7.0,>=4.5 (from aiohttp==3.14.3->browser-use>=0.8.0->openhands-tools==1.54.0->-r /opt/harness/requirements.txt (line 2))
+#14 7.177   Downloading multidict-6.9.1-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (5.3 kB)
+#14 7.237 Collecting propcache>=0.2.0 (from aiohttp==3.14.3->browser-use>=0.8.0->openhands-tools==1.54.0->-r /opt/harness/requirements.txt (line 2))
+#14 7.241   Downloading propcache-0.5.4-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (25 kB)
+#14 7.472 Collecting yarl<2.0,>=1.17.0 (from aiohttp==3.14.3->browser-use>=0.8.0->openhands-tools==1.54.0->-r /opt/harness/requirements.txt (line 2))
+#14 7.477   Downloading yarl-1.25.1-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (111 kB)
+#14 7.502 Collecting fetch-use==0.4.0 (from browser-harness==0.1.13->browser-use>=0.8.0->openhands-tools==1.54.0->-r /opt/harness/requirements.txt (line 2))
+#14 7.508   Downloading fetch_use-0.4.0-py3-none-any.whl.metadata (7.3 kB)
+#14 7.515 Collecting websockets>=12 (from openhands-sdk==1.54.0->-r /opt/harness/requirements.txt (line 1))
+#14 7.519   Downloading websockets-15.0.1-cp312-cp312-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (6.8 kB)
+#14 7.546 Collecting aiofiles>=24.1.0 (from bubus==1.5.6->browser-use>=0.8.0->openhands-tools==1.54.0->-r /opt/harness/requirements.txt (line 2))
+#14 7.550   Downloading aiofiles-25.1.0-py3-none-any.whl.metadata (6.3 kB)
+#14 7.568 Collecting portalocker>=2.7.0 (from bubus==1.5.6->browser-use>=0.8.0->openhands-tools==1.54.0->-r /opt/harness/requirements.txt (line 2))
+#14 7.572   Downloading portalocker-4.4.0-py3-none-any.whl.metadata (10 kB)
+#14 7.615 Collecting googleapis-common-protos<2.0.0,>=1.56.2 (from google-api-core==2.29.0->browser-use>=0.8.0->openhands-tools==1.54.0->-r /opt/harness/requirements.txt (line 2))
+#14 7.619   Downloading googleapis_common_protos-1.75.5-py3-none-any.whl.metadata (8.5 kB)
+#14 7.890 Collecting protobuf!=3.20.0,!=3.20.1,!=4.21.0,!=4.21.1,!=4.21.2,!=4.21.3,!=4.21.4,!=4.21.5,<7.0.0,>=3.19.5 (from google-api-core==2.29.0->browser-use>=0.8.0->openhands-tools==1.54.0->-r /opt/harness/requirements.txt (line 2))
+#14 7.895   Downloading protobuf-6.33.6-cp39-abi3-manylinux2014_x86_64.whl.metadata (593 bytes)
+#14 7.915 Collecting proto-plus<2.0.0,>=1.22.3 (from google-api-core==2.29.0->browser-use>=0.8.0->openhands-tools==1.54.0->-r /opt/harness/requirements.txt (line 2))
+#14 7.920   Downloading proto_plus-1.29.0-py3-none-any.whl.metadata (2.2 kB)
+#14 7.958 Collecting httplib2<1.0.0,>=0.19.0 (from google-api-python-client==2.188.0->browser-use>=0.8.0->openhands-tools==1.54.0->-r /opt/harness/requirements.txt (line 2))
+#14 7.963   Downloading httplib2-0.32.0-py3-none-any.whl.metadata (2.2 kB)
+#14 8.003 Collecting google-auth-httplib2<1.0.0,>=0.2.0 (from google-api-python-client==2.188.0->browser-use>=0.8.0->openhands-tools==1.54.0->-r /opt/harness/requirements.txt (line 2))
+#14 8.009   Downloading google_auth_httplib2-0.4.4-py3-none-any.whl.metadata (3.0 kB)
+#14 8.039 Collecting uritemplate<5,>=3.0.1 (from google-api-python-client==2.188.0->browser-use>=0.8.0->openhands-tools==1.54.0->-r /opt/harness/requirements.txt (line 2))
+#14 8.043   Downloading uritemplate-4.2.0-py3-none-any.whl.metadata (2.6 kB)
+#14 8.060 Collecting pyasn1-modules>=0.2.1 (from google-auth==2.48.0->browser-use>=0.8.0->openhands-tools==1.54.0->-r /opt/harness/requirements.txt (line 2))
+#14 8.065   Downloading pyasn1_modules-0.4.2-py3-none-any.whl.metadata (3.5 kB)
+#14 8.244 Collecting cryptography>=38.0.3 (from google-auth==2.48.0->browser-use>=0.8.0->openhands-tools==1.54.0->-r /opt/harness/requirements.txt (line 2))
+#14 8.250   Downloading cryptography-50.0.2-cp311-abi3-manylinux_2_34_x86_64.whl.metadata (4.4 kB)
+#14 8.264 Collecting rsa<5,>=3.1.4 (from google-auth==2.48.0->browser-use>=0.8.0->openhands-tools==1.54.0->-r /opt/harness/requirements.txt (line 2))
+#14 8.269   Downloading rsa-4.9.1-py3-none-any.whl.metadata (5.6 kB)
+#14 8.330 Collecting requests-oauthlib>=0.7.0 (from google-auth-oauthlib==1.2.4->browser-use>=0.8.0->openhands-tools==1.54.0->-r /opt/harness/requirements.txt (line 2))
+#14 8.336   Downloading requests_oauthlib-2.0.0-py2.py3-none-any.whl.metadata (11 kB)
+#14 8.418 Collecting tenacity>=9.1.2 (from openhands-sdk==1.54.0->-r /opt/harness/requirements.txt (line 1))
+#14 8.422   Downloading tenacity-9.1.4-py3-none-any.whl.metadata (1.2 kB)
+#14 8.440 Collecting distro<2,>=1.7.0 (from google-genai==1.65.0->browser-use>=0.8.0->openhands-tools==1.54.0->-r /opt/harness/requirements.txt (line 2))
+#14 8.444   Downloading distro-1.9.0-py3-none-any.whl.metadata (6.8 kB)
+#14 8.452 Collecting sniffio (from google-genai==1.65.0->browser-use>=0.8.0->openhands-tools==1.54.0->-r /opt/harness/requirements.txt (line 2))
+#14 8.456   Downloading sniffio-1.3.1-py3-none-any.whl.metadata (3.9 kB)
+#14 8.493 Collecting h11>=0.16 (from httpcore==1.*->httpx>=0.28.1->httpx[socks]>=0.28.1->openhands-sdk==1.54.0->-r /opt/harness/requirements.txt (line 1))
+#14 8.499   Downloading h11-0.16.0-py3-none-any.whl.metadata (8.3 kB)
+#14 8.509 Collecting pfzy<0.4.0,>=0.3.1 (from inquirerpy==0.3.4->browser-use>=0.8.0->openhands-tools==1.54.0->-r /opt/harness/requirements.txt (line 2))
+#14 8.515   Downloading pfzy-0.3.4-py3-none-any.whl.metadata (4.9 kB)
+#14 8.546 Collecting prompt-toolkit<4.0.0,>=3.0.1 (from inquirerpy==0.3.4->browser-use>=0.8.0->openhands-tools==1.54.0->-r /opt/harness/requirements.txt (line 2))
+#14 8.552   Downloading prompt_toolkit-3.0.53-py3-none-any.whl.metadata (6.4 kB)
+#14 8.569 Collecting beautifulsoup4<5,>=4.9 (from markdownify==1.2.2->browser-use>=0.8.0->openhands-tools==1.54.0->-r /opt/harness/requirements.txt (line 2))
+#14 8.573   Downloading beautifulsoup4-4.15.0-py3-none-any.whl.metadata (3.8 kB)
+#14 8.587 Collecting six<2,>=1.15 (from markdownify==1.2.2->browser-use>=0.8.0->openhands-tools==1.54.0->-r /opt/harness/requirements.txt (line 2))
+#14 8.592   Downloading six-1.17.0-py2.py3-none-any.whl.metadata (1.7 kB)
+#14 8.605 Collecting httpx2>=2.5.0 (from mcp==2.1.1->browser-use>=0.8.0->openhands-tools==1.54.0->-r /opt/harness/requirements.txt (line 2))
+#14 8.610   Downloading httpx2-2.13.1-py3-none-any.whl.metadata (9.8 kB)
+#14 8.626 Collecting mcp-types==2.1.1 (from mcp==2.1.1->browser-use>=0.8.0->openhands-tools==1.54.0->-r /opt/harness/requirements.txt (line 2))
+#14 8.631   Downloading mcp_types-2.1.1-py3-none-any.whl.metadata (1.9 kB)
+#14 8.654 Collecting opentelemetry-api>=1.28.0 (from mcp==2.1.1->browser-use>=0.8.0->openhands-tools==1.54.0->-r /opt/harness/requirements.txt (line 2))
+#14 8.659   Downloading opentelemetry_api-1.45.1-py3-none-any.whl.metadata (1.4 kB)
+#14 8.685 Collecting pyjwt>=2.10.1 (from pyjwt[crypto]>=2.10.1->mcp==2.1.1->browser-use>=0.8.0->openhands-tools==1.54.0->-r /opt/harness/requirements.txt (line 2))
+#14 8.690   Downloading pyjwt-2.15.1-py3-none-any.whl.metadata (3.5 kB)
+#14 8.701 Collecting python-multipart>=0.0.9 (from mcp==2.1.1->browser-use>=0.8.0->openhands-tools==1.54.0->-r /opt/harness/requirements.txt (line 2))
+#14 8.708   Downloading python_multipart-0.0.32-py3-none-any.whl.metadata (2.1 kB)
+#14 8.725 Collecting sse-starlette>=3.0.0 (from mcp==2.1.1->browser-use>=0.8.0->openhands-tools==1.54.0->-r /opt/harness/requirements.txt (line 2))
+#14 8.729   Downloading sse_starlette-3.5.0-py3-none-any.whl.metadata (15 kB)
+#14 8.762 Collecting starlette>=0.27 (from mcp==2.1.1->browser-use>=0.8.0->openhands-tools==1.54.0->-r /opt/harness/requirements.txt (line 2))
+#14 8.766   Downloading starlette-1.7.0-py3-none-any.whl.metadata (6.6 kB)
+#14 8.799 Collecting uvicorn>=0.31.1 (from mcp==2.1.1->browser-use>=0.8.0->openhands-tools==1.54.0->-r /opt/harness/requirements.txt (line 2))
+#14 8.804   Downloading uvicorn-0.54.0-py3-none-any.whl.metadata (6.6 kB)
+#14 8.894 Collecting jiter<1,>=0.10.0 (from openai==2.26.0->browser-use>=0.8.0->openhands-tools==1.54.0->-r /opt/harness/requirements.txt (line 2))
+#14 8.901   Downloading jiter-0.17.0-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (5.2 kB)
+#14 8.932 Collecting tqdm>4 (from openai==2.26.0->browser-use>=0.8.0->openhands-tools==1.54.0->-r /opt/harness/requirements.txt (line 2))
+#14 8.936   Downloading tqdm-4.70.1-py3-none-any.whl.metadata (57 kB)
+#14 8.969 Collecting python-dateutil>=2.2 (from posthog==7.7.0->browser-use>=0.8.0->openhands-tools==1.54.0->-r /opt/harness/requirements.txt (line 2))
+#14 8.974   Downloading python_dateutil-2.9.0.post0-py2.py3-none-any.whl.metadata (8.4 kB)
+#14 8.984 Collecting backoff>=1.10.0 (from posthog==7.7.0->browser-use>=0.8.0->openhands-tools==1.54.0->-r /opt/harness/requirements.txt (line 2))
+#14 8.988   Downloading backoff-2.2.1-py3-none-any.whl.metadata (14 kB)
+#14 9.284 Collecting lxml>=3.1.0 (from python-docx==1.2.0->browser-use>=0.8.0->openhands-tools==1.54.0->-r /opt/harness/requirements.txt (line 2))
+#14 9.291   Downloading lxml-6.1.3-cp312-cp312-manylinux_2_26_x86_64.manylinux_2_28_x86_64.whl.metadata (3.3 kB)
+#14 9.416 Collecting charset-normalizer (from reportlab==4.4.9->browser-use>=0.8.0->openhands-tools==1.54.0->-r /opt/harness/requirements.txt (line 2))
+#14 9.421   Downloading charset_normalizer-3.5.2-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (46 kB)
+#14 9.462 Collecting urllib3<3,>=1.26 (from requests==2.33.0->browser-use>=0.8.0->openhands-tools==1.54.0->-r /opt/harness/requirements.txt (line 2))
+#14 9.466   Downloading urllib3-2.8.0-py3-none-any.whl.metadata (7.4 kB)
+#14 9.486 Collecting markdown-it-py>=2.2.0 (from rich==14.3.3->browser-use>=0.8.0->openhands-tools==1.54.0->-r /opt/harness/requirements.txt (line 2))
+#14 9.490   Downloading markdown_it_py-4.2.0-py3-none-any.whl.metadata (7.4 kB)
+#14 9.511 Collecting pygments<3.0.0,>=2.13.0 (from rich==14.3.3->browser-use>=0.8.0->openhands-tools==1.54.0->-r /opt/harness/requirements.txt (line 2))
+#14 9.515   Downloading pygments-2.21.0-py3-none-any.whl.metadata (2.5 kB)
+#14 9.541 Collecting packaging (from deprecation>=2.1.0->openhands-sdk==1.54.0->-r /opt/harness/requirements.txt (line 1))
+#14 9.545   Downloading packaging-26.3-py3-none-any.whl.metadata (3.5 kB)
+#14 9.573 Collecting redis>=4.3 (from fakeredis>=2.32.1->fakeredis[lua]>=2.32.1->openhands-sdk==1.54.0->-r /opt/harness/requirements.txt (line 1))
+#14 9.578   Downloading redis-8.1.0-py3-none-any.whl.metadata (16 kB)
+#14 9.592 Collecting sortedcontainers>=2 (from fakeredis>=2.32.1->fakeredis[lua]>=2.32.1->openhands-sdk==1.54.0->-r /opt/harness/requirements.txt (line 1))
+#14 9.596   Downloading sortedcontainers-2.4.0-py2.py3-none-any.whl.metadata (10 kB)
+#14 9.650 Collecting lupa>=2.1 (from fakeredis[lua]>=2.32.1->openhands-sdk==1.54.0->-r /opt/harness/requirements.txt (line 1))
+#14 9.667   Downloading lupa-2.8-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (60 kB)
+#14 9.685 Collecting fastmcp-slim==3.4.8 (from fastmcp-slim[client,server]==3.4.8->fastmcp<4,>=3.2.0->openhands-sdk==1.54.0->-r /opt/harness/requirements.txt (line 1))
+#14 9.698   Downloading fastmcp_slim-3.4.8-py3-none-any.whl.metadata (10 kB)
+#14 9.729 Collecting platformdirs>=4.0.0 (from fastmcp-slim==3.4.8->fastmcp-slim[client,server]==3.4.8->fastmcp<4,>=3.2.0->openhands-sdk==1.54.0->-r /opt/harness/requirements.txt (line 1))
+#14 9.744   Downloading platformdirs-4.12.4-py3-none-any.whl.metadata (5.5 kB)
+#14 9.808 Collecting authlib>=1.6.11 (from fastmcp-slim[client,server]==3.4.8->fastmcp<4,>=3.2.0->openhands-sdk==1.54.0->-r /opt/harness/requirements.txt (line 1))
+#14 9.812   Downloading authlib-1.8.0-py2.py3-none-any.whl.metadata (10 kB)
+#14 9.822 Collecting exceptiongroup>=1.2.2 (from fastmcp-slim[client,server]==3.4.8->fastmcp<4,>=3.2.0->openhands-sdk==1.54.0->-r /opt/harness/requirements.txt (line 1))
+#14 9.827   Downloading exceptiongroup-1.3.1-py3-none-any.whl.metadata (6.7 kB)
+#14 9.833 INFO: pip is looking at multiple versions of fastmcp-slim[client,server] to determine which version is compatible with other requirements. This could take a while.
+#14 9.835 Collecting fastmcp<4,>=3.2.0 (from openhands-sdk==1.54.0->-r /opt/harness/requirements.txt (line 1))
+#14 9.839   Downloading fastmcp-3.4.7-py3-none-any.whl.metadata (8.5 kB)
+#14 9.846 Collecting fastmcp-slim==3.4.7 (from fastmcp-slim[client,server]==3.4.7->fastmcp<4,>=3.2.0->openhands-sdk==1.54.0->-r /opt/harness/requirements.txt (line 1))
+#14 9.850   Downloading fastmcp_slim-3.4.7-py3-none-any.whl.metadata (10 kB)
+#14 9.862 Collecting fastmcp<4,>=3.2.0 (from openhands-sdk==1.54.0->-r /opt/harness/requirements.txt (line 1))
+#14 9.868   Downloading fastmcp-3.4.6-py3-none-any.whl.metadata (8.5 kB)
+#14 9.875 Collecting fastmcp-slim==3.4.6 (from fastmcp-slim[client,server]==3.4.6->fastmcp<4,>=3.2.0->openhands-sdk==1.54.0->-r /opt/harness/requirements.txt (line 1))
+#14 9.880   Downloading fastmcp_slim-3.4.6-py3-none-any.whl.metadata (10 kB)
+#14 9.893 Collecting fastmcp<4,>=3.2.0 (from openhands-sdk==1.54.0->-r /opt/harness/requirements.txt (line 1))
+#14 9.900   Downloading fastmcp-3.4.5-py3-none-any.whl.metadata (8.5 kB)
+#14 9.906 Collecting fastmcp-slim==3.4.5 (from fastmcp-slim[client,server]==3.4.5->fastmcp<4,>=3.2.0->openhands-sdk==1.54.0->-r /opt/harness/requirements.txt (line 1))
+#14 9.914   Downloading fastmcp_slim-3.4.5-py3-none-any.whl.metadata (10 kB)
+#14 9.928 Collecting fastmcp<4,>=3.2.0 (from openhands-sdk==1.54.0->-r /opt/harness/requirements.txt (line 1))
+#14 9.933   Downloading fastmcp-3.4.4-py3-none-any.whl.metadata (8.5 kB)
+#14 9.940 Collecting fastmcp-slim==3.4.4 (from fastmcp-slim[client,server]==3.4.4->fastmcp<4,>=3.2.0->openhands-sdk==1.54.0->-r /opt/harness/requirements.txt (line 1))
+#14 9.944   Downloading fastmcp_slim-3.4.4-py3-none-any.whl.metadata (10 kB)
+#14 9.956 Collecting fastmcp<4,>=3.2.0 (from openhands-sdk==1.54.0->-r /opt/harness/requirements.txt (line 1))
+#14 9.964   Downloading fastmcp-3.4.3-py3-none-any.whl.metadata (8.5 kB)
+#14 9.971 Collecting fastmcp-slim==3.4.3 (from fastmcp-slim[client,server]==3.4.3->fastmcp<4,>=3.2.0->openhands-sdk==1.54.0->-r /opt/harness/requirements.txt (line 1))
+#14 9.978   Downloading fastmcp_slim-3.4.3-py3-none-any.whl.metadata (10 kB)
+#14 9.990 Collecting fastmcp<4,>=3.2.0 (from openhands-sdk==1.54.0->-r /opt/harness/requirements.txt (line 1))
+#14 9.998   Downloading fastmcp-3.4.2-py3-none-any.whl.metadata (8.5 kB)
+#14 10.00 Collecting fastmcp-slim==3.4.2 (from fastmcp-slim[client,server]==3.4.2->fastmcp<4,>=3.2.0->openhands-sdk==1.54.0->-r /opt/harness/requirements.txt (line 1))
+#14 10.01   Downloading fastmcp_slim-3.4.2-py3-none-any.whl.metadata (10 kB)
+#14 10.02 Collecting fastmcp<4,>=3.2.0 (from openhands-sdk==1.54.0->-r /opt/harness/requirements.txt (line 1))
+#14 10.03   Downloading fastmcp-3.4.1-py3-none-any.whl.metadata (8.5 kB)
+#14 10.03 Collecting fastmcp-slim==3.4.1 (from fastmcp-slim[client,server]==3.4.1->fastmcp<4,>=3.2.0->openhands-sdk==1.54.0->-r /opt/harness/requirements.txt (line 1))
+#14 10.04   Downloading fastmcp_slim-3.4.1-py3-none-any.whl.metadata (10 kB)
+#14 10.05 INFO: pip is still looking at multiple versions of fastmcp-slim[client,server] to determine which version is compatible with other requirements. This could take a while.
+#14 10.05 Collecting fastmcp<4,>=3.2.0 (from openhands-sdk==1.54.0->-r /opt/harness/requirements.txt (line 1))
+#14 10.06   Downloading fastmcp-3.4.0-py3-none-any.whl.metadata (8.5 kB)
+#14 10.07 Collecting fastmcp-slim==3.4.0 (from fastmcp-slim[client,server]==3.4.0->fastmcp<4,>=3.2.0->openhands-sdk==1.54.0->-r /opt/harness/requirements.txt (line 1))
+#14 10.08   Downloading fastmcp_slim-3.4.0-py3-none-any.whl.metadata (10 kB)
+#14 10.10 Collecting fastmcp<4,>=3.2.0 (from openhands-sdk==1.54.0->-r /opt/harness/requirements.txt (line 1))
+#14 10.10   Downloading fastmcp-3.3.1-py3-none-any.whl.metadata (8.2 kB)
+#14 10.11 Collecting fastmcp-slim==3.3.1 (from fastmcp-slim[client,server]==3.3.1->fastmcp<4,>=3.2.0->openhands-sdk==1.54.0->-r /opt/harness/requirements.txt (line 1))
+#14 10.11   Downloading fastmcp_slim-3.3.1-py3-none-any.whl.metadata (10 kB)
+#14 10.13 Collecting fastmcp<4,>=3.2.0 (from openhands-sdk==1.54.0->-r /opt/harness/requirements.txt (line 1))
+#14 10.13   Downloading fastmcp-3.3.0-py3-none-any.whl.metadata (8.2 kB)
+#14 10.14 Collecting fastmcp-slim==3.3.0 (from fastmcp-slim[client,server]==3.3.0->fastmcp<4,>=3.2.0->openhands-sdk==1.54.0->-r /opt/harness/requirements.txt (line 1))
+#14 10.15   Downloading fastmcp_slim-3.3.0-py3-none-any.whl.metadata (10 kB)
+#14 10.16 Collecting fastmcp<4,>=3.2.0 (from openhands-sdk==1.54.0->-r /opt/harness/requirements.txt (line 1))
+#14 10.16   Downloading fastmcp-3.2.4-py3-none-any.whl.metadata (8.1 kB)
+#14 10.20 Collecting cyclopts>=4.0.0 (from fastmcp<4,>=3.2.0->openhands-sdk==1.54.0->-r /opt/harness/requirements.txt (line 1))
+#14 10.21   Downloading cyclopts-5.2.0-py3-none-any.whl.metadata (12 kB)
+#14 10.22 Collecting griffelib>=2.0.0 (from fastmcp<4,>=3.2.0->openhands-sdk==1.54.0->-r /opt/harness/requirements.txt (line 1))
+#14 10.22   Downloading griffelib-2.3.2-py3-none-any.whl.metadata (1.3 kB)
+#14 10.23 Collecting jsonref>=1.1.0 (from fastmcp<4,>=3.2.0->openhands-sdk==1.54.0->-r /opt/harness/requirements.txt (line 1))
+#14 10.23   Downloading jsonref-1.1.0-py3-none-any.whl.metadata (2.7 kB)
+#14 10.24 Collecting jsonschema-path>=0.3.4 (from fastmcp<4,>=3.2.0->openhands-sdk==1.54.0->-r /opt/harness/requirements.txt (line 1))
+#14 10.25   Downloading jsonschema_path-0.5.0-py3-none-any.whl.metadata (8.1 kB)
+#14 10.25 INFO: pip is looking at multiple versions of fastmcp to determine which version is compatible with other requirements. This could take a while.
+#14 10.25 Collecting fastmcp<4,>=3.2.0 (from openhands-sdk==1.54.0->-r /opt/harness/requirements.txt (line 1))
+#14 10.26   Downloading fastmcp-3.2.3-py3-none-any.whl.metadata (8.2 kB)
+#14 10.27   Downloading fastmcp-3.2.2-py3-none-any.whl.metadata (8.1 kB)
+#14 10.42   Downloading fastmcp-3.2.1-py3-none-any.whl.metadata (8.1 kB)
+#14 10.44   Downloading fastmcp-3.2.0-py3-none-any.whl.metadata (8.1 kB)
+#14 10.45 Collecting browser-use>=0.8.0 (from openhands-tools==1.54.0->-r /opt/harness/requirements.txt (line 2))
+#14 10.46   Downloading browser_use-0.13.10-py3-none-any.whl.metadata (16 kB)
+#14 10.48 Collecting anthropic==0.76.0 (from browser-use>=0.8.0->openhands-tools==1.54.0->-r /opt/harness/requirements.txt (line 2))
+#14 10.48   Downloading anthropic-0.76.0-py3-none-any.whl.metadata (28 kB)
+#14 10.54 Collecting docstring-parser<1,>=0.15 (from anthropic==0.76.0->browser-use>=0.8.0->openhands-tools==1.54.0->-r /opt/harness/requirements.txt (line 2))
+#14 10.55   Downloading docstring_parser-0.18.0-py3-none-any.whl.metadata (3.5 kB)
+#14 10.73 INFO: This is taking longer than usual. You might need to provide the dependency resolver with stricter constraints to reduce runtime. See https://pip.pypa.io/warnings/backtracking for guidance. If you want to abort this run, press Ctrl + C.
+#14 10.81 INFO: pip is still looking at multiple versions of fastmcp to determine which version is compatible with other requirements. This could take a while.
+#14 10.82 Collecting browser-use>=0.8.0 (from openhands-tools==1.54.0->-r /opt/harness/requirements.txt (line 2))
+#14 10.83   Downloading browser_use-0.13.9-py3-none-any.whl.metadata (16 kB)
+#14 10.83 Collecting browser-harness==0.1.12 (from browser-use>=0.8.0->openhands-tools==1.54.0->-r /opt/harness/requirements.txt (line 2))
+#14 10.84   Downloading browser_harness-0.1.12-py3-none-any.whl.metadata (4.1 kB)
+#14 10.85 Collecting mcp==1.28.1 (from browser-use>=0.8.0->openhands-tools==1.54.0->-r /opt/harness/requirements.txt (line 2))
+#14 10.86   Downloading mcp-1.28.1-py3-none-any.whl.metadata (9.4 kB)
+#14 10.88 Collecting pypdf==6.15.0 (from browser-use>=0.8.0->openhands-tools==1.54.0->-r /opt/harness/requirements.txt (line 2))
+#14 10.88   Downloading pypdf-6.15.0-py3-none-any.whl.metadata (7.5 kB)
+#14 10.90 Collecting httpx-sse>=0.4 (from mcp==1.28.1->browser-use>=0.8.0->openhands-tools==1.54.0->-r /opt/harness/requirements.txt (line 2))
+#14 10.90   Downloading httpx_sse-0.4.3-py3-none-any.whl.metadata (9.7 kB)
+#14 11.17 Collecting py-key-value-aio<0.5.0,>=0.4.4 (from py-key-value-aio[filetree,keyring,memory]<0.5.0,>=0.4.4; extra == "client"->fastmcp-slim[client,server]==3.4.8->fastmcp<4,>=3.2.0->openhands-sdk==1.54.0->-r /opt/harness/requirements.txt (line 1))
+#14 11.17   Downloading py_key_value_aio-0.4.6-py3-none-any.whl.metadata (16 kB)
+#14 11.21 Collecting openapi-pydantic>=0.5.1 (from fastmcp-slim[client,server]==3.4.8->fastmcp<4,>=3.2.0->openhands-sdk==1.54.0->-r /opt/harness/requirements.txt (line 1))
+#14 11.21   Downloading openapi_pydantic-0.6.0-py3-none-any.whl.metadata (12 kB)
+#14 11.23 Collecting pyperclip>=1.9.0 (from fastmcp-slim[client,server]==3.4.8->fastmcp<4,>=3.2.0->openhands-sdk==1.54.0->-r /opt/harness/requirements.txt (line 1))
+#14 11.23   Downloading pyperclip-1.11.0-py3-none-any.whl.metadata (2.4 kB)
+#14 11.26 Collecting pyyaml<7.0,>=6.0 (from fastmcp-slim[client,server]==3.4.8->fastmcp<4,>=3.2.0->openhands-sdk==1.54.0->-r /opt/harness/requirements.txt (line 1))
+#14 11.27   Downloading pyyaml-6.0.3-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (2.4 kB)
+#14 11.28 Collecting uncalled-for>=0.2.0 (from fastmcp-slim[client,server]==3.4.8->fastmcp<4,>=3.2.0->openhands-sdk==1.54.0->-r /opt/harness/requirements.txt (line 1))
+#14 11.28   Downloading uncalled_for-0.4.1-py3-none-any.whl.metadata (3.3 kB)
+#14 11.36 Collecting watchfiles>=1.0.0 (from fastmcp-slim[client,server]==3.4.8->fastmcp<4,>=3.2.0->openhands-sdk==1.54.0->-r /opt/harness/requirements.txt (line 1))
+#14 11.37   Downloading watchfiles-1.3.0-cp310-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (4.9 kB)
+#14 11.39 Collecting socksio==1.* (from httpx[socks]>=0.28.1->openhands-sdk==1.54.0->-r /opt/harness/requirements.txt (line 1))
+#14 11.40   Downloading socksio-1.0.0-py3-none-any.whl.metadata (6.1 kB)
+#14 11.44 Collecting jsonschema-specifications>=2023.03.6 (from jsonschema>=4.23.0->openhands-sdk==1.54.0->-r /opt/harness/requirements.txt (line 1))
+#14 11.44   Downloading jsonschema_specifications-2025.9.1-py3-none-any.whl.metadata (2.9 kB)
+#14 11.55 Collecting referencing>=0.28.4 (from jsonschema>=4.23.0->openhands-sdk==1.54.0->-r /opt/harness/requirements.txt (line 1))
+#14 11.56   Downloading referencing-0.37.0-py3-none-any.whl.metadata (2.8 kB)
+#14 11.79 Collecting rpds-py>=0.25.0 (from jsonschema>=4.23.0->openhands-sdk==1.54.0->-r /opt/harness/requirements.txt (line 1))
+#14 11.79   Downloading rpds_py-2026.9.1-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (4.1 kB)
+#14 11.83 Collecting fastuuid<1.0,>=0.14.0 (from litellm>=1.93.0->openhands-sdk==1.54.0->-r /opt/harness/requirements.txt (line 1))
+#14 11.83   Downloading fastuuid-0.14.0-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (1.1 kB)
+#14 11.85 Collecting filelock>=3.20.1 (from openhands-sdk==1.54.0->-r /opt/harness/requirements.txt (line 1))
+#14 11.85   Downloading filelock-3.32.7-py3-none-any.whl.metadata (2.0 kB)
+#14 11.91 Collecting importlib-metadata<9.0,>=8.0.0 (from litellm>=1.93.0->openhands-sdk==1.54.0->-r /opt/harness/requirements.txt (line 1))
+#14 11.91   Downloading importlib_metadata-8.9.0-py3-none-any.whl.metadata (4.5 kB)
+#14 11.95 Collecting tiktoken<1.0,>=0.8.0 (from litellm>=1.93.0->openhands-sdk==1.54.0->-r /opt/harness/requirements.txt (line 1))
+#14 11.95   Downloading tiktoken-0.14.0-cp312-cp312-manylinux_2_28_x86_64.whl.metadata (6.7 kB)
+#14 12.07 Collecting tokenizers<1.0,>=0.21.0 (from litellm>=1.93.0->openhands-sdk==1.54.0->-r /opt/harness/requirements.txt (line 1))
+#14 12.08   Downloading tokenizers-0.23.3-cp310-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (9.8 kB)
+#14 12.13 Collecting huggingface-hub<2.0,>=0.34.0 (from litellm>=1.93.0->openhands-sdk==1.54.0->-r /opt/harness/requirements.txt (line 1))
+#14 12.14   Downloading huggingface_hub-1.33.0-py3-none-any.whl.metadata (16 kB)
+#14 12.18 Collecting jinja2<4.0,>=3.1.6 (from litellm>=1.93.0->openhands-sdk==1.54.0->-r /opt/harness/requirements.txt (line 1))
+#14 12.18   Downloading jinja2-3.1.6-py3-none-any.whl.metadata (2.9 kB)
+#14 12.59 Collecting boto3<2.0,>=1.43.1 (from litellm>=1.93.0->openhands-sdk==1.54.0->-r /opt/harness/requirements.txt (line 1))
+#14 12.60   Downloading boto3-1.43.111-py3-none-any.whl.metadata (6.6 kB)
+#14 12.67 Collecting blake3<2.0.0,>=1.0.0 (from lmnr<0.8.0,>=0.7.60->openhands-sdk==1.54.0->-r /opt/harness/requirements.txt (line 1))
+#14 12.68   Downloading blake3-1.0.11-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (4.9 kB)
+#14 13.10 Collecting grpcio>=1 (from lmnr<0.8.0,>=0.7.60->openhands-sdk==1.54.0->-r /opt/harness/requirements.txt (line 1))
+#14 13.10   Downloading grpcio-1.84.0-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (3.8 kB)
+#14 13.35 Collecting lmnr-claude-code-proxy>=0.1.22 (from lmnr<0.8.0,>=0.7.60->openhands-sdk==1.54.0->-r /opt/harness/requirements.txt (line 1))
+#14 13.36   Downloading lmnr_claude_code_proxy-0.1.24-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (547 bytes)
+#14 13.39 Collecting opentelemetry-sdk<2.0.0,>=1.39.0 (from lmnr<0.8.0,>=0.7.60->openhands-sdk==1.54.0->-r /opt/harness/requirements.txt (line 1))
+#14 13.39   Downloading opentelemetry_sdk-1.45.1-py3-none-any.whl.metadata (1.6 kB)
+#14 13.41 Collecting opentelemetry-exporter-otlp-proto-http<2.0.0,>=1.39.0 (from lmnr<0.8.0,>=0.7.60->openhands-sdk==1.54.0->-r /opt/harness/requirements.txt (line 1))
+#14 13.41   Downloading opentelemetry_exporter_otlp_proto_http-1.45.1-py3-none-any.whl.metadata (3.0 kB)
+#14 13.43 Collecting opentelemetry-exporter-otlp-proto-grpc<2.0.0,>=1.39.0 (from lmnr<0.8.0,>=0.7.60->openhands-sdk==1.54.0->-r /opt/harness/requirements.txt (line 1))
+#14 13.44   Downloading opentelemetry_exporter_otlp_proto_grpc-1.45.1-py3-none-any.whl.metadata (2.6 kB)
+#14 13.45 Collecting opentelemetry-instrumentation<1.0.0,>=0.54b0 (from lmnr<0.8.0,>=0.7.60->openhands-sdk==1.54.0->-r /opt/harness/requirements.txt (line 1))
+#14 13.46   Downloading opentelemetry_instrumentation-0.66b1-py3-none-any.whl.metadata (7.2 kB)
+#14 13.47 Collecting opentelemetry-instrumentation-threading<1.0.0,>=0.54b0 (from lmnr<0.8.0,>=0.7.60->openhands-sdk==1.54.0->-r /opt/harness/requirements.txt (line 1))
+#14 13.48   Downloading opentelemetry_instrumentation_threading-0.66b1-py3-none-any.whl.metadata (2.1 kB)
+#14 13.49 Collecting opentelemetry-semantic-conventions<1.0.0,>=0.62b1 (from lmnr<0.8.0,>=0.7.60->openhands-sdk==1.54.0->-r /opt/harness/requirements.txt (line 1))
+#14 13.50   Downloading opentelemetry_semantic_conventions-0.66b1-py3-none-any.whl.metadata (2.4 kB)
+#14 13.51 Collecting opentelemetry-semantic-conventions-ai==0.4.13 (from lmnr<0.8.0,>=0.7.60->openhands-sdk==1.54.0->-r /opt/harness/requirements.txt (line 1))
+#14 13.52   Downloading opentelemetry_semantic_conventions_ai-0.4.13-py3-none-any.whl.metadata (1.1 kB)
+#14 13.73 Collecting orjson<4.0.0,>=3.0.0 (from lmnr<0.8.0,>=0.7.60->openhands-sdk==1.54.0->-r /opt/harness/requirements.txt (line 1))
+#14 13.74   Downloading orjson-3.13.0-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (42 kB)
+#14 14.05 Collecting wrapt<2.0.0,>=1.14 (from lmnr<0.8.0,>=0.7.60->openhands-sdk==1.54.0->-r /opt/harness/requirements.txt (line 1))
+#14 14.06   Downloading wrapt-1.17.3-cp312-cp312-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl.metadata (6.4 kB)
+#14 14.13 Collecting json-repair>=0.1.0 (from tom-swe>=1.0.3->openhands-tools==1.54.0->-r /opt/harness/requirements.txt (line 2))
+#14 14.13   Downloading json_repair-0.64.0-py3-none-any.whl.metadata (20 kB)
+#14 14.67 Collecting botocore<1.44.0,>=1.43.111 (from boto3<2.0,>=1.43.1->litellm>=1.93.0->openhands-sdk==1.54.0->-r /opt/harness/requirements.txt (line 1))
+#14 14.68   Downloading botocore-1.43.111-py3-none-any.whl.metadata (5.6 kB)
+#14 14.69 Collecting jmespath<2.0.0,>=0.7.1 (from boto3<2.0,>=1.43.1->litellm>=1.93.0->openhands-sdk==1.54.0->-r /opt/harness/requirements.txt (line 1))
+#14 14.70   Downloading jmespath-1.1.0-py3-none-any.whl.metadata (7.6 kB)
+#14 14.71 Collecting s3transfer<0.20.0,>=0.19.0 (from boto3<2.0,>=1.43.1->litellm>=1.93.0->openhands-sdk==1.54.0->-r /opt/harness/requirements.txt (line 1))
+#14 14.72   Downloading s3transfer-0.19.2-py3-none-any.whl.metadata (1.7 kB)
+#14 14.82 Collecting cffi>=2.0.0 (from cryptography>=38.0.3->google-auth==2.48.0->browser-use>=0.8.0->openhands-tools==1.54.0->-r /opt/harness/requirements.txt (line 2))
+#14 14.83   Downloading cffi-2.1.1-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (2.5 kB)
+#14 14.86 Collecting h2<5,>=3 (from httpx>=0.28.1->httpx[socks]>=0.28.1->openhands-sdk==1.54.0->-r /opt/harness/requirements.txt (line 1))
+#14 14.87   Downloading h2-4.4.1-py3-none-any.whl.metadata (3.8 kB)
+#14 14.88 INFO: pip is looking at multiple versions of huggingface-hub to determine which version is compatible with other requirements. This could take a while.
+#14 14.88 Collecting huggingface-hub<2.0,>=0.34.0 (from litellm>=1.93.0->openhands-sdk==1.54.0->-r /opt/harness/requirements.txt (line 1))
+#14 14.88   Downloading huggingface_hub-1.32.0-py3-none-any.whl.metadata (16 kB)
+#14 14.90   Downloading huggingface_hub-1.31.0-py3-none-any.whl.metadata (16 kB)
+#14 14.92   Downloading huggingface_hub-1.30.0-py3-none-any.whl.metadata (16 kB)
+#14 14.94   Downloading huggingface_hub-1.29.0-py3-none-any.whl.metadata (16 kB)
+#14 14.96   Downloading huggingface_hub-1.28.0-py3-none-any.whl.metadata (16 kB)
+#14 14.97   Downloading huggingface_hub-1.27.0-py3-none-any.whl.metadata (16 kB)
+#14 14.99   Downloading huggingface_hub-1.26.1-py3-none-any.whl.metadata (16 kB)
+#14 15.00 INFO: pip is still looking at multiple versions of huggingface-hub to determine which version is compatible with other requirements. This could take a while.
+#14 15.01   Downloading huggingface_hub-1.26.0-py3-none-any.whl.metadata (16 kB)
+#14 15.02   Downloading huggingface_hub-1.25.1-py3-none-any.whl.metadata (16 kB)
+#14 15.04   Downloading huggingface_hub-1.25.0-py3-none-any.whl.metadata (16 kB)
+#14 15.06   Downloading huggingface_hub-1.24.0-py3-none-any.whl.metadata (16 kB)
+#14 15.08   Downloading huggingface_hub-1.23.0-py3-none-any.whl.metadata (14 kB)
+#14 15.09 INFO: This is taking longer than usual. You might need to provide the dependency resolver with stricter constraints to reduce runtime. See https://pip.pypa.io/warnings/backtracking for guidance. If you want to abort this run, press Ctrl + C.
+#14 15.10   Downloading huggingface_hub-1.22.0-py3-none-any.whl.metadata (14 kB)
+#14 15.12   Downloading huggingface_hub-1.21.0-py3-none-any.whl.metadata (14 kB)
+#14 15.14   Downloading huggingface_hub-1.20.1-py3-none-any.whl.metadata (14 kB)
+#14 15.16   Downloading huggingface_hub-1.20.0-py3-none-any.whl.metadata (14 kB)
+#14 15.18   Downloading huggingface_hub-1.19.0-py3-none-any.whl.metadata (14 kB)
+#14 15.19   Downloading huggingface_hub-1.18.0-py3-none-any.whl.metadata (14 kB)
+#14 15.21   Downloading huggingface_hub-1.17.0-py3-none-any.whl.metadata (14 kB)
+#14 15.23   Downloading huggingface_hub-1.16.4-py3-none-any.whl.metadata (14 kB)
+#14 15.24   Downloading huggingface_hub-1.16.1-py3-none-any.whl.metadata (14 kB)
+#14 15.29 Collecting fsspec>=2023.5.0 (from huggingface-hub<2.0,>=0.34.0->litellm>=1.93.0->openhands-sdk==1.54.0->-r /opt/harness/requirements.txt (line 1))
+#14 15.29   Downloading fsspec-2026.9.0-py3-none-any.whl.metadata (10 kB)
+#14 15.36 Collecting hf-xet<2.0.0,>=1.4.3 (from huggingface-hub<2.0,>=0.34.0->litellm>=1.93.0->openhands-sdk==1.54.0->-r /opt/harness/requirements.txt (line 1))
+#14 15.37   Downloading hf_xet-1.7.0-cp38-abi3-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (4.9 kB)
+#14 15.40 Collecting typer>=0.20.0 (from huggingface-hub<2.0,>=0.34.0->litellm>=1.93.0->openhands-sdk==1.54.0->-r /opt/harness/requirements.txt (line 1))
+#14 15.41   Downloading typer-0.27.3-py3-none-any.whl.metadata (16 kB)
+#14 15.44 Collecting zipp>=3.20 (from importlib-metadata<9.0,>=8.0.0->litellm>=1.93.0->openhands-sdk==1.54.0->-r /opt/harness/requirements.txt (line 1))
+#14 15.45   Downloading zipp-4.1.1-py3-none-any.whl.metadata (3.6 kB)
+#14 15.50 Collecting MarkupSafe>=2.0 (from jinja2<4.0,>=3.1.6->litellm>=1.93.0->openhands-sdk==1.54.0->-r /opt/harness/requirements.txt (line 1))
+#14 15.50   Downloading markupsafe-3.0.4-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (2.7 kB)
+#14 15.58 Collecting opentelemetry-exporter-otlp-common==0.66b1 (from opentelemetry-exporter-otlp-proto-grpc<2.0.0,>=1.39.0->lmnr<0.8.0,>=0.7.60->openhands-sdk==1.54.0->-r /opt/harness/requirements.txt (line 1))
+#14 15.58   Downloading opentelemetry_exporter_otlp_common-0.66b1-py3-none-any.whl.metadata (1.9 kB)
+#14 15.60 Collecting opentelemetry-exporter-otlp-proto-common==1.45.1 (from opentelemetry-exporter-otlp-proto-grpc<2.0.0,>=1.39.0->lmnr<0.8.0,>=0.7.60->openhands-sdk==1.54.0->-r /opt/harness/requirements.txt (line 1))
+#14 15.60   Downloading opentelemetry_exporter_otlp_proto_common-1.45.1-py3-none-any.whl.metadata (1.8 kB)
+#14 15.62 Collecting opentelemetry-proto==1.45.1 (from opentelemetry-exporter-otlp-proto-grpc<2.0.0,>=1.39.0->lmnr<0.8.0,>=0.7.60->openhands-sdk==1.54.0->-r /opt/harness/requirements.txt (line 1))
+#14 15.62   Downloading opentelemetry_proto-1.45.1-py3-none-any.whl.metadata (2.3 kB)
+#14 15.74 Collecting opentelemetry-exporter-http-transport==0.66b1 (from opentelemetry-exporter-http-transport[requests]==0.66b1->opentelemetry-exporter-otlp-proto-http<2.0.0,>=1.39.0->lmnr<0.8.0,>=0.7.60->openhands-sdk==1.54.0->-r /opt/harness/requirements.txt (line 1))
+#14 15.74   Downloading opentelemetry_exporter_http_transport-0.66b1-py3-none-any.whl.metadata (2.3 kB)
+#14 16.28 Collecting regex (from tiktoken<1.0,>=0.8.0->litellm>=1.93.0->openhands-sdk==1.54.0->-r /opt/harness/requirements.txt (line 1))
+#14 16.29   Downloading regex-2026.9.29-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (40 kB)
+#14 16.39 Collecting soupsieve>=1.6.1 (from beautifulsoup4<5,>=4.9->markdownify==1.2.2->browser-use>=0.8.0->openhands-tools==1.54.0->-r /opt/harness/requirements.txt (line 2))
+#14 16.40   Downloading soupsieve-3.0.1-py3-none-any.whl.metadata (4.4 kB)
+#14 16.44 Collecting pycparser (from cffi>=2.0.0->cryptography>=38.0.3->google-auth==2.48.0->browser-use>=0.8.0->openhands-tools==1.54.0->-r /opt/harness/requirements.txt (line 2))
+#14 16.44   Downloading pycparser-3.11-py3-none-any.whl.metadata (8.2 kB)
+#14 16.47 Collecting rich-rst<3,>=2.0.1 (from cyclopts>=4.0.0->fastmcp<4,>=3.2.0->openhands-sdk==1.54.0->-r /opt/harness/requirements.txt (line 1))
+#14 16.47   Downloading rich_rst-2.2.0-py3-none-any.whl.metadata (5.0 kB)
+#14 16.61 Collecting hyperframe<7,>=6.1 (from h2<5,>=3->httpx>=0.28.1->httpx[socks]>=0.28.1->openhands-sdk==1.54.0->-r /opt/harness/requirements.txt (line 1))
+#14 16.62   Downloading hyperframe-6.1.0-py3-none-any.whl.metadata (4.3 kB)
+#14 16.63 Collecting hpack<5,>=4.2 (from h2<5,>=3->httpx>=0.28.1->httpx[socks]>=0.28.1->openhands-sdk==1.54.0->-r /opt/harness/requirements.txt (line 1))
+#14 16.63   Downloading hpack-4.2.0-py3-none-any.whl.metadata (3.3 kB)
+#14 16.66 Collecting pyparsing<4,>=3.1 (from httplib2<1.0.0,>=0.19.0->google-api-python-client==2.188.0->browser-use>=0.8.0->openhands-tools==1.54.0->-r /opt/harness/requirements.txt (line 2))
+#14 16.67   Downloading pyparsing-3.3.3-py3-none-any.whl.metadata (5.9 kB)
+#14 16.70 Collecting pathable<0.7.0,>=0.6.0 (from jsonschema-path>=0.3.4->fastmcp<4,>=3.2.0->openhands-sdk==1.54.0->-r /opt/harness/requirements.txt (line 1))
+#14 16.71   Downloading pathable-0.6.0-py3-none-any.whl.metadata (7.2 kB)
+#14 16.73 Collecting mdurl~=0.1 (from markdown-it-py>=2.2.0->rich==14.3.3->browser-use>=0.8.0->openhands-tools==1.54.0->-r /opt/harness/requirements.txt (line 2))
+#14 16.74   Downloading mdurl-0.1.2-py3-none-any.whl.metadata (1.6 kB)
+#14 16.79 Collecting wcwidth>=0.1.4 (from prompt-toolkit<4.0.0,>=3.0.1->inquirerpy==0.3.4->browser-use>=0.8.0->openhands-tools==1.54.0->-r /opt/harness/requirements.txt (line 2))
+#14 16.80   Downloading wcwidth-0.9.2-cp310-abi3-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (23 kB)
+#14 16.84 Collecting beartype>=0.20.0 (from py-key-value-aio<0.5.0,>=0.4.4->py-key-value-aio[filetree,keyring,memory]<0.5.0,>=0.4.4; extra == "client"->fastmcp-slim[client,server]==3.4.8->fastmcp<4,>=3.2.0->openhands-sdk==1.54.0->-r /opt/harness/requirements.txt (line 1))
+#14 16.84   Downloading beartype-0.23.0-py3-none-any.whl.metadata (35 kB)
+#14 17.02 Collecting aiofile>=3.12.3 (from py-key-value-aio[filetree,keyring,memory]<0.5.0,>=0.4.4; extra == "client"->fastmcp-slim[client,server]==3.4.8->fastmcp<4,>=3.2.0->openhands-sdk==1.54.0->-r /opt/harness/requirements.txt (line 1))
+#14 17.02   Downloading aiofile-3.12.3-py3-none-any.whl.metadata (17 kB)
+#14 17.06 Collecting keyring>=25.6.0 (from py-key-value-aio[filetree,keyring,memory]<0.5.0,>=0.4.4; extra == "client"->fastmcp-slim[client,server]==3.4.8->fastmcp<4,>=3.2.0->openhands-sdk==1.54.0->-r /opt/harness/requirements.txt (line 1))
+#14 17.06   Downloading keyring-25.7.0-py3-none-any.whl.metadata (21 kB)
+#14 17.09 Collecting pyasn1<0.7.0,>=0.6.1 (from pyasn1-modules>=0.2.1->google-auth==2.48.0->browser-use>=0.8.0->openhands-tools==1.54.0->-r /opt/harness/requirements.txt (line 2))
+#14 17.10   Downloading pyasn1-0.6.4-py3-none-any.whl.metadata (8.4 kB)
+#14 17.12 Collecting email-validator>=2.0.0 (from pydantic[email]>=2.11.7->fastmcp-slim==3.4.8->fastmcp-slim[client,server]==3.4.8->fastmcp<4,>=3.2.0->openhands-sdk==1.54.0->-r /opt/harness/requirements.txt (line 1))
+#14 17.12   Downloading email_validator-2.3.0-py3-none-any.whl.metadata (26 kB)
+#14 17.19 Collecting oauthlib>=3.0.0 (from requests-oauthlib>=0.7.0->google-auth-oauthlib==1.2.4->browser-use>=0.8.0->openhands-tools==1.54.0->-r /opt/harness/requirements.txt (line 2))
+#14 17.20   Downloading oauthlib-4.0.0-py3-none-any.whl.metadata (8.6 kB)
+#14 17.48 Collecting shellingham>=1.3.0 (from typer>=0.20.0->huggingface-hub<2.0,>=0.34.0->litellm>=1.93.0->openhands-sdk==1.54.0->-r /opt/harness/requirements.txt (line 1))
+#14 17.49   Downloading shellingham-1.5.4-py2.py3-none-any.whl.metadata (3.5 kB)
+#14 17.50 Collecting annotated-doc>=0.0.2 (from typer>=0.20.0->huggingface-hub<2.0,>=0.34.0->litellm>=1.93.0->openhands-sdk==1.54.0->-r /opt/harness/requirements.txt (line 1))
+#14 17.51   Downloading annotated_doc-0.0.5-py3-none-any.whl.metadata (6.5 kB)
+#14 17.64 Collecting caio~=0.12.0 (from aiofile>=3.12.3->py-key-value-aio[filetree,keyring,memory]<0.5.0,>=0.4.4; extra == "client"->fastmcp-slim[client,server]==3.4.8->fastmcp<4,>=3.2.0->openhands-sdk==1.54.0->-r /opt/harness/requirements.txt (line 1))
+#14 17.64   Downloading caio-0.12.9-cp312-cp312-manylinux_2_34_x86_64.whl.metadata (4.6 kB)
+#14 17.67 Collecting dnspython>=2.0.0 (from email-validator>=2.0.0->pydantic[email]>=2.11.7->fastmcp-slim==3.4.8->fastmcp-slim[client,server]==3.4.8->fastmcp<4,>=3.2.0->openhands-sdk==1.54.0->-r /opt/harness/requirements.txt (line 1))
+#14 17.68   Downloading dnspython-2.9.0-py3-none-any.whl.metadata (5.7 kB)
+#14 17.71 Collecting SecretStorage>=3.2 (from keyring>=25.6.0->py-key-value-aio[filetree,keyring,memory]<0.5.0,>=0.4.4; extra == "client"->fastmcp-slim[client,server]==3.4.8->fastmcp<4,>=3.2.0->openhands-sdk==1.54.0->-r /opt/harness/requirements.txt (line 1))
+#14 17.71   Downloading secretstorage-3.5.0-py3-none-any.whl.metadata (4.0 kB)
+#14 17.72 Collecting jeepney>=0.4.2 (from keyring>=25.6.0->py-key-value-aio[filetree,keyring,memory]<0.5.0,>=0.4.4; extra == "client"->fastmcp-slim[client,server]==3.4.8->fastmcp<4,>=3.2.0->openhands-sdk==1.54.0->-r /opt/harness/requirements.txt (line 1))
+#14 17.72   Downloading jeepney-0.9.0-py3-none-any.whl.metadata (1.2 kB)
+#14 17.75 Collecting jaraco.classes (from keyring>=25.6.0->py-key-value-aio[filetree,keyring,memory]<0.5.0,>=0.4.4; extra == "client"->fastmcp-slim[client,server]==3.4.8->fastmcp<4,>=3.2.0->openhands-sdk==1.54.0->-r /opt/harness/requirements.txt (line 1))
+#14 17.75   Downloading jaraco.classes-3.4.0-py3-none-any.whl.metadata (2.6 kB)
+#14 17.77 Collecting jaraco.functools (from keyring>=25.6.0->py-key-value-aio[filetree,keyring,memory]<0.5.0,>=0.4.4; extra == "client"->fastmcp-slim[client,server]==3.4.8->fastmcp<4,>=3.2.0->openhands-sdk==1.54.0->-r /opt/harness/requirements.txt (line 1))
+#14 17.78   Downloading jaraco_functools-4.6.0-py3-none-any.whl.metadata (2.9 kB)
+#14 17.79 Collecting jaraco.context (from keyring>=25.6.0->py-key-value-aio[filetree,keyring,memory]<0.5.0,>=0.4.4; extra == "client"->fastmcp-slim[client,server]==3.4.8->fastmcp<4,>=3.2.0->openhands-sdk==1.54.0->-r /opt/harness/requirements.txt (line 1))
+#14 17.79   Downloading jaraco_context-6.1.2-py3-none-any.whl.metadata (4.2 kB)
+#14 17.94 Collecting more-itertools (from jaraco.classes->keyring>=25.6.0->py-key-value-aio[filetree,keyring,memory]<0.5.0,>=0.4.4; extra == "client"->fastmcp-slim[client,server]==3.4.8->fastmcp<4,>=3.2.0->openhands-sdk==1.54.0->-r /opt/harness/requirements.txt (line 1))
+#14 17.94   Downloading more_itertools-11.1.0-py3-none-any.whl.metadata (41 kB)
+#14 17.98 Downloading openhands_sdk-1.54.0-py3-none-any.whl (922 kB)
+#14 17.99    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 922.7/922.7 kB 135.6 MB/s eta 0:00:00
+#14 18.00 Downloading openhands_tools-1.54.0-py3-none-any.whl (203 kB)
+#14 18.00 Downloading agent_client_protocol-0.12.1-py3-none-any.whl (85 kB)
+#14 18.01 Downloading binaryornot-0.6.0-py3-none-any.whl (14 kB)
+#14 18.01 Downloading browser_use-0.13.9-py3-none-any.whl (731 kB)
+#14 18.02    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 731.2/731.2 kB 84.5 MB/s eta 0:00:00
+#14 18.03 Downloading mcp-1.28.1-py3-none-any.whl (222 kB)
+#14 18.04 Downloading httpx-0.28.1-py3-none-any.whl (73 kB)
+#14 18.04 Downloading pillow-12.3.0-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (6.9 MB)
+#14 18.06    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 6.9/6.9 MB 364.5 MB/s eta 0:00:00
+#14 18.07 Downloading aiohttp-3.14.3-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (1.8 MB)
+#14 18.08    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.8/1.8 MB 436.9 MB/s eta 0:00:00
+#14 18.08 Downloading anthropic-0.76.0-py3-none-any.whl (390 kB)
+#14 18.09 Downloading anyio-4.12.1-py3-none-any.whl (113 kB)
+#14 18.09 Downloading browser_harness-0.1.12-py3-none-any.whl (121 kB)
+#14 18.10 Downloading websockets-15.0.1-cp312-cp312-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl (182 kB)
+#14 18.11 Downloading browser_use_sdk-3.4.2-py3-none-any.whl (57 kB)
+#14 18.11 Downloading bubus-1.5.6-py3-none-any.whl (52 kB)
+#14 18.11 Downloading cdp_use-1.4.5-py3-none-any.whl (350 kB)
+#14 18.12 Downloading click-8.3.3-py3-none-any.whl (110 kB)
+#14 18.13 Downloading cloudpickle-3.1.2-py3-none-any.whl (22 kB)
+#14 18.13 Downloading google_api_core-2.29.0-py3-none-any.whl (173 kB)
+#14 18.14 Downloading google_api_python_client-2.188.0-py3-none-any.whl (14.9 MB)
+#14 18.34    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 14.9/14.9 MB 73.8 MB/s eta 0:00:00
+#14 18.34 Downloading google_auth-2.48.0-py3-none-any.whl (236 kB)
+#14 18.35 Downloading google_auth_oauthlib-1.2.4-py3-none-any.whl (19 kB)
+#14 18.36 Downloading google_genai-1.65.0-py3-none-any.whl (724 kB)
+#14 18.36    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 724.4/724.4 kB 166.7 MB/s eta 0:00:00
+#14 18.37 Downloading groq-1.0.0-py3-none-any.whl (138 kB)
+#14 18.38 Downloading httpcore-1.0.9-py3-none-any.whl (78 kB)
+#14 18.38 Downloading InquirerPy-0.3.4-py3-none-any.whl (67 kB)
+#14 18.38 Downloading markdownify-1.2.2-py3-none-any.whl (15 kB)
+#14 18.39 Downloading ollama-0.6.1-py3-none-any.whl (14 kB)
+#14 18.39 Downloading openai-2.26.0-py3-none-any.whl (1.1 MB)
+#14 18.40    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.1/1.1 MB 269.8 MB/s eta 0:00:00
+#14 18.40 Downloading posthog-7.7.0-py3-none-any.whl (185 kB)
+#14 18.41 Downloading psutil-7.2.2-cp36-abi3-manylinux2010_x86_64.manylinux_2_12_x86_64.manylinux_2_28_x86_64.whl (155 kB)
+#14 18.41 Downloading pyotp-2.9.0-py3-none-any.whl (13 kB)
+#14 18.42 Downloading pypdf-6.15.0-py3-none-any.whl (378 kB)
+#14 18.42 Downloading python_docx-1.2.0-py3-none-any.whl (252 kB)
+#14 18.43 Downloading python_dotenv-1.2.2-py3-none-any.whl (22 kB)
+#14 18.43 Downloading reportlab-4.4.9-py3-none-any.whl (2.0 MB)
+#14 18.46    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.0/2.0 MB 83.0 MB/s eta 0:00:00
+#14 18.47 Downloading requests-2.33.0-py3-none-any.whl (65 kB)
+#14 18.47 Downloading rich-14.3.3-py3-none-any.whl (310 kB)
+#14 18.48 Downloading screeninfo-0.8.1-py3-none-any.whl (12 kB)
+#14 18.48 Downloading typing_extensions-4.15.0-py3-none-any.whl (44 kB)
+#14 18.49 Downloading uuid7-0.1.0-py2.py3-none-any.whl (7.5 kB)
+#14 18.49 Downloading fetch_use-0.4.0-py3-none-any.whl (9.5 kB)
+#14 18.50 Downloading fastmcp-3.4.8-py3-none-any.whl (8.0 kB)
+#14 18.50 Downloading fastmcp_slim-3.4.8-py3-none-any.whl (784 kB)
+#14 18.51    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 784.1/784.1 kB 287.8 MB/s eta 0:00:00
+#14 18.52 Downloading deprecation-2.1.0-py2.py3-none-any.whl (11 kB)
+#14 18.52 Downloading fakeredis-2.39.0-py3-none-any.whl (186 kB)
+#14 18.52 Downloading socksio-1.0.0-py3-none-any.whl (12 kB)
+#14 18.53 Downloading joserfc-1.7.5-py3-none-any.whl (71 kB)
+#14 18.53 Downloading jsonschema-4.26.0-py3-none-any.whl (90 kB)
+#14 18.54 Downloading libtmux-0.62.0-py3-none-any.whl (127 kB)
+#14 18.54 Downloading litellm-1.104.2-cp310-abi3-manylinux_2_28_x86_64.whl (36.9 MB)
+#14 18.63    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 36.9/36.9 MB 436.1 MB/s eta 0:00:00
+#14 18.66 Downloading filelock-3.32.7-py3-none-any.whl (100 kB)
+#14 18.67 Downloading lmnr-0.7.66-py3-none-any.whl (433 kB)
+#14 18.68 Downloading opentelemetry_semantic_conventions_ai-0.4.13-py3-none-any.whl (6.1 kB)
+#14 18.68 Downloading pydantic-2.13.5-py3-none-any.whl (472 kB)
+#14 18.69 Downloading pydantic_core-2.46.5-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (2.1 MB)
+#14 18.70    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.1/2.1 MB 261.8 MB/s eta 0:00:00
+#14 18.70 Downloading python_frontmatter-1.3.0-py3-none-any.whl (10 kB)
+#14 18.70 Downloading python_json_logger-4.2.0-py3-none-any.whl (14 kB)
+#14 18.71 Downloading tenacity-9.1.4-py3-none-any.whl (28 kB)
+#14 18.71 Downloading tom_swe-1.0.3-py3-none-any.whl (54 kB)
+#14 18.72 Downloading tree_sitter-0.26.0-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (667 kB)
+#14 18.72    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 667.5/667.5 kB 440.3 MB/s eta 0:00:00
+#14 18.73 Downloading tree_sitter_bash-0.25.1-cp310-abi3-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (231 kB)
+#14 18.73 Downloading cachetools-7.2.1-py3-none-any.whl (17 kB)
+#14 18.74 Downloading annotated_types-0.8.0-py3-none-any.whl (13 kB)
+#14 18.74 Downloading attrs-26.1.0-py3-none-any.whl (67 kB)
+#14 18.75 Downloading blake3-1.0.11-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (381 kB)
+#14 18.76 Downloading boto3-1.43.111-py3-none-any.whl (140 kB)
+#14 18.77 Downloading certifi-2026.7.22-py3-none-any.whl (136 kB)
+#14 18.77 Downloading cryptography-50.0.2-cp311-abi3-manylinux_2_34_x86_64.whl (4.8 MB)
+#14 18.79    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.8/4.8 MB 278.7 MB/s eta 0:00:00
+#14 18.80 Downloading fastuuid-0.14.0-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (278 kB)
+#14 18.80 Downloading grpcio-1.84.0-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (7.2 MB)
+#14 18.82    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 7.2/7.2 MB 435.3 MB/s eta 0:00:00
+#14 18.83 Downloading huggingface_hub-1.16.1-py3-none-any.whl (668 kB)
+#14 18.83    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 668.2/668.2 kB 715.4 MB/s eta 0:00:00
+#14 18.84 Downloading idna-3.20-py3-none-any.whl (69 kB)
+#14 18.84 Downloading importlib_metadata-8.9.0-py3-none-any.whl (27 kB)
+#14 18.85 Downloading jinja2-3.1.6-py3-none-any.whl (134 kB)
+#14 18.85 Downloading json_repair-0.64.0-py3-none-any.whl (51 kB)
+#14 18.86 Downloading jsonschema_specifications-2025.9.1-py3-none-any.whl (18 kB)
+#14 18.87 Downloading lmnr_claude_code_proxy-0.1.24-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (1.5 MB)
+#14 18.89    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.5/1.5 MB 53.0 MB/s eta 0:00:00
+#14 18.90 Downloading lupa-2.8-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (2.4 MB)
+#14 18.91    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.4/2.4 MB 532.7 MB/s eta 0:00:00
+#14 18.91 Downloading opentelemetry_api-1.45.1-py3-none-any.whl (60 kB)
+#14 18.92 Downloading opentelemetry_exporter_otlp_proto_grpc-1.45.1-py3-none-any.whl (19 kB)
+#14 18.92 Downloading opentelemetry_exporter_otlp_common-0.66b1-py3-none-any.whl (12 kB)
+#14 18.92 Downloading opentelemetry_exporter_otlp_proto_common-1.45.1-py3-none-any.whl (15 kB)
+#14 18.93 Downloading opentelemetry_proto-1.45.1-py3-none-any.whl (72 kB)
+#14 18.93 Downloading opentelemetry_exporter_otlp_proto_http-1.45.1-py3-none-any.whl (22 kB)
+#14 18.94 Downloading opentelemetry_exporter_http_transport-0.66b1-py3-none-any.whl (12 kB)
+#14 18.94 Downloading opentelemetry_instrumentation-0.66b1-py3-none-any.whl (36 kB)
+#14 18.95 Downloading opentelemetry_semantic_conventions-0.66b1-py3-none-any.whl (206 kB)
+#14 18.95 Downloading opentelemetry_instrumentation_threading-0.66b1-py3-none-any.whl (8.5 kB)
+#14 18.96 Downloading opentelemetry_sdk-1.45.1-py3-none-any.whl (140 kB)
+#14 18.96 Downloading orjson-3.13.0-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (130 kB)
+#14 18.96 Downloading packaging-26.3-py3-none-any.whl (129 kB)
+#14 18.97 Downloading pydantic_settings-2.15.0-py3-none-any.whl (69 kB)
+#14 18.97 Downloading pyyaml-6.0.3-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (807 kB)
+#14 18.98    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 807.9/807.9 kB 616.4 MB/s eta 0:00:00
+#14 18.98 Downloading redis-8.1.0-py3-none-any.whl (560 kB)
+#14 18.98    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 560.6/560.6 kB 655.0 MB/s eta 0:00:00
+#14 18.99 Downloading referencing-0.37.0-py3-none-any.whl (26 kB)
+#14 18.99 Downloading rpds_py-2026.9.1-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (371 kB)
+#14 19.00 Downloading sortedcontainers-2.4.0-py2.py3-none-any.whl (29 kB)
+#14 19.00 Downloading tiktoken-0.14.0-cp312-cp312-manylinux_2_28_x86_64.whl (1.2 MB)
+#14 19.01    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.2/1.2 MB 747.3 MB/s eta 0:00:00
+#14 19.01 Downloading tokenizers-0.23.3-cp310-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (3.4 MB)
+#14 19.02    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3.4/3.4 MB 556.9 MB/s eta 0:00:00
+#14 19.02 Downloading tqdm-4.70.1-py3-none-any.whl (80 kB)
+#14 19.03 Downloading typing_inspection-0.4.4-py3-none-any.whl (14 kB)
+#14 19.03 Downloading wrapt-1.17.3-cp312-cp312-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl (88 kB)
+#14 19.03 Downloading aiofiles-25.1.0-py3-none-any.whl (14 kB)
+#14 19.04 Downloading aiohappyeyeballs-2.7.1-py3-none-any.whl (15 kB)
+#14 19.04 Downloading aiosignal-1.4.0-py3-none-any.whl (7.5 kB)
+#14 19.05 Downloading authlib-1.8.0-py2.py3-none-any.whl (260 kB)
+#14 19.05 Downloading backoff-2.2.1-py3-none-any.whl (15 kB)
+#14 19.06 Downloading beautifulsoup4-4.15.0-py3-none-any.whl (109 kB)
+#14 19.06 Downloading botocore-1.43.111-py3-none-any.whl (16.0 MB)
+#14 19.11    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 16.0/16.0 MB 361.0 MB/s eta 0:00:00
+#14 19.12 Downloading cffi-2.1.1-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (221 kB)
+#14 19.12 Downloading charset_normalizer-3.5.2-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (257 kB)
+#14 19.13 Downloading cyclopts-5.2.0-py3-none-any.whl (289 kB)
+#14 19.13 Downloading distro-1.9.0-py3-none-any.whl (20 kB)
+#14 19.13 Downloading docstring_parser-0.18.0-py3-none-any.whl (22 kB)
+#14 19.14 Downloading exceptiongroup-1.3.1-py3-none-any.whl (16 kB)
+#14 19.14 Downloading frozenlist-1.8.0-cp312-cp312-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl (242 kB)
+#14 19.15 Downloading fsspec-2026.9.0-py3-none-any.whl (221 kB)
+#14 19.15 Downloading google_auth_httplib2-0.4.4-py3-none-any.whl (9.5 kB)
+#14 19.16 Downloading googleapis_common_protos-1.75.5-py3-none-any.whl (307 kB)
+#14 19.16 Downloading griffelib-2.3.2-py3-none-any.whl (169 kB)
+#14 19.17 Downloading h11-0.16.0-py3-none-any.whl (37 kB)
+#14 19.17 Downloading h2-4.4.1-py3-none-any.whl (62 kB)
+#14 19.17 Downloading hf_xet-1.7.0-cp38-abi3-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (4.2 MB)
+#14 19.19    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.2/4.2 MB 459.2 MB/s eta 0:00:00
+#14 19.19 Downloading httplib2-0.32.0-py3-none-any.whl (93 kB)
+#14 19.19 Downloading httpx_sse-0.4.3-py3-none-any.whl (9.0 kB)
+#14 19.20 Downloading jiter-0.17.0-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (345 kB)
+#14 19.20 Downloading jmespath-1.1.0-py3-none-any.whl (20 kB)
+#14 19.21 Downloading jsonref-1.1.0-py3-none-any.whl (9.4 kB)
+#14 19.21 Downloading jsonschema_path-0.5.0-py3-none-any.whl (24 kB)
+#14 19.22 Downloading lxml-6.1.3-cp312-cp312-manylinux_2_26_x86_64.manylinux_2_28_x86_64.whl (5.2 MB)
+#14 19.23    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 5.2/5.2 MB 443.1 MB/s eta 0:00:00
+#14 19.23 Downloading markdown_it_py-4.2.0-py3-none-any.whl (91 kB)
+#14 19.24 Downloading markupsafe-3.0.4-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (22 kB)
+#14 19.24 Downloading multidict-6.9.1-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (336 kB)
+#14 19.25 Downloading openapi_pydantic-0.6.0-py3-none-any.whl (96 kB)
+#14 19.26 Downloading pfzy-0.3.4-py3-none-any.whl (8.5 kB)
+#14 19.26 Downloading platformdirs-4.12.4-py3-none-any.whl (32 kB)
+#14 19.26 Downloading portalocker-4.4.0-py3-none-any.whl (129 kB)
+#14 19.27 Downloading prompt_toolkit-3.0.53-py3-none-any.whl (392 kB)
+#14 19.27 Downloading propcache-0.5.4-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (250 kB)
+#14 19.28 Downloading proto_plus-1.29.0-py3-none-any.whl (50 kB)
+#14 19.28 Downloading protobuf-6.33.6-cp39-abi3-manylinux2014_x86_64.whl (323 kB)
+#14 19.29 Downloading py_key_value_aio-0.4.6-py3-none-any.whl (171 kB)
+#14 19.29 Downloading pyasn1_modules-0.4.2-py3-none-any.whl (181 kB)
+#14 19.29 Downloading pygments-2.21.0-py3-none-any.whl (1.3 MB)
+#14 19.30    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.3/1.3 MB 682.0 MB/s eta 0:00:00
+#14 19.30 Downloading pyjwt-2.15.1-py3-none-any.whl (33 kB)
+#14 19.31 Downloading pyperclip-1.11.0-py3-none-any.whl (11 kB)
+#14 19.31 Downloading python_dateutil-2.9.0.post0-py2.py3-none-any.whl (229 kB)
+#14 19.32 Downloading python_multipart-0.0.32-py3-none-any.whl (30 kB)
+#14 19.32 Downloading requests_oauthlib-2.0.0-py2.py3-none-any.whl (24 kB)
+#14 19.32 Downloading rsa-4.9.1-py3-none-any.whl (34 kB)
+#14 19.33 Downloading s3transfer-0.19.2-py3-none-any.whl (90 kB)
+#14 19.33 Downloading six-1.17.0-py2.py3-none-any.whl (11 kB)
+#14 19.34 Downloading sse_starlette-3.5.0-py3-none-any.whl (17 kB)
+#14 19.34 Downloading starlette-1.7.0-py3-none-any.whl (78 kB)
+#14 19.35 Downloading typer-0.27.3-py3-none-any.whl (123 kB)
+#14 19.35 Downloading uncalled_for-0.4.1-py3-none-any.whl (14 kB)
+#14 19.35 Downloading uritemplate-4.2.0-py3-none-any.whl (11 kB)
+#14 19.36 Downloading urllib3-2.8.0-py3-none-any.whl (135 kB)
+#14 19.36 Downloading uvicorn-0.54.0-py3-none-any.whl (87 kB)
+#14 19.37 Downloading watchfiles-1.3.0-cp310-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (458 kB)
+#14 19.37 Downloading yarl-1.25.1-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (117 kB)
+#14 19.38 Downloading zipp-4.1.1-py3-none-any.whl (10 kB)
+#14 19.38 Downloading regex-2026.9.29-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (807 kB)
+#14 19.38    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 807.8/807.8 kB 740.4 MB/s eta 0:00:00
+#14 19.39 Downloading sniffio-1.3.1-py3-none-any.whl (10 kB)
+#14 19.39 Downloading aiofile-3.12.3-py3-none-any.whl (22 kB)
+#14 19.39 Downloading annotated_doc-0.0.5-py3-none-any.whl (5.3 kB)
+#14 19.40 Downloading beartype-0.23.0-py3-none-any.whl (1.6 MB)
+#14 19.40    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.6/1.6 MB 775.1 MB/s eta 0:00:00
+#14 19.41 Downloading email_validator-2.3.0-py3-none-any.whl (35 kB)
+#14 19.41 Downloading hpack-4.2.0-py3-none-any.whl (34 kB)
+#14 19.42 Downloading hyperframe-6.1.0-py3-none-any.whl (13 kB)
+#14 19.42 Downloading keyring-25.7.0-py3-none-any.whl (39 kB)
+#14 19.42 Downloading mdurl-0.1.2-py3-none-any.whl (10.0 kB)
+#14 19.43 Downloading oauthlib-4.0.0-py3-none-any.whl (159 kB)
+#14 19.43 Downloading pathable-0.6.0-py3-none-any.whl (18 kB)
+#14 19.44 Downloading pyasn1-0.6.4-py3-none-any.whl (84 kB)
+#14 19.44 Downloading pyparsing-3.3.3-py3-none-any.whl (126 kB)
+#14 19.44 Downloading rich_rst-2.2.0-py3-none-any.whl (279 kB)
+#14 19.45 Downloading shellingham-1.5.4-py2.py3-none-any.whl (9.8 kB)
+#14 19.45 Downloading soupsieve-3.0.1-py3-none-any.whl (41 kB)
+#14 19.46 Downloading wcwidth-0.9.2-cp310-abi3-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (769 kB)
+#14 19.46    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 769.8/769.8 kB 485.1 MB/s eta 0:00:00
+#14 19.46 Downloading pycparser-3.11-py3-none-any.whl (51 kB)
+#14 19.47 Downloading caio-0.12.9-cp312-cp312-manylinux_2_34_x86_64.whl (162 kB)
+#14 19.47 Downloading dnspython-2.9.0-py3-none-any.whl (354 kB)
+#14 19.48 Downloading jeepney-0.9.0-py3-none-any.whl (49 kB)
+#14 19.49 Downloading secretstorage-3.5.0-py3-none-any.whl (15 kB)
+#14 19.49 Downloading jaraco.classes-3.4.0-py3-none-any.whl (6.8 kB)
+#14 19.49 Downloading jaraco_context-6.1.2-py3-none-any.whl (7.9 kB)
+#14 19.50 Downloading jaraco_functools-4.6.0-py3-none-any.whl (11 kB)
+#14 19.50 Downloading more_itertools-11.1.0-py3-none-any.whl (72 kB)
+#14 19.79 Building wheels for collected packages: func-timeout
+#14 19.79   Building wheel for func-timeout (pyproject.toml): started
+#14 20.00   Building wheel for func-timeout (pyproject.toml): finished with status 'done'
+#14 20.00   Created wheel for func-timeout: filename=func_timeout-4.3.5-py3-none-any.whl size=15160 sha256=ff3f05f8c75918ca439ac7868b082eeabea59c0739bc045848cd4cd41bd15c08
+#14 20.00   Stored in directory: /tmp/pip-ephem-wheel-cache-ior2anyn/wheels/ed/94/4a/9ccd71f7284a92e4137b7dd0ce8540c40ea7c2689251504a49
+#14 20.00 Successfully built func-timeout
+#14 20.37 Installing collected packages: sortedcontainers, pyperclip, func-timeout, zipp, wrapt, websockets, wcwidth, uuid7, urllib3, uritemplate, uncalled-for, typing-extensions, tree-sitter-bash, tree-sitter, tqdm, tenacity, soupsieve, socksio, sniffio, six, shellingham, screeninfo, rpds-py, regex, redis, pyyaml, python-multipart, python-json-logger, python-dotenv, pypdf, pyparsing, pyotp, pyjwt, pygments, pycparser, pyasn1, psutil, protobuf, propcache, portalocker, platformdirs, pillow, pfzy, pathable, packaging, orjson, opentelemetry-semantic-conventions-ai, oauthlib, multidict, more-itertools, mdurl, MarkupSafe, lxml, lupa, libtmux, jsonref, json-repair, jmespath, jiter, jeepney, jaraco.context, idna, hyperframe, httpx-sse, hpack, hf-xet, h11, griffelib, fsspec, frozenlist, filelock, fetch-use, fastuuid, docstring-parser, dnspython, distro, cloudpickle, click, charset-normalizer, certifi, caio, cachetools, blake3, binaryornot, beartype, backoff, attrs, annotated-types, annotated-doc, aiohappyeyeballs, aiofiles, yarl, uvicorn, typing-inspection, rsa, requests, reportlab, referencing, python-frontmatter, python-docx, python-dateutil, pydantic-core, pyasn1-modules, py-key-value-aio, proto-plus, prompt-toolkit, opentelemetry-proto, opentelemetry-api, markdown-it-py, jinja2, jaraco.functools, jaraco.classes, importlib-metadata, httplib2, httpcore, h2, grpcio, googleapis-common-protos, fakeredis, exceptiongroup, email-validator, deprecation, cffi, beautifulsoup4, anyio, aiosignal, aiofile, watchfiles, tiktoken, starlette, rich, requests-oauthlib, pydantic, posthog, opentelemetry-semantic-conventions, opentelemetry-exporter-otlp-proto-common, opentelemetry-exporter-http-transport, markdownify, jsonschema-specifications, jsonschema-path, inquirerpy, httpx, cryptography, botocore, aiohttp, typer, sse-starlette, SecretStorage, s3transfer, rich-rst, pydantic-settings, opentelemetry-sdk, opentelemetry-instrumentation, openapi-pydantic, openai, ollama, lmnr-claude-code-proxy, jsonschema, joserfc, groq, google-auth, cdp-use, bubus, browser-use-sdk, anthropic, agent-client-protocol, opentelemetry-instrumentation-threading, opentelemetry-exporter-otlp-common, mcp, keyring, huggingface-hub, google-auth-oauthlib, google-auth-httplib2, google-api-core, fastmcp-slim, cyclopts, browser-harness, boto3, authlib, tokenizers, opentelemetry-exporter-otlp-proto-http, opentelemetry-exporter-otlp-proto-grpc, google-genai, google-api-python-client, lmnr, litellm, browser-use, tom-swe, fastmcp, openhands-sdk, openhands-tools
+#14 43.22 Successfully installed MarkupSafe-3.0.4 SecretStorage-3.5.0 agent-client-protocol-0.12.1 aiofile-3.12.3 aiofiles-25.1.0 aiohappyeyeballs-2.7.1 aiohttp-3.14.3 aiosignal-1.4.0 annotated-doc-0.0.5 annotated-types-0.8.0 anthropic-0.76.0 anyio-4.12.1 attrs-26.1.0 authlib-1.8.0 backoff-2.2.1 beartype-0.23.0 beautifulsoup4-4.15.0 binaryornot-0.6.0 blake3-1.0.11 boto3-1.43.111 botocore-1.43.111 browser-harness-0.1.12 browser-use-0.13.9 browser-use-sdk-3.4.2 bubus-1.5.6 cachetools-7.2.1 caio-0.12.9 cdp-use-1.4.5 certifi-2026.7.22 cffi-2.1.1 charset-normalizer-3.5.2 click-8.3.3 cloudpickle-3.1.2 cryptography-50.0.2 cyclopts-5.2.0 deprecation-2.1.0 distro-1.9.0 dnspython-2.9.0 docstring-parser-0.18.0 email-validator-2.3.0 exceptiongroup-1.3.1 fakeredis-2.39.0 fastmcp-3.4.8 fastmcp-slim-3.4.8 fastuuid-0.14.0 fetch-use-0.4.0 filelock-3.32.7 frozenlist-1.8.0 fsspec-2026.9.0 func-timeout-4.3.5 google-api-core-2.29.0 google-api-python-client-2.188.0 google-auth-2.48.0 google-auth-httplib2-0.4.4 google-auth-oauthlib-1.2.4 google-genai-1.65.0 googleapis-common-protos-1.75.5 griffelib-2.3.2 groq-1.0.0 grpcio-1.84.0 h11-0.16.0 h2-4.4.1 hf-xet-1.7.0 hpack-4.2.0 httpcore-1.0.9 httplib2-0.32.0 httpx-0.28.1 httpx-sse-0.4.3 huggingface-hub-1.16.1 hyperframe-6.1.0 idna-3.20 importlib-metadata-8.9.0 inquirerpy-0.3.4 jaraco.classes-3.4.0 jaraco.context-6.1.2 jaraco.functools-4.6.0 jeepney-0.9.0 jinja2-3.1.6 jiter-0.17.0 jmespath-1.1.0 joserfc-1.7.5 json-repair-0.64.0 jsonref-1.1.0 jsonschema-4.26.0 jsonschema-path-0.5.0 jsonschema-specifications-2025.9.1 keyring-25.7.0 libtmux-0.62.0 litellm-1.104.2 lmnr-0.7.66 lmnr-claude-code-proxy-0.1.24 lupa-2.8 lxml-6.1.3 markdown-it-py-4.2.0 markdownify-1.2.2 mcp-1.28.1 mdurl-0.1.2 more-itertools-11.1.0 multidict-6.9.1 oauthlib-4.0.0 ollama-0.6.1 openai-2.26.0 openapi-pydantic-0.6.0 openhands-sdk-1.54.0 openhands-tools-1.54.0 opentelemetry-api-1.45.1 opentelemetry-exporter-http-transport-0.66b1 opentelemetry-exporter-otlp-common-0.66b1 opentelemetry-exporter-otlp-proto-common-1.45.1 opentelemetry-exporter-otlp-proto-grpc-1.45.1 opentelemetry-exporter-otlp-proto-http-1.45.1 opentelemetry-instrumentation-0.66b1 opentelemetry-instrumentation-threading-0.66b1 opentelemetry-proto-1.45.1 opentelemetry-sdk-1.45.1 opentelemetry-semantic-conventions-0.66b1 opentelemetry-semantic-conventions-ai-0.4.13 orjson-3.13.0 packaging-26.3 pathable-0.6.0 pfzy-0.3.4 pillow-12.3.0 platformdirs-4.12.4 portalocker-4.4.0 posthog-7.7.0 prompt-toolkit-3.0.53 propcache-0.5.4 proto-plus-1.29.0 protobuf-6.33.6 psutil-7.2.2 py-key-value-aio-0.4.6 pyasn1-0.6.4 pyasn1-modules-0.4.2 pycparser-3.11 pydantic-2.13.5 pydantic-core-2.46.5 pydantic-settings-2.15.0 pygments-2.21.0 pyjwt-2.15.1 pyotp-2.9.0 pyparsing-3.3.3 pypdf-6.15.0 pyperclip-1.11.0 python-dateutil-2.9.0.post0 python-docx-1.2.0 python-dotenv-1.2.2 python-frontmatter-1.3.0 python-json-logger-4.2.0 python-multipart-0.0.32 pyyaml-6.0.3 redis-8.1.0 referencing-0.37.0 regex-2026.9.29 reportlab-4.4.9 requests-2.33.0 requests-oauthlib-2.0.0 rich-14.3.3 rich-rst-2.2.0 rpds-py-2026.9.1 rsa-4.9.1 s3transfer-0.19.2 screeninfo-0.8.1 shellingham-1.5.4 six-1.17.0 sniffio-1.3.1 socksio-1.0.0 sortedcontainers-2.4.0 soupsieve-3.0.1 sse-starlette-3.5.0 starlette-1.7.0 tenacity-9.1.4 tiktoken-0.14.0 tokenizers-0.23.3 tom-swe-1.0.3 tqdm-4.70.1 tree-sitter-0.26.0 tree-sitter-bash-0.25.1 typer-0.27.3 typing-extensions-4.15.0 typing-inspection-0.4.4 uncalled-for-0.4.1 uritemplate-4.2.0 urllib3-2.8.0 uuid7-0.1.0 uvicorn-0.54.0 watchfiles-1.3.0 wcwidth-0.9.2 websockets-15.0.1 wrapt-1.17.3 yarl-1.25.1 zipp-4.1.1
+#14 43.23 WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager, possibly rendering your system unusable. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv. Use the --root-user-action option if you know what you are doing and want to suppress this warning.
+#14 43.35 
+#14 43.35 [notice] A new release of pip is available: 25.0.1 -> 26.2.1
+#14 43.35 [notice] To update, run: pip install --upgrade pip
+#14 DONE 46.8s
+
+#15 [stage-1  7/11] COPY run.py /opt/harness/run.py
+#15 DONE 0.0s
+
+#16 [stage-1  8/11] COPY credentials.py /opt/harness/credentials.py
+#16 DONE 0.0s
+
+#17 [stage-1  9/11] COPY preflight.py /opt/harness/preflight.py
+#17 DONE 0.0s
+
+#18 [stage-1 10/11] RUN useradd --create-home --uid 1000 agent && mkdir -p /workspace && chown agent:agent /workspace
+#18 DONE 0.2s
+
+#19 [stage-1 11/11] WORKDIR /workspace
+#19 DONE 0.0s
+
+#20 exporting to image
+#20 exporting layers
+#20 exporting layers 12.6s done
+#20 writing image sha256:387ad71fd9a56459bc9f5c79560ab7803a83a8afa38283916d5f41c57121c46f done
+#20 naming to docker.io/library/stockroom-openhands:1.54.0 done
+#20 DONE 12.6s

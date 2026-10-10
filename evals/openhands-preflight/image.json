@@ -1,0 +1,77 @@
+[
+    {
+        "Id": "sha256:387ad71fd9a56459bc9f5c79560ab7803a83a8afa38283916d5f41c57121c46f",
+        "RepoTags": [
+            "stockroom-openhands:1.54.0"
+        ],
+        "RepoDigests": [],
+        "Parent": "",
+        "Comment": "buildkit.dockerfile.v0",
+        "Created": "2026-10-10T19:36:20.42493376Z",
+        "DockerVersion": "",
+        "Author": "",
+        "Config": {
+            "Hostname": "",
+            "Domainname": "",
+            "User": "agent",
+            "AttachStdin": false,
+            "AttachStdout": false,
+            "AttachStderr": false,
+            "Tty": false,
+            "OpenStdin": false,
+            "StdinOnce": false,
+            "Env": [
+                "PATH=/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+                "LANG=C.UTF-8",
+                "GPG_KEY=7169605F62C751356D054A26A821E680E5FA6305",
+                "PYTHON_VERSION=3.12.13",
+                "PYTHON_SHA256=c08bc65a81971c1dd5783182826503369466c7e67374d1646519adf05207b684",
+                "PYTHONUNBUFFERED=1"
+            ],
+            "Cmd": null,
+            "Image": "",
+            "Volumes": null,
+            "WorkingDir": "/workspace",
+            "Entrypoint": [
+                "python",
+                "/opt/harness/run.py"
+            ],
+            "OnBuild": null,
+            "Labels": null
+        },
+        "Architecture": "amd64",
+        "Os": "linux",
+        "Size": 933841943,
+        "GraphDriver": {
+            "Data": {
+                "LowerDir": "/var/lib/docker/overlay2/xeddafy8hiphky1uyaj7lrpnn/diff:/var/lib/docker/overlay2/sm6uc2psdnkwvi849rak1nhn8/diff:/var/lib/docker/overlay2/yooq007f82r7y0518hd7lafa7/diff:/var/lib/docker/overlay2/s485upwrocv29vams5gk6o6mq/diff:/var/lib/docker/overlay2/oubm2gi7olga7kaw7qy0jqmt4/diff:/var/lib/docker/overlay2/6ggfqfvnrum0atijlbahq90ug/diff:/var/lib/docker/overlay2/tk41ktgjfm8bflnvkirctuc7m/diff:/var/lib/docker/overlay2/44dqzosjjwp0heu89bugnf03l/diff:/var/lib/docker/overlay2/tdyr3s2jwjc685fyvfnx0e9li/diff:/var/lib/docker/overlay2/10297ce7bfad5a6bbf1203601648b7f8072ac6f941c77ec6bc2d5e21075be26c/diff:/var/lib/docker/overlay2/5b05f86b1334e5067d51138a673fa8c6d6d2d7d8cb7dc3ce42b0294422fc16b2/diff:/var/lib/docker/overlay2/a0a12a3d3d84eab1c4328297ae979f8efcef89dbf61c4c68f40f0804397b5f60/diff:/var/lib/docker/overlay2/1c7684e443198818fd2a85dd6c6232a2f2564ba83b16701e4bd5c67dd447aedf/diff",
+                "MergedDir": "/var/lib/docker/overlay2/g0zp7g8t7hsnnygvfgnxk06eq/merged",
+                "UpperDir": "/var/lib/docker/overlay2/g0zp7g8t7hsnnygvfgnxk06eq/diff",
+                "WorkDir": "/var/lib/docker/overlay2/g0zp7g8t7hsnnygvfgnxk06eq/work"
+            },
+            "Name": "overlay2"
+        },
+        "RootFS": {
+            "Type": "layers",
+            "Layers": [
+                "sha256:66462cc862fe2053b9863fefa3866e07bb5dfb06f6b3ce3177cc096e4021aabe",
+                "sha256:bbbb19fa59e928e9d2412742b476b97f157cd95304b1f9fd3a82d221f661acde",
+                "sha256:0632d0601fca2055c070f7382e63078c292b98d8fa4a5388ee04bd6b1ea0582e",
+                "sha256:da835b7922cb8503b751d1cd1a3ac2309a9608198554e43fdd225591a1ec16f4",
+                "sha256:4088a9c950fba55ab649a7a15139f575ee66690dabeb8e6e89bb5ead03076360",
+                "sha256:f3398f201c884345fb2c97aa10adb7a022ea5c7b12ebd2bb499e83e7ece9acaa",
+                "sha256:35acc443b0dda8da5922961852220ea46a3bd566f1438195d51d52b2ea9abc5b",
+                "sha256:883f4688a670762a471887f5b2c984c4d94d5ba22041d0874167781beb27d64c",
+                "sha256:be1def4d9409a406132c661501a42e9a3f9351877508c4476df1d2ea8538ee63",
+                "sha256:02c34503854bd9fa64e0e7f54d9fd1ab281f60842d1b7df27a096e31815303d8",
+                "sha256:bd03e65e10fb5e080eeb227acc66dc56b4d201b95ca10a9eeefe54d2531abf4b",
+                "sha256:c4659e134432e2400371aed3fb725c55ccc842073cb5f1d2cd53ab4c94c18c19",
+                "sha256:d18bdf5f5cbeadb8139c951c61fe7607560acbadee70179114d46b63ae463883",
+                "sha256:5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+            ]
+        },
+        "Metadata": {
+            "LastTagTime": "2026-10-10T19:36:33.029175488Z"
+        }
+    }
+]
