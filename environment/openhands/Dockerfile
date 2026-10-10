@@ -10,6 +10,7 @@ RUN ln -s /usr/local/lib/node_modules/npm/bin/npm-cli.js /usr/local/bin/npm \
 COPY requirements.txt /opt/harness/requirements.txt
 RUN pip install --no-cache-dir -r /opt/harness/requirements.txt
 COPY run.py /opt/harness/run.py
+COPY credentials.py /opt/harness/credentials.py
 RUN useradd --create-home --uid 1000 agent && mkdir -p /workspace && chown agent:agent /workspace
 USER agent
 WORKDIR /workspace

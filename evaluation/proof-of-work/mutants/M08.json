@@ -1,9 +1,9 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-10T15:31:01.458Z",
+  "generatedAt": "2026-10-10T15:36:53.342Z",
   "solution": ".runs/mutants/M08",
-  "solutionHash": "1950ca889f06f4043da313b79278af5531e81cf1c36e4e8cdb877195860c099a",
-  "checkHash": "e85ccbc4bfb0eb8b48671f34c07f5073e544b8618071c9ced16bf700f5c655f0",
+  "solutionHash": "0cc4f0f47adbf7f8528ed917db2e0a098f9beec5ca5f8affc8d89b9321670571",
+  "checkHash": "abbc689d16fb67cb4f976c998436430867557c5787fd3781128432f33ecba96b",
   "node": "v25.6.0",
   "platform": "win32",
   "execution": "local",
@@ -76,14 +76,14 @@
       "group": "inventory",
       "description": "Reservation, shipment and cancellation conserve physical stock",
       "passed": false,
-      "error": "AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:\n+ actual - expected\n\n  {\n+   available: 7,\n+   onHand: 8,\n-   available: 5,\n-   onHand: 6,\n    reserved: 1,\n    sku: 'widget',\n    warehouse: 'A'\n  }\n\n    at file:///C:/Users/rishi/Downloads/RL%20GYM%20AI/evaluation/tests/cases/inventory.mjs:28:10\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)\n    at async withService (file:///C:/Users/rishi/Downloads/RL%20GYM%20AI/evaluation/tests/harness.mjs:86:24)\n    at async score (file:///C:/Users/rishi/Downloads/RL%20GYM%20AI/evaluation/score.mjs:37:11)\n    at async file:///C:/Users/rishi/Downloads/RL%20GYM%20AI/evaluation/mutants/check.mjs:24:18"
+      "error": "AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:\n+ actual - expected\n\n  {\n+   available: 7,\n+   onHand: 8,\n-   available: 5,\n-   onHand: 6,\n    reserved: 1,\n    sku: 'widget',\n    warehouse: 'A'\n  }\n\n    at file:///C:/Users/rishi/Downloads/RL%20GYM%20AI/evaluation/tests/cases/inventory.mjs:28:10\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)\n    at async withService (file:///C:/Users/rishi/Downloads/RL%20GYM%20AI/evaluation/tests/harness.mjs:87:24)\n    at async score (file:///C:/Users/rishi/Downloads/RL%20GYM%20AI/evaluation/score.mjs:37:11)\n    at async file:///C:/Users/rishi/Downloads/RL%20GYM%20AI/evaluation/mutants/check.mjs:24:18"
     },
     {
       "id": "I06",
       "group": "inventory",
       "description": "Zero stock rows remain visible after full shipment",
       "passed": false,
-      "error": "AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:\n+ actual - expected\n\n  {\n+   available: 4,\n+   onHand: 4,\n-   available: 0,\n-   onHand: 0,\n    reserved: 0,\n    sku: 'widget',\n    warehouse: 'A'\n  }\n\n    at file:///C:/Users/rishi/Downloads/RL%20GYM%20AI/evaluation/tests/cases/inventory.mjs:32:10\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)\n    at async withService (file:///C:/Users/rishi/Downloads/RL%20GYM%20AI/evaluation/tests/harness.mjs:86:24)\n    at async score (file:///C:/Users/rishi/Downloads/RL%20GYM%20AI/evaluation/score.mjs:37:11)\n    at async file:///C:/Users/rishi/Downloads/RL%20GYM%20AI/evaluation/mutants/check.mjs:24:18"
+      "error": "AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:\n+ actual - expected\n\n  {\n+   available: 4,\n+   onHand: 4,\n-   available: 0,\n-   onHand: 0,\n    reserved: 0,\n    sku: 'widget',\n    warehouse: 'A'\n  }\n\n    at file:///C:/Users/rishi/Downloads/RL%20GYM%20AI/evaluation/tests/cases/inventory.mjs:32:10\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)\n    at async withService (file:///C:/Users/rishi/Downloads/RL%20GYM%20AI/evaluation/tests/harness.mjs:87:24)\n    at async score (file:///C:/Users/rishi/Downloads/RL%20GYM%20AI/evaluation/score.mjs:37:11)\n    at async file:///C:/Users/rishi/Downloads/RL%20GYM%20AI/evaluation/mutants/check.mjs:24:18"
     }
   ]
 }

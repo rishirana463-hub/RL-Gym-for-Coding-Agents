@@ -3,9 +3,11 @@ import path from 'node:path';
 import { spawn, spawnSync } from 'node:child_process';
 import { root, args, write, sourceHash, files } from './util.mjs';
 import { createOutput, parseEvent } from './output.mjs';
+import { dockerEnvironment } from './docker-environment.mjs';
 
 const options = args();
-const docker = spawnSync('docker', ['version', '--format', '{{.Server.Version}}'], { encoding: 'utf8' });
+const dockerEnv = dockerEnvironment();
+const docker = spawnSync('docker', ['version', '--format', '{{.Server.Version}}'], { env: dockerEnv, encoding: 'utf8' });
 if (options.prepare) {
   const directory = path.join(root, '.runs/starter-preview');
   fs.mkdirSync(directory, { recursive: true });
@@ -24,9 +26,17 @@ if (options.prepare) {
 if (!options.run || !/^model-[a-z0-9-]+$/.test(options.run) || typeof options.model !== 'string') throw new Error('Use --run model-a --model <provider/model> (or --prepare)');
 if (docker.error || docker.status !== 0) throw new Error('Docker Desktop with Linux containers is required. No model attempt started.');
 if (!process.env.LLM_API_KEY) throw new Error('Set LLM_API_KEY in the local environment. No model attempt started.');
+const secret = process.env.LLM_API_KEY;
+if (Buffer.byteLength(JSON.stringify(secret)) > 65_536) throw new Error('LLM_API_KEY is too long. No model attempt started.');
+const baseURL = process.env.LLM_BASE_URL ?? '';
+if (baseURL) {
+  let endpoint;
+  try { endpoint = new URL(baseURL); } catch { throw new Error('LLM_BASE_URL must be a valid HTTP(S) endpoint'); }
+  if (!['https:', 'http:'].includes(endpoint.protocol) || endpoint.username || endpoint.password || endpoint.search || endpoint.hash) throw new Error('LLM_BASE_URL must be an HTTP(S) endpoint without credentials, query parameters, or fragment');
+}
 const maxIterations = Number(options.iterations ?? 100), seconds = Number(options.seconds ?? 1800);
-if (!Number.isInteger(maxIterations) || maxIterations < 1 || !Number.isInteger(seconds) || seconds < 1) throw new Error('iterations and seconds must be positive integers');
-const build = spawnSync('docker', ['build', '-t', 'stockroom-openhands:1.54.0', path.join(root, 'environment/openhands')], { stdio: 'inherit' });
+if (!Number.isSafeInteger(maxIterations) || maxIterations < 1 || !Number.isSafeInteger(seconds) || seconds < 1 || seconds * 1000 > 2_147_483_647) throw new Error('iterations must be a positive safe integer; seconds must be between 1 and 2147483');
+const build = spawnSync('docker', ['build', '-t', 'stockroom-openhands:1.54.0', path.join(root, 'environment/openhands')], { env: dockerEnv, stdio: 'inherit' });
 if (build.status !== 0) throw new Error('OpenHands image build failed. No model attempt started.');
 const destination = path.join(root, 'evaluation/proof-of-work', options.run);
 // An attempt folder is exclusive: an interrupted run may not be silently retried.
@@ -47,21 +57,22 @@ const metadata = {
   sdkVersion: '1.54.0', maxIterations, wallTimeSeconds: seconds,
   startedAt: new Date().toISOString(), workspace: path.relative(root, workspace).replaceAll('\\', '/'),
   startingSourceHash: sourceHash(workspace), instructionHash: sourceHash(path.join(root, 'task')),
-  imageId: spawnSync('docker', ['image', 'inspect', '--format', '{{.Id}}', 'stockroom-openhands:1.54.0'], { encoding: 'utf8' }).stdout.trim(),
+  imageId: spawnSync('docker', ['image', 'inspect', '--format', '{{.Id}}', 'stockroom-openhands:1.54.0'], { env: dockerEnv, encoding: 'utf8' }).stdout.trim(),
   privateAssetsExposed: false
 };
 const metadataPath = path.join(destination, 'run.json'); write(metadataPath, metadata);
 const log = fs.openSync(path.join(destination, 'openhands.log'), 'w');
-const secret = process.env.LLM_API_KEY;
 let timedOut = false, finishedEvent = false;
 const stdout = createOutput({ secret, onText: text => fs.writeSync(log, text), onLine: line => {
   if (parseEvent(line)?.event === 'harness_finished') finishedEvent = true;
 } });
 const stderr = createOutput({ secret, onText: text => fs.writeSync(log, text) });
-const child = spawn('docker', ['run', '--rm', '--name', name, '--init', '--cap-drop', 'ALL', '--security-opt', 'no-new-privileges', '--memory', '4g', '--cpus', '2', '--pids-limit', '256', '--env', 'LLM_API_KEY', '--env', 'LLM_BASE_URL', '--env', `LLM_MODEL=${options.model}`, '--env', `GYM_MAX_ITERATIONS=${maxIterations}`, '--mount', `type=bind,source=${workspace},target=/workspace`, 'stockroom-openhands:1.54.0'], { stdio: ['ignore', 'pipe', 'pipe'] });
+const child = spawn('docker', ['run', '--rm', '-i', '--name', name, '--init', '--cap-drop', 'ALL', '--security-opt', 'no-new-privileges', '--memory', '4g', '--cpus', '2', '--pids-limit', '256', '--env', `LLM_BASE_URL=${baseURL}`, '--env', `LLM_MODEL=${options.model}`, '--env', `GYM_MAX_ITERATIONS=${maxIterations}`, '--mount', `type=bind,source=${workspace},target=/workspace`, 'stockroom-openhands:1.54.0'], { env: dockerEnv, stdio: ['pipe', 'pipe', 'pipe'] });
+child.stdin.on('error', () => stderr.write('Credential input pipe closed before delivery.\n'));
+child.stdin.end(JSON.stringify(secret) + '\n');
 child.stdout.on('data', data => stdout.write(data));
 child.stderr.on('data', data => stderr.write(data));
-const timer = setTimeout(() => { timedOut = true; spawnSync('docker', ['kill', name], { stdio: 'ignore' }); }, seconds * 1000);
+const timer = setTimeout(() => { timedOut = true; spawnSync('docker', ['kill', name], { env: dockerEnv, stdio: 'ignore' }); }, seconds * 1000);
 const exitCode = await new Promise(resolve => { child.once('close', code => resolve(code ?? -1)); child.once('error', error => stderr.write(String(error))); });
 clearTimeout(timer); stdout.end(); stderr.end(); fs.closeSync(log);
 metadata.status = timedOut ? 'timed_out' : exitCode === 0 && finishedEvent ? 'completed' : 'harness_error';

@@ -15,6 +15,7 @@ test('API success and error responses are JSON and carry noindex', async () => {
       assert.equal(response.headers.get('content-type'), 'application/json');
       assert.equal(response.headers.get('x-robots-tag'), 'noindex');
       assert.equal(response.headers.get('cache-control'), 'no-store');
+      assert.equal(response.headers.get('x-content-type-options'), 'nosniff');
       assert.equal(typeof await response.json(), 'object');
     }
   });

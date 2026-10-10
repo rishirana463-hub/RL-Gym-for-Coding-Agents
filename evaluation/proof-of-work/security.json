@@ -1,0 +1,17 @@
+{
+  "passed": true,
+  "scannedFiles": 97,
+  "scannedHistoryBlobs": 160,
+  "scannedIndexBlobs": 0,
+  "skippedBinaryFiles": 0,
+  "skippedBinaryBlobs": 0,
+  "deletedTrackedFiles": 0,
+  "ignoredEnvironmentPaths": [
+    ".env",
+    ".env.local",
+    ".env.production.local",
+    "nested/.env"
+  ],
+  "findings": [],
+  "errors": []
+}

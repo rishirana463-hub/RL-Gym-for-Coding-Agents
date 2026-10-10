@@ -3,6 +3,12 @@
 node_modules
 .state
 .runs
+dist
+docs
+**/__pycache__
+**/*.pyc
+**/*.pem
+**/*.key
 evaluation
 scripts
 README.md

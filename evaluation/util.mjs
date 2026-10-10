@@ -33,7 +33,7 @@ export function sourceHash(directory) {
 export function verifierHash() {
   const hash = crypto.createHash('sha256');
   hash.update(sourceHash(path.join(root, 'evaluation/tests')));
-  for (const name of ['score.mjs', 'metadata.mjs', 'util.mjs', 'output.mjs', 'scoring.yml', 'acceptance-criteria.yml']) {
+  for (const name of ['score.mjs', 'metadata.mjs', 'util.mjs', 'output.mjs', 'environment.mjs', 'scoring.yml', 'acceptance-criteria.yml']) {
     hash.update(name); hash.update('\0'); hash.update(fs.readFileSync(path.join(root, 'evaluation', name)));
   }
   hash.update(sourceHash(path.join(root, 'app-setup')));

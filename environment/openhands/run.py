@@ -1,8 +1,12 @@
 """One prompt and one OpenHands conversation.run(), inside an isolated container."""
 import json
 import os
+import sys
 from pathlib import Path
 from importlib.metadata import version
+from credentials import read_api_key
+
+key = read_api_key(sys.stdin.buffer)
 
 from pydantic import SecretStr
 from openhands.sdk import LLM, Agent, Conversation, Tool
@@ -15,7 +19,6 @@ def event_callback(event):
     print(json.dumps({"event": "trajectory", "data": event.model_dump(mode="json")}), flush=True)
 
 
-key = os.environ.pop("LLM_API_KEY")
 llm = LLM(
     model=os.environ["LLM_MODEL"],
     api_key=SecretStr(key),
@@ -23,6 +26,7 @@ llm = LLM(
     reasoning_effort="medium",
     log_completions=False,
 )
+del key
 agent = Agent(llm=llm, tools=[Tool(name=TerminalTool.name), Tool(name=FileEditorTool.name)])
 conversation = Conversation(
     agent=agent,

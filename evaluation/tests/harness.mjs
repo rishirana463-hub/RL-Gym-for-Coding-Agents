@@ -6,6 +6,7 @@ import { spawn, spawnSync } from 'node:child_process';
 import { setTimeout as delay } from 'node:timers/promises';
 import assert from 'node:assert/strict';
 import { createOutput, parseEvent } from '../output.mjs';
+import { runtimeEnvironment } from '../environment.mjs';
 
 export class ServiceInfrastructureError extends Error {
   constructor(message, options) { super(message, options); this.name = 'ServiceInfrastructureError'; }
@@ -39,7 +40,7 @@ export async function withService(options, action) {
       base = `http://127.0.0.1:${port}`;
     } else {
       container = undefined;
-      child = spawn(process.execPath, ['server.mjs'], { cwd: options.solution, env: { ...process.env, DATA_DIR: data, PORT: '0', HOST: '127.0.0.1' }, stdio: ['ignore', 'pipe', 'pipe'] });
+      child = spawn(process.execPath, ['server.mjs'], { cwd: options.solution, env: { ...runtimeEnvironment(), DATA_DIR: data, PORT: '0', HOST: '127.0.0.1' }, stdio: ['ignore', 'pipe', 'pipe'] });
     }
     const diagnostic = text => { output = (output + text).slice(-2000); };
     const stdout = createOutput({ onText: diagnostic, onLine: line => {
@@ -82,7 +83,7 @@ export async function withService(options, action) {
     transfer: (quantity = 4, transferId = 't1') => api.ok({ op: 'dispatchTransfer', transferId, from: 'A', to: 'B', items: [{ sku: 'widget', quantity }] })
   };
   // Bind-mounted Linux directories must be writable by the non-root service user.
-  if (process.platform !== 'win32') fs.chmodSync(data, 0o777);
+  if (options.dockerImage && process.platform !== 'win32') fs.chmodSync(data, 0o777);
   try { await start(); await action(api); }
   catch (error) { throw infrastructureError() ?? error; }
   finally {

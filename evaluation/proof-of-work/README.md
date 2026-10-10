@@ -10,6 +10,8 @@ This folder contains **actual locally executed results**, not model simulations.
 - `generation-preflight.json`: setup status with zero model attempts.
 - `submission-readiness.json`: an honest list of missing submission evidence.
 - `lifecycle.json`: safe-reset checks, including rejection of source paths and symlink traversal.
+- `security.json`: signature scan of working files, staged content and reachable Git-history blobs, plus environment-file ignore checks. Binary and Git-ignored files are excluded; a passing signature scan is not proof that arbitrary or encoded secrets are absent.
+- `dependency-audit.json`: npm audit of application and development dependencies. The Python/OpenHands image dependencies have not been installed or audited here.
 
 Docker is unavailable on the development machine. The Linux images and OpenHands integration are prepared but have not been executed here. Neither frontier-model attempt has been performed. There is **no evidence yet** that two frontier models score below 30%. Local success does not establish Linux-container durability or real-model difficulty.
 

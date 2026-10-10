@@ -35,3 +35,15 @@ Verified: lint/build pass, 10 regression tests pass, reference remains 56/56, mu
 ## Phase 4 — Accessibility and SEO
 
 There is no HTML or interactive UI, so alt text, semantic elements, ARIA, focus states, and meta/OG tags are not applicable. JSON API responses now include `X-Robots-Tag: noindex`, the [documented mechanism for non-HTML resources](https://developers.google.com/search/docs/crawling-indexing/robots-meta-tag). This is a search-crawler hint, not access control. Success/error response checks verify JSON content type, no-store caching, and noindex. Lint/build and all 11 regression tests pass; the observable JSON contract is preserved.
+
+## Phase 5 — Security
+
+Local evaluation subprocesses now receive only OS/runtime paths and locale settings; host credentials and Node injection settings are excluded. Local temporary state keeps private permissions. Local execution remains for trusted code only: this environment filter is not a sandbox. Docker evaluation remains required for model-produced code; its Linux bind-mount permission workaround still requires container verification.
+
+The OpenHands runner sends its bounded API credential through stdin and closes the pipe before starting tools; the key is absent from Docker arguments and the launch environment. All Docker client commands retain the same host connection/TLS/proxy configuration, with model credentials excluded. Configured-key streaming log redaction remains enabled. Provider URLs reject embedded credentials, query parameters and fragments, and invalid URLs produce sanitized errors. Credential-input Python unit tests pass; complete Docker/OpenHands execution is still unavailable.
+
+Added `npm run check:secrets`: scans working files, staged blobs, and unique reachable Git-history blobs for common provider/GitHub/AWS/Google/Slack/Stripe keys, private keys and credential URLs. It prints filenames/categories only and fails when text cannot be scanned. No signatures were found. Binary and Git-ignored files are excluded; arbitrary/encoded secrets may escape signature detection. `.env`, `.env.local`, `.env.production.local` and nested `.env` ignore checks pass. Both Docker contexts exclude environment/key files; the root context also excludes build archives and docs.
+
+JSON responses now include `X-Content-Type-Options: nosniff`. npm audit reports zero known vulnerabilities, including development dependencies; the pinned Python image dependencies remain unverified. Local reference, mutant and determinism evidence was regenerated for the current source/verifier fingerprint. Runtime artifact: 12,073 raw bytes / 4,498 gzip bytes.
+
+Verified: lint/build, all 18 Node regressions, two Python credential-input tests, reference and built runtime 56/56, 18/18 mutants caught, three stable reference runs, metadata and lifecycle checks. The intentionally incomplete starter remains 0/56; it is not model difficulty evidence.
