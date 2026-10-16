@@ -2,7 +2,7 @@
 
 Read this file first at the start of every session and continue from the outstanding work. Do not repeat Done items. Update Done / In progress / Next / Notes after each phase or meaningful step, before moving on, and commit the update with that work.
 
-Last updated: 2026-10-16.
+Last updated: 2026-10-17.
 
 ## Done
 
@@ -54,17 +54,21 @@ Recorded verification, already executed:
 - Follow-up legacy Docker CI [38927309305](https://github.com/rishirana463-hub/RL-Gym-for-Coding-Agents/actions/runs/38927309305) passed on `39a3cf8` after the clean-checkout fix. Original source/verifier fingerprints still match the preserved Docker evidence. Rechecked current GitHub state: private, zero outside collaborators/invitations, neither model-provider Actions secret configured.
 - Updated and independently verified the GitHub description to reflect the ProblemSetters greenfield format, durable inventory API, 56 checks and 18 Docker-detected mutants. Final validation-phase lint/build passed with unchanged runtime size; a fresh LF Git checkout is clean. The legacy readiness gate still correctly reports the eight missing model files; the new manual template review gaps remain additional requirements.
 - Final documentation validation resolved 112 local links; outgoing signature scanning passed over 565 working files plus staged/reachable-history blobs with no findings/errors. New Docker build transcripts also retain their original progress-control bytes through a targeted raw-log attribute, rather than silently normalizing imported evidence.
+- Final follow-up legacy CI [38930130107](https://github.com/rishirana463-hub/RL-Gym-for-Coding-Agents/actions/runs/38930130107) succeeded on `032d100`: clean-checkout, tooling, reference, mutant and three-run determinism steps all passed. Saved GitHub step-status provenance separately in `evals/docker/follow-up-38930130107.json`; it does not replace preserved raw measurement logs. No completed tests or model attempts were dispatched for this status check.
+- Independent read-only handoff review found one additional literal-guidance gap: the instruction names public `smoke.mjs`, while the pinned criterion states no test filenames and gives no public-test exception. Corrected the report/checklist's compliance claim and recorded the gap without changing the tested instruction, source, weights or exported manifest. Other reviewed evidence/readiness claims were consistent. Rechecked GitHub on 2026-10-17: private, zero outside collaborators/invitations and neither provider Actions secret configured.
+- Handoff documentation phase passed lint/build; runtime remains 12,073 raw / 4,498 gzip bytes. All 75 local links in changed documents resolve, and the current exported manifest remains byte-identical to the complete measured Docker artifact. Reference/model/scoring runs were not repeated for this documentation update.
+- Outgoing signature scan passed over 566 working files, 461 reachable-history blobs and seven staged blobs, with zero findings/errors and all environment-file ignore checks satisfied. Its signature-only detection limits still apply.
 
 ## In progress
 
-- Official greenfield export and its local/Docker self-check are complete. Remaining official-template review items are mutant count/isolation and non-functional classification; no acceptance-ready claim is made.
+- Official greenfield export and its local/Docker self-check are complete. Remaining official-template review items are instruction test-file naming, mutant count/isolation and non-functional classification; no acceptance-ready claim is made.
 - Real evaluation step 2 is requested but blocked by missing funded provider access and unconfirmed models/reasoning. The user confirms they have no access. Steps 3-4 cannot proceed without genuine results. No model execution is active. Completed Docker validation and offline setup have not been repeated.
 - Reasoning/difficulty guidance differs across the original listing/Discord and new starter README/AGENTS. The detailed AGENTS candidate protocol is medium/below 30%; README prefers high/below 50% and AGENTS describes a separate high/below-40% final assessment. The existing stricter candidate settings are retained; the unsent draft requests clarification.
 - Added a manual hosted-runner path for the two real evaluations because local Docker is absent. It requires two secure provider secrets, distinct confirmed model IDs and matching current Docker evidence, refuses workflow retries/saved attempt folders, and archives full generation/scoring/trajectory logs under model-specific `evals/` directories. It has not been dispatched; actual provider execution remains unverified. Preserve artifacts before any further dispatch.
 
 ## Next
 
-0. Review `docs/template-self-check.md` and the official-starter checklist rows. Resolve mutant count/isolation and non-functional classification with the organizer before claiming compliance; preserve all original coverage and measurements.
+0. Review `docs/template-self-check.md` and the official-starter checklist rows. Resolve instruction test-file naming, mutant count/isolation and non-functional classification before claiming compliance; preserve all original coverage and measurements. Authoring-source changes require regeneration and fresh package validation; the current tested manifest is unchanged.
 1. Have the user share the unsent organizer draft to request scope approval, clarify models/reasoning, identify the GitHub collaborator and ask whether an approved evaluator or alternative is accepted because provider access is unavailable. No arrangement or waiver exists yet. The listing's approval-before-implementation ordering was not met; only the organizer can decide whether to review the existing prototype.
 2. Once funded authorized provider access and exact model/reasoning confirmation are available, run each model once, save full logs under model-specific `evals/` directories, and score saved solutions in Docker. The user's request to resume is already recorded; do not request it again.
 3. Apply the difficulty gate to real scores only. If needed, preserve attempts, revise the task fairly and rerun Docker plus both evaluations under a disclosed new version. Then write actual per-model failure analyses.

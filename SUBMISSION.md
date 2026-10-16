@@ -4,7 +4,7 @@ Checked 2026-10-11 against the [original listing](docs/bounty-listing.txt) and t
 
 **Done** means the listed artifact exists or the stated check actually passed. **Not done** means evidence or work is missing. **Needs human** means organizer confirmation, account access or a human decision is required. Prepared tooling is not a completed model evaluation.
 
-## Official starter update — 2026-10-16
+## Official starter update — reviewed 2026-10-17
 
 The organizer now requires the [official starter layout](https://github.com/ProblemSetters/earn-rl-gym-starter-template). The original listing checklist below remains historical context; the generated [greenfield task](greenfield/README.md) is the current submission format. [Compatibility decisions](docs/template-compatibility.md) preserve exact source/credit and explain the conflicting guidance.
 
@@ -16,9 +16,10 @@ The organizer now requires the [official starter layout](https://github.com/Prob
 | Clean Docker execution of the new package | Done | [Official-template run 38926363562](https://github.com/rishirana463-hub/RL-Gym-for-Coding-Agents/actions/runs/38926363562), verified artifact digest/current manifest, full output preserved in [evals](evals/template-self-check/README.md) and required records in the official task directories. |
 | Full-suite independent mutant losses and count/mix | Measurements done; requirements not passing yet | All 18 patches applied independently, passed setup/syntax and were detected after a 100-point control. Twelve full-suite losses exceed original declared target-check points by more than two points. Eighteen mutants also exceed the requested count. [Self-check report](docs/template-self-check.md); coverage and weights were retained. |
 | Non-functional score share at most 20% | Needs human / not shown yet | Recovery alone is 12.5%; including concurrency as robustness would total 25%. An agreed classification is missing; no weights were changed to manufacture compliance. |
+| Instruction names no tests, cases, checks or scoring details | Not done under literal guidance | Its final line names public `smoke.mjs`. No private test IDs/weights are disclosed, but the pinned guidance states no public-test exception. [Self-check report](docs/template-self-check.md). Tested source is unchanged. |
 | Latest qualifying models, actual solution/metadata/trajectory/verification records | Not done | Zero real attempts. Future records must use the new `<model>-<reasoning>-<timestamp>` directory format, omit provider prefix and retain exact current instruction/verifier provenance. Do not copy synthetic template examples. |
 | Reasoning and difficulty requirements resolved | Needs human | Starter README: prefer high / ideally below 50%; starter AGENTS: medium / below 30%, plus a separate high / below-40% final assessment. Existing stricter candidate protocol is retained pending clarification. |
-| Official AGENTS scratch-copy self-check and all review items closed | Self-check done; review items open | [Report](docs/template-self-check.md), [pinned guidance](docs/official-template-AGENTS.md), [actual records](evals/template-self-check/README.md). Mutant criteria, non-functional classification, model evidence and organizer/access requirements remain open. |
+| Official AGENTS scratch-copy self-check and all review items closed | Self-check done; review items open | [Report](docs/template-self-check.md), [pinned guidance](docs/official-template-AGENTS.md), [actual records](evals/template-self-check/README.md). Instruction wording, mutant criteria, non-functional classification, model evidence and organizer/access requirements remain open. |
 
 The legacy automated readiness gate below does not certify all new starter requirements. Review this section and the official self-check even after that gate passes. External organizer-runner integration with the private mount/verifier image has not been exercised.
 

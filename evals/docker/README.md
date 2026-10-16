@@ -15,4 +15,6 @@ Actual execution: [GitHub Actions run 38079910504](https://github.com/rishirana4
 
 Every verifier check creates a fresh container and state directory. Crash/retry checks deliberately reuse their own directory during restarts. Linux bind-mount write permissions, non-root execution and process-crash recovery passed these checks. This does not test hardware power loss or Windows Docker Desktop.
 
+Follow-up CI [38930130107](https://github.com/rishirana463-hub/RL-Gym-for-Coding-Agents/actions/runs/38930130107) succeeded on source `032d100`, including the clean-checkout guard, tooling, reference, mutant and three-run determinism steps. Its [GitHub status record](follow-up-38930130107.json), observed 2026-10-17, records step conclusions only. It does not replace the original raw logs/reports above or the [official-format full-suite evidence](../template-self-check/README.md).
+
 Reproduce with the [workflow](../../.github/workflows/docker-validation.yml) or the [container commands](../../docs/evaluation.md#container-verification). Model attempts: **zero**. These are reference/mutant results, not frontier-model scores.

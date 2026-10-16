@@ -16,4 +16,6 @@ Downloaded artifact `12056418972` matched GitHub's SHA-256 `394c72d80e76572b16a5
 
 The accompanying legacy validation initially stopped before task checks because an LF rule made a historical mixed-line-ending log appear dirty. An explicit byte-preservation exception fixed that clean-checkout regression; [follow-up run 38927309305](https://github.com/rishirana463-hub/RL-Gym-for-Coding-Agents/actions/runs/38927309305) passed. No historical log was rewritten, and no failed guard run is counted as fresh correctness evidence.
 
+Final legacy CI [38930130107](https://github.com/rishirana463-hub/RL-Gym-for-Coding-Agents/actions/runs/38930130107) also passed on `032d100`; [status-only provenance](../docker/follow-up-38930130107.json) was saved on 2026-10-17. Independent documentation review additionally flagged the instruction's public test filename against the literal no-test-names criterion. This does not alter the measured scores or source manifest; the formal report and checklist now disclose it.
+
 See the [complete official self-check report](../../docs/template-self-check.md) for passing checks, unresolved classifications, mutant loss differences and missing model proof. Successful technical execution does not mean every authoring requirement is satisfied.

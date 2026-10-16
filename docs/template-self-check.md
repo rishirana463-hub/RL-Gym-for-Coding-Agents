@@ -1,11 +1,11 @@
 # RL Gym Task Self-Check: Stockroom
 
-Reviewed 2026-10-16 using the pinned [official AGENTS](official-template-AGENTS.md). Actual execution: [run 38926363562](https://github.com/rishirana463-hub/RL-Gym-for-Coding-Agents/actions/runs/38926363562), source `8721c8d`, fresh Ubuntu runner and independent scratch task/workspaces. [Complete evidence](../evals/template-self-check/README.md), [verified download](../evals/template-self-check/38926363562/download.json), [current task manifest](../greenfield/template-manifest.json). No candidate-authoring source was edited during the self-check.
+Reviewed 2026-10-16 using the pinned [official AGENTS](official-template-AGENTS.md); independent documentation review completed 2026-10-17. Actual execution: [run 38926363562](https://github.com/rishirana463-hub/RL-Gym-for-Coding-Agents/actions/runs/38926363562), source `8721c8d`, fresh Ubuntu runner and independent scratch task/workspaces. [Complete evidence](../evals/template-self-check/README.md), [verified download](../evals/template-self-check/38926363562/download.json), [current task manifest](../greenfield/template-manifest.json). No candidate-authoring source was edited during the self-check.
 
 ## Instruction
 
 - Realistic: **Looks good.** Warehouse receipts, reservations, fulfillment, returns, transfers, optimistic revisions and durable retries are practical stateful workflows. Scope approval is still an organizer decision.
-- No verifier/test leakage: **Looks good for private assets.** No hidden test names, IDs or weights appear in the instruction. It names a deliberately partial public smoke check, which is itself candidate-visible; this is not hidden-suite proof or coverage disclosure.
+- No verifier/test leakage: **This check is not passing yet under the literal guidance.** No hidden test names, IDs or weights appear in the instruction, but its final line names the public `smoke.mjs` check. The pinned guidance prohibits naming test files without an explicit public-test exception. This is a wording/compliance gap, not evidence that the private suite was exposed. The tested instruction and package remain unchanged.
 - No evaluation framing: **Looks good.** The instruction describes an application contract rather than RL training or model assessment.
 
 ## Verifier
@@ -65,8 +65,9 @@ Reviewed 2026-10-16 using the pinned [official AGENTS](official-template-AGENTS.
 4. Obtain two real latest-qualifying frontier-model attempts with actual source, trajectories, metadata, scores and analyses in the official model-named proof format. Provider access remains unavailable. The authoring generation workflow's end-to-end new-format model handoff has not been exercised.
 5. Clarify the conflicting reasoning/difficulty protocols and verify current model eligibility at generation time. Other or free-tier runs could inform early review but would not establish the official final-assessment result.
 6. Organizer task-idea approval and collaborator access remain outstanding. Confirm the external organizer runner honors the private mount/verifier-image contract; only this repository's runner was exercised.
+7. The instruction names a public test file. The literal instruction criterion requires no test filenames; any intended public-test exception has not been confirmed.
 
-The initial legacy CI clean-checkout guard failure was caused by a historical mixed-line-ending log affected by the new LF rule. Its bytes were preserved; a fresh-checkout reproduction and [follow-up validation 38927309305](https://github.com/rishirana463-hub/RL-Gym-for-Coding-Agents/actions/runs/38927309305) confirmed the fix. No failed guard artifact was used as fresh task evidence. Repository private visibility was restored and independently verified after finding it public; uninterrupted historical privacy is not claimed.
+The initial legacy CI clean-checkout guard failure was caused by a historical mixed-line-ending log affected by the new LF rule. Its bytes were preserved; a fresh-checkout reproduction and [follow-up validation 38927309305](https://github.com/rishirana463-hub/RL-Gym-for-Coding-Agents/actions/runs/38927309305) confirmed the fix. Final legacy validation [38930130107](https://github.com/rishirana463-hub/RL-Gym-for-Coding-Agents/actions/runs/38930130107) also succeeded on source `032d100`, including reference, mutant and three-run determinism steps; its [status record](../evals/docker/follow-up-38930130107.json) does not replace the preserved raw evidence. No failed guard artifact was used as fresh task evidence. Repository private visibility was restored and independently verified again on 2026-10-17; uninterrupted historical privacy is not claimed.
 
 **This is a basic pre-submission validation, not the final review. The final review may identify additional issues.**
 

@@ -1,0 +1,74 @@
+{
+  "record_kind": "github-workflow-status",
+  "observed_at": "2026-10-16T20:44:00.692779+00:00",
+  "repository": "rishirana463-hub/RL-Gym-for-Coding-Agents",
+  "run": {
+    "id": 38930130107,
+    "run_attempt": 1,
+    "head_sha": "032d10065d6c708828e9fe875c5474e65fb86347",
+    "status": "completed",
+    "conclusion": "success",
+    "html_url": "https://github.com/rishirana463-hub/RL-Gym-for-Coding-Agents/actions/runs/38930130107",
+    "created_at": "2026-10-16T16:12:40Z",
+    "updated_at": "2026-10-16T16:17:31Z"
+  },
+  "jobs": [
+    {
+      "name": "validate",
+      "status": "completed",
+      "conclusion": "success",
+      "steps": [
+        {
+          "name": "Set up job",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020",
+          "conclusion": "success"
+        },
+        {
+          "name": "Record clean environment",
+          "conclusion": "success"
+        },
+        {
+          "name": "Install and verify tooling",
+          "conclusion": "success"
+        },
+        {
+          "name": "Reference in fresh containers",
+          "conclusion": "success"
+        },
+        {
+          "name": "All mutants in fresh containers",
+          "conclusion": "success"
+        },
+        {
+          "name": "Three complete container runs",
+          "conclusion": "success"
+        },
+        {
+          "name": "Preserve validation evidence, including failures",
+          "conclusion": "success"
+        },
+        {
+          "name": "Post Run actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020",
+          "conclusion": "success"
+        },
+        {
+          "name": "Post Run actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683",
+          "conclusion": "success"
+        },
+        {
+          "name": "Complete job",
+          "conclusion": "success"
+        }
+      ]
+    }
+  ],
+  "model_attempts": 0,
+  "scope": "Workflow status only. Full original Docker logs/reports remain in evals/docker; official-format measured outputs remain in evals/template-self-check/38926363562. This record does not contain or replace those raw outputs."
+}
