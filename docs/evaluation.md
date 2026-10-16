@@ -48,7 +48,7 @@ npm run check:mutants -- --docker
 npm run check:determinism -- --docker
 ```
 
-Alternatively, dispatch [Clean Docker validation](../.github/workflows/docker-validation.yml) on the private GitHub repository. It uses a fresh Ubuntu 24.04 checkout without model credentials and preserves full command logs, source fingerprints and reports as an artifact. Download and verify those artifacts before updating recorded evidence. Reports fingerprint exact bytes; `.gitattributes` enforces LF for fingerprinted source/configuration files across platforms. Earlier local reports retain their historical fingerprints.
+Alternatively, dispatch [Clean Docker validation](../.github/workflows/docker-validation.yml) on the GitHub repository. It uses a fresh Ubuntu 24.04 checkout without model credentials and preserves full command logs, source fingerprints and reports as an artifact. Download and verify those artifacts before updating recorded evidence. Reports fingerprint exact bytes; `.gitattributes` enforces LF for fingerprinted source/configuration files across platforms. Earlier local reports retain their historical fingerprints.
 
 The scorer builds from a temporary context containing **only the selected solution, public instruction, and lifecycle scripts**. Each check starts a fresh container and fresh state directory. Recovery scenarios intentionally restart the service using the same state directory. Private tests stay on the host and interact through HTTP. The server runs as an unprivileged user.
 

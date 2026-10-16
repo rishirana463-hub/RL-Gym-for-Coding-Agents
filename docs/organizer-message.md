@@ -8,4 +8,4 @@ The official greenfield export passes 56/56 reference checks twice in Docker and
 
 I have no provider API access. Could an approved evaluator run the two models, or is an alternative accepted? Please confirm the candidate reasoning/threshold: AGENTS says medium/below 30%, while README prefers high/below 50%. Which GitHub account should receive organizer access?
 
-Private repository: [RL-Gym-for-Coding-Agents](https://github.com/rishirana463-hub/RL-Gym-for-Coding-Agents)
+Public repository: [RL-Gym-for-Coding-Agents](https://github.com/rishirana463-hub/RL-Gym-for-Coding-Agents)

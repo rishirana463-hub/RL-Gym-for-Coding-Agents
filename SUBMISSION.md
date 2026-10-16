@@ -23,7 +23,7 @@ The organizer now requires the [official starter layout](https://github.com/Prob
 
 The legacy automated readiness gate below does not certify all new starter requirements. Review this section and the official self-check even after that gate passes. External organizer-runner integration with the private mount/verifier image has not been exercised.
 
-On 2026-10-16 GitHub was found public and restored to private under the user's existing instruction; an independent API read confirmed private visibility. The same recheck found zero outside collaborators, zero pending invitations, and neither configured model-provider Actions secret. Current privacy is verified, not uninterrupted historical privacy.
+On 2026-10-16 GitHub was found public and restored to private under the user's then-current instruction; an independent API read confirmed private visibility. The same recheck found zero outside collaborators, zero pending invitations, and neither configured model-provider Actions secret. On 2026-10-17 the user explicitly requested public visibility. GitHub now confirms `private: false` / `visibility: public`, and the repository page is accessible without authentication. The original listing's private-repository criterion below is therefore no longer satisfied.
 
 ## Task and verifier
 
@@ -47,7 +47,7 @@ The Excalidraw drawing/editing/export/collaboration features in the listing are 
 
 | Listing requirement | Status | Evidence / remaining work |
 |---|---|---|
-| One private GitHub repository | Done | [Repository](https://github.com/rishirana463-hub/RL-Gym-for-Coding-Agents); GitHub API rechecked `private: true`, `visibility: private` on 2026-10-11. It was initially public before the user's privacy request; do not describe it as always private. |
+| One private GitHub repository | Not done (public by latest user request) | [Repository](https://github.com/rishirana463-hub/RL-Gym-for-Coding-Agents); changed to public on 2026-10-17 at the user's explicit request. GitHub API and unauthenticated page access independently verified public visibility. Earlier private checks remain historical evidence. |
 | `task/instruction.md` and `task/public/` | Done | [Instructions](task/instruction.md), [public materials](task/public/). |
 | `environment/Dockerfile` | Done | [Pinned task image](environment/Dockerfile); built and run on a fresh Linux hosted runner. |
 | `reference/` | Done | [Reference source](reference/) and complete [Docker proof](evaluation/proof-of-work/reference-docker.json). |
