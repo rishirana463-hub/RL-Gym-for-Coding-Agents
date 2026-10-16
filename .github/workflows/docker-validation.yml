@@ -4,6 +4,7 @@ on:
   workflow_dispatch:
   push:
     paths:
+      - .gitattributes
       - .github/workflows/docker-validation.yml
       - environment/**
       - app-setup/**
@@ -30,6 +31,7 @@ jobs:
         run: |
           set -euo pipefail
           mkdir -p evals/docker/logs
+          git status --short --untracked-files=no
           test -z "$(git status --porcelain --untracked-files=no)"
           docker version > evals/docker/logs/docker-version.txt
           docker images --no-trunc > evals/docker/logs/images-before.txt

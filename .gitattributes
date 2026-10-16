@@ -11,3 +11,5 @@ Dockerfile text eol=lf
 *.toml text eol=lf
 *.patch text eol=lf whitespace=-blank-at-eol
 *.log text eol=lf
+# Preserve the original Docker terminal log's mixed progress-control line endings.
+evals/openhands-preflight/logs/build.log -text
