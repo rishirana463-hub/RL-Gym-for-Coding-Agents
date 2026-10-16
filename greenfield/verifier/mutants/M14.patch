@@ -1,0 +1,11 @@
+--- a/server.mjs
++++ b/server.mjs
+@@ -22,7 +22,7 @@
+     // No await in the transaction: simultaneous requests serialize here.
+     const outcome = execute(state, command);
+     if (!outcome.replay) {
+-      try { persist(outcome.state); state = outcome.state; }
++      try { state = outcome.state; }
+       catch (error) {
+         // Immediately disable writes when the disk may have committed before an error.
+         failed = true; server.close(); setImmediate(() => process.exit(1));

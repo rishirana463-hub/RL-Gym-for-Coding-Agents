@@ -1,0 +1,341 @@
+{
+  "schemaVersion": 1,
+  "criteria": [
+    {
+      "checkId": "T01",
+      "group": "transport",
+      "requirement": "Health, exact empty state, and read purity",
+      "instructionSection": "Runtime and transport; Validation and ordering"
+    },
+    {
+      "checkId": "T02",
+      "group": "transport",
+      "requirement": "Unknown paths and methods are 404",
+      "instructionSection": "Runtime and transport; Validation and ordering"
+    },
+    {
+      "checkId": "T03",
+      "group": "transport",
+      "requirement": "Malformed JSON and non-object bodies are rejected atomically",
+      "instructionSection": "Runtime and transport; Validation and ordering"
+    },
+    {
+      "checkId": "T04",
+      "group": "transport",
+      "requirement": "Unknown operations, missing and extra fields are invalid",
+      "instructionSection": "Runtime and transport; Validation and ordering"
+    },
+    {
+      "checkId": "T05",
+      "group": "transport",
+      "requirement": "Identifier boundaries, case sensitivity and object-like names",
+      "instructionSection": "Runtime and transport; Validation and ordering"
+    },
+    {
+      "checkId": "T06",
+      "group": "transport",
+      "requirement": "Quantity and timestamp type/range boundaries",
+      "instructionSection": "Runtime and transport; Validation and ordering"
+    },
+    {
+      "checkId": "T07",
+      "group": "transport",
+      "requirement": "Item-list shape, duplicates, extra fields and size are validated",
+      "instructionSection": "Runtime and transport; Validation and ordering"
+    },
+    {
+      "checkId": "T08",
+      "group": "transport",
+      "requirement": "Missing entities and invalid revisions have specified precedence",
+      "instructionSection": "Runtime and transport; Validation and ordering"
+    },
+    {
+      "checkId": "I01",
+      "group": "inventory",
+      "requirement": "Receipts accumulate independently across SKU and warehouse",
+      "instructionSection": "State and invariants; Commands"
+    },
+    {
+      "checkId": "I02",
+      "group": "inventory",
+      "requirement": "Inventory and order lines use ASCII lexical order",
+      "instructionSection": "State and invariants; Commands"
+    },
+    {
+      "checkId": "I03",
+      "group": "inventory",
+      "requirement": "Stock cap accepts maximum and rejects overflow with no audit effect",
+      "instructionSection": "State and invariants; Commands"
+    },
+    {
+      "checkId": "I04",
+      "group": "inventory",
+      "requirement": "Unknown stock failure does not leave phantom rows or orders",
+      "instructionSection": "State and invariants; Commands"
+    },
+    {
+      "checkId": "I05",
+      "group": "inventory",
+      "requirement": "Reservation, shipment and cancellation conserve physical stock",
+      "instructionSection": "State and invariants; Commands"
+    },
+    {
+      "checkId": "I06",
+      "group": "inventory",
+      "requirement": "Zero stock rows remain visible after full shipment",
+      "instructionSection": "State and invariants; Commands"
+    },
+    {
+      "checkId": "O01",
+      "group": "orders",
+      "requirement": "Multi-SKU reservation rolls back an earlier successful line",
+      "instructionSection": "Commands; State and invariants"
+    },
+    {
+      "checkId": "O02",
+      "group": "orders",
+      "requirement": "Partial shipment, cancellation and closure preserve line totals",
+      "instructionSection": "Commands; State and invariants"
+    },
+    {
+      "checkId": "O03",
+      "group": "orders",
+      "requirement": "Closed IDs cannot be reused and duplicate detection precedes expiry",
+      "instructionSection": "Commands; State and invariants"
+    },
+    {
+      "checkId": "O04",
+      "group": "orders",
+      "requirement": "Stale revisions reject shipments, cancellations and returns",
+      "instructionSection": "Commands; State and invariants"
+    },
+    {
+      "checkId": "O05",
+      "group": "orders",
+      "requirement": "Unknown and excess line quantities fail atomically",
+      "instructionSection": "Commands; State and invariants"
+    },
+    {
+      "checkId": "O06",
+      "group": "orders",
+      "requirement": "Partial returns restore original warehouse without reopening orders",
+      "instructionSection": "Commands; State and invariants"
+    },
+    {
+      "checkId": "O07",
+      "group": "orders",
+      "requirement": "Cumulative returns cannot exceed shipments or include cancelled stock",
+      "instructionSection": "Commands; State and invariants"
+    },
+    {
+      "checkId": "O08",
+      "group": "orders",
+      "requirement": "Multi-line return overflow rolls back earlier restoration",
+      "instructionSection": "Commands; State and invariants"
+    },
+    {
+      "checkId": "F01",
+      "group": "transfers",
+      "requirement": "Dispatch removes source stock without crediting destination",
+      "instructionSection": "Commands; State and invariants"
+    },
+    {
+      "checkId": "F02",
+      "group": "transfers",
+      "requirement": "Dispatch cannot consume reserved stock and same-warehouse fails",
+      "instructionSection": "Commands; State and invariants"
+    },
+    {
+      "checkId": "F03",
+      "group": "transfers",
+      "requirement": "Multi-SKU dispatch is atomic on insufficient stock",
+      "instructionSection": "Commands; State and invariants"
+    },
+    {
+      "checkId": "F04",
+      "group": "transfers",
+      "requirement": "Partial receipt and cancellation close transfer with correct stock",
+      "instructionSection": "Commands; State and invariants"
+    },
+    {
+      "checkId": "F05",
+      "group": "transfers",
+      "requirement": "Received or cancelled quantities cannot be processed twice",
+      "instructionSection": "Commands; State and invariants"
+    },
+    {
+      "checkId": "F06",
+      "group": "transfers",
+      "requirement": "Transfer stale revisions and duplicate IDs are protected",
+      "instructionSection": "Commands; State and invariants"
+    },
+    {
+      "checkId": "F07",
+      "group": "transfers",
+      "requirement": "Destination overflow rolls back all receipt lines",
+      "instructionSection": "Commands; State and invariants"
+    },
+    {
+      "checkId": "F08",
+      "group": "transfers",
+      "requirement": "Source overflow and unknown transfer lines fail atomically",
+      "instructionSection": "Commands; State and invariants"
+    },
+    {
+      "checkId": "K01",
+      "group": "clock",
+      "requirement": "Expiration occurs at the exact boundary and releases once",
+      "instructionSection": "Commands; Time changes"
+    },
+    {
+      "checkId": "K02",
+      "group": "clock",
+      "requirement": "Clock cannot move backwards; new orders require future expiry",
+      "instructionSection": "Commands; Time changes"
+    },
+    {
+      "checkId": "K03",
+      "group": "clock",
+      "requirement": "Expiry preserves shipments and increments each affected revision once",
+      "instructionSection": "Commands; Time changes"
+    },
+    {
+      "checkId": "K04",
+      "group": "clock",
+      "requirement": "Closed orders retain revisions at expiry; returns remain possible",
+      "instructionSection": "Commands; Time changes"
+    },
+    {
+      "checkId": "K05",
+      "group": "clock",
+      "requirement": "Bulk expiry sorts IDs and leaves later reservations intact",
+      "instructionSection": "Commands; Time changes"
+    },
+    {
+      "checkId": "K06",
+      "group": "clock",
+      "requirement": "Reads and restarts do not advance logical time or expire orders",
+      "instructionSection": "Commands; Time changes"
+    },
+    {
+      "checkId": "D01",
+      "group": "idempotency",
+      "requirement": "Retry receipt returns exact response with one stock/audit effect",
+      "instructionSection": "Validation and ordering; Idempotency, concurrency, and recovery"
+    },
+    {
+      "checkId": "D02",
+      "group": "idempotency",
+      "requirement": "Retry identity ignores nested object key order",
+      "instructionSection": "Validation and ordering; Idempotency, concurrency, and recovery"
+    },
+    {
+      "checkId": "D03",
+      "group": "idempotency",
+      "requirement": "Global retry keys reject changed payload and changed operation",
+      "instructionSection": "Validation and ordering; Idempotency, concurrency, and recovery"
+    },
+    {
+      "checkId": "D04",
+      "group": "idempotency",
+      "requirement": "Array order remains part of retry identity",
+      "instructionSection": "Validation and ordering; Idempotency, concurrency, and recovery"
+    },
+    {
+      "checkId": "D05",
+      "group": "idempotency",
+      "requirement": "Rejected requests do not claim retry keys",
+      "instructionSection": "Validation and ordering; Idempotency, concurrency, and recovery"
+    },
+    {
+      "checkId": "D06",
+      "group": "idempotency",
+      "requirement": "Replay precedes stale revisions and returns immutable historical snapshots",
+      "instructionSection": "Validation and ordering; Idempotency, concurrency, and recovery"
+    },
+    {
+      "checkId": "D07",
+      "group": "idempotency",
+      "requirement": "Validation precedes replay lookup",
+      "instructionSection": "Validation and ordering; Idempotency, concurrency, and recovery"
+    },
+    {
+      "checkId": "D08",
+      "group": "idempotency",
+      "requirement": "Audit contains one ordered event per successful command only",
+      "instructionSection": "Validation and ordering; Idempotency, concurrency, and recovery"
+    },
+    {
+      "checkId": "C01",
+      "group": "concurrency",
+      "requirement": "Concurrent reservations cannot oversell the last units",
+      "instructionSection": "Idempotency, concurrency, and recovery"
+    },
+    {
+      "checkId": "C02",
+      "group": "concurrency",
+      "requirement": "Identical concurrent retries have exactly one effect",
+      "instructionSection": "Idempotency, concurrency, and recovery"
+    },
+    {
+      "checkId": "C03",
+      "group": "concurrency",
+      "requirement": "Two order writers at one revision cannot both succeed",
+      "instructionSection": "Idempotency, concurrency, and recovery"
+    },
+    {
+      "checkId": "C04",
+      "group": "concurrency",
+      "requirement": "Transfer receipt and cancellation share revision protection",
+      "instructionSection": "Idempotency, concurrency, and recovery"
+    },
+    {
+      "checkId": "C05",
+      "group": "concurrency",
+      "requirement": "Independent concurrent receipts have no lost updates or audit gaps",
+      "instructionSection": "Idempotency, concurrency, and recovery"
+    },
+    {
+      "checkId": "C06",
+      "group": "concurrency",
+      "requirement": "Shipment racing expiry has only serializable outcomes",
+      "instructionSection": "Idempotency, concurrency, and recovery"
+    },
+    {
+      "checkId": "R01",
+      "group": "recovery",
+      "requirement": "Acknowledged inventory and reservations survive forced termination",
+      "instructionSection": "Runtime and transport; Idempotency, concurrency, and recovery"
+    },
+    {
+      "checkId": "R02",
+      "group": "recovery",
+      "requirement": "Retry ledger and original snapshots survive repeated termination",
+      "instructionSection": "Runtime and transport; Idempotency, concurrency, and recovery"
+    },
+    {
+      "checkId": "R03",
+      "group": "recovery",
+      "requirement": "Clock, transfer progress, returns and audit recover together",
+      "instructionSection": "Runtime and transport; Idempotency, concurrency, and recovery"
+    },
+    {
+      "checkId": "R04",
+      "group": "recovery",
+      "requirement": "Unrelated recovery-directory artifacts do not overwrite committed state",
+      "instructionSection": "Runtime and transport; Idempotency, concurrency, and recovery"
+    },
+    {
+      "checkId": "R05",
+      "group": "recovery",
+      "requirement": "Interrupted unacknowledged receipt is atomic and retryable exactly once",
+      "instructionSection": "Runtime and transport; Idempotency, concurrency, and recovery"
+    },
+    {
+      "checkId": "R06",
+      "group": "recovery",
+      "requirement": "Long mixed workflow conserves units through restart and transfer retries",
+      "instructionSection": "Runtime and transport; Idempotency, concurrency, and recovery"
+    }
+  ]
+}

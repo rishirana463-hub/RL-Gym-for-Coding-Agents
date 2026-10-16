@@ -1,0 +1,11 @@
+{
+  "reference_scores": [
+    100,
+    100
+  ],
+  "starter_score": 0,
+  "model_attempts": 0,
+  "mutants": [],
+  "mutant_count_matches_template": false,
+  "mutant_weight_mismatches": []
+}

@@ -1,0 +1,11 @@
+--- a/engine.mjs
++++ b/engine.mjs
+@@ -106,7 +106,7 @@
+       const inv = stock(s, o.warehouse, x.sku);
+       const q = item.quantity;
+       if (c.op === 'return') {
+-        if (q > x.shipped - x.returned) fail('INVALID_QUANTITY');
++        if (q > x.shipped) fail('INVALID_QUANTITY');
+         addStock(inv, q); x.returned += q;
+       } else {
+         if (q > x.reserved) fail('INVALID_QUANTITY');

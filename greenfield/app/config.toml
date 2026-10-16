@@ -1,0 +1,8 @@
+schema_version = "1"
+
+[setup]
+commands = ["node --check server.mjs"]
+
+[run]
+command = "node server.mjs"
+ports = [3000]

@@ -8,6 +8,6 @@ The prototype is already implemented; I have not obtained the required prior app
 
 I do not have provider API access. Could an approved evaluator run the two attempts, or is there an accepted alternative?
 
-Could you confirm eligible model choices and reasoning level? The listing specifies frontier models at medium reasoning; your reply permits accessible models with higher reasoning. Which GitHub account should receive access for content.team@problemsetters.com?
+The project now has the official greenfield export. Could you confirm the applicable reasoning/threshold? The starter README prefers high/below 50%, while AGENTS requires medium/below 30% and describes a high/below-40% final assessment. Is retaining our 18-mutant suite acceptable given AGENTS' smaller count guidance? Which GitHub account should receive access for content.team@problemsetters.com?
 
 Private repository: [RL-Gym-for-Coding-Agents](https://github.com/rishirana463-hub/RL-Gym-for-Coding-Agents)

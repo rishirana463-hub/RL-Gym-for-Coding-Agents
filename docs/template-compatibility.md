@@ -16,7 +16,9 @@ Reviewed 2026-10-16 against [ProblemSetters' starter](https://github.com/Problem
 | Executable source replacements | Independent `greenfield/verifier/mutants/*.patch` files |
 | Reference/mutant evidence and future real model attempts | `greenfield/proof-of-work/` and `verifier/mutants/verifications/`; preserve original reports and provenance |
 
-The planned export is deterministic and checked for drift. Existing authoring source remains authoritative; generated submission copies are distinct and must not be edited independently. Packaging does not turn old Docker evidence into evidence for a new adapter. The exported verifier/environment need their own execution records.
+`npm run export:template` now writes the 62-file `greenfield/` snapshot. `npm run check:template` and the build verify it against current authoring source. Existing source remains authoritative; generated submission copies must not be edited independently. Packaging does not turn old Docker evidence into evidence for a new adapter. The exported verifier/environment have [separate execution records](../evals/template-self-check/README.md).
+
+The private behavioral checks and relative credit are preserved. A packaged harness adjustment runs candidate processes at UID/GID 10001 with process-group cleanup. The verifier image keeps task/reference/proof materials below root-only `/opt/private`; the candidate image contains no private assets. A runtime networking preflight reports host faults as infrastructure errors with null scores. Trusted-local verification is explicit and does not claim sandbox isolation. Actual external-organizer runner integration is not yet verified; it must honor the documented private mount and verifier image.
 
 ## Conflicting guidance and unproven requirements
 

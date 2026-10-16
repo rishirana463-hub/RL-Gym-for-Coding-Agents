@@ -1,0 +1,11 @@
+--- a/engine.mjs
++++ b/engine.mjs
+@@ -82,7 +82,7 @@
+     return { state: previous, response: structuredClone(old.response), replay: true };
+   }
+   // All checks and edits operate on an isolated transaction; failures discard it.
+-  const s = structuredClone(previous);
++  const s = previous;
+   let result;
+   if (c.op === 'receive') {
+     const x = stock(s, c.warehouse, c.sku); addStock(x, c.quantity);

@@ -1,0 +1,11 @@
+--- a/engine.mjs
++++ b/engine.mjs
+@@ -147,7 +147,7 @@
+       if (o.expiresAt <= s.now && o.lines.some(x => x.reserved > 0)) {
+         for (const x of o.lines) {
+           stock(s, o.warehouse, x.sku).reserved -= x.reserved;
+-          x.cancelled += x.reserved; x.reserved = 0;
++          x.cancelled += x.quantity; x.reserved = 0;
+         }
+         o.revision += 1; expired.push(o.id);
+       }

@@ -1,0 +1,11 @@
+--- a/engine.mjs
++++ b/engine.mjs
+@@ -78,7 +78,7 @@
+   const fingerprint = canonical(c);
+   if (own(previous.requests, c.requestId)) {
+     const old = previous.requests[c.requestId];
+-    if (old.fingerprint !== fingerprint) fail('IDEMPOTENCY_CONFLICT');
++    if (false && old.fingerprint !== fingerprint) fail('IDEMPOTENCY_CONFLICT');
+     return { state: previous, response: structuredClone(old.response), replay: true };
+   }
+   // All checks and edits operate on an isolated transaction; failures discard it.

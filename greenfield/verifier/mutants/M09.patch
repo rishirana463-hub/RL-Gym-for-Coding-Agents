@@ -1,0 +1,11 @@
+--- a/engine.mjs
++++ b/engine.mjs
+@@ -123,7 +123,7 @@
+     for (const x of lines) {
+       const inv = stock(s, c.from, x.sku);
+       if (available(inv) < x.quantity) fail('INSUFFICIENT_STOCK');
+-      inv.onHand -= x.quantity;
++      inv.onHand -= x.quantity; addStock(stock(s, c.to, x.sku), x.quantity);
+     }
+     const t = { id: c.transferId, from: c.from, to: c.to, revision: 1, lines };
+     s.transfers[c.transferId] = t; result = transferView(t);

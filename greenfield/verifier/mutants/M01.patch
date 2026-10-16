@@ -1,0 +1,11 @@
+--- a/engine.mjs
++++ b/engine.mjs
+@@ -76,7 +76,7 @@
+ export function execute(previous, c) {
+   validate(c);
+   const fingerprint = canonical(c);
+-  if (own(previous.requests, c.requestId)) {
++  if (false && own(previous.requests, c.requestId)) {
+     const old = previous.requests[c.requestId];
+     if (old.fingerprint !== fingerprint) fail('IDEMPOTENCY_CONFLICT');
+     return { state: previous, response: structuredClone(old.response), replay: true };

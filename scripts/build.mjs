@@ -4,8 +4,10 @@ import { spawnSync } from 'node:child_process';
 import { gzipSync } from 'node:zlib';
 import { root, files } from '../evaluation/util.mjs';
 import { checkMetadata } from '../evaluation/metadata.mjs';
+import { exportTemplate } from './export-template.mjs';
 
 checkMetadata();
+exportTemplate(path.join(root, 'greenfield'), true);
 for (const directory of ['reference', 'task/public', 'evaluation', 'scripts', 'app-setup']) {
   for (const filename of files(path.join(root, directory)).filter(name => name.endsWith('.mjs'))) {
     const result = spawnSync(process.execPath, ['--check', filename], { stdio: 'inherit' });

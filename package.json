@@ -21,6 +21,8 @@
     "check:secrets": "node scripts/secret-scan.mjs",
     "check:determinism": "node evaluation/determinism.mjs",
     "check:submission": "node evaluation/submission.mjs",
+    "export:template": "node scripts/export-template.mjs",
+    "check:template": "node scripts/export-template.mjs --check",
     "check:lifecycle": "node scripts/check-lifecycle.mjs",
     "demo": "node scripts/demo.mjs"
   },

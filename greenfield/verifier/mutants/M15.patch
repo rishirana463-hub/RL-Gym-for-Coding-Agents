@@ -1,0 +1,11 @@
+--- a/engine.mjs
++++ b/engine.mjs
+@@ -135,7 +135,7 @@
+       if (c.op === 'receiveTransfer') {
+         addStock(stock(s, t.to, x.sku), item.quantity); x.received += item.quantity;
+       } else {
+-        addStock(stock(s, t.from, x.sku), item.quantity); x.cancelled += item.quantity;
++        addStock(stock(s, t.to, x.sku), item.quantity); x.cancelled += item.quantity;
+       }
+     }
+     t.revision += 1; result = transferView(t);

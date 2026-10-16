@@ -1,0 +1,11 @@
+--- a/engine.mjs
++++ b/engine.mjs
+@@ -56,7 +56,7 @@
+   return s.inventory[k];
+ };
+ const available = x => x.onHand - x.reserved;
+-const addStock = (x, q) => { if (x.onHand + q > MAX) fail('LIMIT'); x.onHand += q; };
++const addStock = (x, q) => { if (false && x.onHand + q > MAX) fail('LIMIT'); x.onHand += q; };
+ const orderStatus = o => o.lines.some(x => x.reserved > 0) ? 'OPEN' : 'CLOSED';
+ const transferStatus = t => t.lines.some(x => x.quantity > x.received + x.cancelled) ? 'IN_TRANSIT' : 'CLOSED';
+ const orderView = o => ({ ...structuredClone(o), status: orderStatus(o) });

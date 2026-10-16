@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "policy": "Each group contributes its weight multiplied by the fraction of its checks passed; no partial credit within a check.",
+  "groups": {
+    "transport": {
+      "weight": 0.125,
+      "description": "Validation and transport"
+    },
+    "inventory": {
+      "weight": 0.125,
+      "description": "Inventory accounting"
+    },
+    "orders": {
+      "weight": 0.125,
+      "description": "Order lifecycle"
+    },
+    "transfers": {
+      "weight": 0.125,
+      "description": "Warehouse transfers"
+    },
+    "clock": {
+      "weight": 0.125,
+      "description": "Logical time and expiration"
+    },
+    "idempotency": {
+      "weight": 0.125,
+      "description": "Durable request identity and audit"
+    },
+    "concurrency": {
+      "weight": 0.125,
+      "description": "Serializable concurrent operations"
+    },
+    "recovery": {
+      "weight": 0.125,
+      "description": "Crash recovery and composed workflows"
+    }
+  }
+}

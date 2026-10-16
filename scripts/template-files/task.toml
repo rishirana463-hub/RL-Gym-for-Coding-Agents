@@ -1,0 +1,34 @@
+schema_version = "1"
+
+[metadata]
+id = "stockroom"
+version = 1
+title = "Build a durable warehouse fulfillment service"
+profile = "greenfield"
+category = "new_project"
+languages = ["javascript"]
+
+[task]
+timeout_sec = 1800
+env = []
+
+[task.environment]
+dockerfile = "environment/Dockerfile"
+workdir = "/work/candidate"
+network = "gateway-only"
+cpus = 2
+memory = "4g"
+
+[commands]
+verify = "python3 verifier/tests/run_tests.py"
+
+[verifier]
+type = "tests"
+timeout_sec = 600
+network = "none"
+deterministic = true
+
+[verifier.environment]
+dockerfile = "environment/verifier.Dockerfile"
+cpus = 2
+memory = "1g"

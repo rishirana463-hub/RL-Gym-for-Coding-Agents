@@ -1,0 +1,2 @@
+COMMAND ["C:\\Users\\rishi\\AppData\\Local\\Programs\\Python\\Python314\\python.exe", "C:\\Users\\rishi\\Downloads\\RL GYM AI\\.runs\\template-self-check-6zdr_9a0\\task\\verifier\\tests\\run_tests.py"]
+[verifier] score=0/100 (trusted-local)

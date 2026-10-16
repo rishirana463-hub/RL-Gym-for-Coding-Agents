@@ -1,0 +1,11 @@
+--- a/engine.mjs
++++ b/engine.mjs
+@@ -112,7 +112,7 @@
+         if (q > x.reserved) fail('INVALID_QUANTITY');
+         inv.reserved -= q; x.reserved -= q;
+         if (c.op === 'ship') { inv.onHand -= q; x.shipped += q; }
+-        else x.cancelled += q;
++        else { inv.onHand -= q; x.cancelled += q; }
+       }
+     }
+     o.revision += 1; result = orderView(o);

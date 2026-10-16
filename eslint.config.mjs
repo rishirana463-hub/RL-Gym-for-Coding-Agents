@@ -1,5 +1,5 @@
 export default [
-  { ignores: ['.git/**', '.runs/**', 'dist/**', 'node_modules/**', 'evaluation/proof-of-work/**'] },
+  { ignores: ['.git/**', '.runs/**', 'dist/**', 'node_modules/**', 'evaluation/proof-of-work/**', 'greenfield/proof-of-work/**'] },
   {
     files: ['**/*.mjs'],
     languageOptions: {

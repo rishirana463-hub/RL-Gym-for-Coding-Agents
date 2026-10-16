@@ -1,0 +1,3 @@
+COMMAND ["node", "--check", "server.mjs"]
+COMMAND ["node", "--check", "server.mjs"]
+COMMAND ["node", "--check", "smoke.mjs"]

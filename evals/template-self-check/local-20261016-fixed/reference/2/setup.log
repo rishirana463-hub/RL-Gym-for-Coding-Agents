@@ -1,0 +1,5 @@
+COMMAND ["node", "--check", "server.mjs"]
+COMMAND ["node", "--check", "engine.mjs"]
+COMMAND ["node", "--check", "http.mjs"]
+COMMAND ["node", "--check", "server.mjs"]
+COMMAND ["node", "--check", "store.mjs"]

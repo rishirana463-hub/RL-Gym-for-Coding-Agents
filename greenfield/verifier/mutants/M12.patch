@@ -1,0 +1,11 @@
+--- a/server.mjs
++++ b/server.mjs
+@@ -5,7 +5,7 @@
+ import { readCommand, send } from './http.mjs';
+ 
+ const { load, persist } = openStore(path.resolve(process.env.DATA_DIR ?? '.state'));
+-let state = load();
++let state = load(); state.requests = {};
+ let failed = false;
+ let stateJSON;
+ const stateBody = () => stateJSON ??= JSON.stringify({ ok: true, result: view(state) });

@@ -1,0 +1,49 @@
+name: Official template self-check
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - .github/workflows/template-validation.yml
+      - scripts/export-template.mjs
+      - scripts/template-schema.mjs
+      - scripts/template-self-check.py
+      - scripts/template-files/**
+      - greenfield/**
+      - '!greenfield/proof-of-work/**'
+      - '!greenfield/verifier/mutants/verifications/**'
+
+permissions:
+  contents: read
+
+jobs:
+  self-check:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
+        with:
+          node-version: 24.14.0
+      - name: Check exported source and tooling
+        run: |
+          set -euo pipefail
+          npm ci
+          npm run lint
+          npm run build
+          node --test scripts/template.test.mjs
+          python3 scripts/test_template_reward.py
+      - name: Fresh Docker scratch self-check
+        run: |
+          set -euo pipefail
+          python3 scripts/template-self-check.py --docker --out "evals/template-self-check/$GITHUB_RUN_ID"
+      - name: Preserve complete measured output, including failures
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+        with:
+          name: template-self-check-${{ github.run_id }}-${{ github.run_attempt }}
+          retention-days: 90
+          if-no-files-found: warn
+          path: evals/template-self-check/

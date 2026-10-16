@@ -1,0 +1,57 @@
+FAIL T01 Health, exact empty state, and read purity
+FAIL T02 Unknown paths and methods are 404
+FAIL T03 Malformed JSON and non-object bodies are rejected atomically
+FAIL T04 Unknown operations, missing and extra fields are invalid
+FAIL T05 Identifier boundaries, case sensitivity and object-like names
+FAIL T06 Quantity and timestamp type/range boundaries
+FAIL T07 Item-list shape, duplicates, extra fields and size are validated
+FAIL T08 Missing entities and invalid revisions have specified precedence
+FAIL I01 Receipts accumulate independently across SKU and warehouse
+FAIL I02 Inventory and order lines use ASCII lexical order
+FAIL I03 Stock cap accepts maximum and rejects overflow with no audit effect
+FAIL I04 Unknown stock failure does not leave phantom rows or orders
+FAIL I05 Reservation, shipment and cancellation conserve physical stock
+FAIL I06 Zero stock rows remain visible after full shipment
+FAIL O01 Multi-SKU reservation rolls back an earlier successful line
+FAIL O02 Partial shipment, cancellation and closure preserve line totals
+FAIL O03 Closed IDs cannot be reused and duplicate detection precedes expiry
+FAIL O04 Stale revisions reject shipments, cancellations and returns
+FAIL O05 Unknown and excess line quantities fail atomically
+FAIL O06 Partial returns restore original warehouse without reopening orders
+FAIL O07 Cumulative returns cannot exceed shipments or include cancelled stock
+FAIL O08 Multi-line return overflow rolls back earlier restoration
+FAIL F01 Dispatch removes source stock without crediting destination
+FAIL F02 Dispatch cannot consume reserved stock and same-warehouse fails
+FAIL F03 Multi-SKU dispatch is atomic on insufficient stock
+FAIL F04 Partial receipt and cancellation close transfer with correct stock
+FAIL F05 Received or cancelled quantities cannot be processed twice
+FAIL F06 Transfer stale revisions and duplicate IDs are protected
+FAIL F07 Destination overflow rolls back all receipt lines
+FAIL F08 Source overflow and unknown transfer lines fail atomically
+FAIL K01 Expiration occurs at the exact boundary and releases once
+FAIL K02 Clock cannot move backwards; new orders require future expiry
+FAIL K03 Expiry preserves shipments and increments each affected revision once
+FAIL K04 Closed orders retain revisions at expiry; returns remain possible
+FAIL K05 Bulk expiry sorts IDs and leaves later reservations intact
+FAIL K06 Reads and restarts do not advance logical time or expire orders
+FAIL D01 Retry receipt returns exact response with one stock/audit effect
+FAIL D02 Retry identity ignores nested object key order
+FAIL D03 Global retry keys reject changed payload and changed operation
+FAIL D04 Array order remains part of retry identity
+FAIL D05 Rejected requests do not claim retry keys
+FAIL D06 Replay precedes stale revisions and returns immutable historical snapshots
+FAIL D07 Validation precedes replay lookup
+FAIL D08 Audit contains one ordered event per successful command only
+FAIL C01 Concurrent reservations cannot oversell the last units
+FAIL C02 Identical concurrent retries have exactly one effect
+FAIL C03 Two order writers at one revision cannot both succeed
+FAIL C04 Transfer receipt and cancellation share revision protection
+FAIL C05 Independent concurrent receipts have no lost updates or audit gaps
+FAIL C06 Shipment racing expiry has only serializable outcomes
+FAIL R01 Acknowledged inventory and reservations survive forced termination
+FAIL R02 Retry ledger and original snapshots survive repeated termination
+FAIL R03 Clock, transfer progress, returns and audit recover together
+FAIL R04 Unrelated recovery-directory artifacts do not overwrite committed state
+FAIL R05 Interrupted unacknowledged receipt is atomic and retryable exactly once
+FAIL R06 Long mixed workflow conserves units through restart and transfer retries
+Score: 0.00% (0/56; local)

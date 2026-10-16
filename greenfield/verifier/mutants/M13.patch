@@ -1,0 +1,11 @@
+--- a/engine.mjs
++++ b/engine.mjs
+@@ -55,7 +55,7 @@
+   if (!own(s.inventory, k)) s.inventory[k] = { warehouse, sku, onHand: 0, reserved: 0 };
+   return s.inventory[k];
+ };
+-const available = x => x.onHand - x.reserved;
++const available = x => x.onHand;
+ const addStock = (x, q) => { if (x.onHand + q > MAX) fail('LIMIT'); x.onHand += q; };
+ const orderStatus = o => o.lines.some(x => x.reserved > 0) ? 'OPEN' : 'CLOSED';
+ const transferStatus = t => t.lines.some(x => x.quantity > x.received + x.cancelled) ? 'IN_TRANSIT' : 'CLOSED';

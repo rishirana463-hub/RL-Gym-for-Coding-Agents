@@ -1,0 +1,11 @@
+--- a/engine.mjs
++++ b/engine.mjs
+@@ -75,7 +75,7 @@
+ }
+ export function execute(previous, c) {
+   validate(c);
+-  const fingerprint = canonical(c);
++  const fingerprint = JSON.stringify(c);
+   if (own(previous.requests, c.requestId)) {
+     const old = previous.requests[c.requestId];
+     if (old.fingerprint !== fingerprint) fail('IDEMPOTENCY_CONFLICT');

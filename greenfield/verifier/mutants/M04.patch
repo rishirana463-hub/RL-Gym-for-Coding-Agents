@@ -1,0 +1,11 @@
+--- a/engine.mjs
++++ b/engine.mjs
+@@ -144,7 +144,7 @@
+     s.now = c.now;
+     const expired = [];
+     for (const o of Object.values(s.orders).sort((a, b) => sort(a.id, b.id))) {
+-      if (o.expiresAt <= s.now && o.lines.some(x => x.reserved > 0)) {
++      if (o.expiresAt < s.now && o.lines.some(x => x.reserved > 0)) {
+         for (const x of o.lines) {
+           stock(s, o.warehouse, x.sku).reserved -= x.reserved;
+           x.cancelled += x.reserved; x.reserved = 0;
