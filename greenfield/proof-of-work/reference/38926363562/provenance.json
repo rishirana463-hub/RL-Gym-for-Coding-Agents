@@ -1,0 +1,296 @@
+{
+  "task": "stockroom",
+  "task_version": 1,
+  "started_at": "2026-10-16T15:44:39.161669+00:00",
+  "source_commit": "8721c8d638d3025b3cbf138296644ace01f4223b",
+  "execution": "docker-isolated",
+  "template_manifest_sha256": "95d3e9d6da044c0a659bc78403f5462b307c36d083103f97e900e8a14b24017a",
+  "model_attempts": 0,
+  "scratch_copy": true,
+  "node": "v24.14.0",
+  "python": "3.12.3 (main, Aug 31 2026, 10:18:26) [GCC 13.3.0]",
+  "workflow_run_id": "38926363562",
+  "workflow_url": "https://github.com/rishirana463-hub/RL-Gym-for-Coding-Agents/actions/runs/38926363562",
+  "runs": [
+    {
+      "name": "reference/1",
+      "score": 100,
+      "failed": [],
+      "solution_hash": "d6ccc709653661acfbd888cb1889444434befceeab9de2df06e8bc0e6396f4d6"
+    },
+    {
+      "name": "reference/2",
+      "score": 100,
+      "failed": [],
+      "solution_hash": "d6ccc709653661acfbd888cb1889444434befceeab9de2df06e8bc0e6396f4d6"
+    },
+    {
+      "name": "starter/1",
+      "score": 0,
+      "failed": [
+        "T01",
+        "T02",
+        "T03",
+        "T04",
+        "T05",
+        "T06",
+        "T07",
+        "T08",
+        "I01",
+        "I02",
+        "I03",
+        "I04",
+        "I05",
+        "I06",
+        "O01",
+        "O02",
+        "O03",
+        "O04",
+        "O05",
+        "O06",
+        "O07",
+        "O08",
+        "F01",
+        "F02",
+        "F03",
+        "F04",
+        "F05",
+        "F06",
+        "F07",
+        "F08",
+        "K01",
+        "K02",
+        "K03",
+        "K04",
+        "K05",
+        "K06",
+        "D01",
+        "D02",
+        "D03",
+        "D04",
+        "D05",
+        "D06",
+        "D07",
+        "D08",
+        "C01",
+        "C02",
+        "C03",
+        "C04",
+        "C05",
+        "C06",
+        "R01",
+        "R02",
+        "R03",
+        "R04",
+        "R05",
+        "R06"
+      ],
+      "solution_hash": "54e8098d559d1b559495d765d110993b9d43d70056c3db91e117774cbcab978e"
+    },
+    {
+      "name": "privacy-probe/1",
+      "score": 100,
+      "failed": [],
+      "solution_hash": "84ec47f1b4a62388c84c7981b6715a59f3243f7353dbbc9c8d0c8174271dac38"
+    },
+    {
+      "name": "mutants/control/1",
+      "score": 100,
+      "failed": [],
+      "solution_hash": "d6ccc709653661acfbd888cb1889444434befceeab9de2df06e8bc0e6396f4d6"
+    },
+    {
+      "name": "mutants/M01/1",
+      "score": 84.375,
+      "failed": [
+        "D01",
+        "D02",
+        "D03",
+        "D04",
+        "D06",
+        "D08",
+        "C02",
+        "R02",
+        "R06"
+      ],
+      "solution_hash": "a7538656cd9663675fa733ee61da196c1cecf39342933e2d985bdb7fa7e23a3e"
+    },
+    {
+      "name": "mutants/M02/1",
+      "score": 98.4375,
+      "failed": [
+        "D02"
+      ],
+      "solution_hash": "612e33ce4cf75eb2137dfca56ae541ad2ce95e9a6247633ee250ea9c6fe9cb0f"
+    },
+    {
+      "name": "mutants/M03/1",
+      "score": 96.875,
+      "failed": [
+        "D03",
+        "D04"
+      ],
+      "solution_hash": "6f6289d3ea7cf6d54374ad4bf3cad2215adfcb2c36558623650a15d59d5be1cb"
+    },
+    {
+      "name": "mutants/M04/1",
+      "score": 91.6666666667,
+      "failed": [
+        "K01",
+        "K05",
+        "C06",
+        "R06"
+      ],
+      "solution_hash": "f740a9b2d17e9c0394f936fb7b93fc16544d2a925d95b62293d908a96b397d4a"
+    },
+    {
+      "name": "mutants/M05/1",
+      "score": 90.625,
+      "failed": [
+        "O04",
+        "F06",
+        "K03",
+        "C03",
+        "C04"
+      ],
+      "solution_hash": "acfcc0bce407fc58322276c1b3764c021eaf5191bb128cb075a6168a807806de"
+    },
+    {
+      "name": "mutants/M06/1",
+      "score": 98.4375,
+      "failed": [
+        "O07"
+      ],
+      "solution_hash": "b92ac88dc5ea44964ed54f11138914da9a343f5b34b62adcf2b7b55418ca93b4"
+    },
+    {
+      "name": "mutants/M07/1",
+      "score": 97.9166666667,
+      "failed": [
+        "I05"
+      ],
+      "solution_hash": "cfc808362c3781a1d2161a26cd2a396789f3b779528230cf2dc722a9d007606c"
+    },
+    {
+      "name": "mutants/M08/1",
+      "score": 86.4583333333,
+      "failed": [
+        "I05",
+        "I06",
+        "O06",
+        "O08",
+        "K03",
+        "C06",
+        "R06"
+      ],
+      "solution_hash": "0cc4f0f47adbf7f8528ed917db2e0a098f9beec5ca5f8affc8d89b9321670571"
+    },
+    {
+      "name": "mutants/M09/1",
+      "score": 93.2291666667,
+      "failed": [
+        "F01",
+        "F04",
+        "F07",
+        "R06"
+      ],
+      "solution_hash": "534ba3cd1e8bbf4c72da43c34bed464abd094c42bfc389dece509cdacc970f04"
+    },
+    {
+      "name": "mutants/M10/1",
+      "score": 94.7916666667,
+      "failed": [
+        "O06",
+        "O08",
+        "R06"
+      ],
+      "solution_hash": "151847bd35641a0a3e839c1c25ddf2ba0fbe567886d57f7794824600191f1d04"
+    },
+    {
+      "name": "mutants/M11/1",
+      "score": 90.1041666667,
+      "failed": [
+        "I04",
+        "O01",
+        "O05",
+        "O08",
+        "F03",
+        "F07"
+      ],
+      "solution_hash": "0ecf298f9bbbfcdc830e5333498945459ff4ee80458a54b0634ded052dae9b32"
+    },
+    {
+      "name": "mutants/M12/1",
+      "score": 95.8333333333,
+      "failed": [
+        "R02",
+        "R06"
+      ],
+      "solution_hash": "96f64e5147e0eb3fbd02d0866d50b9a9bf37ae32875155a7905f4799b303628c"
+    },
+    {
+      "name": "mutants/M13/1",
+      "score": 94.2708333333,
+      "failed": [
+        "I05",
+        "F02",
+        "C01"
+      ],
+      "solution_hash": "9b3e22bfe75f77c695a0caa0130883b5491461195dcc995f8a65ec9d1e560094"
+    },
+    {
+      "name": "mutants/M14/1",
+      "score": 85.4166666667,
+      "failed": [
+        "K06",
+        "R01",
+        "R02",
+        "R03",
+        "R04",
+        "R05",
+        "R06"
+      ],
+      "solution_hash": "e60d0297c88fc7e398d394a112f0d781f65d4adcd0840a4c5ae557de0c1f0a3b"
+    },
+    {
+      "name": "mutants/M15/1",
+      "score": 94.7916666667,
+      "failed": [
+        "F04",
+        "F08",
+        "R06"
+      ],
+      "solution_hash": "d7362402b6daa25b9a8433e55fd1a6ed8753debff0a3bacc714fea75b0afe4ee"
+    },
+    {
+      "name": "mutants/M16/1",
+      "score": 97.9166666667,
+      "failed": [
+        "K02"
+      ],
+      "solution_hash": "acbd33db46038204346bf24e78e08cf8193ea44bbc0604aa343adb32d3476834"
+    },
+    {
+      "name": "mutants/M17/1",
+      "score": 93.2291666667,
+      "failed": [
+        "I03",
+        "O08",
+        "F07",
+        "F08"
+      ],
+      "solution_hash": "44f6a3915aac8eaa76fc26bb6cc9276fb89ee5a8b98256e00f5e87e29cb06791"
+    },
+    {
+      "name": "mutants/M18/1",
+      "score": 93.75,
+      "failed": [
+        "K03",
+        "C06",
+        "R06"
+      ],
+      "solution_hash": "6dd24e073e858c2027f4cca9d405d3bb9d12b2033bb8549943bbb2b992f97098"
+    }
+  ],
+  "finished_at": "2026-10-16T15:48:34.802863+00:00"
+}

@@ -1,0 +1,412 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-10-16T15:46:34.470Z",
+  "solution": "../../../../../work/candidate",
+  "solutionHash": "b92ac88dc5ea44964ed54f11138914da9a343f5b34b62adcf2b7b55418ca93b4",
+  "checkHash": "2b57f09a276bcd6255c921a6609192d120a4a654a536c87f9411ff6e330c6aa2",
+  "node": "v24.14.0",
+  "platform": "linux",
+  "execution": "local",
+  "complete": true,
+  "score": 0.984375,
+  "passed": 55,
+  "total": 56,
+  "executed": 56,
+  "groups": {
+    "transport": {
+      "weight": 0.125,
+      "passed": 8,
+      "total": 8,
+      "executed": 8,
+      "weightedScore": 0.125
+    },
+    "inventory": {
+      "weight": 0.125,
+      "passed": 6,
+      "total": 6,
+      "executed": 6,
+      "weightedScore": 0.125
+    },
+    "orders": {
+      "weight": 0.125,
+      "passed": 7,
+      "total": 8,
+      "executed": 8,
+      "weightedScore": 0.109375
+    },
+    "transfers": {
+      "weight": 0.125,
+      "passed": 8,
+      "total": 8,
+      "executed": 8,
+      "weightedScore": 0.125
+    },
+    "clock": {
+      "weight": 0.125,
+      "passed": 6,
+      "total": 6,
+      "executed": 6,
+      "weightedScore": 0.125
+    },
+    "idempotency": {
+      "weight": 0.125,
+      "passed": 8,
+      "total": 8,
+      "executed": 8,
+      "weightedScore": 0.125
+    },
+    "concurrency": {
+      "weight": 0.125,
+      "passed": 6,
+      "total": 6,
+      "executed": 6,
+      "weightedScore": 0.125
+    },
+    "recovery": {
+      "weight": 0.125,
+      "passed": 6,
+      "total": 6,
+      "executed": 6,
+      "weightedScore": 0.125
+    }
+  },
+  "checks": [
+    {
+      "id": "T01",
+      "group": "transport",
+      "description": "Health, exact empty state, and read purity",
+      "passed": true
+    },
+    {
+      "id": "T02",
+      "group": "transport",
+      "description": "Unknown paths and methods are 404",
+      "passed": true
+    },
+    {
+      "id": "T03",
+      "group": "transport",
+      "description": "Malformed JSON and non-object bodies are rejected atomically",
+      "passed": true
+    },
+    {
+      "id": "T04",
+      "group": "transport",
+      "description": "Unknown operations, missing and extra fields are invalid",
+      "passed": true
+    },
+    {
+      "id": "T05",
+      "group": "transport",
+      "description": "Identifier boundaries, case sensitivity and object-like names",
+      "passed": true
+    },
+    {
+      "id": "T06",
+      "group": "transport",
+      "description": "Quantity and timestamp type/range boundaries",
+      "passed": true
+    },
+    {
+      "id": "T07",
+      "group": "transport",
+      "description": "Item-list shape, duplicates, extra fields and size are validated",
+      "passed": true
+    },
+    {
+      "id": "T08",
+      "group": "transport",
+      "description": "Missing entities and invalid revisions have specified precedence",
+      "passed": true
+    },
+    {
+      "id": "I01",
+      "group": "inventory",
+      "description": "Receipts accumulate independently across SKU and warehouse",
+      "passed": true
+    },
+    {
+      "id": "I02",
+      "group": "inventory",
+      "description": "Inventory and order lines use ASCII lexical order",
+      "passed": true
+    },
+    {
+      "id": "I03",
+      "group": "inventory",
+      "description": "Stock cap accepts maximum and rejects overflow with no audit effect",
+      "passed": true
+    },
+    {
+      "id": "I04",
+      "group": "inventory",
+      "description": "Unknown stock failure does not leave phantom rows or orders",
+      "passed": true
+    },
+    {
+      "id": "I05",
+      "group": "inventory",
+      "description": "Reservation, shipment and cancellation conserve physical stock",
+      "passed": true
+    },
+    {
+      "id": "I06",
+      "group": "inventory",
+      "description": "Zero stock rows remain visible after full shipment",
+      "passed": true
+    },
+    {
+      "id": "O01",
+      "group": "orders",
+      "description": "Multi-SKU reservation rolls back an earlier successful line",
+      "passed": true
+    },
+    {
+      "id": "O02",
+      "group": "orders",
+      "description": "Partial shipment, cancellation and closure preserve line totals",
+      "passed": true
+    },
+    {
+      "id": "O03",
+      "group": "orders",
+      "description": "Closed IDs cannot be reused and duplicate detection precedes expiry",
+      "passed": true
+    },
+    {
+      "id": "O04",
+      "group": "orders",
+      "description": "Stale revisions reject shipments, cancellations and returns",
+      "passed": true
+    },
+    {
+      "id": "O05",
+      "group": "orders",
+      "description": "Unknown and excess line quantities fail atomically",
+      "passed": true
+    },
+    {
+      "id": "O06",
+      "group": "orders",
+      "description": "Partial returns restore original warehouse without reopening orders",
+      "passed": true
+    },
+    {
+      "id": "O07",
+      "group": "orders",
+      "description": "Cumulative returns cannot exceed shipments or include cancelled stock",
+      "passed": false,
+      "error": "AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n\n200 !== 409\n\n    at Object.error (file:///opt/private/task/verifier/implementation/evaluation/tests/harness.mjs:84:126)\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)\n    at async unchanged (file:///opt/private/task/verifier/implementation/evaluation/tests/helpers.mjs:7:78)\n    at async file:///opt/private/task/verifier/implementation/evaluation/tests/cases/orders.mjs:39:3\n    at async withService (file:///opt/private/task/verifier/implementation/evaluation/tests/harness.mjs:91:24)\n    at async score (file:///opt/private/task/verifier/implementation/evaluation/score.mjs:37:11)\n    at async file:///opt/private/task/verifier/implementation/evaluation/score.mjs:66:18"
+    },
+    {
+      "id": "O08",
+      "group": "orders",
+      "description": "Multi-line return overflow rolls back earlier restoration",
+      "passed": true
+    },
+    {
+      "id": "F01",
+      "group": "transfers",
+      "description": "Dispatch removes source stock without crediting destination",
+      "passed": true
+    },
+    {
+      "id": "F02",
+      "group": "transfers",
+      "description": "Dispatch cannot consume reserved stock and same-warehouse fails",
+      "passed": true
+    },
+    {
+      "id": "F03",
+      "group": "transfers",
+      "description": "Multi-SKU dispatch is atomic on insufficient stock",
+      "passed": true
+    },
+    {
+      "id": "F04",
+      "group": "transfers",
+      "description": "Partial receipt and cancellation close transfer with correct stock",
+      "passed": true
+    },
+    {
+      "id": "F05",
+      "group": "transfers",
+      "description": "Received or cancelled quantities cannot be processed twice",
+      "passed": true
+    },
+    {
+      "id": "F06",
+      "group": "transfers",
+      "description": "Transfer stale revisions and duplicate IDs are protected",
+      "passed": true
+    },
+    {
+      "id": "F07",
+      "group": "transfers",
+      "description": "Destination overflow rolls back all receipt lines",
+      "passed": true
+    },
+    {
+      "id": "F08",
+      "group": "transfers",
+      "description": "Source overflow and unknown transfer lines fail atomically",
+      "passed": true
+    },
+    {
+      "id": "K01",
+      "group": "clock",
+      "description": "Expiration occurs at the exact boundary and releases once",
+      "passed": true
+    },
+    {
+      "id": "K02",
+      "group": "clock",
+      "description": "Clock cannot move backwards; new orders require future expiry",
+      "passed": true
+    },
+    {
+      "id": "K03",
+      "group": "clock",
+      "description": "Expiry preserves shipments and increments each affected revision once",
+      "passed": true
+    },
+    {
+      "id": "K04",
+      "group": "clock",
+      "description": "Closed orders retain revisions at expiry; returns remain possible",
+      "passed": true
+    },
+    {
+      "id": "K05",
+      "group": "clock",
+      "description": "Bulk expiry sorts IDs and leaves later reservations intact",
+      "passed": true
+    },
+    {
+      "id": "K06",
+      "group": "clock",
+      "description": "Reads and restarts do not advance logical time or expire orders",
+      "passed": true
+    },
+    {
+      "id": "D01",
+      "group": "idempotency",
+      "description": "Retry receipt returns exact response with one stock/audit effect",
+      "passed": true
+    },
+    {
+      "id": "D02",
+      "group": "idempotency",
+      "description": "Retry identity ignores nested object key order",
+      "passed": true
+    },
+    {
+      "id": "D03",
+      "group": "idempotency",
+      "description": "Global retry keys reject changed payload and changed operation",
+      "passed": true
+    },
+    {
+      "id": "D04",
+      "group": "idempotency",
+      "description": "Array order remains part of retry identity",
+      "passed": true
+    },
+    {
+      "id": "D05",
+      "group": "idempotency",
+      "description": "Rejected requests do not claim retry keys",
+      "passed": true
+    },
+    {
+      "id": "D06",
+      "group": "idempotency",
+      "description": "Replay precedes stale revisions and returns immutable historical snapshots",
+      "passed": true
+    },
+    {
+      "id": "D07",
+      "group": "idempotency",
+      "description": "Validation precedes replay lookup",
+      "passed": true
+    },
+    {
+      "id": "D08",
+      "group": "idempotency",
+      "description": "Audit contains one ordered event per successful command only",
+      "passed": true
+    },
+    {
+      "id": "C01",
+      "group": "concurrency",
+      "description": "Concurrent reservations cannot oversell the last units",
+      "passed": true
+    },
+    {
+      "id": "C02",
+      "group": "concurrency",
+      "description": "Identical concurrent retries have exactly one effect",
+      "passed": true
+    },
+    {
+      "id": "C03",
+      "group": "concurrency",
+      "description": "Two order writers at one revision cannot both succeed",
+      "passed": true
+    },
+    {
+      "id": "C04",
+      "group": "concurrency",
+      "description": "Transfer receipt and cancellation share revision protection",
+      "passed": true
+    },
+    {
+      "id": "C05",
+      "group": "concurrency",
+      "description": "Independent concurrent receipts have no lost updates or audit gaps",
+      "passed": true
+    },
+    {
+      "id": "C06",
+      "group": "concurrency",
+      "description": "Shipment racing expiry has only serializable outcomes",
+      "passed": true
+    },
+    {
+      "id": "R01",
+      "group": "recovery",
+      "description": "Acknowledged inventory and reservations survive forced termination",
+      "passed": true
+    },
+    {
+      "id": "R02",
+      "group": "recovery",
+      "description": "Retry ledger and original snapshots survive repeated termination",
+      "passed": true
+    },
+    {
+      "id": "R03",
+      "group": "recovery",
+      "description": "Clock, transfer progress, returns and audit recover together",
+      "passed": true
+    },
+    {
+      "id": "R04",
+      "group": "recovery",
+      "description": "Unrelated recovery-directory artifacts do not overwrite committed state",
+      "passed": true
+    },
+    {
+      "id": "R05",
+      "group": "recovery",
+      "description": "Interrupted unacknowledged receipt is atomic and retryable exactly once",
+      "passed": true
+    },
+    {
+      "id": "R06",
+      "group": "recovery",
+      "description": "Long mixed workflow conserves units through restart and transfer retries",
+      "passed": true
+    }
+  ]
+}

@@ -1,0 +1,235 @@
+{
+  "reference_scores": [
+    100,
+    100
+  ],
+  "starter_score": 0,
+  "model_attempts": 0,
+  "mutants": [
+    {
+      "mutant": "M01",
+      "score": 84.375,
+      "detected": true,
+      "declared_target_checks": [
+        "D01",
+        "C02"
+      ],
+      "declared_target_points": 3.6458333333333335,
+      "actual_loss": 15.625,
+      "within_two_points": false
+    },
+    {
+      "mutant": "M02",
+      "score": 98.4375,
+      "detected": true,
+      "declared_target_checks": [
+        "D02"
+      ],
+      "declared_target_points": 1.5625,
+      "actual_loss": 1.5625,
+      "within_two_points": true
+    },
+    {
+      "mutant": "M03",
+      "score": 96.875,
+      "detected": true,
+      "declared_target_checks": [
+        "D03"
+      ],
+      "declared_target_points": 1.5625,
+      "actual_loss": 3.125,
+      "within_two_points": true
+    },
+    {
+      "mutant": "M04",
+      "score": 91.6666666667,
+      "detected": true,
+      "declared_target_checks": [
+        "K01",
+        "K05"
+      ],
+      "declared_target_points": 4.166666666666667,
+      "actual_loss": 8.333333333300004,
+      "within_two_points": false
+    },
+    {
+      "mutant": "M05",
+      "score": 90.625,
+      "detected": true,
+      "declared_target_checks": [
+        "O04",
+        "C03",
+        "C04"
+      ],
+      "declared_target_points": 5.729166666666667,
+      "actual_loss": 9.375,
+      "within_two_points": false
+    },
+    {
+      "mutant": "M06",
+      "score": 98.4375,
+      "detected": true,
+      "declared_target_checks": [
+        "O07"
+      ],
+      "declared_target_points": 1.5625,
+      "actual_loss": 1.5625,
+      "within_two_points": true
+    },
+    {
+      "mutant": "M07",
+      "score": 97.9166666667,
+      "detected": true,
+      "declared_target_checks": [
+        "I05"
+      ],
+      "declared_target_points": 2.0833333333333335,
+      "actual_loss": 2.083333333300004,
+      "within_two_points": true
+    },
+    {
+      "mutant": "M08",
+      "score": 86.4583333333,
+      "detected": true,
+      "declared_target_checks": [
+        "I05",
+        "I06"
+      ],
+      "declared_target_points": 4.166666666666667,
+      "actual_loss": 13.541666666699996,
+      "within_two_points": false
+    },
+    {
+      "mutant": "M09",
+      "score": 93.2291666667,
+      "detected": true,
+      "declared_target_checks": [
+        "F01"
+      ],
+      "declared_target_points": 1.5625,
+      "actual_loss": 6.770833333300004,
+      "within_two_points": false
+    },
+    {
+      "mutant": "M10",
+      "score": 94.7916666667,
+      "detected": true,
+      "declared_target_checks": [
+        "O06"
+      ],
+      "declared_target_points": 1.5625,
+      "actual_loss": 5.208333333300004,
+      "within_two_points": false
+    },
+    {
+      "mutant": "M11",
+      "score": 90.1041666667,
+      "detected": true,
+      "declared_target_checks": [
+        "O01",
+        "O05",
+        "F03"
+      ],
+      "declared_target_points": 4.6875,
+      "actual_loss": 9.895833333300004,
+      "within_two_points": false
+    },
+    {
+      "mutant": "M12",
+      "score": 95.8333333333,
+      "detected": true,
+      "declared_target_checks": [
+        "R02"
+      ],
+      "declared_target_points": 2.0833333333333335,
+      "actual_loss": 4.166666666699996,
+      "within_two_points": false
+    },
+    {
+      "mutant": "M13",
+      "score": 94.2708333333,
+      "detected": true,
+      "declared_target_checks": [
+        "F02",
+        "C01"
+      ],
+      "declared_target_points": 3.6458333333333335,
+      "actual_loss": 5.729166666699996,
+      "within_two_points": false
+    },
+    {
+      "mutant": "M14",
+      "score": 85.4166666667,
+      "detected": true,
+      "declared_target_checks": [
+        "R01",
+        "R03"
+      ],
+      "declared_target_points": 4.166666666666667,
+      "actual_loss": 14.583333333300004,
+      "within_two_points": false
+    },
+    {
+      "mutant": "M15",
+      "score": 94.7916666667,
+      "detected": true,
+      "declared_target_checks": [
+        "F04"
+      ],
+      "declared_target_points": 1.5625,
+      "actual_loss": 5.208333333300004,
+      "within_two_points": false
+    },
+    {
+      "mutant": "M16",
+      "score": 97.9166666667,
+      "detected": true,
+      "declared_target_checks": [
+        "K02"
+      ],
+      "declared_target_points": 2.0833333333333335,
+      "actual_loss": 2.083333333300004,
+      "within_two_points": true
+    },
+    {
+      "mutant": "M17",
+      "score": 93.2291666667,
+      "detected": true,
+      "declared_target_checks": [
+        "I03",
+        "O08",
+        "F07"
+      ],
+      "declared_target_points": 5.208333333333334,
+      "actual_loss": 6.770833333300004,
+      "within_two_points": true
+    },
+    {
+      "mutant": "M18",
+      "score": 93.75,
+      "detected": true,
+      "declared_target_checks": [
+        "K03",
+        "R06"
+      ],
+      "declared_target_points": 4.166666666666667,
+      "actual_loss": 6.25,
+      "within_two_points": false
+    }
+  ],
+  "mutant_count_matches_template": false,
+  "mutant_weight_mismatches": [
+    "M01",
+    "M04",
+    "M05",
+    "M08",
+    "M09",
+    "M10",
+    "M11",
+    "M12",
+    "M13",
+    "M14",
+    "M15",
+    "M18"
+  ]
+}

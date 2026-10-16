@@ -1,0 +1,29 @@
+COMMAND ["docker", "build", "--pull", "-f", "/home/runner/work/RL-Gym-for-Coding-Agents/RL-Gym-for-Coding-Agents/.runs/template-self-check-yfiejp0y/task/environment/verifier.Dockerfile", "-t", "stockroom-template-verifier:1", "/home/runner/work/RL-Gym-for-Coding-Agents/RL-Gym-for-Coding-Agents/.runs/template-self-check-yfiejp0y/task/environment"]
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from verifier.Dockerfile
+#1 transferring dockerfile: 671B done
+#1 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/library/node:24.14.0-bookworm-slim@sha256:d8e448a56fc63242f70026718378bd4b00f8c82e78d20eefb199224a4d8e33d8
+#2 DONE 0.0s
+
+#3 [internal] load .dockerignore
+#3 transferring context: 2B done
+#3 DONE 0.0s
+
+#4 [1/3] FROM docker.io/library/node:24.14.0-bookworm-slim@sha256:d8e448a56fc63242f70026718378bd4b00f8c82e78d20eefb199224a4d8e33d8
+#4 DONE 0.0s
+
+#5 [2/3] RUN apt-get update && apt-get install -y --no-install-recommends python3     && rm -rf /var/lib/apt/lists/*     && useradd --create-home --uid 10001 agent     && mkdir -p /work/candidate /logs/verifier /opt/private     && chown agent:agent /work/candidate /logs/verifier     && chmod 700 /opt/private
+#5 CACHED
+
+#6 [3/3] WORKDIR /opt/private/task
+#6 DONE 0.0s
+
+#7 exporting to image
+#7 exporting layers
+#7 exporting layers 0.8s done
+#7 writing image sha256:baace470073a304b186d853be3fa93e77f5048533047654d1f2456d432575852 done
+#7 naming to docker.io/library/stockroom-template-verifier:1 done
+#7 DONE 0.8s

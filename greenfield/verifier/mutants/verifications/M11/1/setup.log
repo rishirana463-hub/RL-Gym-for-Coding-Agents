@@ -1,0 +1,3 @@
+COMMAND ["git", "init", "--quiet"]
+COMMAND ["git", "apply", "/home/runner/work/RL-Gym-for-Coding-Agents/RL-Gym-for-Coding-Agents/.runs/template-self-check-yfiejp0y/task/verifier/mutants/M11.patch"]
+COMMAND ["docker", "run", "--rm", "--network", "none", "--cap-drop", "ALL", "--security-opt", "no-new-privileges", "--mount", "type=bind,source=/home/runner/work/RL-Gym-for-Coding-Agents/RL-Gym-for-Coding-Agents/.runs/template-self-check-yfiejp0y/mutants-M11-1,target=/work/candidate,readonly", "stockroom-template-task:1", "sh", "-c", "node --check server.mjs && node --check server.mjs && node --check store.mjs && node --check http.mjs && node --check engine.mjs"]

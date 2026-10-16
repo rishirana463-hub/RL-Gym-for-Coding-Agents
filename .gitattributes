@@ -13,3 +13,4 @@ Dockerfile text eol=lf
 *.log text eol=lf
 # Preserve the original Docker terminal log's mixed progress-control line endings.
 evals/openhands-preflight/logs/build.log -text
+evals/template-self-check/*/build-*.log -text whitespace=cr-at-eol

@@ -1,0 +1,471 @@
+{
+  "schema_version": 1,
+  "task": "stockroom",
+  "task_version": 1,
+  "status": "completed",
+  "score": 85.4166666667,
+  "max_score": 100,
+  "tests": [
+    {
+      "id": "T01",
+      "title": "Health, exact empty state, and read purity",
+      "score": 1.5625,
+      "max_score": 1.5625,
+      "status": "passed",
+      "type": "deterministic"
+    },
+    {
+      "id": "T02",
+      "title": "Unknown paths and methods are 404",
+      "score": 1.5625,
+      "max_score": 1.5625,
+      "status": "passed",
+      "type": "deterministic"
+    },
+    {
+      "id": "T03",
+      "title": "Malformed JSON and non-object bodies are rejected atomically",
+      "score": 1.5625,
+      "max_score": 1.5625,
+      "status": "passed",
+      "type": "deterministic"
+    },
+    {
+      "id": "T04",
+      "title": "Unknown operations, missing and extra fields are invalid",
+      "score": 1.5625,
+      "max_score": 1.5625,
+      "status": "passed",
+      "type": "deterministic"
+    },
+    {
+      "id": "T05",
+      "title": "Identifier boundaries, case sensitivity and object-like names",
+      "score": 1.5625,
+      "max_score": 1.5625,
+      "status": "passed",
+      "type": "deterministic"
+    },
+    {
+      "id": "T06",
+      "title": "Quantity and timestamp type/range boundaries",
+      "score": 1.5625,
+      "max_score": 1.5625,
+      "status": "passed",
+      "type": "deterministic"
+    },
+    {
+      "id": "T07",
+      "title": "Item-list shape, duplicates, extra fields and size are validated",
+      "score": 1.5625,
+      "max_score": 1.5625,
+      "status": "passed",
+      "type": "deterministic"
+    },
+    {
+      "id": "T08",
+      "title": "Missing entities and invalid revisions have specified precedence",
+      "score": 1.5625,
+      "max_score": 1.5625,
+      "status": "passed",
+      "type": "deterministic"
+    },
+    {
+      "id": "I01",
+      "title": "Receipts accumulate independently across SKU and warehouse",
+      "score": 2.0833333333333335,
+      "max_score": 2.0833333333333335,
+      "status": "passed",
+      "type": "deterministic"
+    },
+    {
+      "id": "I02",
+      "title": "Inventory and order lines use ASCII lexical order",
+      "score": 2.0833333333333335,
+      "max_score": 2.0833333333333335,
+      "status": "passed",
+      "type": "deterministic"
+    },
+    {
+      "id": "I03",
+      "title": "Stock cap accepts maximum and rejects overflow with no audit effect",
+      "score": 2.0833333333333335,
+      "max_score": 2.0833333333333335,
+      "status": "passed",
+      "type": "deterministic"
+    },
+    {
+      "id": "I04",
+      "title": "Unknown stock failure does not leave phantom rows or orders",
+      "score": 2.0833333333333335,
+      "max_score": 2.0833333333333335,
+      "status": "passed",
+      "type": "deterministic"
+    },
+    {
+      "id": "I05",
+      "title": "Reservation, shipment and cancellation conserve physical stock",
+      "score": 2.0833333333333335,
+      "max_score": 2.0833333333333335,
+      "status": "passed",
+      "type": "deterministic"
+    },
+    {
+      "id": "I06",
+      "title": "Zero stock rows remain visible after full shipment",
+      "score": 2.0833333333333335,
+      "max_score": 2.0833333333333335,
+      "status": "passed",
+      "type": "deterministic"
+    },
+    {
+      "id": "O01",
+      "title": "Multi-SKU reservation rolls back an earlier successful line",
+      "score": 1.5625,
+      "max_score": 1.5625,
+      "status": "passed",
+      "type": "deterministic"
+    },
+    {
+      "id": "O02",
+      "title": "Partial shipment, cancellation and closure preserve line totals",
+      "score": 1.5625,
+      "max_score": 1.5625,
+      "status": "passed",
+      "type": "deterministic"
+    },
+    {
+      "id": "O03",
+      "title": "Closed IDs cannot be reused and duplicate detection precedes expiry",
+      "score": 1.5625,
+      "max_score": 1.5625,
+      "status": "passed",
+      "type": "deterministic"
+    },
+    {
+      "id": "O04",
+      "title": "Stale revisions reject shipments, cancellations and returns",
+      "score": 1.5625,
+      "max_score": 1.5625,
+      "status": "passed",
+      "type": "deterministic"
+    },
+    {
+      "id": "O05",
+      "title": "Unknown and excess line quantities fail atomically",
+      "score": 1.5625,
+      "max_score": 1.5625,
+      "status": "passed",
+      "type": "deterministic"
+    },
+    {
+      "id": "O06",
+      "title": "Partial returns restore original warehouse without reopening orders",
+      "score": 1.5625,
+      "max_score": 1.5625,
+      "status": "passed",
+      "type": "deterministic"
+    },
+    {
+      "id": "O07",
+      "title": "Cumulative returns cannot exceed shipments or include cancelled stock",
+      "score": 1.5625,
+      "max_score": 1.5625,
+      "status": "passed",
+      "type": "deterministic"
+    },
+    {
+      "id": "O08",
+      "title": "Multi-line return overflow rolls back earlier restoration",
+      "score": 1.5625,
+      "max_score": 1.5625,
+      "status": "passed",
+      "type": "deterministic"
+    },
+    {
+      "id": "F01",
+      "title": "Dispatch removes source stock without crediting destination",
+      "score": 1.5625,
+      "max_score": 1.5625,
+      "status": "passed",
+      "type": "deterministic"
+    },
+    {
+      "id": "F02",
+      "title": "Dispatch cannot consume reserved stock and same-warehouse fails",
+      "score": 1.5625,
+      "max_score": 1.5625,
+      "status": "passed",
+      "type": "deterministic"
+    },
+    {
+      "id": "F03",
+      "title": "Multi-SKU dispatch is atomic on insufficient stock",
+      "score": 1.5625,
+      "max_score": 1.5625,
+      "status": "passed",
+      "type": "deterministic"
+    },
+    {
+      "id": "F04",
+      "title": "Partial receipt and cancellation close transfer with correct stock",
+      "score": 1.5625,
+      "max_score": 1.5625,
+      "status": "passed",
+      "type": "deterministic"
+    },
+    {
+      "id": "F05",
+      "title": "Received or cancelled quantities cannot be processed twice",
+      "score": 1.5625,
+      "max_score": 1.5625,
+      "status": "passed",
+      "type": "deterministic"
+    },
+    {
+      "id": "F06",
+      "title": "Transfer stale revisions and duplicate IDs are protected",
+      "score": 1.5625,
+      "max_score": 1.5625,
+      "status": "passed",
+      "type": "deterministic"
+    },
+    {
+      "id": "F07",
+      "title": "Destination overflow rolls back all receipt lines",
+      "score": 1.5625,
+      "max_score": 1.5625,
+      "status": "passed",
+      "type": "deterministic"
+    },
+    {
+      "id": "F08",
+      "title": "Source overflow and unknown transfer lines fail atomically",
+      "score": 1.5625,
+      "max_score": 1.5625,
+      "status": "passed",
+      "type": "deterministic"
+    },
+    {
+      "id": "K01",
+      "title": "Expiration occurs at the exact boundary and releases once",
+      "score": 2.0833333333333335,
+      "max_score": 2.0833333333333335,
+      "status": "passed",
+      "type": "deterministic"
+    },
+    {
+      "id": "K02",
+      "title": "Clock cannot move backwards; new orders require future expiry",
+      "score": 2.0833333333333335,
+      "max_score": 2.0833333333333335,
+      "status": "passed",
+      "type": "deterministic"
+    },
+    {
+      "id": "K03",
+      "title": "Expiry preserves shipments and increments each affected revision once",
+      "score": 2.0833333333333335,
+      "max_score": 2.0833333333333335,
+      "status": "passed",
+      "type": "deterministic"
+    },
+    {
+      "id": "K04",
+      "title": "Closed orders retain revisions at expiry; returns remain possible",
+      "score": 2.0833333333333335,
+      "max_score": 2.0833333333333335,
+      "status": "passed",
+      "type": "deterministic"
+    },
+    {
+      "id": "K05",
+      "title": "Bulk expiry sorts IDs and leaves later reservations intact",
+      "score": 2.0833333333333335,
+      "max_score": 2.0833333333333335,
+      "status": "passed",
+      "type": "deterministic"
+    },
+    {
+      "id": "K06",
+      "title": "Reads and restarts do not advance logical time or expire orders",
+      "score": 0,
+      "max_score": 2.0833333333333335,
+      "status": "failed",
+      "type": "deterministic",
+      "details": "AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:\n+ actual - expected\n\n  {\n+   audit: [],\n+   inventory: [],\n-   audit: [\n-     {\n-       now: 0,\n-       op: 'receive',\n-       requestId: 'req-1',\n-       sequence: 1\n-     },\n-     {\n-       now: 0,\n-       op: 'createOrder',\n-       requestId: 'req-2',\n-       sequence: 2\n-     }\n-   ],\n-   inventory: [\n-     {\n-       available: 8,\n-       onHand: 10,\n-       reserved: 2,\n-       sku: 'widget',\n-       warehouse: 'A'\n-     }\n-   ],\n    now: 0,\n+   orders: [],\n+   sequence: 0,\n-   orders: [\n-     {\n-       expiresAt: 1,\n-       id: 'o1',\n-       lines: [\n-         {\n-           cancelled: 0,\n-           quantity: 2,\n-           reserved: 2,\n-           returned: 0,\n-           shipped: 0,\n-           sku: 'widget'\n-         }\n-       ],\n-       revision: 1,\n-       status: 'OPEN',\n-       warehouse: 'A'\n-     }\n-   ],\n-   sequence: 2,\n    transfers: []\n  }\n\n    at file:///opt/private/task/verifier/implementation/evaluation/tests/cases/clock.mjs:39:29\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)\n    at async withService (file:///opt/private/task/verifier/implementation/evaluation/tests/harness.mjs:91:24)\n    at async score (file:///opt/private/task/verifier/implementation/evaluation/score.mjs:37:11)\n    at async file:///opt/private/task/verifier/implementation/evaluation/score.mjs:66:18"
+    },
+    {
+      "id": "D01",
+      "title": "Retry receipt returns exact response with one stock/audit effect",
+      "score": 1.5625,
+      "max_score": 1.5625,
+      "status": "passed",
+      "type": "deterministic"
+    },
+    {
+      "id": "D02",
+      "title": "Retry identity ignores nested object key order",
+      "score": 1.5625,
+      "max_score": 1.5625,
+      "status": "passed",
+      "type": "deterministic"
+    },
+    {
+      "id": "D03",
+      "title": "Global retry keys reject changed payload and changed operation",
+      "score": 1.5625,
+      "max_score": 1.5625,
+      "status": "passed",
+      "type": "deterministic"
+    },
+    {
+      "id": "D04",
+      "title": "Array order remains part of retry identity",
+      "score": 1.5625,
+      "max_score": 1.5625,
+      "status": "passed",
+      "type": "deterministic"
+    },
+    {
+      "id": "D05",
+      "title": "Rejected requests do not claim retry keys",
+      "score": 1.5625,
+      "max_score": 1.5625,
+      "status": "passed",
+      "type": "deterministic"
+    },
+    {
+      "id": "D06",
+      "title": "Replay precedes stale revisions and returns immutable historical snapshots",
+      "score": 1.5625,
+      "max_score": 1.5625,
+      "status": "passed",
+      "type": "deterministic"
+    },
+    {
+      "id": "D07",
+      "title": "Validation precedes replay lookup",
+      "score": 1.5625,
+      "max_score": 1.5625,
+      "status": "passed",
+      "type": "deterministic"
+    },
+    {
+      "id": "D08",
+      "title": "Audit contains one ordered event per successful command only",
+      "score": 1.5625,
+      "max_score": 1.5625,
+      "status": "passed",
+      "type": "deterministic"
+    },
+    {
+      "id": "C01",
+      "title": "Concurrent reservations cannot oversell the last units",
+      "score": 2.0833333333333335,
+      "max_score": 2.0833333333333335,
+      "status": "passed",
+      "type": "deterministic"
+    },
+    {
+      "id": "C02",
+      "title": "Identical concurrent retries have exactly one effect",
+      "score": 2.0833333333333335,
+      "max_score": 2.0833333333333335,
+      "status": "passed",
+      "type": "deterministic"
+    },
+    {
+      "id": "C03",
+      "title": "Two order writers at one revision cannot both succeed",
+      "score": 2.0833333333333335,
+      "max_score": 2.0833333333333335,
+      "status": "passed",
+      "type": "deterministic"
+    },
+    {
+      "id": "C04",
+      "title": "Transfer receipt and cancellation share revision protection",
+      "score": 2.0833333333333335,
+      "max_score": 2.0833333333333335,
+      "status": "passed",
+      "type": "deterministic"
+    },
+    {
+      "id": "C05",
+      "title": "Independent concurrent receipts have no lost updates or audit gaps",
+      "score": 2.0833333333333335,
+      "max_score": 2.0833333333333335,
+      "status": "passed",
+      "type": "deterministic"
+    },
+    {
+      "id": "C06",
+      "title": "Shipment racing expiry has only serializable outcomes",
+      "score": 2.0833333333333335,
+      "max_score": 2.0833333333333335,
+      "status": "passed",
+      "type": "deterministic"
+    },
+    {
+      "id": "R01",
+      "title": "Acknowledged inventory and reservations survive forced termination",
+      "score": 0,
+      "max_score": 2.0833333333333335,
+      "status": "failed",
+      "type": "deterministic",
+      "details": "AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:\n+ actual - expected\n\n  {\n+   audit: [],\n+   inventory: [],\n-   audit: [\n-     {\n-       now: 0,\n-       op: 'receive',\n-       requestId: 'req-1',\n-       sequence: 1\n-     },\n-     {\n-       now: 0,\n-       op: 'createOrder',\n-       requestId: 'req-2',\n-       sequence: 2\n-     }\n-   ],\n-   inventory: [\n-     {\n-       available: 8,\n-       onHand: 12,\n-       reserved: 4,\n-       sku: 'widget',\n-       warehouse: 'A'\n-     }\n-   ],\n    now: 0,\n+   orders: [],\n+   sequence: 0,\n-   orders: [\n-     {\n-       expiresAt: 10,\n-       id: 'o1',\n-       lines: [\n-         {\n-           cancelled: 0,\n-           quantity: 4,\n-           reserved: 4,\n-           returned: 0,\n-           shipped: 0,\n-           sku: 'widget'\n-         }\n-       ],\n-       revision: 1,\n-       status: 'OPEN',\n-       warehouse: 'A'\n-     }\n-   ],\n-   sequence: 2,\n    transfers: []\n  }\n\n    at file:///opt/private/task/verifier/implementation/evaluation/tests/cases/recovery.mjs:10:99\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)\n    at async withService (file:///opt/private/task/verifier/implementation/evaluation/tests/harness.mjs:91:24)\n    at async score (file:///opt/private/task/verifier/implementation/evaluation/score.mjs:37:11)\n    at async file:///opt/private/task/verifier/implementation/evaluation/score.mjs:66:18"
+    },
+    {
+      "id": "R02",
+      "title": "Retry ledger and original snapshots survive repeated termination",
+      "score": 0,
+      "max_score": 2.0833333333333335,
+      "status": "failed",
+      "type": "deterministic",
+      "details": "AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:\n+ actual - expected\n\n  {\n    body: {\n+     error: {\n+       code: 'NOT_FOUND'\n-     ok: true,\n-     result: {\n-       expiresAt: 10,\n-       id: 'o1',\n-       lines: [\n-         {\n-           cancelled: 0,\n-           quantity: 4,\n-           reserved: 3,\n-           returned: 0,\n-           shipped: 1,\n-           sku: 'widget'\n-         }\n-       ],\n-       revision: 2,\n-       status: 'OPEN',\n-       warehouse: 'A'\n      },\n+     ok: false\n-     sequence: 3\n    },\n+   status: 404\n-   status: 200\n  }\n\n    at file:///opt/private/task/verifier/implementation/evaluation/tests/cases/recovery.mjs:16:59\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)\n    at async withService (file:///opt/private/task/verifier/implementation/evaluation/tests/harness.mjs:91:24)\n    at async score (file:///opt/private/task/verifier/implementation/evaluation/score.mjs:37:11)\n    at async file:///opt/private/task/verifier/implementation/evaluation/score.mjs:66:18"
+    },
+    {
+      "id": "R03",
+      "title": "Clock, transfer progress, returns and audit recover together",
+      "score": 0,
+      "max_score": 2.0833333333333335,
+      "status": "failed",
+      "type": "deterministic",
+      "details": "AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:\n+ actual - expected\n\n  {\n+   audit: [],\n+   inventory: [],\n+   now: 0,\n+   orders: [],\n+   sequence: 0,\n+   transfers: []\n-   audit: [\n-     {\n-       now: 0,\n-       op: 'receive',\n-       requestId: 'req-1',\n-       sequence: 1\n-     },\n-     {\n-       now: 0,\n-       op: 'createOrder',\n-       requestId: 'req-2',\n-       sequence: 2\n-     },\n-     {\n-       now: 0,\n-       op: 'ship',\n-       requestId: 'req-3',\n-       sequence: 3\n-     },\n-     {\n-       now: 0,\n-       op: 'return',\n-       requestId: 'req-4',\n-       sequence: 4\n-     },\n-     {\n-       now: 0,\n-       op: 'dispatchTransfer',\n-       requestId: 'req-5',\n-       sequence: 5\n-     },\n-     {\n-       now: 0,\n-       op: 'receiveTransfer',\n-       requestId: 'req-6',\n-       sequence: 6\n-     },\n-     {\n-       now: 10,\n-       op: 'advanceClock',\n-       requestId: 'req-7',\n-       sequence: 7\n-     }\n-   ],\n-   inventory: [\n-     {\n-       available: 14,\n-       onHand: 14,\n-       reserved: 0,\n-       sku: 'widget',\n-       warehouse: 'A'\n-     },\n-     {\n-       available: 2,\n-       onHand: 2,\n-       reserved: 0,\n-       sku: 'widget',\n-       warehouse: 'B'\n-     }\n-   ],\n-   now: 10,\n-   orders: [\n-     {\n-       expiresAt: 10,\n-       id: 'o1',\n-       lines: [\n-         {\n-           cancelled: 2,\n-           quantity: 4,\n-           reserved: 0,\n-           returned: 1,\n-           shipped: 2,\n-           sku: 'widget'\n-         }\n-       ],\n-       revision: 4,\n-       status: 'CLOSED',\n-       warehouse: 'A'\n-     }\n-   ],\n-   sequence: 7,\n-   transfers: [\n-     {\n-       from: 'A',\n-       id: 't1',\n-       lines: [\n-         {\n-           cancelled: 0,\n-           quantity: 5,\n-           received: 2,\n-           sku: 'widget'\n-         }\n-       ],\n-       revision: 2,\n-       status: 'IN_TRANSIT',\n-       to: 'B'\n-     }\n-   ]\n  }\n\n    at file:///opt/private/task/verifier/implementation/evaluation/tests/cases/recovery.mjs:21:61\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)\n    at async withService (file:///opt/private/task/verifier/implementation/evaluation/tests/harness.mjs:91:24)\n    at async score (file:///opt/private/task/verifier/implementation/evaluation/score.mjs:37:11)\n    at async file:///opt/private/task/verifier/implementation/evaluation/score.mjs:66:18"
+    },
+    {
+      "id": "R04",
+      "title": "Unrelated recovery-directory artifacts do not overwrite committed state",
+      "score": 0,
+      "max_score": 2.0833333333333335,
+      "status": "failed",
+      "type": "deterministic",
+      "details": "AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:\n+ actual - expected\n\n  {\n+   audit: [],\n+   inventory: [],\n-   audit: [\n-     {\n-       now: 0,\n-       op: 'receive',\n-       requestId: 'req-1',\n-       sequence: 1\n-     },\n-     {\n-       now: 0,\n-       op: 'createOrder',\n-       requestId: 'req-2',\n-       sequence: 2\n-     }\n-   ],\n-   inventory: [\n-     {\n-       available: 6,\n-       onHand: 10,\n-       reserved: 4,\n-       sku: 'widget',\n-       warehouse: 'A'\n-     }\n-   ],\n    now: 0,\n+   orders: [],\n+   sequence: 0,\n-   orders: [\n-     {\n-       expiresAt: 10,\n-       id: 'o1',\n-       lines: [\n-         {\n-           cancelled: 0,\n-           quantity: 4,\n-           reserved: 4,\n-           returned: 0,\n-           shipped: 0,\n-           sku: 'widget'\n-         }\n-       ],\n-       revision: 1,\n-       status: 'OPEN',\n-       warehouse: 'A'\n-     }\n-   ],\n-   sequence: 2,\n    transfers: []\n  }\n\n    at file:///opt/private/task/verifier/implementation/evaluation/tests/cases/recovery.mjs:26:29\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)\n    at async withService (file:///opt/private/task/verifier/implementation/evaluation/tests/harness.mjs:91:24)\n    at async score (file:///opt/private/task/verifier/implementation/evaluation/score.mjs:37:11)\n    at async file:///opt/private/task/verifier/implementation/evaluation/score.mjs:66:18"
+    },
+    {
+      "id": "R05",
+      "title": "Interrupted unacknowledged receipt is atomic and retryable exactly once",
+      "score": 0,
+      "max_score": 2.0833333333333335,
+      "status": "failed",
+      "type": "deterministic",
+      "details": "TypeError: Cannot read properties of undefined (reading 'onHand')\n    at file:///opt/private/task/verifier/implementation/evaluation/tests/cases/recovery.mjs:32:81\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)\n    at async withService (file:///opt/private/task/verifier/implementation/evaluation/tests/harness.mjs:91:24)\n    at async score (file:///opt/private/task/verifier/implementation/evaluation/score.mjs:37:11)\n    at async file:///opt/private/task/verifier/implementation/evaluation/score.mjs:66:18"
+    },
+    {
+      "id": "R06",
+      "title": "Long mixed workflow conserves units through restart and transfer retries",
+      "score": 0,
+      "max_score": 2.0833333333333335,
+      "status": "failed",
+      "type": "deterministic",
+      "details": "AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:\n+ actual - expected\n\n  {\n    body: {\n+     error: {\n+       code: 'INSUFFICIENT_STOCK'\n-     ok: true,\n-     result: {\n-       from: 'A',\n-       id: 't1',\n-       lines: [\n-         {\n-           cancelled: 0,\n-           quantity: 8,\n-           received: 0,\n-           sku: 'widget'\n-         }\n-       ],\n-       revision: 1,\n-       status: 'IN_TRANSIT',\n-       to: 'B'\n      },\n+     ok: false\n-     sequence: 5\n    },\n+   status: 409\n-   status: 200\n  }\n\n    at file:///opt/private/task/verifier/implementation/evaluation/tests/cases/recovery.mjs:40:72\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)\n    at async withService (file:///opt/private/task/verifier/implementation/evaluation/tests/harness.mjs:91:24)\n    at async score (file:///opt/private/task/verifier/implementation/evaluation/score.mjs:37:11)\n    at async file:///opt/private/task/verifier/implementation/evaluation/score.mjs:66:18"
+    }
+  ],
+  "execution": "docker-isolated",
+  "provenance": {
+    "template_manifest_sha256": "95d3e9d6da044c0a659bc78403f5462b307c36d083103f97e900e8a14b24017a",
+    "verifier_hash": "2b57f09a276bcd6255c921a6609192d120a4a654a536c87f9411ff6e330c6aa2",
+    "solution_hash": "e60d0297c88fc7e398d394a112f0d781f65d4adcd0840a4c5ae557de0c1f0a3b"
+  }
+}

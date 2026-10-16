@@ -1,0 +1,520 @@
+{
+  "schema_version": 1,
+  "task": "stockroom",
+  "task_version": 1,
+  "status": "completed",
+  "score": 0,
+  "max_score": 100,
+  "tests": [
+    {
+      "id": "T01",
+      "title": "Health, exact empty state, and read purity",
+      "score": 0,
+      "max_score": 1.5625,
+      "status": "failed",
+      "type": "deterministic",
+      "details": "AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n\n501 !== 200\n\n    at Object.state (file:///opt/private/task/verifier/implementation/evaluation/tests/harness.mjs:82:67)\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)\n    at async file:///opt/private/task/verifier/implementation/evaluation/tests/cases/transport.mjs:10:20\n    at async withService (file:///opt/private/task/verifier/implementation/evaluation/tests/harness.mjs:91:24)\n    at async score (file:///opt/private/task/verifier/implementation/evaluation/score.mjs:37:11)\n    at async file:///opt/private/task/verifier/implementation/evaluation/score.mjs:66:18"
+    },
+    {
+      "id": "T02",
+      "title": "Unknown paths and methods are 404",
+      "score": 0,
+      "max_score": 1.5625,
+      "status": "failed",
+      "type": "deterministic",
+      "details": "AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:\n+ actual - expected\n\n  {\n    body: {\n      error: {\n+       code: 'NOT_IMPLEMENTED'\n-       code: 'NOT_FOUND'\n      },\n      ok: false\n    },\n+   status: 501\n-   status: 404\n  }\n\n    at file:///opt/private/task/verifier/implementation/evaluation/tests/cases/transport.mjs:14:12\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)\n    at async withService (file:///opt/private/task/verifier/implementation/evaluation/tests/harness.mjs:91:24)\n    at async score (file:///opt/private/task/verifier/implementation/evaluation/score.mjs:37:11)\n    at async file:///opt/private/task/verifier/implementation/evaluation/score.mjs:66:18"
+    },
+    {
+      "id": "T03",
+      "title": "Malformed JSON and non-object bodies are rejected atomically",
+      "score": 0,
+      "max_score": 1.5625,
+      "status": "failed",
+      "type": "deterministic",
+      "details": "AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n\n501 !== 200\n\n    at Object.state (file:///opt/private/task/verifier/implementation/evaluation/tests/harness.mjs:82:67)\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)\n    at async unchanged (file:///opt/private/task/verifier/implementation/evaluation/tests/helpers.mjs:7:61)\n    at async file:///opt/private/task/verifier/implementation/evaluation/tests/cases/transport.mjs:18:3\n    at async withService (file:///opt/private/task/verifier/implementation/evaluation/tests/harness.mjs:91:24)\n    at async score (file:///opt/private/task/verifier/implementation/evaluation/score.mjs:37:11)\n    at async file:///opt/private/task/verifier/implementation/evaluation/score.mjs:66:18"
+    },
+    {
+      "id": "T04",
+      "title": "Unknown operations, missing and extra fields are invalid",
+      "score": 0,
+      "max_score": 1.5625,
+      "status": "failed",
+      "type": "deterministic",
+      "details": "AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n\n501 !== 200\n\n    at Object.state (file:///opt/private/task/verifier/implementation/evaluation/tests/harness.mjs:82:67)\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)\n    at async unchanged (file:///opt/private/task/verifier/implementation/evaluation/tests/helpers.mjs:7:61)\n    at async file:///opt/private/task/verifier/implementation/evaluation/tests/cases/transport.mjs:26:3\n    at async withService (file:///opt/private/task/verifier/implementation/evaluation/tests/harness.mjs:91:24)\n    at async score (file:///opt/private/task/verifier/implementation/evaluation/score.mjs:37:11)\n    at async file:///opt/private/task/verifier/implementation/evaluation/score.mjs:66:18"
+    },
+    {
+      "id": "T05",
+      "title": "Identifier boundaries, case sensitivity and object-like names",
+      "score": 0,
+      "max_score": 1.5625,
+      "status": "failed",
+      "type": "deterministic",
+      "details": "AssertionError [ERR_ASSERTION]: {\"ok\":false,\"error\":{\"code\":\"NOT_IMPLEMENTED\"}}\n\n501 !== 200\n\n    at Object.ok (file:///opt/private/task/verifier/implementation/evaluation/tests/harness.mjs:83:101)\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)\n    at async file:///opt/private/task/verifier/implementation/evaluation/tests/cases/transport.mjs:33:76\n    at async withService (file:///opt/private/task/verifier/implementation/evaluation/tests/harness.mjs:91:24)\n    at async score (file:///opt/private/task/verifier/implementation/evaluation/score.mjs:37:11)\n    at async file:///opt/private/task/verifier/implementation/evaluation/score.mjs:66:18"
+    },
+    {
+      "id": "T06",
+      "title": "Quantity and timestamp type/range boundaries",
+      "score": 0,
+      "max_score": 1.5625,
+      "status": "failed",
+      "type": "deterministic",
+      "details": "AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n\n501 !== 400\n\n    at Object.error (file:///opt/private/task/verifier/implementation/evaluation/tests/harness.mjs:84:126)\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)\n    at async file:///opt/private/task/verifier/implementation/evaluation/tests/cases/transport.mjs:38:72\n    at async withService (file:///opt/private/task/verifier/implementation/evaluation/tests/harness.mjs:91:24)\n    at async score (file:///opt/private/task/verifier/implementation/evaluation/score.mjs:37:11)\n    at async file:///opt/private/task/verifier/implementation/evaluation/score.mjs:66:18"
+    },
+    {
+      "id": "T07",
+      "title": "Item-list shape, duplicates, extra fields and size are validated",
+      "score": 0,
+      "max_score": 1.5625,
+      "status": "failed",
+      "type": "deterministic",
+      "details": "AssertionError [ERR_ASSERTION]: {\"ok\":false,\"error\":{\"code\":\"NOT_IMPLEMENTED\"}}\n\n501 !== 200\n\n    at Object.ok (file:///opt/private/task/verifier/implementation/evaluation/tests/harness.mjs:83:101)\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)\n    at async file:///opt/private/task/verifier/implementation/evaluation/tests/cases/transport.mjs:43:3\n    at async withService (file:///opt/private/task/verifier/implementation/evaluation/tests/harness.mjs:91:24)\n    at async score (file:///opt/private/task/verifier/implementation/evaluation/score.mjs:37:11)\n    at async file:///opt/private/task/verifier/implementation/evaluation/score.mjs:66:18"
+    },
+    {
+      "id": "T08",
+      "title": "Missing entities and invalid revisions have specified precedence",
+      "score": 0,
+      "max_score": 1.5625,
+      "status": "failed",
+      "type": "deterministic",
+      "details": "AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n\n501 !== 404\n\n    at Object.error (file:///opt/private/task/verifier/implementation/evaluation/tests/harness.mjs:84:126)\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)\n    at async file:///opt/private/task/verifier/implementation/evaluation/tests/cases/transport.mjs:50:3\n    at async withService (file:///opt/private/task/verifier/implementation/evaluation/tests/harness.mjs:91:24)\n    at async score (file:///opt/private/task/verifier/implementation/evaluation/score.mjs:37:11)\n    at async file:///opt/private/task/verifier/implementation/evaluation/score.mjs:66:18"
+    },
+    {
+      "id": "I01",
+      "title": "Receipts accumulate independently across SKU and warehouse",
+      "score": 0,
+      "max_score": 2.0833333333333335,
+      "status": "failed",
+      "type": "deterministic",
+      "details": "AssertionError [ERR_ASSERTION]: {\"ok\":false,\"error\":{\"code\":\"NOT_IMPLEMENTED\"}}\n\n501 !== 200\n\n    at Object.ok (file:///opt/private/task/verifier/implementation/evaluation/tests/harness.mjs:83:101)\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)\n    at async file:///opt/private/task/verifier/implementation/evaluation/tests/cases/inventory.mjs:8:3\n    at async withService (file:///opt/private/task/verifier/implementation/evaluation/tests/harness.mjs:91:24)\n    at async score (file:///opt/private/task/verifier/implementation/evaluation/score.mjs:37:11)\n    at async file:///opt/private/task/verifier/implementation/evaluation/score.mjs:66:18"
+    },
+    {
+      "id": "I02",
+      "title": "Inventory and order lines use ASCII lexical order",
+      "score": 0,
+      "max_score": 2.0833333333333335,
+      "status": "failed",
+      "type": "deterministic",
+      "details": "AssertionError [ERR_ASSERTION]: {\"ok\":false,\"error\":{\"code\":\"NOT_IMPLEMENTED\"}}\n\n501 !== 200\n\n    at Object.ok (file:///opt/private/task/verifier/implementation/evaluation/tests/harness.mjs:83:101)\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)\n    at async file:///opt/private/task/verifier/implementation/evaluation/tests/cases/inventory.mjs:13:79\n    at async withService (file:///opt/private/task/verifier/implementation/evaluation/tests/harness.mjs:91:24)\n    at async score (file:///opt/private/task/verifier/implementation/evaluation/score.mjs:37:11)\n    at async file:///opt/private/task/verifier/implementation/evaluation/score.mjs:66:18"
+    },
+    {
+      "id": "I03",
+      "title": "Stock cap accepts maximum and rejects overflow with no audit effect",
+      "score": 0,
+      "max_score": 2.0833333333333335,
+      "status": "failed",
+      "type": "deterministic",
+      "details": "AssertionError [ERR_ASSERTION]: {\"ok\":false,\"error\":{\"code\":\"NOT_IMPLEMENTED\"}}\n\n501 !== 200\n\n    at Object.ok (file:///opt/private/task/verifier/implementation/evaluation/tests/harness.mjs:83:101)\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)\n    at async file:///opt/private/task/verifier/implementation/evaluation/tests/cases/inventory.mjs:18:3\n    at async withService (file:///opt/private/task/verifier/implementation/evaluation/tests/harness.mjs:91:24)\n    at async score (file:///opt/private/task/verifier/implementation/evaluation/score.mjs:37:11)\n    at async file:///opt/private/task/verifier/implementation/evaluation/score.mjs:66:18"
+    },
+    {
+      "id": "I04",
+      "title": "Unknown stock failure does not leave phantom rows or orders",
+      "score": 0,
+      "max_score": 2.0833333333333335,
+      "status": "failed",
+      "type": "deterministic",
+      "details": "AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n\n501 !== 200\n\n    at Object.state (file:///opt/private/task/verifier/implementation/evaluation/tests/harness.mjs:82:67)\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)\n    at async unchanged (file:///opt/private/task/verifier/implementation/evaluation/tests/helpers.mjs:7:61)\n    at async file:///opt/private/task/verifier/implementation/evaluation/tests/cases/inventory.mjs:22:3\n    at async withService (file:///opt/private/task/verifier/implementation/evaluation/tests/harness.mjs:91:24)\n    at async score (file:///opt/private/task/verifier/implementation/evaluation/score.mjs:37:11)\n    at async file:///opt/private/task/verifier/implementation/evaluation/score.mjs:66:18"
+    },
+    {
+      "id": "I05",
+      "title": "Reservation, shipment and cancellation conserve physical stock",
+      "score": 0,
+      "max_score": 2.0833333333333335,
+      "status": "failed",
+      "type": "deterministic",
+      "details": "AssertionError [ERR_ASSERTION]: {\"ok\":false,\"error\":{\"code\":\"NOT_IMPLEMENTED\"}}\n\n501 !== 200\n\n    at Object.ok (file:///opt/private/task/verifier/implementation/evaluation/tests/harness.mjs:83:101)\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)\n    at async file:///opt/private/task/verifier/implementation/evaluation/tests/cases/inventory.mjs:25:3\n    at async withService (file:///opt/private/task/verifier/implementation/evaluation/tests/harness.mjs:91:24)\n    at async score (file:///opt/private/task/verifier/implementation/evaluation/score.mjs:37:11)\n    at async file:///opt/private/task/verifier/implementation/evaluation/score.mjs:66:18"
+    },
+    {
+      "id": "I06",
+      "title": "Zero stock rows remain visible after full shipment",
+      "score": 0,
+      "max_score": 2.0833333333333335,
+      "status": "failed",
+      "type": "deterministic",
+      "details": "AssertionError [ERR_ASSERTION]: {\"ok\":false,\"error\":{\"code\":\"NOT_IMPLEMENTED\"}}\n\n501 !== 200\n\n    at Object.ok (file:///opt/private/task/verifier/implementation/evaluation/tests/harness.mjs:83:101)\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)\n    at async file:///opt/private/task/verifier/implementation/evaluation/tests/cases/inventory.mjs:31:3\n    at async withService (file:///opt/private/task/verifier/implementation/evaluation/tests/harness.mjs:91:24)\n    at async score (file:///opt/private/task/verifier/implementation/evaluation/score.mjs:37:11)\n    at async file:///opt/private/task/verifier/implementation/evaluation/score.mjs:66:18"
+    },
+    {
+      "id": "O01",
+      "title": "Multi-SKU reservation rolls back an earlier successful line",
+      "score": 0,
+      "max_score": 1.5625,
+      "status": "failed",
+      "type": "deterministic",
+      "details": "AssertionError [ERR_ASSERTION]: {\"ok\":false,\"error\":{\"code\":\"NOT_IMPLEMENTED\"}}\n\n501 !== 200\n\n    at Object.ok (file:///opt/private/task/verifier/implementation/evaluation/tests/harness.mjs:83:101)\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)\n    at async file:///opt/private/task/verifier/implementation/evaluation/tests/cases/orders.mjs:8:3\n    at async withService (file:///opt/private/task/verifier/implementation/evaluation/tests/harness.mjs:91:24)\n    at async score (file:///opt/private/task/verifier/implementation/evaluation/score.mjs:37:11)\n    at async file:///opt/private/task/verifier/implementation/evaluation/score.mjs:66:18"
+    },
+    {
+      "id": "O02",
+      "title": "Partial shipment, cancellation and closure preserve line totals",
+      "score": 0,
+      "max_score": 1.5625,
+      "status": "failed",
+      "type": "deterministic",
+      "details": "AssertionError [ERR_ASSERTION]: {\"ok\":false,\"error\":{\"code\":\"NOT_IMPLEMENTED\"}}\n\n501 !== 200\n\n    at Object.ok (file:///opt/private/task/verifier/implementation/evaluation/tests/harness.mjs:83:101)\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)\n    at async file:///opt/private/task/verifier/implementation/evaluation/tests/cases/orders.mjs:12:3\n    at async withService (file:///opt/private/task/verifier/implementation/evaluation/tests/harness.mjs:91:24)\n    at async score (file:///opt/private/task/verifier/implementation/evaluation/score.mjs:37:11)\n    at async file:///opt/private/task/verifier/implementation/evaluation/score.mjs:66:18"
+    },
+    {
+      "id": "O03",
+      "title": "Closed IDs cannot be reused and duplicate detection precedes expiry",
+      "score": 0,
+      "max_score": 1.5625,
+      "status": "failed",
+      "type": "deterministic",
+      "details": "AssertionError [ERR_ASSERTION]: {\"ok\":false,\"error\":{\"code\":\"NOT_IMPLEMENTED\"}}\n\n501 !== 200\n\n    at Object.ok (file:///opt/private/task/verifier/implementation/evaluation/tests/harness.mjs:83:101)\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)\n    at async file:///opt/private/task/verifier/implementation/evaluation/tests/cases/orders.mjs:18:3\n    at async withService (file:///opt/private/task/verifier/implementation/evaluation/tests/harness.mjs:91:24)\n    at async score (file:///opt/private/task/verifier/implementation/evaluation/score.mjs:37:11)\n    at async file:///opt/private/task/verifier/implementation/evaluation/score.mjs:66:18"
+    },
+    {
+      "id": "O04",
+      "title": "Stale revisions reject shipments, cancellations and returns",
+      "score": 0,
+      "max_score": 1.5625,
+      "status": "failed",
+      "type": "deterministic",
+      "details": "AssertionError [ERR_ASSERTION]: {\"ok\":false,\"error\":{\"code\":\"NOT_IMPLEMENTED\"}}\n\n501 !== 200\n\n    at Object.ok (file:///opt/private/task/verifier/implementation/evaluation/tests/harness.mjs:83:101)\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)\n    at async file:///opt/private/task/verifier/implementation/evaluation/tests/cases/orders.mjs:22:3\n    at async withService (file:///opt/private/task/verifier/implementation/evaluation/tests/harness.mjs:91:24)\n    at async score (file:///opt/private/task/verifier/implementation/evaluation/score.mjs:37:11)\n    at async file:///opt/private/task/verifier/implementation/evaluation/score.mjs:66:18"
+    },
+    {
+      "id": "O05",
+      "title": "Unknown and excess line quantities fail atomically",
+      "score": 0,
+      "max_score": 1.5625,
+      "status": "failed",
+      "type": "deterministic",
+      "details": "AssertionError [ERR_ASSERTION]: {\"ok\":false,\"error\":{\"code\":\"NOT_IMPLEMENTED\"}}\n\n501 !== 200\n\n    at Object.ok (file:///opt/private/task/verifier/implementation/evaluation/tests/harness.mjs:83:101)\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)\n    at async file:///opt/private/task/verifier/implementation/evaluation/tests/cases/orders.mjs:26:3\n    at async withService (file:///opt/private/task/verifier/implementation/evaluation/tests/harness.mjs:91:24)\n    at async score (file:///opt/private/task/verifier/implementation/evaluation/score.mjs:37:11)\n    at async file:///opt/private/task/verifier/implementation/evaluation/score.mjs:66:18"
+    },
+    {
+      "id": "O06",
+      "title": "Partial returns restore original warehouse without reopening orders",
+      "score": 0,
+      "max_score": 1.5625,
+      "status": "failed",
+      "type": "deterministic",
+      "details": "AssertionError [ERR_ASSERTION]: {\"ok\":false,\"error\":{\"code\":\"NOT_IMPLEMENTED\"}}\n\n501 !== 200\n\n    at Object.ok (file:///opt/private/task/verifier/implementation/evaluation/tests/harness.mjs:83:101)\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)\n    at async file:///opt/private/task/verifier/implementation/evaluation/tests/cases/orders.mjs:33:3\n    at async withService (file:///opt/private/task/verifier/implementation/evaluation/tests/harness.mjs:91:24)\n    at async score (file:///opt/private/task/verifier/implementation/evaluation/score.mjs:37:11)\n    at async file:///opt/private/task/verifier/implementation/evaluation/score.mjs:66:18"
+    },
+    {
+      "id": "O07",
+      "title": "Cumulative returns cannot exceed shipments or include cancelled stock",
+      "score": 0,
+      "max_score": 1.5625,
+      "status": "failed",
+      "type": "deterministic",
+      "details": "AssertionError [ERR_ASSERTION]: {\"ok\":false,\"error\":{\"code\":\"NOT_IMPLEMENTED\"}}\n\n501 !== 200\n\n    at Object.ok (file:///opt/private/task/verifier/implementation/evaluation/tests/harness.mjs:83:101)\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)\n    at async file:///opt/private/task/verifier/implementation/evaluation/tests/cases/orders.mjs:38:3\n    at async withService (file:///opt/private/task/verifier/implementation/evaluation/tests/harness.mjs:91:24)\n    at async score (file:///opt/private/task/verifier/implementation/evaluation/score.mjs:37:11)\n    at async file:///opt/private/task/verifier/implementation/evaluation/score.mjs:66:18"
+    },
+    {
+      "id": "O08",
+      "title": "Multi-line return overflow rolls back earlier restoration",
+      "score": 0,
+      "max_score": 1.5625,
+      "status": "failed",
+      "type": "deterministic",
+      "details": "AssertionError [ERR_ASSERTION]: {\"ok\":false,\"error\":{\"code\":\"NOT_IMPLEMENTED\"}}\n\n501 !== 200\n\n    at Object.ok (file:///opt/private/task/verifier/implementation/evaluation/tests/harness.mjs:83:101)\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)\n    at async file:///opt/private/task/verifier/implementation/evaluation/tests/cases/orders.mjs:42:3\n    at async withService (file:///opt/private/task/verifier/implementation/evaluation/tests/harness.mjs:91:24)\n    at async score (file:///opt/private/task/verifier/implementation/evaluation/score.mjs:37:11)\n    at async file:///opt/private/task/verifier/implementation/evaluation/score.mjs:66:18"
+    },
+    {
+      "id": "F01",
+      "title": "Dispatch removes source stock without crediting destination",
+      "score": 0,
+      "max_score": 1.5625,
+      "status": "failed",
+      "type": "deterministic",
+      "details": "AssertionError [ERR_ASSERTION]: {\"ok\":false,\"error\":{\"code\":\"NOT_IMPLEMENTED\"}}\n\n501 !== 200\n\n    at Object.ok (file:///opt/private/task/verifier/implementation/evaluation/tests/harness.mjs:83:101)\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)\n    at async file:///opt/private/task/verifier/implementation/evaluation/tests/cases/transfers.mjs:8:3\n    at async withService (file:///opt/private/task/verifier/implementation/evaluation/tests/harness.mjs:91:24)\n    at async score (file:///opt/private/task/verifier/implementation/evaluation/score.mjs:37:11)\n    at async file:///opt/private/task/verifier/implementation/evaluation/score.mjs:66:18"
+    },
+    {
+      "id": "F02",
+      "title": "Dispatch cannot consume reserved stock and same-warehouse fails",
+      "score": 0,
+      "max_score": 1.5625,
+      "status": "failed",
+      "type": "deterministic",
+      "details": "AssertionError [ERR_ASSERTION]: {\"ok\":false,\"error\":{\"code\":\"NOT_IMPLEMENTED\"}}\n\n501 !== 200\n\n    at Object.ok (file:///opt/private/task/verifier/implementation/evaluation/tests/harness.mjs:83:101)\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)\n    at async file:///opt/private/task/verifier/implementation/evaluation/tests/cases/transfers.mjs:13:3\n    at async withService (file:///opt/private/task/verifier/implementation/evaluation/tests/harness.mjs:91:24)\n    at async score (file:///opt/private/task/verifier/implementation/evaluation/score.mjs:37:11)\n    at async file:///opt/private/task/verifier/implementation/evaluation/score.mjs:66:18"
+    },
+    {
+      "id": "F03",
+      "title": "Multi-SKU dispatch is atomic on insufficient stock",
+      "score": 0,
+      "max_score": 1.5625,
+      "status": "failed",
+      "type": "deterministic",
+      "details": "AssertionError [ERR_ASSERTION]: {\"ok\":false,\"error\":{\"code\":\"NOT_IMPLEMENTED\"}}\n\n501 !== 200\n\n    at Object.ok (file:///opt/private/task/verifier/implementation/evaluation/tests/harness.mjs:83:101)\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)\n    at async file:///opt/private/task/verifier/implementation/evaluation/tests/cases/transfers.mjs:20:3\n    at async withService (file:///opt/private/task/verifier/implementation/evaluation/tests/harness.mjs:91:24)\n    at async score (file:///opt/private/task/verifier/implementation/evaluation/score.mjs:37:11)\n    at async file:///opt/private/task/verifier/implementation/evaluation/score.mjs:66:18"
+    },
+    {
+      "id": "F04",
+      "title": "Partial receipt and cancellation close transfer with correct stock",
+      "score": 0,
+      "max_score": 1.5625,
+      "status": "failed",
+      "type": "deterministic",
+      "details": "AssertionError [ERR_ASSERTION]: {\"ok\":false,\"error\":{\"code\":\"NOT_IMPLEMENTED\"}}\n\n501 !== 200\n\n    at Object.ok (file:///opt/private/task/verifier/implementation/evaluation/tests/harness.mjs:83:101)\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)\n    at async file:///opt/private/task/verifier/implementation/evaluation/tests/cases/transfers.mjs:24:3\n    at async withService (file:///opt/private/task/verifier/implementation/evaluation/tests/harness.mjs:91:24)\n    at async score (file:///opt/private/task/verifier/implementation/evaluation/score.mjs:37:11)\n    at async file:///opt/private/task/verifier/implementation/evaluation/score.mjs:66:18"
+    },
+    {
+      "id": "F05",
+      "title": "Received or cancelled quantities cannot be processed twice",
+      "score": 0,
+      "max_score": 1.5625,
+      "status": "failed",
+      "type": "deterministic",
+      "details": "AssertionError [ERR_ASSERTION]: {\"ok\":false,\"error\":{\"code\":\"NOT_IMPLEMENTED\"}}\n\n501 !== 200\n\n    at Object.ok (file:///opt/private/task/verifier/implementation/evaluation/tests/harness.mjs:83:101)\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)\n    at async file:///opt/private/task/verifier/implementation/evaluation/tests/cases/transfers.mjs:30:3\n    at async withService (file:///opt/private/task/verifier/implementation/evaluation/tests/harness.mjs:91:24)\n    at async score (file:///opt/private/task/verifier/implementation/evaluation/score.mjs:37:11)\n    at async file:///opt/private/task/verifier/implementation/evaluation/score.mjs:66:18"
+    },
+    {
+      "id": "F06",
+      "title": "Transfer stale revisions and duplicate IDs are protected",
+      "score": 0,
+      "max_score": 1.5625,
+      "status": "failed",
+      "type": "deterministic",
+      "details": "AssertionError [ERR_ASSERTION]: {\"ok\":false,\"error\":{\"code\":\"NOT_IMPLEMENTED\"}}\n\n501 !== 200\n\n    at Object.ok (file:///opt/private/task/verifier/implementation/evaluation/tests/harness.mjs:83:101)\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)\n    at async file:///opt/private/task/verifier/implementation/evaluation/tests/cases/transfers.mjs:34:3\n    at async withService (file:///opt/private/task/verifier/implementation/evaluation/tests/harness.mjs:91:24)\n    at async score (file:///opt/private/task/verifier/implementation/evaluation/score.mjs:37:11)\n    at async file:///opt/private/task/verifier/implementation/evaluation/score.mjs:66:18"
+    },
+    {
+      "id": "F07",
+      "title": "Destination overflow rolls back all receipt lines",
+      "score": 0,
+      "max_score": 1.5625,
+      "status": "failed",
+      "type": "deterministic",
+      "details": "AssertionError [ERR_ASSERTION]: {\"ok\":false,\"error\":{\"code\":\"NOT_IMPLEMENTED\"}}\n\n501 !== 200\n\n    at Object.ok (file:///opt/private/task/verifier/implementation/evaluation/tests/harness.mjs:83:101)\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)\n    at async file:///opt/private/task/verifier/implementation/evaluation/tests/cases/transfers.mjs:41:33\n    at async withService (file:///opt/private/task/verifier/implementation/evaluation/tests/harness.mjs:91:24)\n    at async score (file:///opt/private/task/verifier/implementation/evaluation/score.mjs:37:11)\n    at async file:///opt/private/task/verifier/implementation/evaluation/score.mjs:66:18"
+    },
+    {
+      "id": "F08",
+      "title": "Source overflow and unknown transfer lines fail atomically",
+      "score": 0,
+      "max_score": 1.5625,
+      "status": "failed",
+      "type": "deterministic",
+      "details": "AssertionError [ERR_ASSERTION]: {\"ok\":false,\"error\":{\"code\":\"NOT_IMPLEMENTED\"}}\n\n501 !== 200\n\n    at Object.ok (file:///opt/private/task/verifier/implementation/evaluation/tests/harness.mjs:83:101)\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)\n    at async file:///opt/private/task/verifier/implementation/evaluation/tests/cases/transfers.mjs:47:3\n    at async withService (file:///opt/private/task/verifier/implementation/evaluation/tests/harness.mjs:91:24)\n    at async score (file:///opt/private/task/verifier/implementation/evaluation/score.mjs:37:11)\n    at async file:///opt/private/task/verifier/implementation/evaluation/score.mjs:66:18"
+    },
+    {
+      "id": "K01",
+      "title": "Expiration occurs at the exact boundary and releases once",
+      "score": 0,
+      "max_score": 2.0833333333333335,
+      "status": "failed",
+      "type": "deterministic",
+      "details": "AssertionError [ERR_ASSERTION]: {\"ok\":false,\"error\":{\"code\":\"NOT_IMPLEMENTED\"}}\n\n501 !== 200\n\n    at Object.ok (file:///opt/private/task/verifier/implementation/evaluation/tests/harness.mjs:83:101)\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)\n    at async file:///opt/private/task/verifier/implementation/evaluation/tests/cases/clock.mjs:8:3\n    at async withService (file:///opt/private/task/verifier/implementation/evaluation/tests/harness.mjs:91:24)\n    at async score (file:///opt/private/task/verifier/implementation/evaluation/score.mjs:37:11)\n    at async file:///opt/private/task/verifier/implementation/evaluation/score.mjs:66:18"
+    },
+    {
+      "id": "K02",
+      "title": "Clock cannot move backwards; new orders require future expiry",
+      "score": 0,
+      "max_score": 2.0833333333333335,
+      "status": "failed",
+      "type": "deterministic",
+      "details": "AssertionError [ERR_ASSERTION]: {\"ok\":false,\"error\":{\"code\":\"NOT_IMPLEMENTED\"}}\n\n501 !== 200\n\n    at Object.ok (file:///opt/private/task/verifier/implementation/evaluation/tests/harness.mjs:83:101)\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)\n    at async file:///opt/private/task/verifier/implementation/evaluation/tests/cases/clock.mjs:16:3\n    at async withService (file:///opt/private/task/verifier/implementation/evaluation/tests/harness.mjs:91:24)\n    at async score (file:///opt/private/task/verifier/implementation/evaluation/score.mjs:37:11)\n    at async file:///opt/private/task/verifier/implementation/evaluation/score.mjs:66:18"
+    },
+    {
+      "id": "K03",
+      "title": "Expiry preserves shipments and increments each affected revision once",
+      "score": 0,
+      "max_score": 2.0833333333333335,
+      "status": "failed",
+      "type": "deterministic",
+      "details": "AssertionError [ERR_ASSERTION]: {\"ok\":false,\"error\":{\"code\":\"NOT_IMPLEMENTED\"}}\n\n501 !== 200\n\n    at Object.ok (file:///opt/private/task/verifier/implementation/evaluation/tests/harness.mjs:83:101)\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)\n    at async file:///opt/private/task/verifier/implementation/evaluation/tests/cases/clock.mjs:23:3\n    at async withService (file:///opt/private/task/verifier/implementation/evaluation/tests/harness.mjs:91:24)\n    at async score (file:///opt/private/task/verifier/implementation/evaluation/score.mjs:37:11)\n    at async file:///opt/private/task/verifier/implementation/evaluation/score.mjs:66:18"
+    },
+    {
+      "id": "K04",
+      "title": "Closed orders retain revisions at expiry; returns remain possible",
+      "score": 0,
+      "max_score": 2.0833333333333335,
+      "status": "failed",
+      "type": "deterministic",
+      "details": "AssertionError [ERR_ASSERTION]: {\"ok\":false,\"error\":{\"code\":\"NOT_IMPLEMENTED\"}}\n\n501 !== 200\n\n    at Object.ok (file:///opt/private/task/verifier/implementation/evaluation/tests/harness.mjs:83:101)\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)\n    at async file:///opt/private/task/verifier/implementation/evaluation/tests/cases/clock.mjs:28:3\n    at async withService (file:///opt/private/task/verifier/implementation/evaluation/tests/harness.mjs:91:24)\n    at async score (file:///opt/private/task/verifier/implementation/evaluation/score.mjs:37:11)\n    at async file:///opt/private/task/verifier/implementation/evaluation/score.mjs:66:18"
+    },
+    {
+      "id": "K05",
+      "title": "Bulk expiry sorts IDs and leaves later reservations intact",
+      "score": 0,
+      "max_score": 2.0833333333333335,
+      "status": "failed",
+      "type": "deterministic",
+      "details": "AssertionError [ERR_ASSERTION]: {\"ok\":false,\"error\":{\"code\":\"NOT_IMPLEMENTED\"}}\n\n501 !== 200\n\n    at Object.ok (file:///opt/private/task/verifier/implementation/evaluation/tests/harness.mjs:83:101)\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)\n    at async file:///opt/private/task/verifier/implementation/evaluation/tests/cases/clock.mjs:32:3\n    at async withService (file:///opt/private/task/verifier/implementation/evaluation/tests/harness.mjs:91:24)\n    at async score (file:///opt/private/task/verifier/implementation/evaluation/score.mjs:37:11)\n    at async file:///opt/private/task/verifier/implementation/evaluation/score.mjs:66:18"
+    },
+    {
+      "id": "K06",
+      "title": "Reads and restarts do not advance logical time or expire orders",
+      "score": 0,
+      "max_score": 2.0833333333333335,
+      "status": "failed",
+      "type": "deterministic",
+      "details": "AssertionError [ERR_ASSERTION]: {\"ok\":false,\"error\":{\"code\":\"NOT_IMPLEMENTED\"}}\n\n501 !== 200\n\n    at Object.ok (file:///opt/private/task/verifier/implementation/evaluation/tests/harness.mjs:83:101)\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)\n    at async file:///opt/private/task/verifier/implementation/evaluation/tests/cases/clock.mjs:37:3\n    at async withService (file:///opt/private/task/verifier/implementation/evaluation/tests/harness.mjs:91:24)\n    at async score (file:///opt/private/task/verifier/implementation/evaluation/score.mjs:37:11)\n    at async file:///opt/private/task/verifier/implementation/evaluation/score.mjs:66:18"
+    },
+    {
+      "id": "D01",
+      "title": "Retry receipt returns exact response with one stock/audit effect",
+      "score": 0,
+      "max_score": 1.5625,
+      "status": "failed",
+      "type": "deterministic",
+      "details": "AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n\n501 !== 200\n\n    at Object.state (file:///opt/private/task/verifier/implementation/evaluation/tests/harness.mjs:82:67)\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)\n    at async file:///opt/private/task/verifier/implementation/evaluation/tests/cases/idempotency.mjs:9:52\n    at async withService (file:///opt/private/task/verifier/implementation/evaluation/tests/harness.mjs:91:24)\n    at async score (file:///opt/private/task/verifier/implementation/evaluation/score.mjs:37:11)\n    at async file:///opt/private/task/verifier/implementation/evaluation/score.mjs:66:18"
+    },
+    {
+      "id": "D02",
+      "title": "Retry identity ignores nested object key order",
+      "score": 0,
+      "max_score": 1.5625,
+      "status": "failed",
+      "type": "deterministic",
+      "details": "AssertionError [ERR_ASSERTION]: {\"ok\":false,\"error\":{\"code\":\"NOT_IMPLEMENTED\"}}\n\n501 !== 200\n\n    at Object.ok (file:///opt/private/task/verifier/implementation/evaluation/tests/harness.mjs:83:101)\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)\n    at async file:///opt/private/task/verifier/implementation/evaluation/tests/cases/idempotency.mjs:13:3\n    at async withService (file:///opt/private/task/verifier/implementation/evaluation/tests/harness.mjs:91:24)\n    at async score (file:///opt/private/task/verifier/implementation/evaluation/score.mjs:37:11)\n    at async file:///opt/private/task/verifier/implementation/evaluation/score.mjs:66:18"
+    },
+    {
+      "id": "D03",
+      "title": "Global retry keys reject changed payload and changed operation",
+      "score": 0,
+      "max_score": 1.5625,
+      "status": "failed",
+      "type": "deterministic",
+      "details": "AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n\n501 !== 200\n\n    at Object.state (file:///opt/private/task/verifier/implementation/evaluation/tests/harness.mjs:82:67)\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)\n    at async unchanged (file:///opt/private/task/verifier/implementation/evaluation/tests/helpers.mjs:7:61)\n    at async file:///opt/private/task/verifier/implementation/evaluation/tests/cases/idempotency.mjs:20:3\n    at async withService (file:///opt/private/task/verifier/implementation/evaluation/tests/harness.mjs:91:24)\n    at async score (file:///opt/private/task/verifier/implementation/evaluation/score.mjs:37:11)\n    at async file:///opt/private/task/verifier/implementation/evaluation/score.mjs:66:18"
+    },
+    {
+      "id": "D04",
+      "title": "Array order remains part of retry identity",
+      "score": 0,
+      "max_score": 1.5625,
+      "status": "failed",
+      "type": "deterministic",
+      "details": "AssertionError [ERR_ASSERTION]: {\"ok\":false,\"error\":{\"code\":\"NOT_IMPLEMENTED\"}}\n\n501 !== 200\n\n    at Object.ok (file:///opt/private/task/verifier/implementation/evaluation/tests/harness.mjs:83:101)\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)\n    at async file:///opt/private/task/verifier/implementation/evaluation/tests/cases/idempotency.mjs:26:3\n    at async withService (file:///opt/private/task/verifier/implementation/evaluation/tests/harness.mjs:91:24)\n    at async score (file:///opt/private/task/verifier/implementation/evaluation/score.mjs:37:11)\n    at async file:///opt/private/task/verifier/implementation/evaluation/score.mjs:66:18"
+    },
+    {
+      "id": "D05",
+      "title": "Rejected requests do not claim retry keys",
+      "score": 0,
+      "max_score": 1.5625,
+      "status": "failed",
+      "type": "deterministic",
+      "details": "AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n\n501 !== 409\n\n    at Object.error (file:///opt/private/task/verifier/implementation/evaluation/tests/harness.mjs:84:126)\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)\n    at async file:///opt/private/task/verifier/implementation/evaluation/tests/cases/idempotency.mjs:32:3\n    at async withService (file:///opt/private/task/verifier/implementation/evaluation/tests/harness.mjs:91:24)\n    at async score (file:///opt/private/task/verifier/implementation/evaluation/score.mjs:37:11)\n    at async file:///opt/private/task/verifier/implementation/evaluation/score.mjs:66:18"
+    },
+    {
+      "id": "D06",
+      "title": "Replay precedes stale revisions and returns immutable historical snapshots",
+      "score": 0,
+      "max_score": 1.5625,
+      "status": "failed",
+      "type": "deterministic",
+      "details": "AssertionError [ERR_ASSERTION]: {\"ok\":false,\"error\":{\"code\":\"NOT_IMPLEMENTED\"}}\n\n501 !== 200\n\n    at Object.ok (file:///opt/private/task/verifier/implementation/evaluation/tests/harness.mjs:83:101)\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)\n    at async file:///opt/private/task/verifier/implementation/evaluation/tests/cases/idempotency.mjs:37:3\n    at async withService (file:///opt/private/task/verifier/implementation/evaluation/tests/harness.mjs:91:24)\n    at async score (file:///opt/private/task/verifier/implementation/evaluation/score.mjs:37:11)\n    at async file:///opt/private/task/verifier/implementation/evaluation/score.mjs:66:18"
+    },
+    {
+      "id": "D07",
+      "title": "Validation precedes replay lookup",
+      "score": 0,
+      "max_score": 1.5625,
+      "status": "failed",
+      "type": "deterministic",
+      "details": "AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n\n501 !== 200\n\n    at Object.state (file:///opt/private/task/verifier/implementation/evaluation/tests/harness.mjs:82:67)\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)\n    at async unchanged (file:///opt/private/task/verifier/implementation/evaluation/tests/helpers.mjs:7:61)\n    at async file:///opt/private/task/verifier/implementation/evaluation/tests/cases/idempotency.mjs:44:3\n    at async withService (file:///opt/private/task/verifier/implementation/evaluation/tests/harness.mjs:91:24)\n    at async score (file:///opt/private/task/verifier/implementation/evaluation/score.mjs:37:11)\n    at async file:///opt/private/task/verifier/implementation/evaluation/score.mjs:66:18"
+    },
+    {
+      "id": "D08",
+      "title": "Audit contains one ordered event per successful command only",
+      "score": 0,
+      "max_score": 1.5625,
+      "status": "failed",
+      "type": "deterministic",
+      "details": "AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n\n501 !== 404\n\n    at Object.error (file:///opt/private/task/verifier/implementation/evaluation/tests/harness.mjs:84:126)\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)\n    at async file:///opt/private/task/verifier/implementation/evaluation/tests/cases/idempotency.mjs:48:43\n    at async withService (file:///opt/private/task/verifier/implementation/evaluation/tests/harness.mjs:91:24)\n    at async score (file:///opt/private/task/verifier/implementation/evaluation/score.mjs:37:11)\n    at async file:///opt/private/task/verifier/implementation/evaluation/score.mjs:66:18"
+    },
+    {
+      "id": "C01",
+      "title": "Concurrent reservations cannot oversell the last units",
+      "score": 0,
+      "max_score": 2.0833333333333335,
+      "status": "failed",
+      "type": "deterministic",
+      "details": "AssertionError [ERR_ASSERTION]: {\"ok\":false,\"error\":{\"code\":\"NOT_IMPLEMENTED\"}}\n\n501 !== 200\n\n    at Object.ok (file:///opt/private/task/verifier/implementation/evaluation/tests/harness.mjs:83:101)\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)\n    at async file:///opt/private/task/verifier/implementation/evaluation/tests/cases/concurrency.mjs:8:3\n    at async withService (file:///opt/private/task/verifier/implementation/evaluation/tests/harness.mjs:91:24)\n    at async score (file:///opt/private/task/verifier/implementation/evaluation/score.mjs:37:11)\n    at async file:///opt/private/task/verifier/implementation/evaluation/score.mjs:66:18"
+    },
+    {
+      "id": "C02",
+      "title": "Identical concurrent retries have exactly one effect",
+      "score": 0,
+      "max_score": 2.0833333333333335,
+      "status": "failed",
+      "type": "deterministic",
+      "details": "AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n\n501 !== 200\n\n    at file:///opt/private/task/verifier/implementation/evaluation/tests/cases/concurrency.mjs:17:10\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)\n    at async withService (file:///opt/private/task/verifier/implementation/evaluation/tests/harness.mjs:91:24)\n    at async score (file:///opt/private/task/verifier/implementation/evaluation/score.mjs:37:11)\n    at async file:///opt/private/task/verifier/implementation/evaluation/score.mjs:66:18"
+    },
+    {
+      "id": "C03",
+      "title": "Two order writers at one revision cannot both succeed",
+      "score": 0,
+      "max_score": 2.0833333333333335,
+      "status": "failed",
+      "type": "deterministic",
+      "details": "AssertionError [ERR_ASSERTION]: {\"ok\":false,\"error\":{\"code\":\"NOT_IMPLEMENTED\"}}\n\n501 !== 200\n\n    at Object.ok (file:///opt/private/task/verifier/implementation/evaluation/tests/harness.mjs:83:101)\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)\n    at async file:///opt/private/task/verifier/implementation/evaluation/tests/cases/concurrency.mjs:21:3\n    at async withService (file:///opt/private/task/verifier/implementation/evaluation/tests/harness.mjs:91:24)\n    at async score (file:///opt/private/task/verifier/implementation/evaluation/score.mjs:37:11)\n    at async file:///opt/private/task/verifier/implementation/evaluation/score.mjs:66:18"
+    },
+    {
+      "id": "C04",
+      "title": "Transfer receipt and cancellation share revision protection",
+      "score": 0,
+      "max_score": 2.0833333333333335,
+      "status": "failed",
+      "type": "deterministic",
+      "details": "AssertionError [ERR_ASSERTION]: {\"ok\":false,\"error\":{\"code\":\"NOT_IMPLEMENTED\"}}\n\n501 !== 200\n\n    at Object.ok (file:///opt/private/task/verifier/implementation/evaluation/tests/harness.mjs:83:101)\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)\n    at async file:///opt/private/task/verifier/implementation/evaluation/tests/cases/concurrency.mjs:27:3\n    at async withService (file:///opt/private/task/verifier/implementation/evaluation/tests/harness.mjs:91:24)\n    at async score (file:///opt/private/task/verifier/implementation/evaluation/score.mjs:37:11)\n    at async file:///opt/private/task/verifier/implementation/evaluation/score.mjs:66:18"
+    },
+    {
+      "id": "C05",
+      "title": "Independent concurrent receipts have no lost updates or audit gaps",
+      "score": 0,
+      "max_score": 2.0833333333333335,
+      "status": "failed",
+      "type": "deterministic",
+      "details": "AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:\n\n  assert.ok(r.every(x => x.status === 200))\n\n    at file:///opt/private/task/verifier/implementation/evaluation/tests/cases/concurrency.mjs:34:10\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)\n    at async withService (file:///opt/private/task/verifier/implementation/evaluation/tests/harness.mjs:91:24)\n    at async score (file:///opt/private/task/verifier/implementation/evaluation/score.mjs:37:11)\n    at async file:///opt/private/task/verifier/implementation/evaluation/score.mjs:66:18"
+    },
+    {
+      "id": "C06",
+      "title": "Shipment racing expiry has only serializable outcomes",
+      "score": 0,
+      "max_score": 2.0833333333333335,
+      "status": "failed",
+      "type": "deterministic",
+      "details": "AssertionError [ERR_ASSERTION]: {\"ok\":false,\"error\":{\"code\":\"NOT_IMPLEMENTED\"}}\n\n501 !== 200\n\n    at Object.ok (file:///opt/private/task/verifier/implementation/evaluation/tests/harness.mjs:83:101)\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)\n    at async file:///opt/private/task/verifier/implementation/evaluation/tests/cases/concurrency.mjs:38:3\n    at async withService (file:///opt/private/task/verifier/implementation/evaluation/tests/harness.mjs:91:24)\n    at async score (file:///opt/private/task/verifier/implementation/evaluation/score.mjs:37:11)\n    at async file:///opt/private/task/verifier/implementation/evaluation/score.mjs:66:18"
+    },
+    {
+      "id": "R01",
+      "title": "Acknowledged inventory and reservations survive forced termination",
+      "score": 0,
+      "max_score": 2.0833333333333335,
+      "status": "failed",
+      "type": "deterministic",
+      "details": "AssertionError [ERR_ASSERTION]: {\"ok\":false,\"error\":{\"code\":\"NOT_IMPLEMENTED\"}}\n\n501 !== 200\n\n    at Object.ok (file:///opt/private/task/verifier/implementation/evaluation/tests/harness.mjs:83:101)\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)\n    at async file:///opt/private/task/verifier/implementation/evaluation/tests/cases/recovery.mjs:10:3\n    at async withService (file:///opt/private/task/verifier/implementation/evaluation/tests/harness.mjs:91:24)\n    at async score (file:///opt/private/task/verifier/implementation/evaluation/score.mjs:37:11)\n    at async file:///opt/private/task/verifier/implementation/evaluation/score.mjs:66:18"
+    },
+    {
+      "id": "R02",
+      "title": "Retry ledger and original snapshots survive repeated termination",
+      "score": 0,
+      "max_score": 2.0833333333333335,
+      "status": "failed",
+      "type": "deterministic",
+      "details": "AssertionError [ERR_ASSERTION]: {\"ok\":false,\"error\":{\"code\":\"NOT_IMPLEMENTED\"}}\n\n501 !== 200\n\n    at Object.ok (file:///opt/private/task/verifier/implementation/evaluation/tests/harness.mjs:83:101)\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)\n    at async file:///opt/private/task/verifier/implementation/evaluation/tests/cases/recovery.mjs:14:3\n    at async withService (file:///opt/private/task/verifier/implementation/evaluation/tests/harness.mjs:91:24)\n    at async score (file:///opt/private/task/verifier/implementation/evaluation/score.mjs:37:11)\n    at async file:///opt/private/task/verifier/implementation/evaluation/score.mjs:66:18"
+    },
+    {
+      "id": "R03",
+      "title": "Clock, transfer progress, returns and audit recover together",
+      "score": 0,
+      "max_score": 2.0833333333333335,
+      "status": "failed",
+      "type": "deterministic",
+      "details": "AssertionError [ERR_ASSERTION]: {\"ok\":false,\"error\":{\"code\":\"NOT_IMPLEMENTED\"}}\n\n501 !== 200\n\n    at Object.ok (file:///opt/private/task/verifier/implementation/evaluation/tests/harness.mjs:83:101)\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)\n    at async file:///opt/private/task/verifier/implementation/evaluation/tests/cases/recovery.mjs:19:3\n    at async withService (file:///opt/private/task/verifier/implementation/evaluation/tests/harness.mjs:91:24)\n    at async score (file:///opt/private/task/verifier/implementation/evaluation/score.mjs:37:11)\n    at async file:///opt/private/task/verifier/implementation/evaluation/score.mjs:66:18"
+    },
+    {
+      "id": "R04",
+      "title": "Unrelated recovery-directory artifacts do not overwrite committed state",
+      "score": 0,
+      "max_score": 2.0833333333333335,
+      "status": "failed",
+      "type": "deterministic",
+      "details": "AssertionError [ERR_ASSERTION]: {\"ok\":false,\"error\":{\"code\":\"NOT_IMPLEMENTED\"}}\n\n501 !== 200\n\n    at Object.ok (file:///opt/private/task/verifier/implementation/evaluation/tests/harness.mjs:83:101)\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)\n    at async file:///opt/private/task/verifier/implementation/evaluation/tests/cases/recovery.mjs:24:3\n    at async withService (file:///opt/private/task/verifier/implementation/evaluation/tests/harness.mjs:91:24)\n    at async score (file:///opt/private/task/verifier/implementation/evaluation/score.mjs:37:11)\n    at async file:///opt/private/task/verifier/implementation/evaluation/score.mjs:66:18"
+    },
+    {
+      "id": "R05",
+      "title": "Interrupted unacknowledged receipt is atomic and retryable exactly once",
+      "score": 0,
+      "max_score": 2.0833333333333335,
+      "status": "failed",
+      "type": "deterministic",
+      "details": "AssertionError [ERR_ASSERTION]: {\"ok\":false,\"error\":{\"code\":\"NOT_IMPLEMENTED\"}}\n\n501 !== 200\n\n    at Object.ok (file:///opt/private/task/verifier/implementation/evaluation/tests/harness.mjs:83:101)\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)\n    at async file:///opt/private/task/verifier/implementation/evaluation/tests/cases/recovery.mjs:29:3\n    at async withService (file:///opt/private/task/verifier/implementation/evaluation/tests/harness.mjs:91:24)\n    at async score (file:///opt/private/task/verifier/implementation/evaluation/score.mjs:37:11)\n    at async file:///opt/private/task/verifier/implementation/evaluation/score.mjs:66:18"
+    },
+    {
+      "id": "R06",
+      "title": "Long mixed workflow conserves units through restart and transfer retries",
+      "score": 0,
+      "max_score": 2.0833333333333335,
+      "status": "failed",
+      "type": "deterministic",
+      "details": "AssertionError [ERR_ASSERTION]: {\"ok\":false,\"error\":{\"code\":\"NOT_IMPLEMENTED\"}}\n\n501 !== 200\n\n    at Object.ok (file:///opt/private/task/verifier/implementation/evaluation/tests/harness.mjs:83:101)\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)\n    at async file:///opt/private/task/verifier/implementation/evaluation/tests/cases/recovery.mjs:38:3\n    at async withService (file:///opt/private/task/verifier/implementation/evaluation/tests/harness.mjs:91:24)\n    at async score (file:///opt/private/task/verifier/implementation/evaluation/score.mjs:37:11)\n    at async file:///opt/private/task/verifier/implementation/evaluation/score.mjs:66:18"
+    }
+  ],
+  "execution": "docker-isolated",
+  "provenance": {
+    "template_manifest_sha256": "95d3e9d6da044c0a659bc78403f5462b307c36d083103f97e900e8a14b24017a",
+    "verifier_hash": "2b57f09a276bcd6255c921a6609192d120a4a654a536c87f9411ff6e330c6aa2",
+    "solution_hash": "54e8098d559d1b559495d765d110993b9d43d70056c3db91e117774cbcab978e"
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "artifact_id": 12056418972,
+  "name": "template-self-check-38926363562-1",
+  "sha256": "sha256:394c72d80e76572b16a5b1f596d7a7828740d75a12c61365d860821f657a58b0",
+  "github_digest": "sha256:394c72d80e76572b16a5b1f596d7a7828740d75a12c61365d860821f657a58b0",
+  "run_id": 38926363562,
+  "source_commit": "8721c8d638d3025b3cbf138296644ace01f4223b",
+  "run_url": "https://github.com/rishirana463-hub/RL-Gym-for-Coding-Agents/actions/runs/38926363562"
+}

@@ -36,6 +36,10 @@ The `.yml` configuration files use JSON syntax, which is valid YAML 1.2, to avoi
 
 ## Container verification
 
+The current organizer submission is the generated [official greenfield task](../greenfield/README.md). Use `npm run export:template` after authoring changes and `npm run check:template` to detect drift; the build also checks it. Its task/config files, per-check 0–100 scoring and private verifier environment follow [the reviewed starter](template-compatibility.md). [Separate Docker self-check evidence](../evals/template-self-check/README.md) validates the exported wrapper: reference 100 twice, starter 0, private-file/UID probe passed and 18 full-suite mutants caught. The [self-check report](template-self-check.md) records unresolved mutation/classification requirements.
+
+The commands below continue to operate on the authoritative authoring source and its original 0–1 score reports. Do not relabel those reports as new-format model attempts. Future actual candidates need measured exported-verifier records plus current model/version metadata and real trajectories in the official model-named proof directories. Provider execution and this end-to-end model-record handoff remain untested.
+
 Use Docker with Linux containers, then run from the repository root:
 
 ```sh
